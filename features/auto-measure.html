@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Auto Measure — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/measurement.html">Measurement &amp; Imaging</a></div>
+    <h1>Auto Measure</h1>
+    <p class="brief">Point at a lesion in InteleViewer, press a button, and get an automatic bidimensional measurement drawn over the image — ready to paste into the report.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/keymappings.png" alt="Assign Auto Measure to a key or mic button in Key Mappings" loading="lazy" class="lightboxable"><figcaption>Assign Auto Measure to a key or mic button in Key Mappings</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>Bidimensional measurement overlay on a lesion</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Auto Measure captures the region of the InteleViewer image around your cursor, segments the lesion under it, and draws a <strong>bidimensional measurement overlay</strong> (long axis + perpendicular short axis, with the numbers) right on top of the image. Segmentation runs two ways at once: a MobileSAM neural model on your GPU (via DirectML) plus an adaptive region-growing heuristic with edge-snap refinement — so it handles both well-circumscribed and messier lesions. Calibration is ruler-free: measurements derive from the workstation&#39;s monitor pitch and the true-size zoom level, so you don&#39;t need the on-screen ruler overlay for it to be accurate.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Map the <strong>Auto Measure</strong> action to a PowerMic/SpeechMike button or hotkey under Settings → Keys &amp; Buttons. There&#39;s no separate enable toggle — the action does the work.</p>
+<h2>Using it</h2>
+<ol>
+<li>Hover your cursor over the lesion in InteleViewer.</li>
+<li>Trigger Auto Measure.</li>
+<li>The measurement overlay appears over the lesion and <strong>auto-dismisses after about 5 seconds</strong> (click to dismiss early). Focus returns to InteleViewer the moment the measurement appears, so your tool-select mouse button keeps working — no need to click the image first.</li>
+<li>The measurement is available to paste into the report.</li>
+</ol>
+<p>The first measurement after launch pays a GPU cold-start cost (~2 s for kernel compilation); subsequent measurements come back in a few hundred milliseconds on a modern GPU.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>It measures what it can segment — a lesion with almost no contrast against its background may get a poor boundary. Always eyeball the overlay before dictating the number.</li>
+<li>Works with InteleViewer rulers in either yellow or orange (used only for legacy calibration; the pitch-based calibration is the default).</li>
+<li>A side-by-side compare popup showing the SAM crop vs. the heuristic crop exists behind a developer flag (<code>SamCompareEnabled</code>) — it is not a user-facing setting.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Auto Measure</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/measurement.html">📏 Measurement &amp; Imaging</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/ruler-overlay.html">Draggable Ruler Overlay</a></li><li><a href="../features/capture-series-image.html">Capture Series/Image</a></li><li><a href="../features/cycle-window-level.html">Cycle Window/Level</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

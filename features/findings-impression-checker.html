@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Findings/Impression Mismatch — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Findings/Impression Mismatch</h1>
+    <p class="brief">Catches outright contradictions between FINDINGS and IMPRESSION — &quot;no bowel obstruction&quot; in the findings with &quot;bowel obstruction&quot; in the impression — and pulses an alert until you fix or dismiss it.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="Findings/Impression mismatch under Alert Triggers" loading="lazy" class="lightboxable"><figcaption>Findings/Impression mismatch under Alert Triggers</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>After both sections exist, MosaicTools compares FINDINGS and IMPRESSION for contradictions of assertion: one section negates a concept the other asserts. The classic case is a normal-template findings line (&quot;No evidence of bowel obstruction&quot;) surviving next to a dictated impression point (&quot;Small bowel obstruction&quot;) — usually the residue of an edited template or a processing hiccup. When it finds one, the notification box pulses (the settings label marks it <strong>pulsing orange</strong>) and names the contradiction.</p>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → Alerts → Alert Triggers → Findings/Impression mismatch.</strong> It requires the notification box (<strong>Enable Notification Box</strong>, same tab) and appears even in alerts-only mode.</p>
+<h2>Using it</h2>
+<p>The check runs automatically as the report is scraped — in practice you notice it right after Process Report. It matches medical concepts through synonym patterns plus proximity matching (all the significant words of a term in the same sentence), so &quot;SBO&quot; phrasings and reworded equivalents are still caught. With CDP active, the contradicting text flashes in orange in the report editor itself until corrected. Click the alert to dismiss; it clears on study change.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Direction matters and is reported: findings-negates/impression-asserts is the common one, but the reverse fires too.</li>
+<li>It&#39;s a concept-level check, not a grammar check — it won&#39;t catch a contradiction phrased in terms it has no concept for. Treat it as a net, not a guarantee.</li>
+<li>Number and side discrepancies are the job of the Measurement &amp; laterality consistency checker; run both.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Alerts → Alert Triggers → Findings/Impression mismatch</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v4.2</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/consistency-checker.html">Measurement &amp; Laterality Consistency</a></li><li><a href="../features/gender-check.html">Gender Check</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/rainbow-mode.html">Rainbow Mode</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

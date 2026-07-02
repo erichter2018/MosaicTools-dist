@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Report Processing &amp; QA — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<section class="cathead"><div class="cathead-icon">🧾</div><div><h1>Report Processing &amp; QA</h1><p>Process Report and the safety net around it — consistency checks, mismatch alerts, and sign-time guards.</p></div></section>
+<div class="cardgrid"><a class="card" href="../features/custom-process-report.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span></div>
+    <h3>Custom Process Report</h3>
+    <p>An experimental alternate to Process Report where MosaicTools itself calls an LLM of your choice — Gemini, OpenAI, Groq, or xAI Grok, or all four racing in Quad Compare — instead of Mosaic's built-in one.</p>
+  </a>
+<a class="card" href="../features/findings-impression-checker.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 4.2</span></div>
+    <h3>Findings/Impression Mismatch</h3>
+    <p>Catches outright contradictions between FINDINGS and IMPRESSION — &quot;no bowel obstruction&quot; in the findings with &quot;bowel obstruction&quot; in the impression — and pulses an alert until you fix or dismiss it.</p>
+  </a>
+<a class="card" href="../features/gender-check.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span></div>
+    <h3>Gender Check</h3>
+    <p>Flashing red alert when the report contains gender-specific terms that don't fit the patient — a prostate in a female patient's report, a uterus in a male's.</p>
+  </a>
+<a class="card" href="../features/consistency-checker.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 4.2</span></div>
+    <h3>Measurement &amp; Laterality Consistency</h3>
+    <p>Flags a pulsing red alert when a measurement or a left/right differs between FINDINGS and IMPRESSION, or when the report's laterality contradicts the study description.</p>
+  </a>
+<a class="card" href="../features/patient-mismatch.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span></div>
+    <h3>Patient Mismatch Alert</h3>
+    <p>Pulsing yellow alert when InteleViewer is showing a different patient than the one open in Mosaic — the classic setup for dictating one patient's images into another's report.</p>
+  </a>
+<a class="card" href="../features/process-report.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span></div>
+    <h3>Process Report</h3>
+    <p>The one-button core of the workflow — sends Alt+P to Mosaic to structure your dictation into the report, wrapped with auto-stop dictation, smart scrolling, and every post-process surface MosaicTools offers.</p>
+  </a>
+<a class="card" href="../features/template-correction.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span></div>
+    <h3>Template Mismatch &amp; Auto-Correct</h3>
+    <p>A red-border alert when the loaded report template doesn't match the study type — with an optional attempt to fix it automatically by re-typing the study description into Mosaic.</p>
+  </a>
+<a class="card" href="../features/sign-warning.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 5.1</span></div>
+    <h3>Unprocessed-Sign Warning</h3>
+    <p>Beeps and shows a red warning box when you press Sign while dictation is still sitting unprocessed in the transcript box — press Sign again to sign anyway, or Process Report to capture it first.</p>
+  </a></div>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

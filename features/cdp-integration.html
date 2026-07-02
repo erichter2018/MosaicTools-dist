@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CDP Integration — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
+    <h1>CDP Integration</h1>
+    <p class="brief">Reads Mosaic and Clario through the Chrome DevTools Protocol instead of screen-level UI Automation — faster, more reliable, and the foundation for the in-editor visual features.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-cdp.png" alt="Mosaic CDP toggles and what they unlock" loading="lazy" class="lightboxable"><figcaption>Mosaic CDP toggles and what they unlock</figcaption></figure>
+<figure class="shot"><img src="../img/settings-experimental.png" alt="The Experimental tab hosting the CDP settings" loading="lazy" class="lightboxable"><figcaption>The Experimental tab hosting the CDP settings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Mosaic&#39;s report screen is a web page inside an embedded browser, and Clario is a Chrome web app. CDP lets MosaicTools read and modify those pages directly through the browser&#39;s own debugging protocol — instant JS evaluation instead of walking accessibility trees. That means faster and more accurate scraping (accession, drafted state, clinical history, exam notes, Priority/Class, critical note creation), plus a set of features that are only possible with DOM access: independent column scrolling, auto-scroll to the cursor while dictating, dictated-text highlighting, visual report enhancements, flashing alert text, in-editor impression-fixer buttons, MTRec boxes, and Mosaic zoom memory.</p>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Mosaic</strong> — in <strong>Settings → Experimental → Mosaic CDP (Direct DOM Access)</strong>, check <strong>Use CDP for Mosaic interaction</strong> (requires a Mosaic restart the first time), then enable whichever sub-features you want.</p>
+<p><strong>Clario</strong> — in the <strong>Clario CDP (Direct DOM Access)</strong> section, check <strong>Use CDP for Clario interaction</strong>, enter your <strong>Clario URL</strong>, and click <strong>Setup Chrome CDP Shortcut</strong>. This creates a &quot;Clario CDP&quot; desktop shortcut (and a profile junction) so Chrome launches with CDP enabled while keeping your normal profile. Close Chrome before first launching it, then always open Clario from that shortcut.</p>
+<p>The <strong>CDP Status</strong> dashboard at the bottom of the section shows live green/red dots for both connections.</p>
+<h2>Using it</h2>
+<p>Invisible when working: everything is just faster and steadier. The Clario TBWU injection and instant critical-note creation also depend on it.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li><strong>UI Automation remains the fallback</strong> — if CDP is unavailable, MosaicTools silently falls back, so enabling CDP can&#39;t leave you worse off.</li>
+<li>If CDP-dependent features stop, check the status dashboard first; the Clario side usually means Chrome wasn&#39;t launched from the &quot;Clario CDP&quot; shortcut.</li>
+<li>Known interaction: the Independent Column Scrolling CSS can corrupt the page for RadPair users — turn that sub-option off if you run RadPair.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Experimental → Mosaic CDP (Direct DOM Access) → Use CDP for Mosaic interaction</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/independent-scrolling.html">Independent Column Scrolling</a></li><li><a href="../features/visual-enhancements.html">Visual Report Enhancements</a></li><li><a href="../features/dictated-text-highlighting.html">Dictated Text Highlighting</a></li><li><a href="../features/mtrec-boxes.html">MTRec Boxes</a></li><li><a href="../features/mosaic-zoom.html">Mosaic Zoom Memory</a></li><li><a href="../features/impression-fixer.html">Impression Fixer</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dictation Data Sharing (Opt-in) — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Dictation Data Sharing (Opt-in)</h1>
+    <p class="brief">Strictly opt-in sharing of de-identified dictation data to improve recognition accuracy — all PHI is stripped on your own machine before anything leaves it.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-stt-sharing.png" alt="The Data Sharing opt-in — de-identified on this PC first" loading="lazy" class="lightboxable"><figcaption>The Data Sharing opt-in — de-identified on this PC first</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Recognition problems are fixed by looking at real dictations — which engine misheard what, and how the merge decided. <strong>Share de-identified dictation to improve accuracy</strong> contributes anonymized dictation data for exactly that tuning. The critical part is <em>where</em> de-identification happens: <strong>on your computer, before anything is shared</strong>. Names, dates, MRNs, accession numbers, and hospital/facility names are removed locally; nothing identifiable ever leaves your machine. Sharing is one-way (push only) and off by default.</p>
+<p>A second, narrower opt-in — <strong>Contribute ~30 min of de-identified dictation audio to improve engine recommendations</strong> — is only visible to testers who have arranged it with the developer. Audio can&#39;t be scrubbed the way text can, so each clip is checked on your machine first and any clip with a detected identifier is dropped and never uploaded; it stops automatically at about 30 minutes total.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Settings → Speech-to-Text → <strong>Data Sharing</strong>. Both boxes default to off; check the first if you&#39;re willing to contribute. Nothing else to do.</p>
+<h2>Using it</h2>
+<p>Invisible in daily work. The practical benefit flows back to you: engine misfires seen in the shared data drive keyterm additions, merge fixes, and ensemble recommendations in subsequent releases.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Independent of this, ensemble mode keeps a local de-identified diagnostics log (<code>dictation_log.jsonl</code>, next to the main log) that never leaves your machine unless you personally send it — right-click the bar → Show Log to find it.</li>
+<li>You can switch either opt-in off at any time; it stops immediately.</li>
+<li>What&#39;s shared is dictation/diagnostic data — never raw patient reports with identifiers.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Speech-to-Text → Data Sharing → Share de-identified dictation to improve accuracy</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/telemetry.html">Diagnostics &amp; Data Sharing</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/keyterms.html">Keyterms &amp; Auto-Learning</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

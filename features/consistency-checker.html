@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Measurement &amp; Laterality Consistency — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Measurement &amp; Laterality Consistency</h1>
+    <p class="brief">Flags a pulsing red alert when a measurement or a left/right differs between FINDINGS and IMPRESSION, or when the report's laterality contradicts the study description.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="Measurement &amp; laterality consistency under Alert Triggers" loading="lazy" class="lightboxable"><figcaption>Measurement &amp; laterality consistency under Alert Triggers</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Three checks run automatically on the drafted report and surface as a <strong>pulsing red</strong> alert on the notification box:</p>
+<ol>
+<li><strong>Measurement consistency</strong> — the same finding carries different sizes in FINDINGS vs IMPRESSION (a 4 mm calculus that became 5 mm in the impression).</li>
+<li><strong>Laterality consistency</strong> — a structure is left in FINDINGS and right in IMPRESSION (or vice versa).</li>
+<li><strong>Study description laterality</strong> — the report says &quot;right metacarpal&quot; but the study is a LEFT HAND. Suppressed for studies with bilateral components (AP pelvis, chest, etc.), and spine levels like L4/L5 are never mistaken for laterality.</li>
+</ol>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → Alerts → Alert Triggers → Measurement &amp; laterality consistency.</strong> The notification box itself must be enabled (<strong>Enable Notification Box</strong>, same tab) — the checker&#39;s alerts appear even in alerts-only mode.</p>
+<h2>Using it</h2>
+<p>You&#39;ll usually see it right after Process Report, once both sections exist. The alert names the discrepancy (&quot;calculus: 4mm→5mm&quot;, &quot;kidney: left→right&quot;), and when the CDP connection is active the mismatched text flashes in the report editor itself so you can find it without hunting. Click the alert to dismiss it; dismissals are tracked per-mismatch and cleared when you change studies, so fixing one issue won&#39;t re-fire it but a new one still will.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Measurement matching is one-to-one, so two findings that share anatomy keywords (two renal cysts of different sizes) don&#39;t cross-trigger false positives.</li>
+<li>It compares FINDINGS against IMPRESSION — it can&#39;t know which of the two numbers is the correct one; that&#39;s your call.</li>
+<li>This is a different check from the Findings/Impression mismatch alert, which catches contradictions of assertion (&quot;no obstruction&quot; vs &quot;obstruction&quot;) rather than numbers and sides.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Alerts → Alert Triggers → Measurement &amp; laterality consistency</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v4.2</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/findings-impression-checker.html">Findings/Impression Mismatch</a></li><li><a href="../features/gender-check.html">Gender Check</a></li><li><a href="../features/patient-mismatch.html">Patient Mismatch Alert</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

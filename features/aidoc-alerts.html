@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Aidoc Alerts — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/worklist.html">Worklist &amp; Productivity</a></div>
+    <h1>Aidoc Alerts</h1>
+    <p class="brief">Watches the Aidoc widget and raises an orange alert when Aidoc has a positive finding that's actually relevant to the study you have open — irrelevant flags are filtered out.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="Aidoc AI detection under Alert Triggers" loading="lazy" class="lightboxable"><figcaption>Aidoc AI detection under Alert Triggers</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>An Aidoc alert in the notification box</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Scrapes the Aidoc shortcut widget in the background and shows an <strong>orange border</strong> alert on the notification box when Aidoc has detected a positive finding for the current study. Findings are checked for <strong>study-type relevance</strong> before alerting, so an Aidoc flag that can&#39;t apply to your open study doesn&#39;t nag you.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Check <strong>Aidoc AI detection</strong> in <strong>Settings → Alerts → Alert Triggers</strong>.</li>
+<li><strong>Required Aidoc configuration:</strong> in the Aidoc widget, set <strong>Contextual summary display → No animation</strong>. The animated display defeats the scrape; the settings page has a <strong>?</strong> button showing exactly where this option lives.</li>
+</ol>
+<p>Aidoc itself must be installed and running on the workstation — MosaicTools only reads its widget, it doesn&#39;t talk to Aidoc&#39;s servers.</p>
+<h2>Using it</h2>
+<p>Nothing to do during a shift: when you open a study that Aidoc has flagged positive (the red-dot indicator on a finding icon), the orange alert appears so you know to look for it before you start dictating. Negative/absent findings produce no alert.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The relevance filter is the point: Aidoc&#39;s widget shows results for the <em>patient</em>, which may include findings from a different exam. MosaicTools verifies the finding type plausibly belongs to your open study&#39;s type before alerting.</li>
+<li>Positive/negative status is read from the widget&#39;s colored indicator dots, so unusual display scaling or a themed/updated Aidoc widget can break detection — if alerts stop, check the widget still looks normal and animation is still off.</li>
+<li>The Aidoc scrape runs independently of the clinical-history display, so it keeps working even with the notification box in alerts-only mode.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Alerts → Alert Triggers → Aidoc AI detection</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/worklist.html">📈 Worklist &amp; Productivity</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/stroke-detection.html">Stroke Detection</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

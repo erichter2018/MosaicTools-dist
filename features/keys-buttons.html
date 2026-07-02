@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Keys &amp; Buttons — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
+    <h1>Keys &amp; Buttons</h1>
+    <p class="brief">Map any MosaicTools action to a PowerMic button, a SpeechMike button, or a global keyboard hotkey — every action, one dialog.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/keymappings.png" alt="The Key Mappings dialog: hotkeys and mic buttons per action" loading="lazy" class="lightboxable"><figcaption>The Key Mappings dialog: hotkeys and mic buttons per action</figcaption></figure>
+<figure class="shot"><img src="../img/keys-buttons.png" alt="The hardcoded PowerMic / SpeechMike reference" loading="lazy" class="lightboxable"><figcaption>The hardcoded PowerMic / SpeechMike reference</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Every MosaicTools action — Get Prior, Critical Findings, Process Report, Sign Report, Show Pick Lists, MTRec Recommendations, Auto Measure, and the rest — can be triggered from your dictation mic&#39;s buttons or a global hotkey. The <strong>Key Mappings</strong> dialog shows one row per action with a hotkey box and a mic-button dropdown.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li><strong>Settings → Keys &amp; Buttons</strong>. Under <strong>Dictation Microphone</strong>, pick <strong>Auto</strong>, <strong>PowerMic</strong>, or <strong>SpeechMike</strong> (Auto connects to whatever is plugged in); the status line shows what&#39;s detected.</li>
+<li>Click <strong>Open Keys Configuration...</strong> In the dialog, choose the device to configure (<strong>PowerMic</strong> or <strong>SpeechMike</strong> — each keeps its own mapping set), then per action:<ul>
+<li>Click the hotkey box and press a key combination to capture it.</li>
+<li>Or pick a mic button from the dropdown.</li>
+</ul>
+</li>
+</ol>
+<p><strong>PowerMic buttons:</strong> Left Button, Right Button, Record Button, T Button, Skip Back, Skip Forward, Rewind, Fast Forward, Stop/Play, Checkmark, Scan Button.
+<strong>SpeechMike buttons:</strong> Record, Play/Pause, Fast Forward, Rewind, EoL, Ins/Ovr, -i-, Index Finger, F1–F4.</p>
+<h2>Using it</h2>
+<p>Press the button; the action runs. MosaicTools reads the mic&#39;s HID interface directly, so mappings work regardless of which window has focus, and focus is saved/restored around Mosaic interactions.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The settings page also lists the <strong>Hardcoded Mic Buttons</strong> — a default set (e.g. PowerMic Skip Back → Process Report, Record Button → Start/Stop Dictation, Checkmark → Sign Report; SpeechMike Ins/Ovr, -i-, Record, EoL for the same four) so a fresh install works before you customize anything.</li>
+<li>SpeechMike works in Event mode; use Philips SpeechControl if you want the front mouse-style buttons behaving as hotkeys.</li>
+<li>Global hotkeys are disabled in headless mode — mic buttons still work there.</li>
+<li>MosaicTools tags its own injected keystrokes so an Alt-key mapping can&#39;t re-trigger itself.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Keys &amp; Buttons → Open Keys Configuration...</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/widget-bar.html">Widget Bar</a></li><li><a href="../features/headless-mode.html">Headless Mode</a></li><li><a href="../features/push-to-talk.html">Push-to-Talk (Dead Man's Switch)</a></li><li><a href="../features/iv-toolbar.html">InteleViewer Buttons Toolbar</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

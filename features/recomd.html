@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>RecoMD Integration — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/recommendations.html">Recommendations</a></div>
+    <h1>RecoMD Integration <span class="badge-dep badge-dep-lg">legacy / deprecated</span></h1>
+    <p class="brief">Legacy integration with the external RecoMD recommendation service — superseded by the built-in MTRec engine.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="The legacy RecoMD integration toggles under Alerts" loading="lazy" class="lightboxable"><figcaption>The legacy RecoMD integration toggles under Alerts</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>RecoMD is an external best-practice recommendation service. MosaicTools can send it report data (<strong>Settings → Alerts → RecoMD integration</strong>, with an <strong>Auto-send on Process Report</strong> sub-option) and paste its recommendations back via two mappable actions, <strong>Trigger RecoMD</strong> and <strong>Paste RecoMD</strong>. Paste RecoMD deduplicates against your existing impression points, verifies the copy actually happened, and restores your mouse position.</p>
+<h2>Why it&#39;s deprecated</h2>
+<p>MTRec (5.3.0) is the in-house replacement: offline, instant, no external agent or window-scraping, with every recommendation drawn from verified guideline tables and closed with its citation. If you still have RecoMD wired to a button, the MTRec pages are where to start — enable the engine under <strong>Settings → MTRec</strong> and either use the <strong>MTRec Recommendations</strong> key or the automatic MTRec boxes after Process Report.</p>
+<p>The RecoMD integration remains functional for workstations that still run the service (note the settings hint: it requires &quot;Wait for Impression&quot; to be OFF in RecoMD&#39;s own settings), but it receives no further development.</p>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Trigger RecoMD</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Alerts → RecoMD integration</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/recommendations.html">📋 Recommendations</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/mtrec.html">MTRec Recommendations</a></li><li><a href="../features/mtrec-boxes.html">MTRec Boxes</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Push-to-Talk (Dead Man's Switch) — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Push-to-Talk (Dead Man's Switch)</h1>
+    <p class="brief">Hold the Record button to dictate, release to stop — recording can never be left running by accident.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-desktop.png" alt="Push-to-Talk (Dead Man’s Switch) in Desktop Mode settings" loading="lazy" class="lightboxable"><figcaption>Push-to-Talk (Dead Man’s Switch) in Desktop Mode settings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>By default the Record button is a toggle: press to start, press to stop. Push-to-Talk changes it to a dead man&#39;s switch: recording runs <strong>only while the button is held</strong> and stops the instant you release. Nothing can be left recording between studies, no half-toggled state, and the start/stop rhythm matches how many radiologists already dictate on legacy systems.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Settings → Desktop Mode → <strong>Push-to-Talk (Dead Man&#39;s Switch)</strong>. It applies to the PowerMic/SpeechMike Record button and works with both Mosaic&#39;s built-in dictation and Custom STT Mode.</p>
+<h2>Using it</h2>
+<p>Squeeze, speak a finding, release. With Custom STT and Turbo Paste, text lands essentially as you release; the ensemble&#39;s slower voters finish their corrections in the moment after. Short bursts per press work well — the ensemble is tuned for exactly that dictation style, and the setup wizard even asks whether you dictate in short bursts.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>MosaicTools uses a desired-state model for the held button, so a fast squeeze-release never wedges the recorder in the wrong state.</li>
+<li>The speech-gating cost saver (which pauses cloud streaming during silence) applies only to hands-free auto-start dictation — under Push-to-Talk the held button itself defines the session, so there&#39;s no idle time to save.</li>
+<li>If you prefer hands-free, the opposite workflow exists too: <strong>Auto-start on case open</strong> in Speech-to-Text settings begins recording when a study opens and stops on Sign Report. Pick one style; they compose poorly.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Desktop Mode → Push-to-Talk (Dead Man's Switch)</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li><li><a href="../features/dictation-indicator.html">Dictation Indicator &amp; Beeps</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

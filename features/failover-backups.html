@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Failover Backup Engines — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Failover Backup Engines</h1>
+    <p class="brief">Spare engines you've set up but don't run in your ensemble automatically swap in when a member fails mid-shift — dictation keeps its full strength, then hands back when the engine recovers.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/ensemble-slots.png" alt="The failover backup pool listed under the ensemble slots" loading="lazy" class="lightboxable"><figcaption>The failover backup pool listed under the ensemble slots</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Cloud engines have outages, and API keys run out of credit — usually mid-shift. Failover turns every engine you&#39;ve configured but <em>aren&#39;t</em> running in your ensemble into a <strong>backup pool</strong>: when any ensemble member goes down (provider outage, exhausted credits, or an engine that stays connected but silently stops producing transcripts), a suitable spare swaps into its slot automatically. Your dictation continues at full ensemble strength instead of quietly running a voter short. When the failed engine recovers, your normal ensemble is restored.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Nothing to enable — any spare configured engine is automatically part of the pool. Settings → Speech-to-Text shows your current pool read-only under the <strong>Failover backups</strong> divider at the bottom of the ensemble section. The Quick Setup Wizard has an optional <strong>Backup engines</strong> step that explains this and helps you add a spare for resilience.</p>
+<h2>Using it</h2>
+<p>You&#39;ll usually learn a failover happened from the health light: the toolbar dot becomes a split circle (left half = configured ensemble, right half = what&#39;s actually running), and the health drawer names the substitution — &quot;replaced by …&quot;. Fix the underlying account when convenient; nothing is urgent while the backup is covering.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Failovers hold steady deliberately — hysteresis prevents flip-flopping every time an engine&#39;s health briefly wavers.</li>
+<li>A backup can only cover a role it&#39;s capable of (a batch-only engine can&#39;t stand in as the streaming driver).</li>
+<li>The best cheap insurance is one extra key you never otherwise use — pay-per-use engines cost nothing while idle.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Through the shift</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.2</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/ensemble-health.html">Ensemble Health Light</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/stt-providers.html">Speech Engines (Providers)</a></li><li><a href="../features/stt-setup-wizard.html">Quick Setup Wizard</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

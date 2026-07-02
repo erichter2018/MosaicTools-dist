@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Installation &amp; Updates — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
+    <h1>Installation &amp; Updates</h1>
+    <p class="brief">A single exe with no installer and no admin rights, which quietly keeps itself up to date — updates stage in the background and apply only when it's safe, with a What's New popup and one-click rollback.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-desktop.png" alt="Auto-update, Check Now, and Rollback in Desktop Mode settings" loading="lazy" class="lightboxable"><figcaption>Auto-update, Check Now, and Rollback in Desktop Mode settings</figcaption></figure>
+<figure class="shot"><img src="../img/whatsnew.png" alt="The What’s New popup after an update" loading="lazy" class="lightboxable"><figcaption>The What’s New popup after an update</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>MosaicTools is one <code>MosaicTools.exe</code> — no installer, no admin rights, no services. Drop it in a folder and run it. It updates itself from GitHub Releases: new versions download as a ZIP (which corporate antivirus tolerates far better than a bare exe download) and install via a rename trick — the running exe is renamed aside, the new one takes its place, and the app restarts into it.</p>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → Desktop Mode → Updates</strong>:</p>
+<ul>
+<li><strong>Auto-update on startup</strong> — check for and install updates when the app launches.</li>
+<li><strong>Check Now</strong> — manual check.</li>
+<li><strong>Rollback to Previous Version</strong> — pick any earlier release and install it; auto-update is disabled afterwards so it doesn&#39;t immediately re-update you.</li>
+</ul>
+<h2>Using it</h2>
+<p>Mostly nothing: long-running sessions also check hourly in the background, <strong>stage</strong> the update silently, and apply it at a dictation lull — never mid-dictation. After an update you get the <strong>What&#39;s New</strong> popup summarizing everything since the version you last saw (skip three updates, see all three sets of notes). The full history is always available via the <strong>🆕 What&#39;s New</strong> button at the top of Settings.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Updates come from the public <code>MosaicTools-dist</code> GitHub repo; only outbound HTTPS to github.com is needed. The updater honors your system proxy and authenticates with your Windows credentials, which matters behind authenticating corporate proxies.</li>
+<li>An anti-loop guard backs off for a cooldown if an update can&#39;t stick (locked exe, AV quarantine) rather than restart-looping.</li>
+<li>Don&#39;t run MosaicTools from a folder you can&#39;t write to, or from OneDrive-synced paths if you can avoid it — the rename swap needs write access next to the exe.</li>
+<li>Rollback is the escape hatch if a new version misbehaves; report the issue so it&#39;s fixed, then re-enable <strong>Auto-update on startup</strong>.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Desktop Mode → Updates → Auto-update on startup</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/settings-window.html">Settings Window</a></li><li><a href="../features/widget-bar.html">Widget Bar</a></li><li><a href="../features/headless-mode.html">Headless Mode</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

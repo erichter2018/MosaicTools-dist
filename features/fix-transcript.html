@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Fix Transcript — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Fix Transcript</h1>
+    <p class="brief">A mappable action that presses Mosaic's transcript-cleanup button (the wrench icon) for you — no mousing to the Transcript toolbar.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/keymappings.png" alt="Assign Fix Transcript to a key or mic button in Key Mappings" loading="lazy" class="lightboxable"><figcaption>Assign Fix Transcript to a key or mic button in Key Mappings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Mosaic&#39;s Transcript editor has a cleanup button — the wrench-in-a-circle icon — that tidies the dictated transcript. Fix Transcript is a MosaicTools action that clicks it for you, so you can trigger the cleanup from a PowerMic/SpeechMike button or a keyboard hotkey without leaving the images or hunting for the icon.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Nothing to enable — just map it. Open Settings → Keys &amp; Buttons and bind <strong>Fix Transcript</strong> to a spare mic button or hotkey, like any other action.</p>
+<h2>Using it</h2>
+<p>After dictating a chunk, hit the mapped button; MosaicTools finds the wrench in the Transcript editor toolbar and presses it. The transcript cleans up exactly as if you had clicked it yourself — this action adds convenience, not a different cleanup.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The action drives Mosaic&#39;s own cleanup — what it fixes (and doesn&#39;t) is Mosaic&#39;s behavior, identical to a manual click on the wrench.</li>
+<li>It works through MosaicTools&#39; direct Mosaic access (CDP); if the button can&#39;t be found — say, no transcript is open — the action logs it and does nothing rather than clicking blindly.</li>
+<li>It pairs well with a dictation-heavy workflow: dictate, Fix Transcript, then Process Report, all from mic buttons without touching the mouse.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Fix Transcript</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.0</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li><li><a href="../features/process-report.html">Process Report</a></li><li><a href="../features/turbo-paste.html">Turbo Paste</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

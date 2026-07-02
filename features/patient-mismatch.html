@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Patient Mismatch Alert — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Patient Mismatch Alert</h1>
+    <p class="brief">Pulsing yellow alert when InteleViewer is showing a different patient than the one open in Mosaic — the classic setup for dictating one patient's images into another's report.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="Patient mismatch under Alert Triggers" loading="lazy" class="lightboxable"><figcaption>Patient mismatch under Alert Triggers</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>The highest-stakes desynchronization on a PACS workstation is images and report belonging to two different people. MosaicTools continuously compares the patient name in Mosaic against the topmost InteleViewer window, and when they disagree the notification box gets a <strong>pulsing yellow</strong> border. It&#39;s the first-listed alert trigger for a reason.</p>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → Alerts → Alert Triggers → Patient mismatch.</strong> Requires the notification box to be enabled (<strong>Enable Notification Box</strong> on the same tab); the alert shows even in alerts-only mode.</p>
+<h2>Using it</h2>
+<p>It runs in the background off the normal scrape loop — you only see it when Mosaic and InteleViewer diverge. That legitimately happens for a moment whenever you advance one application before the other, so the useful signal is a pulse that <em>persists</em>: if the yellow border is still going once both apps have settled, stop and reconcile which patient you&#39;re actually reading before dictating another word.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Brief pulses during study transitions are normal and expected; they clear on their own as the two applications catch up.</li>
+<li>Name comparison is deliberately tolerant of formatting differences between the two systems, and false alerts were further tightened in 5.4.5 — a persistent alert deserves attention.</li>
+<li>It compares against the <em>topmost</em> InteleViewer window; with multiple InteleViewer windows open, make sure the one on top is the one you&#39;re reading from.</li>
+<li>This alert is about the viewer/reporter pair. Wrong-sex content already inside the report is the Gender check&#39;s job.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Alerts → Alert Triggers → Patient mismatch</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Through the shift</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/gender-check.html">Gender Check</a></li><li><a href="../features/template-correction.html">Template Mismatch &amp; Auto-Correct</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

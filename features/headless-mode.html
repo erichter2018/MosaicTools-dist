@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Headless Mode — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
+    <h1>Headless Mode</h1>
+    <p class="brief">Launch with -headless and MosaicTools runs invisibly from the system tray — no widget bar, no hotkeys, but your mic buttons and toasts still work.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/widget-bar.png" alt="The normal bar — absent in headless mode, replaced by a tray icon" loading="lazy" class="lightboxable"><figcaption>The normal bar — absent in headless mode, replaced by a tray icon</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The tray icon + menu in -headless mode</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Headless mode strips MosaicTools down to the invisible essentials for people who want the automation without any on-screen chrome. There&#39;s no widget bar and no global keyboard hotkeys — just a system-tray icon. PowerMic/SpeechMike buttons, the InteleViewer floating toolbar, and toast notifications all still work, so every mic-triggered action behaves exactly as in normal mode.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Start the exe with the flag:</p>
+<pre><code>MosaicTools.exe -headless
+</code></pre>
+<p>To make it permanent, add <code>-headless</code> to whatever launches MosaicTools (a shortcut&#39;s Target field, or your startup entry). The tray icon reads &quot;Mosaic Tools (Headless)&quot; so you can tell which mode you&#39;re in.</p>
+<h2>Using it</h2>
+<p>Everything runs from the tray icon:</p>
+<ul>
+<li><strong>Double-click</strong> it to open Settings.</li>
+<li><strong>Right-click</strong> for <strong>Settings</strong>, <strong>Show Log</strong>, and <strong>Exit</strong>.</li>
+</ul>
+<p>Trigger actions with your mic buttons as usual. Toasts still appear at the bottom-right for feedback (action confirmations, warnings, update notices).</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Keyboard hotkeys are intentionally disabled in this mode — if you rely on hotkeys rather than mic buttons, headless isn&#39;t for you.</li>
+<li>Bar-dependent displays (TBWU metrics, critical count badge, ensemble health dot, connectivity dots) have nowhere to render; the underlying services still run, you just don&#39;t see the indicators.</li>
+<li>Settings are shared between modes — configure everything in normal mode first, then switch to headless once you&#39;re happy.</li>
+<li>Desktop-only sections (like the recording indicator options) hide themselves in the Settings window when running headless.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/widget-bar.html">Widget Bar</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li><li><a href="../features/settings-window.html">Settings Window</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

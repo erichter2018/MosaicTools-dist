@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Unprocessed-Sign Warning — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Unprocessed-Sign Warning</h1>
+    <p class="brief">Beeps and shows a red warning box when you press Sign while dictation is still sitting unprocessed in the transcript box — press Sign again to sign anyway, or Process Report to capture it first.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-behavior.png" alt="&quot;Warn before signing (unprocessed transcript)&quot; in Behavior settings" loading="lazy" class="lightboxable"><figcaption>&quot;Warn before signing (unprocessed transcript)&quot; in Behavior settings</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The warning window at sign time</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>The failure mode this prevents: you dictate a late addition, forget to re-run Process Report, and sign — the report goes out missing your last sentences. When you trigger <strong>Sign Report</strong> (Alt+F in Mosaic), MosaicTools first checks whether the transcript box looks unprocessed. If it does, it beeps and shows a red, movable warning box instead of signing.</p>
+<p>It distinguishes two cases and words the box accordingly: dictation that was <strong>never processed</strong> (&quot;may not be in the report&quot;), and dictation that <strong>changed after</strong> you processed — a late edit or a streaming correction that arrived after the fact (&quot;Press Process Report again to capture it&quot;).</p>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → Behavior → Warn before signing (unprocessed transcript).</strong> Sign Report itself is mapped under <strong>Keys &amp; Buttons</strong>.</p>
+<h2>Using it</h2>
+<p>The box never steals your keyboard — it&#39;s dismissed through your normal actions:</p>
+<ul>
+<li><strong>Press Sign again</strong> — signs anyway (you&#39;ve decided the transcript remainder doesn&#39;t matter).</li>
+<li><strong>Press Process Report</strong> — processes the outstanding dictation first; then sign.</li>
+<li><strong>Start dictating again</strong> — the box closes and gets out of your way.</li>
+</ul>
+<p>It&#39;s draggable and remembers its position between sessions.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>MosaicTools&#39; own inserts into the transcript (a macro, a corrected clinical history) don&#39;t count as unprocessed dictation — only text you actually dictated or edited triggers it, which keeps false warnings rare.</li>
+<li>The two-press pattern means a determined double-tap of Sign still signs quickly; the warning costs you one keypress exactly when it might save an addendum.</li>
+<li>The alert tone was made deliberately audible (tuned in 5.1.x) — if you sign and hear a beep, look before pressing again.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Sign Report</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Behavior → Report Processing → Warn before signing (unprocessed transcript)</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Signing</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.1</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/process-report.html">Process Report</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li><li><a href="../features/mtrec-boxes.html">MTRec Boxes</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MTRec Boxes — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/recommendations.html">Recommendations</a></div>
+    <h1>MTRec Boxes</h1>
+    <p class="brief">After Process Report, small clickable boxes appear next to &quot;Final Report&quot; — green &quot;+&quot; boxes insert a guideline recommendation into the impression with one click, amber &quot;⚠&quot; boxes are association reminders.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/mtrec-boxes.png" alt="The green &quot;+ renal&quot; box after Process Report" loading="lazy" class="lightboxable"><figcaption>The green &quot;+ renal&quot; box after Process Report</figcaption></figure>
+<figure class="shot"><img src="../img/settings-mtrec.png" alt="&quot;Show MTRec boxes after Process Report&quot; in MTRec settings" loading="lazy" class="lightboxable"><figcaption>&quot;Show MTRec boxes after Process Report&quot; in MTRec settings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Instead of pressing the MTRec key and having recommendations merge immediately, the boxes give you a look-then-click flow. After you Process Report, once the impression has generated, MTRec runs automatically and posts its results as small boxes next to &quot;Final Report&quot; (e.g. &quot;+ renal&quot;):</p>
+<ul>
+<li><strong>Green boxes</strong> are available recommendations. Click one and it&#39;s inserted into the impression; <strong>nothing is inserted until you click</strong>, and Ctrl+Z undoes an insert.</li>
+<li><strong>Amber boxes</strong> are association reminders (only if MTRec Associations is enabled). Hover to see which companion findings the report hasn&#39;t addressed; click to open the full checklist modal.</li>
+</ul>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → MTRec → &quot;Show MTRec boxes after Process Report&quot;</strong> — on by default once the MTRec engine itself is enabled. The manual <strong>MTRec Recommendations</strong> key keeps working exactly as before and is unaffected by this toggle.</p>
+<h2>Using it</h2>
+<p>Process the report, glance right of &quot;Final Report&quot;. No boxes = MTRec found nothing actionable. A green &quot;+ thyroid&quot; means a guideline follow-up is one click away; click it, check the wording in the impression, move on. An amber &quot;⚠ cirrhosis&quot; is a nudge, not text — hover for the missing companions or click for the checklist.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The boxes wait for the impression to generate — on a slow processing pass they appear a beat after the report does.</li>
+<li>Since 5.5.3 the boxes anchor correctly in the <strong>stacked (top/bottom) layout</strong> too, not just side-by-side.</li>
+<li>Box labels are displayed all-lowercase (as are the tooltips and checklist) — that&#39;s cosmetic, since 5.5.0.</li>
+<li>Clicking green inserts exactly what the manual MTRec key would have inserted for that finding, citation included.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">MTRec → Show MTRec boxes after Process Report</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/recommendations.html">📋 Recommendations</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.5</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/mtrec.html">MTRec Recommendations</a></li><li><a href="../features/mtrec-associations.html">MTRec Associations</a></li><li><a href="../features/process-report.html">Process Report</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

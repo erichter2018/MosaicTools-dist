@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Keyterms &amp; Auto-Learning — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Keyterms &amp; Auto-Learning</h1>
+    <p class="brief">Radiology vocabulary sent to the speech engines to bias recognition toward the right words — plus auto-learning that harvests new terms from your own signed reports.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/punctuation-group.png" alt="The keyterm list and per-engine auto-learned counts" loading="lazy" class="lightboxable"><figcaption>The keyterm list and per-engine auto-learned counts</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Speech engines let you supply a list of &quot;keyterms&quot; — words to favor when the audio is ambiguous, which is exactly where radiology vocabulary lives (periportal, echogenicity, spondylolisthesis). MosaicTools maintains that list for you in three tiers: your <strong>manual</strong> terms, <strong>auto-learned</strong> terms, and a built-in <strong>radiology backfill</strong> database that fills whatever slots remain. The merged list is sent to every engine in your ensemble, formatted however each one needs it (Whisper gets it as a prompt string).</p>
+<p>Auto-learning watches for low-confidence words during dictation and verifies them against the final <strong>signed</strong> report — if you kept the word, it&#39;s a real term the engine struggled with, and it earns a keyterm slot. Each engine keeps its own learned list, since each mishears different things.</p>
+<h2>How to turn it on / set it up</h2>
+<ul>
+<li>Manual terms: Settings → Speech-to-Text → <strong>Keyterms</strong> box, one per line (a Sort A–Z button and a live count are next to it).</li>
+<li>Auto-learning: check <strong>Auto-learn keyterms from reports</strong>. Per-engine stats rows (Deepgram, Soniox, Speechmatics, AssemblyAI, ElevenLabs, OpenAI…) show how many terms each has learned, with a <strong>View</strong> button to inspect or prune them.</li>
+</ul>
+<h2>Using it</h2>
+<p>It&#39;s invisible in daily use — recognition of your recurring hard words simply improves over weeks as the learned lists grow.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Every engine caps its keyterm count, so priority matters: manual terms win, and an auto-learned term misrecognized at least 3 times jumps ahead of the rest. Duplicates across tiers are never sent twice.</li>
+<li>Keyterms bias recognition; they don&#39;t force it. For deterministic swaps use <strong>Custom word replacements</strong> under Text Processing instead.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Speech-to-Text → Keyterms / Auto-learn keyterms from reports</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v4.1</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/stt-providers.html">Speech Engines (Providers)</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li><li><a href="../features/punctuation-formatting.html">Punctuation &amp; Formatting</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

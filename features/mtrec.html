@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MTRec Recommendations — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/recommendations.html">Recommendations</a></div>
+    <h1>MTRec Recommendations</h1>
+    <p class="brief">The in-house, deterministic recommendation engine — detects incidental findings in your report and merges the matching guideline follow-up recommendation, with citation, into the impression on a single key.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-mtrec.png" alt="The MTRec settings tab" loading="lazy" class="lightboxable"><figcaption>The MTRec settings tab</figcaption></figure>
+<figure class="shot"><img src="../img/mtrec-boxes.png" alt="A recommendation box next to Final Report" loading="lazy" class="lightboxable"><figcaption>A recommendation box next to Final Report</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>MTRec reads your FINDINGS and IMPRESSION and, on one keypress, inserts guideline follow-up recommendations for the incidental findings it detects — pulmonary nodules, thyroid, adrenal, renal, ovarian, liver, gallbladder, spleen, lymph nodes, biliary, pancreatic, AAA/thoracic aorta, plus trauma grading. Every recommendation ends with its source: Fleischner 2017, Bosniak v2019, ACR TI-RADS, O-RADS, the ACR Incidental Findings white papers, SRU gallbladder consensus, SVS aorta guidelines, AAST organ injury scaling (2025 kidney update), and more.</p>
+<p>The safety contract is the point: <strong>no AI ever authors a clinical number</strong>. Every threshold comes from verified guideline tables, the engine runs entirely offline inside MosaicTools, and its behavior is pinned by 460+ self-tests. It replaced the external RecoMD service — no agent, no window-scraping, instant.</p>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → MTRec → Enable MTRec recommendation engine</strong>, then assign <strong>MTRec Recommendations</strong> to a key or mic button under <strong>Keys &amp; Buttons</strong>. Optional settings on the same tab:</p>
+<ul>
+<li><strong>Extraction engine</strong> — &quot;Deterministic (offline, verified tables)&quot; is the default; &quot;AI-assisted (LLM extract, then verified rules)&quot; lets your Summarize Prior LLM normalize the findings text first, but the <em>same</em> verified rules still decide (falls back to deterministic if the LLM is unavailable).</li>
+<li><strong>Relocate recommendations that ended up in FINDINGS into the impression (R6)</strong> — off by default.</li>
+</ul>
+<h2>Using it</h2>
+<p>Press the key after your findings are in; recommendations merge into the impression, placed last. It&#39;s smart about noise: it reports the largest lesion with multiplicity/laterality, respects stability (&quot;unchanged for 3 years&quot; clears the guideline window instead of restarting the clock), reads the clinical history (no incidental-nodule follow-up in a known-cancer study), and replaces a matching point already in your impression rather than duplicating it. <strong>Ctrl+Z undoes the whole insert.</strong></p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>With <strong>Show MTRec boxes after Process Report</strong> on, you rarely need the manual key — see the MTRec boxes page.</li>
+<li>A recommendation you disagree with is a keypress to undo — and Copy MTRec Debug captures the case for a fix.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>MTRec Recommendations</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">MTRec → Enable MTRec recommendation engine</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/recommendations.html">📋 Recommendations</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.3</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/mtrec-boxes.html">MTRec Boxes</a></li><li><a href="../features/mtrec-associations.html">MTRec Associations</a></li><li><a href="../features/mtrec-debug.html">Copy MTRec Debug</a></li><li><a href="../features/recomd.html">RecoMD Integration</a></li><li><a href="../features/process-report.html">Process Report</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

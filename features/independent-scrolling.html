@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Independent Column Scrolling — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
+    <h1>Independent Column Scrolling</h1>
+    <p class="brief">Makes Mosaic's Transcript, Report, and utility columns scroll independently instead of the whole page moving at once.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-cdp.png" alt="Independent column scrolling under Experimental → Mosaic CDP" loading="lazy" class="lightboxable"><figcaption>Independent column scrolling under Experimental → Mosaic CDP</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>By default, Mosaic scrolls its layout as one page: scroll the report and the transcript goes with it. With this on, MosaicTools injects styling via CDP so the <strong>Transcript, Report, and sidebar/utility columns each scroll on their own</strong>. You can park the transcript where you want it, scroll the Final Report to the impression, and keep a utility panel pinned — each column holds its own position.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Settings → Experimental → check <strong>Use CDP for Mosaic interaction</strong> (Mosaic restart needed on first enable).</li>
+<li>Check <strong>Independent column scrolling</strong> underneath it.</li>
+</ol>
+<h2>Using it</h2>
+<p>Once enabled, it&#39;s transparent — the columns just behave the way you&#39;d expect a modern app to behave. A defensive scroll guard also runs inside the report editor to catch Mosaic&#39;s habit of yanking the report back to the top a second after an edit, reverting those unwanted jumps within about 150 ms.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li><strong>Recording border</strong>: as of 5.5.3, Mosaic&#39;s native red &quot;recording&quot; outline around the panel is no longer clipped to tiny corner dots while this is on — the full red border shows during recording, matching the scrolling-off behavior.</li>
+<li>Opening Mosaic&#39;s Settings/Profile page used to leave the report unscrollable with a clipped toolbar; the styling now cleans itself up when you leave the report view and re-applies when you return.</li>
+<li>If you use the RadPair page inside Mosaic and see layout weirdness there, turning this off is the known workaround — the injected CSS can interact badly with that page.</li>
+<li>Like all Mosaic CDP features, a Mosaic update can temporarily change behavior until MosaicTools adjusts.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Experimental → Mosaic CDP (Direct DOM Access) → Independent column scrolling</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/visual-enhancements.html">Visual Report Enhancements</a></li><li><a href="../features/dictated-text-highlighting.html">Dictated Text Highlighting</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

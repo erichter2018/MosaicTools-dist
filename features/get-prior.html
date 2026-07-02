@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Get Prior — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/priors.html">Priors &amp; Clinical History</a></div>
+    <h1>Get Prior</h1>
+    <p class="brief">Grabs the relevant prior study's date, time, and description from InteleViewer, formats it as your COMPARISON line, and pastes it into Mosaic — one button, no typing.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/keys-buttons.png" alt="The Get Prior Comparison template with {date}/{time}/{description} placeholders" loading="lazy" class="lightboxable"><figcaption>The Get Prior Comparison template with {date}/{time}/{description} placeholders</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Instead of reading the prior&#39;s date off InteleViewer and dictating &quot;Comparison: CT chest from …&quot;, Get Prior extracts the prior study&#39;s information from InteleViewer — date, time, and study description — formats it through your comparison template, and pastes the finished line into the Mosaic report. It parses the raw InteleViewer text (including the timezone-stamped time) into a clean date, so the pasted line always reads the same way regardless of how InteleViewer displayed it.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Map the <strong>Get Prior</strong> action to a mic button or hotkey under Settings → Keys &amp; Buttons.</li>
+<li>Customize the output under Settings → Text Templates → <strong>Get Prior Comparison</strong>, using placeholders: <code>{date}</code>, <code>{time}</code>, <code>{description}</code>, and <code>{noimages}</code> (the text to use when there&#39;s no prior).</li>
+</ol>
+<h2>Using it</h2>
+<ol>
+<li>Have the prior selected/visible in InteleViewer.</li>
+<li>Trigger Get Prior.</li>
+<li>The formatted COMPARISON text lands in your Mosaic report. Done — carry on dictating.</li>
+</ol>
+<p>The same prior information also feeds the Comparison line pinned at the top of the drafted-findings popup, so drafted cases show what the draft was compared against.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The extraction is text-based: if InteleViewer&#39;s prior text is oddly formatted or nothing prior-like is on screen, nothing pastes — check that the prior is actually the active/selected study in InteleViewer and try again.</li>
+<li>Get Prior gives you the <em>reference line</em>; if you want to know what the prior actually <em>said</em>, use <strong>Summarize Prior</strong> — it opens the full prior report with an AI summary on top. The two actions complement each other and many people map both.</li>
+<li>The <code>{time}</code> placeholder is there for sites/modalities where same-day priors matter (e.g. ICU chest films); most people&#39;s templates use just <code>{date}</code> and <code>{description}</code>.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Get Prior</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Text Templates → Get Prior Comparison</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/priors.html">📚 Priors &amp; Clinical History</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/summarize-prior.html">Summarize Prior</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

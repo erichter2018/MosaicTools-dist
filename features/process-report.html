@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Process Report — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Process Report</h1>
+    <p class="brief">The one-button core of the workflow — sends Alt+P to Mosaic to structure your dictation into the report, wrapped with auto-stop dictation, smart scrolling, and every post-process surface MosaicTools offers.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-profile.png" alt="Auto-Stop Dictation on Process Report (Desktop Mode)" loading="lazy" class="lightboxable"><figcaption>Auto-Stop Dictation on Process Report (Desktop Mode)</figcaption></figure>
+<figure class="shot"><img src="../img/settings-behavior.png" alt="Report-processing behavior: scroll, warnings, auto-process" loading="lazy" class="lightboxable"><figcaption>Report-processing behavior: scroll, warnings, auto-process</figcaption></figure>
+<figure class="shot"><img src="../img/mtrec-boxes.png" alt="MTRec boxes appearing next to Final Report after processing" loading="lazy" class="lightboxable"><figcaption>MTRec boxes appearing next to Final Report after processing</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Process Report is the center of the MosaicTools workflow. The action itself sends Alt+P to Mosaic, which runs Mosaic&#39;s own LLM to structure your dictation into the report. What MosaicTools adds is everything around that keypress: it can stop your dictation first, scroll the report so the IMPRESSION is visible, and light up all the post-process surfaces — the report popup, the impression popup, MTRec boxes, and (if enabled) RecoMD/RadAI.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Map <strong>Process Report</strong> to a mic button or hotkey under <strong>Settings → Keys &amp; Buttons</strong>. The wrappers each have their own toggle:</p>
+<ul>
+<li><strong>Settings → Desktop → Auto-Stop Dictation on Process Report</strong> — stops dictation when you press it (with an optional <strong>Auto-Restart Dictation after Process Report</strong> sub-option so you can keep dictating into the impression).</li>
+<li><strong>Settings → Behavior → Scroll to bottom on Process Report</strong> — scrolls so the impression is on screen, with <strong>Smart Scroll Thresholds (lines)</strong> controlling how many PgDn presses fire for longer reports, and <strong>Show line count toast</strong> for a quick length readout.</li>
+<li><strong>Settings → Behavior → Hide clinical history during Process Report</strong> — transiently hides the clinical history while Mosaic&#39;s LLM runs, so it can&#39;t hallucinate a finding that appears only in the history. Nondestructive; the history is restored immediately after processing.</li>
+</ul>
+<h2>Using it</h2>
+<p>Dictate, press the button once, and watch the surfaces appear: the structured report lands in Mosaic, the report/impression popups open if enabled, and once the impression generates, MTRec runs and shows its clickable boxes next to &quot;Final Report&quot;.</p>
+<h2>Tips &amp; gotchas</h2>
+<p>If you triggered it while dictating with auto-stop on, MosaicTools waits for dictation to fully stop and finalize before processing — one press is enough. Process Report is also what arms the sign-warning: dictating after processing and then signing without re-processing triggers the warning box.</p>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Process Report</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Behavior → Report Processing</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/custom-process-report.html">Custom Process Report</a></li><li><a href="../features/mtrec-boxes.html">MTRec Boxes</a></li><li><a href="../features/report-popup.html">Report Popup</a></li><li><a href="../features/impression-popup.html">Impression Popup</a></li><li><a href="../features/sign-warning.html">Unprocessed-Sign Warning</a></li><li><a href="../features/auto-process.html">Auto-Process on Open</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

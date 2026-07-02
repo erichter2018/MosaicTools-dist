@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Custom STT Mode — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Custom STT Mode</h1>
+    <p class="brief">Replaces Mosaic's built-in speech recognition with MosaicTools' own multi-engine dictation pipeline — faster, more accurate on radiology vocabulary, and entirely under your control.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-stt.png" alt="Enable Custom STT Mode — the top of the Speech-to-Text settings" loading="lazy" class="lightboxable"><figcaption>Enable Custom STT Mode — the top of the Speech-to-Text settings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Custom STT Mode takes over dictation from Mosaic&#39;s built-in speech recognition. Your microphone audio goes to one or (usually) several speech engines in parallel, the results are merged, run through radiology-aware text processing (units, spine levels, punctuation, your own word replacements), and pasted into the Mosaic report. You keep your normal workflow — Record button, transcript, Process Report — but the recognition underneath is yours to choose and tune.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Open Settings → Speech-to-Text and check <strong>Enable Custom STT Mode</strong>.</li>
+<li>Click <strong>⚡ Quick Setup Wizard</strong> — it walks you through creating the engine accounts and API keys step by step, then assembles the recommended ensemble for you.</li>
+<li>When Mosaic shows its WebHID device prompt, cancel it (MosaicTools handles the microphone). The wizard also helps turn off Mosaic&#39;s &quot;Auto Transcript Record&quot; so Mosaic doesn&#39;t grab the mic first.</li>
+</ol>
+<p>Cost honesty: the cloud engines are paid, on your own account — typically fractions of a cent per minute of dictation, pay-per-use. The on-device medASR engine is free.</p>
+<h2>Using it</h2>
+<p>Dictate exactly as before. Text appears near-instantly (see Turbo Paste) and quietly refines as the other engines weigh in. A floating indicator shows live transcription, beeps confirm start/stop, and <strong>Auto-start on case open</strong> can begin recording automatically when a new study opens (stopping on Sign Report).</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Run the wizard rather than entering keys by hand — it validates each key with a real connection to the provider.</li>
+<li>One engine works; the ensemble is where the accuracy gain lives.</li>
+<li>If dictation misbehaves, check the ensemble health light on the toolbar first — a dead engine (usually billing) is the most common cause.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Speech-to-Text → Enable Custom STT Mode</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/stt-providers.html">Speech Engines (Providers)</a></li><li><a href="../features/stt-setup-wizard.html">Quick Setup Wizard</a></li><li><a href="../features/turbo-paste.html">Turbo Paste</a></li><li><a href="../features/push-to-talk.html">Push-to-Talk (Dead Man's Switch)</a></li><li><a href="../features/dictation-indicator.html">Dictation Indicator &amp; Beeps</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

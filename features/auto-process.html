@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Auto-Process on Open — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/worklist.html">Worklist &amp; Productivity</a></div>
+    <h1>Auto-Process on Open</h1>
+    <p class="brief">Runs Process Report automatically the moment a drafted or capture study opens, so AI-drafted findings land in the Final Report before you've touched anything.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-behavior.png" alt="Auto-process drafted/capture studies in Behavior settings" loading="lazy" class="lightboxable"><figcaption>Auto-process drafted/capture studies in Behavior settings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>For hands-off study types, MosaicTools presses Process Report for you at study open:</p>
+<ul>
+<li><strong>Auto-process drafted studies on open</strong> — when a study arrives with an AI preliminary draft, Process Report runs immediately so the drafted findings are placed into the Final Report with no manual step (and drafts that arrive with findings still unprocessed get fixed).</li>
+<li><strong>Auto-process capture studies on open</strong> — same idea for CAPTURE studies (e.g. ultrasound tech-worksheet OCR), independent of the drafted toggle.</li>
+<li><strong>Auto-process all studies after macro insertion</strong> — runs Process Report once on <em>every</em> new study, but only after all of the study&#39;s opening macros have landed in the transcript. For workflows that insert a template macro at open and want it processed straight away.</li>
+</ul>
+<h2>How to turn it on / set it up</h2>
+<p>All three toggles live in <strong>Settings → Behavior</strong> under Report Processing. Enable whichever match your workflow; they&#39;re independent of each other.</p>
+<p>Related: <strong>Ignore Inpatient Drafted (select all after auto-insertions)</strong> in the <strong>Inpatient XR Handling</strong> section auto-selects all text on inpatient X-rays after macro/clinical-history insertions, with a choice of <strong>All Inpatient XR</strong> or <strong>Inpatient Chest XR only</strong> — useful when you re-dictate those from scratch.</p>
+<h2>Using it</h2>
+<p>Open a drafted study; by the time you&#39;ve looked at the images the findings are already in the Final Report and the impression is ready for your attention. It fires once per study open.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Auto-process is <strong>skipped while you&#39;re actively dictating</strong> — it will not fire on studies you&#39;re talking into, only genuinely hands-off ones. It also skips addendums (macro-triggered variant).</li>
+<li>The macro variant waits for <em>all</em> matching opening macros before processing, whether a study matches zero, one, or several.</li>
+<li>Combine with <strong>Auto-Stop/Auto-Restart Dictation</strong> and the sign warning for a fully guarded flow.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Behavior → Auto-process drafted studies on open</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/worklist.html">📈 Worklist &amp; Productivity</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/process-report.html">Process Report</a></li><li><a href="../features/macros.html">Macros</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

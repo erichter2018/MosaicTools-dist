@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pick Lists — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/worklist.html">Worklist &amp; Productivity</a></div>
+    <h1>Pick Lists</h1>
+    <p class="brief">Structured text insertion from a popup — navigate a hierarchical tree or build sentences category-by-category, and paste the result straight into the report.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-text.png" alt="Enable Pick Lists under Text &amp; Templates" loading="lazy" class="lightboxable"><figcaption>Enable Pick Lists under Text &amp; Templates</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The runtime pick-list window</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The pick-list editor</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Presents a popup of your configured pick lists for the current study and pastes what you select. Two modes per list:</p>
+<ul>
+<li><strong>Tree</strong> — hierarchical navigation with breadcrumbs; drill into categories and pick items (structured or freeform accumulation).</li>
+<li><strong>Builder</strong> — sentence construction: step through categories in order (location → size → character…), and the popup assembles the sentence as you go.</li>
+</ul>
+<p>Tree nodes can embed Builder lists and vice versa, so a tree item can drop you into a sentence builder mid-flow.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Check <strong>Enable Pick Lists</strong> in <strong>Settings → Text &amp; Templates → Pick Lists</strong>.</li>
+<li>Click <strong>Edit...</strong> to create lists in the Pick List Editor — define each list&#39;s trigger criteria (study description), mode, and items. Items can also reference macros.</li>
+<li>Map the <strong>Show Pick Lists</strong> action to a button or hotkey in <strong>Settings → Keys &amp; Buttons</strong> (the settings page reminds you: <em>Assign &quot;Show Pick Lists&quot; action in Keys dialog</em>).</li>
+<li>Options:<ul>
+<li><strong>Skip list when only one matches</strong> — jumps straight into the list instead of showing a one-item chooser.</li>
+<li><strong>Keep window open</strong> — the popup stays up after inserting, so you can fire several items with the number keys.</li>
+</ul>
+</li>
+</ol>
+<h2>Using it</h2>
+<p>Press the mapped button, pick with mouse, arrow keys, number keys, or the search box; the text pastes into the report at the cursor. In Builder mode, finish the sentence and it pastes as a unit; undo steps back one selection.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Pick lists match on the study description, so a study matching zero lists shows nothing — check your trigger criteria if the popup seems empty.</li>
+<li>Number keys are the fast path with <strong>Keep window open</strong>: press the digit, item inserts, popup stays.</li>
+<li>Editing macros referenced by pick lists is safe — references are preserved by ID.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Show Pick Lists</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Text &amp; Templates → Pick Lists → Enable Pick Lists</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/worklist.html">📈 Worklist &amp; Productivity</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/macros.html">Macros</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

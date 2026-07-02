@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MosaicTools — Documentation</title>
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="index.html" class="active">Home</a>
+    <a href="az.html">A–Z</a>
+    <a href="workflow.html">Workflow</a>
+    <a href="surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="category/recommendations.html">📋 Recommendations</a>
+        <a href="category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<section class="hero">
+  <div class="aurora"><i></i><i></i><i></i></div>
+  <img class="hero-logo" src="assets/logo.svg" alt="MosaicTools logo">
+  <h1>MosaicTools</h1>
+  <p class="tagline">The radiologist's companion for Mosaic, Clario, and InteleViewer</p>
+  <p class="pitch">MosaicTools is a lightweight desktop companion that supercharges the Mosaic Reporting workflow — a multi-engine dictation ensemble, guideline-cited follow-up recommendations, report QA checks, prior summarization, productivity tracking, and dozens of quality-of-life upgrades. One small exe, no installer, auto-updating.</p>
+  <div class="hero-search"><input id="hero-search" type="search" placeholder="Search every feature…" autocomplete="off"><div id="hero-search-results" hidden></div></div>
+</section>
+
+  <section class="module">
+    <h2>✨ New in v5.5.3</h2>
+    <div class="spotlight">
+      
+      <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.3</span><span class="spot-title">Final Report display fixes (stacked layout + recording indicator)</span></div>
+        <ul><li>The MTRec boxes next to &quot;Final Report&quot; (e.g. &quot;+ renal&quot;) now appear in the stacked (top/bottom) layout too. Previously they only showed in the side-by-side layout; the box now anchors correctly regardless of layout ori…</li><li>With independent column scrolling on, Mosaic's native red &quot;recording&quot; outline around the panel was being clipped to just tiny dots in the corners. The full red border now shows while recording, matching the scrolling-…</li></ul>
+      </div>
+      <div class="spot-ver">
+        <div class="spot-head"><span class="spot-vnum">v5.5.2</span><span class="spot-title">MTRec accuracy: pancreatic-cyst follow-up, lung-nodule/consolidation fix, hydronephrosis &amp; cirrhosis triggers</span></div>
+        <ul><li>MTRec now stops recommending pancreatic-cyst surveillance in patients age 80+ when there are no worrisome or high-risk features — consistent with the ACR 2017 incidental-findings white paper and ACG 2018 (surveillance…</li><li>A pancreatic cyst described as slightly enlarging is no longer treated as a worrisome feature on its own (worrisome growth is rate-defined: Kyoto 2024 ≥2.5 mm/yr, Fukuoka 2017 ≥5 mm/2 yr). Instead of jumping to EUS, u…</li><li>Lung nodule fix: a real pulmonary nodule was being silently dropped when the very next sentence was a normal line such as &quot;No focal consolidation&quot; — the negated word &quot;consolidation&quot; was tripping the infection/consolid…</li></ul>
+      </div>
+      <div class="spot-ver">
+        <div class="spot-head"><span class="spot-vnum">v5.5.1</span><span class="spot-title">Rainbow highlighting for appendix/uterus, stroke-note fix, persistent highlight mode, dictation dedup</span></div>
+        <ul><li>Rainbow mode now always highlights any mention of the appendix or uterus. These structures are never in the CT abdomen/pelvis default template, so any comment about them is new — and it's now highlighted even when you…</li><li>The final-report highlight mode you pick (None / Regular / Rainbow) now persists across restarts and study changes instead of resetting to Regular each launch.</li><li>Stroke critical note: the automatic note is now created only when YOU press Process Report, not on the automatic drafted-study processing that runs shortly after a study is displayed. (The manual Create Critical Note …</li></ul>
+      </div>
+    </div>
+  </section>
+<section class="module">
+  <h2>🎲 Feature of the day</h2>
+  <div id="fotd" class="fotd"></div>
+</section>
+<section class="module">
+  <h2>Browse by function</h2>
+  <div class="catgrid">
+    <a class="catcard" href="category/dictation.html"><div class="catcard-icon">🎙️</div><h3>Dictation &amp; Speech</h3><p>The custom speech-to-text ensemble: multiple engines voting on every word, with health monitoring, keyterm boosting, and instant paste.</p><span class="catcard-n">17 features</span></a>
+    <a class="catcard" href="category/processing.html"><div class="catcard-icon">🧾</div><h3>Report Processing &amp; QA</h3><p>Process Report and the safety net around it — consistency checks, mismatch alerts, and sign-time guards.</p><span class="catcard-n">8 features</span></a>
+    <a class="catcard" href="category/recommendations.html"><div class="catcard-icon">📋</div><h3>Recommendations</h3><p>MTRec: deterministic, guideline-cited follow-up recommendations and the Associations completeness checklist.</p><span class="catcard-n">6 features</span></a>
+    <a class="catcard" href="category/priors.html"><div class="catcard-icon">📚</div><h3>Priors &amp; Clinical History</h3><p>Pull the relevant prior, AI-summarize it, and keep the corrected clinical history in view.</p><span class="catcard-n">3 features</span></a>
+    <a class="catcard" href="category/display.html"><div class="catcard-icon">🌈</div><h3>Report Display &amp; Highlighting</h3><p>See your report the way you think — change highlighting, rainbow correlation, drafted-findings triage, and layout upgrades.</p><span class="catcard-n">7 features</span></a>
+    <a class="catcard" href="category/measurement.html"><div class="catcard-icon">📏</div><h3>Measurement &amp; Imaging</h3><p>Auto-measure lesions, capture series/image numbers, and drive InteleViewer without touching it.</p><span class="catcard-n">5 features</span></a>
+    <a class="catcard" href="category/worklist.html"><div class="catcard-icon">📈</div><h3>Worklist &amp; Productivity</h3><p>TBWU pace tracking, critical-findings workflow, macros, and pick lists — the shift-management toolkit.</p><span class="catcard-n">10 features</span></a>
+    <a class="catcard" href="category/platform.html"><div class="catcard-icon">⚙️</div><h3>Setup &amp; Platform</h3><p>Install, updates, button mapping, integrations, and exactly what telemetry does (and doesn't) leave your machine.</p><span class="catcard-n">10 features</span></a>
+  </div>
+</section>
+<section class="module">
+  <h2>Or browse another way</h2>
+  <div class="axisrow">
+    <a class="axischip" href="az.html">🔤 Alphabetical A–Z</a>
+    <a class="axischip" href="workflow.html">🕐 By workflow stage</a>
+    <a class="axischip" href="surfaces.html">🖱️ By surface (actions / settings / popups / automatic)</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "";</script>
+<script src="assets/minisearch.min.js"></script>
+<script src="assets/search-data.js"></script>
+<script src="assets/features-lite.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

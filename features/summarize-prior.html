@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Summarize Prior — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/priors.html">Priors &amp; Clinical History</a></div>
+    <h1>Summarize Prior</h1>
+    <p class="brief">Opens the prior report from InteleViewer in a popup with a short AI summary on top — the gist of the prior in five seconds, full text below if you want it.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-summarize-prior.png" alt="Summarize Prior settings: model choice and shared API keys (masked)" loading="lazy" class="lightboxable"><figcaption>Summarize Prior settings: model choice and shared API keys (masked)</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The AI summary above the formatted prior</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>With InteleViewer active, Summarize Prior reads the prior report straight from InteleViewer&#39;s Search Tool (via Java Access Bridge — no clipboard, no clicking), cleans up the formatting, and shows it in a popup with a short AI-generated summary at the top: 1–4 telegraphic bullets covering the positive findings, any follow-up the prior recommended, and — because your current study&#39;s clinical history is sent along as context — the pertinent negative that answers <em>today&#39;s</em> question. A negative prior comes back as a single line (&quot;Prior shoulder XR negative&quot;), not a list of everything normal. The full formatted prior sits below the summary for when you need the detail.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Settings → Summarize Prior → check <strong>Enable AI summary of prior reports</strong>.</li>
+<li>Pick a <strong>Model</strong> — the family picks the provider: <code>gpt-*</code> → OpenAI, <code>gemini-*</code> → Google, <code>claude-*</code> → Anthropic. You can type a custom model name.</li>
+<li>Enter the matching API key (OpenAI key / Gemini key / Claude key — only one is needed). The OpenAI and Gemini keys are shared with Custom STT and Custom Process Report, so if you&#39;ve entered one there it&#39;s already filled in.</li>
+<li>Optionally set a <strong>Custom prompt</strong> to override the built-in summary instructions.</li>
+<li>Map the <strong>Summarize Prior</strong> action under Keys &amp; Buttons.</li>
+</ol>
+<p>These are paid cloud APIs — a summary costs a fraction of a cent, billed to your own key.</p>
+<h2>Using it</h2>
+<p>Open the prior in InteleViewer&#39;s Search Tool, trigger the action. The popup shows &quot;Summarizing…&quot; and fills in as the model responds; the header shows &quot;Prior: <study type>&quot; with the study date. It&#39;s resizable (drag the side edges), remembers its size and position, and closes on Esc or right-click — and automatically when you sign or discard the study.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Summaries are cached per study: dismiss the popup and re-summon the same prior (or flip between a few priors on one patient) and the saved summary reappears instantly with no second AI call. The cache clears on the next study.</li>
+<li>The summary preserves the prior&#39;s own hedging — &quot;probable&quot; stays &quot;probable&quot;; it will not upgrade qualifiers.</li>
+<li>If the summary errors or your key is blank, you still get the full formatted prior — the popup degrades gracefully.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Summarize Prior</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Summarize Prior → Enable AI summary of prior reports</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/priors.html">📚 Priors &amp; Clinical History</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.2</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/custom-process-report.html">Custom Process Report</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

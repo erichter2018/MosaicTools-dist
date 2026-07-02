@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Speech Engines (Providers) — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Speech Engines (Providers)</h1>
+    <p class="brief">The roster of speech engines MosaicTools can run — all cloud engines are paid on your own account; medASR is free and runs locally on your workstation.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-stt.png" alt="Provider selection and API key entry (keys are always masked)" loading="lazy" class="lightboxable"><figcaption>Provider selection and API key entry (keys are always masked)</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>MosaicTools speaks to a dozen speech-recognition engines through one interface, so any of them can be your driver, a voting secondary, or a failover backup. The current roster:</p>
+<ul>
+<li><strong>Deepgram Nova-3 Medical</strong> — the recommended driver; medical-tuned streaming (~$0.0077/min, free starter credit)</li>
+<li><strong>AssemblyAI U3 Pro</strong> — medical-domain streaming with large keyterm support</li>
+<li><strong>Speechmatics Medical</strong> — streaming, US/EU regions</li>
+<li><strong>Soniox</strong> (streaming) and <strong>Soniox v5 Async</strong> (batch, same key)</li>
+<li><strong>OpenAI Realtime Whisper</strong> (streaming, ~$0.017/min) and gpt-4o-transcribe (batch back-fill)</li>
+<li><strong>Mistral Voxtral</strong> (batch)</li>
+<li><strong>Google Chirp 3</strong> — needs a Google Cloud service-account JSON</li>
+<li><strong>Microsoft MAI-Transcribe</strong> — needs an Azure AI Foundry resource key + endpoint</li>
+<li><strong>Corti Symphony</strong> — OAuth client credentials; enterprise/contract billing</li>
+<li><strong>ElevenLabs Scribe v2</strong> — single key; watch for paid monthly plans</li>
+<li><strong>Amazon Transcribe Medical</strong> — AWS IAM credentials (~$0.075/min)</li>
+<li><strong>MedASR</strong> — <strong>free</strong>, runs entirely on your workstation; downloads itself the first time you select it</li>
+</ul>
+<h2>How to turn it on / set it up</h2>
+<p>Pick an engine under Settings → Speech-to-Text → Provider and enter its credentials (<strong>Get API Key</strong> opens the right signup page; <strong>Test key</strong> validates without sending audio). The Quick Setup Wizard does all of this for you, engine by engine.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Every cloud engine is <strong>paid, on your own account</strong> — mostly pay-per-use, so an idle key costs nothing. Exceptions: ElevenLabs sells monthly plans and Corti is contract-billed; cancel those if unused.</li>
+<li>medASR is excellent on a <strong>wired microphone</strong> but degrades badly on Bluetooth headsets — keep it wired or drop it.</li>
+<li>The multi-field engines (Chirp, MAI) have a &quot;Copy AI setup prompt&quot; button — paste it into an AI assistant for guided account setup.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Speech-to-Text → Provider</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/stt-setup-wizard.html">Quick Setup Wizard</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li><li><a href="../features/failover-backups.html">Failover Backup Engines</a></li><li><a href="../features/mic-gain-calibrator.html">Mic Gain Calibrator</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

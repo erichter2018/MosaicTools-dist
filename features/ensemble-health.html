@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ensemble Health Light — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Ensemble Health Light</h1>
+    <p class="brief">A green/yellow/red dot on the main bar shows your speech engines' health at a glance; click it for a per-engine drawer with a plain-language reason when something is wrong.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/widget-bar.png" alt="The health dot lives on the main bar" loading="lazy" class="lightboxable"><figcaption>The health dot lives on the main bar</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The per-engine drawer with plain-language failure reasons</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>The most common dictation failure isn&#39;t a bug — it&#39;s an API key quietly running out of credits, leaving the ensemble running a voter short. The health light makes that visible: a small dot at the far left of the MosaicTools toolbar that is green when all engines are healthy, yellow when one is struggling, red when one is down. Click it and a pull-out <strong>Ensemble health</strong> drawer lists each engine with its own light and, when something is wrong, a normalized plain-language reason you can act on yourself — &quot;Out of credits — add funds&quot;, &quot;API key invalid&quot; — instead of a raw error code.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Nothing to configure. The light appears automatically when you&#39;re running the multi-engine ensemble.</p>
+<h2>Using it</h2>
+<p>Glance at the dot between cases; open the drawer only when it isn&#39;t green. The drawer refreshes live and dismisses when you click away. When automatic failover is active, the dot becomes a <strong>split circle</strong> — the left half is your configured ensemble, the right half is what&#39;s actually running — so a swap-in is visible at a glance (hover for details), and the drawer names the backup covering for the degraded engine (&quot;replaced by …&quot;).</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>A red light almost always means billing or quota on that engine&#39;s account — fixing it is on the provider&#39;s website, not in MosaicTools.</li>
+<li>You also get a toast notification the moment an engine is detected down, so silent degradation doesn&#39;t last a whole shift.</li>
+<li>The same live status appears next to each provider in Settings → Speech-to-Text, plus per-slot <strong>Test</strong> buttons to verify keys proactively.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Through the shift</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.2</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/failover-backups.html">Failover Backup Engines</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/stt-providers.html">Speech Engines (Providers)</a></li><li><a href="../features/widget-bar.html">Widget Bar</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

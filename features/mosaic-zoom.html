@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mosaic Zoom Memory — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
+    <h1>Mosaic Zoom Memory</h1>
+    <p class="brief">Mosaic forgets your Ctrl+scroll text-size zoom on every launch; MosaicTools remembers it and re-applies it silently.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-behavior-zoom.png" alt="&quot;Remember &amp; restore my Mosaic zoom level&quot; in Behavior settings" loading="lazy" class="lightboxable"><figcaption>&quot;Remember &amp; restore my Mosaic zoom level&quot; in Behavior settings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Mosaic loses your text-size zoom (the Ctrl+scroll / Ctrl +/- page zoom) every time it launches, so anyone who reads at anything other than 100% has been re-zooming daily. With this on, MosaicTools remembers the zoom level you set and re-applies it automatically the next time you&#39;re working in Mosaic.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Enable CDP if you haven&#39;t: <strong>Settings → Experimental → Mosaic CDP → Use CDP for Mosaic interaction</strong> (this feature requires it).</li>
+<li>Check <strong>Remember &amp; restore my Mosaic zoom level</strong> in <strong>Settings → Behavior → Mosaic Zoom</strong>.</li>
+<li>Set your preferred zoom once in Mosaic with Ctrl+scroll or Ctrl +/-. Done.</li>
+</ol>
+<h2>Using it</h2>
+<p>Nothing to do day-to-day. When Mosaic launches fresh at the default zoom, MosaicTools applies your remembered level the moment Mosaic is focused. If you change the zoom during a shift, the new level becomes the remembered one.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The restore is deliberately unobtrusive: it applies <strong>silently while Mosaic is focused</strong> and never moves, resizes, or steals focus from your windows.</li>
+<li>This is the <em>text-size page zoom</em> inside Mosaic&#39;s report area, not your PACS/InteleViewer image zoom.</li>
+<li>If restore stops working, check the CDP status dashboard (Settings → Experimental → CDP Status) — the Mosaic dot should be green. CDP requires a Mosaic restart the first time it&#39;s enabled.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Behavior → Mosaic Zoom → Remember &amp; restore my Mosaic zoom level</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.1</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/visual-enhancements.html">Visual Report Enhancements</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

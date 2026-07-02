@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gender Check — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Gender Check</h1>
+    <p class="brief">Flashing red alert when the report contains gender-specific terms that don't fit the patient — a prostate in a female patient's report, a uterus in a male's.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="Gender check under Alert Triggers" loading="lazy" class="lightboxable"><figcaption>Gender check under Alert Triggers</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>A gender-specific organ in the wrong patient&#39;s report almost always means one of two things: a template with leftover organ lines, or dictation landing in the wrong chart. Either way you want to know before signing. Gender check watches the drafted report for gender-specific terms that contradict the patient&#39;s sex and raises a <strong>flashing red</strong> border on the notification box when it finds one.</p>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → Alerts → Alert Triggers → Gender check.</strong> Like the other alert triggers it needs the notification box enabled (<strong>Enable Notification Box</strong>, same tab) and fires even in alerts-only mode.</p>
+<h2>Using it</h2>
+<p>Nothing to do during a normal case — it&#39;s silent until it trips. When it does, the notification box flashes red, and with the CDP connection active the offending text also flashes red inside the report editor itself until you correct it, so the exact word is easy to find in a long report.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The most common trigger is benign: a stock template mentioning the uterus/prostate in its normal lines on a mismatched patient. It&#39;s still worth the two seconds to check — the rare true wrong-patient case looks identical.</li>
+<li>It reads the patient&#39;s sex from the scraped study data, so it needs background Mosaic scraping running (it is by default).</li>
+<li>Pair it with the Patient mismatch alert: gender check catches wrong-sex content inside the report, patient mismatch catches Mosaic and InteleViewer showing two different patients.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Alerts → Alert Triggers → Gender check</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Through the shift</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/patient-mismatch.html">Patient Mismatch Alert</a></li><li><a href="../features/consistency-checker.html">Measurement &amp; Laterality Consistency</a></li><li><a href="../features/findings-impression-checker.html">Findings/Impression Mismatch</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

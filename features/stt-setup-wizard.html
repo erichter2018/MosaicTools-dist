@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quick Setup Wizard — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
+    <h1>Quick Setup Wizard</h1>
+    <p class="brief">A guided, one-step-at-a-time wizard that creates the speech-engine accounts, captures and validates the API keys, and assembles the recommended ensemble for you.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-stt.png" alt="The ⚡ Quick Setup Wizard button at the top of Speech-to-Text settings" loading="lazy" class="lightboxable"><figcaption>The ⚡ Quick Setup Wizard button at the top of Speech-to-Text settings</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The wizard walking through provider account setup</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Setting up multi-engine dictation by hand means a half-dozen accounts, consoles, and key formats. The wizard turns that into a sequence of small steps: for each recommended engine it opens the signup page in your real browser (steering you to &quot;Sign in with Google&quot; so there are no new passwords), then watches your clipboard — the moment you click Copy on the provider&#39;s key page, the wizard grabs the key, validates it with a real connection to the provider, stores it, and moves on. Nothing to paste. At the end it arranges everything you set up into the current <strong>Recommended Ensemble</strong> (driver + voting secondaries in priority order).</p>
+<h2>How to turn it on / set it up</h2>
+<p>Settings → Speech-to-Text → <strong>⚡ Quick Setup Wizard</strong>. It&#39;s safe to re-run any time; it remembers your previous answers.</p>
+<h2>Using it</h2>
+<p>Beyond the key steps, the wizard also: turns on the two prerequisites (Custom dictation and Direct Mosaic access) with one click if they&#39;re off; adds the free on-device medASR model; offers an optional <strong>Advanced</strong> section for Microsoft MAI-Transcribe and Google Chirp 3; offers a <strong>Backup engines</strong> step for failover resilience; and switches Mosaic&#39;s &quot;Auto Transcript Record&quot; off so Mosaic doesn&#39;t grab the microphone first. If the recommended line-up changes in a future update, you get a one-time tip to re-run it.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>A rejected key blocks the Next button on purpose — the wizard tells you plainly whether the key is bad or it looks like a network problem.</li>
+<li>On the finish step it lists any engine you set up that the recommended stack won&#39;t use, and whether leaving it idle is free (pay-per-use) or could keep charging you (e.g. an ElevenLabs monthly plan to cancel).</li>
+<li>Skip the Advanced engines freely — dictation works well without them.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Speech-to-Text → ⚡ Quick Setup Wizard</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.2</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/stt-providers.html">Speech Engines (Providers)</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li><li><a href="../features/failover-backups.html">Failover Backup Engines</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

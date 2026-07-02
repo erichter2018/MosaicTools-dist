@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Custom Process Report — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Custom Process Report</h1>
+    <p class="brief">An experimental alternate to Process Report where MosaicTools itself calls an LLM of your choice — Gemini, OpenAI, Groq, or xAI Grok, or all four racing in Quad Compare — instead of Mosaic's built-in one.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-experimental-llm.png" alt="Custom Process Report provider selection (Experimental)" loading="lazy" class="lightboxable"><figcaption>Custom Process Report provider selection (Experimental)</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Normal Process Report hands your dictation to Mosaic&#39;s own LLM. Custom Process Report bypasses that entirely: MosaicTools reads the transcript and template directly (via the Chrome DevTools Protocol connection to Mosaic), sends them to a cloud LLM you configure, and writes the merged report back. It lives under the &quot;Beyond Experimental&quot; divider for a reason — it works, but it replaces a core Mosaic function, so treat it as a power-user experiment.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li><strong>Settings → Experimental</strong>, scroll to the <strong>BEYOND EXPERIMENTAL</strong> section, and check <strong>Custom Process Report (LLM)</strong>. CDP must be enabled (also on the Experimental tab).</li>
+<li>Pick a <strong>Provider</strong>: Google Gemini, OpenAI GPT, Groq, xAI Grok, or <strong>Quad Compare</strong> — which races one model from each of the four providers and uses the result you prefer. Each provider needs its own API key (&quot;Get Key&quot; buttons link to the right console); model pickers show per-million-token pricing.</li>
+<li>Map <strong>Custom Process Report</strong> to a key or button under <strong>Keys &amp; Buttons</strong> — it does not replace your normal Process Report mapping.</li>
+</ol>
+<h2>Using it</h2>
+<p>Press your Custom Process Report key instead of (or alongside) the regular one. The transcript and template go to your chosen LLM and the structured report is written back into Mosaic.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>These are paid cloud APIs billed to your own keys — costs are small per report, but they&#39;re yours.</li>
+<li>PHI is scrubbed before anything is sent.</li>
+<li>Keep regular Process Report mapped too: if CDP is down or the provider errors, the built-in path is the fallback.</li>
+<li>MTRec boxes and the other post-process surfaces are built around the standard Process Report flow; the custom path is primarily about the report text itself.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Custom Process Report</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Experimental → Beyond Experimental → Custom Process Report (LLM)</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/process-report.html">Process Report</a></li><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/telemetry.html">Diagnostics &amp; Data Sharing</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

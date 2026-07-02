@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>TBWU Counter — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/worklist.html">Worklist &amp; Productivity</a></div>
+    <h1>TBWU Counter</h1>
+    <p class="brief">Live TBWU productivity metrics on the widget bar — total, per-hour, pace, and goal tracking — pulled from your local RADCounter database, with optional injection of live TBWU values into the Clario worklist.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-tbwu.png" alt="TBWU &amp; Metrics settings: display metrics, goal, pace car, Clario injection" loading="lazy" class="lightboxable"><figcaption>TBWU &amp; Metrics settings: display metrics, goal, pace car, Clario injection</figcaption></figure>
+<figure class="shot"><img src="../img/widget-bar.png" alt="The TBWU readout on the main bar" loading="lazy" class="lightboxable"><figcaption>The TBWU readout on the main bar</figcaption></figure>
+<figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The expanded metrics popup</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Reads your shift&#39;s TBWU data from the local RADCounter (RVUCounter) SQLite database and shows it live on the MosaicTools bar. You choose which metrics appear: <strong>Total</strong>, <strong>TBWU/h</strong>, <strong>This Hour</strong>, <strong>Prev Hour</strong>, <strong>Est Total</strong>, <strong>TBWU/Study</strong>, <strong>Avg/h</strong>, and <strong>Pace +/-</strong> (e.g. &quot;+2.1 ahead&quot;). It can also replace Clario&#39;s broken TBWU column with live values.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Open <strong>Settings → TBWU &amp; Metrics</strong>.</li>
+<li>Under <strong>Database</strong>, click <strong>Find</strong> to auto-detect the RADCounter database, or <strong>...</strong> to browse to it. RADCounter must be installed for any of this to work.</li>
+<li>Under <strong>Display Metrics</strong>, check the metrics you want on the bar. With 3+ metrics selected, the <strong>3+ layout:</strong> dropdown controls presentation: <strong>Horizontal</strong>, <strong>Vertical Stack</strong>, <strong>Hover Popup</strong>, or <strong>Carousel</strong> (cycles every 4s).</li>
+<li>Optional: check <strong>Goal:</strong> and set a per-hour target — TBWU/h turns red on the bar when you fall below it.</li>
+<li>Optional: check <strong>Show full pace car information</strong> under <strong>Pace Car</strong> — the display alternates between your TBWU metrics and a pace comparison every few seconds (<strong>Alternate every N sec</strong>, 3–30).</li>
+<li>Optional: check <strong>Inject TBWU values into Clario worklist</strong> under <strong>Clario Integration</strong> to overwrite Clario&#39;s TBWU display with live RADCounter values (requires Clario CDP).</li>
+</ol>
+<h2>Using it</h2>
+<p>The bar shows your selected metrics next to the &quot;TBWU&quot; label and updates continuously through the shift. In Hover Popup or Vertical Stack layouts, secondary metrics live in a small popup/drawer that matches the bar styling. Pace +/- tells you at a glance whether you&#39;re ahead of or behind your goal pace.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>User-facing branding is TBWU everywhere (the RVU→TBWU rename); internally and on disk the tool still reads RVUCounter&#39;s <code>rvu_data.db</code>.</li>
+<li><strong>Est Total</strong> projects your end-of-shift total from your current rate — useful early in a shift, noisy in the first hour.</li>
+<li>If metrics stop updating mid-shift, check that RADCounter is still running and has an active shift; MosaicTools only reads the database, it doesn&#39;t count studies itself.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → TBWU &amp; Metrics</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/worklist.html">📈 Worklist &amp; Productivity</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Through the shift</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/widget-bar.html">Widget Bar</a></li><li><a href="../features/settings-window.html">Settings Window</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

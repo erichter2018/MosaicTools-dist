@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Diagnostics &amp; Data Sharing — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
+    <h1>Diagnostics &amp; Data Sharing</h1>
+    <p class="brief">Two opt-in sharing switches — app diagnostics and de-identified dictation — that let bugs get fixed remotely. Everything is scrubbed on your machine before upload, and nothing identifiable ever leaves it.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-profile.png" alt="&quot;Share app diagnostics&quot; opt-in on the Profile tab" loading="lazy" class="lightboxable"><figcaption>&quot;Share app diagnostics&quot; opt-in on the Profile tab</figcaption></figure>
+<figure class="shot"><img src="../img/settings-stt-sharing.png" alt="The dictation data-sharing opt-ins (de-identified on device)" loading="lazy" class="lightboxable"><figcaption>The dictation data-sharing opt-ins (de-identified on device)</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>MosaicTools has two separate, <strong>opt-in, default-off</strong> sharing switches:</p>
+<ol>
+<li><strong>Share app diagnostics to help troubleshoot issues</strong> (Settings → Profile) — a one-way stream of errors, crashes, config, and version info, so problems can be diagnosed without asking you to dig up log files. It contains <strong>no patient info, no report text, and no record of what or how much you read</strong> — by design, it cannot be a productivity tracker.</li>
+<li><strong>Share de-identified dictation to improve accuracy</strong> (Settings → Speech-to-Text → Data Sharing) — contributes anonymized dictation data used to tune the speech-recognition ensemble for everyone.</li>
+</ol>
+<h2>What leaves the machine — and what never does</h2>
+<p>De-identification happens <strong>on your computer, before anything is written or uploaded</strong>. Every free-text string passes through the scrubber first: patient and clinician names, MRNs, accession numbers, dates of service, phone numbers, emails, and even hospital/facility names are removed or replaced. Accession numbers never appear at all — only a salted one-way pseudonym, which cannot be reversed into a PACS lookup. Study descriptions are collapsed to coarse categories. What&#39;s <em>kept</em> is exactly the clinical content needed to judge transcription accuracy (measurements, anatomy, findings), because corrupting those would defeat the purpose.</p>
+<p>Upload is <strong>push-only</strong> to the developer&#39;s private storage — nothing on your machine can be browsed or pulled remotely; only what the scrubbed stream sends goes out.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Check either box (or both) and save; they apply immediately. Uncheck any time to stop sharing.</p>
+<h2>Why say yes</h2>
+<p>Nearly every remote fix in the changelog — dead STT providers, update failures on locked-down PCs, the blank-panel scrape bug — was found and verified through these streams, usually before the affected radiologist filed a report. Honest caveat: no automated scrubber is theoretically perfect against free text, which is why the scrubber is conservative, audited, and continuously improved — and why the whole thing stays opt-in.</p>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Profile → Share app diagnostics to help troubleshoot issues</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.1</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/stt-data-sharing.html">Dictation Data Sharing (Opt-in)</a></li><li><a href="../features/settings-window.html">Settings Window</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

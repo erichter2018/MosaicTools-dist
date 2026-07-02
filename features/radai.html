@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>RadAI Impression — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/recommendations.html">Recommendations</a></div>
+    <h1>RadAI Impression <span class="badge-dep badge-dep-lg">legacy / deprecated</span></h1>
+    <p class="brief">Legacy integration with the RadAI impression generator — being retired; MTRec and Mosaic's own impression generation cover the ground.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="Alert &amp; integration toggles (Settings → Alerts)" loading="lazy" class="lightboxable"><figcaption>Alert &amp; integration toggles (Settings → Alerts)</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>For workstations with RadAI installed, MosaicTools can drive it: the mappable <strong>RadAI Impression</strong> action generates and shows an AI impression, and <strong>Settings → Alerts → RadAI auto-insert on Process Report</strong> generates and inserts one automatically when you press Process Report.</p>
+<h2>Why it&#39;s deprecated</h2>
+<p>The integration is being retired. It only ever worked on workstations with the separate RadAI application installed, and the ground it covered is now handled inside MosaicTools and Mosaic itself — Mosaic generates the impression during Process Report, and MTRec adds guideline follow-up recommendations from verified tables with citations (see the MTRec pages).</p>
+<p>If you have the auto-insert option enabled on a machine without RadAI, it does nothing; you can safely uncheck it. Expect the action and setting to disappear in a future release.</p>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>RadAI Impression</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Alerts → RadAI auto-insert on Process Report</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/recommendations.html">📋 Recommendations</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/mtrec.html">MTRec Recommendations</a></li><li><a href="../features/impression-popup.html">Impression Popup</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

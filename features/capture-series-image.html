@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Capture Series/Image — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/measurement.html">Measurement &amp; Imaging</a></div>
+    <h1>Capture Series/Image</h1>
+    <p class="brief">OCRs the InteleViewer viewport header to grab the current series and image numbers and inserts them into your report, formatted your way.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/keys-buttons.png" alt="The Series/Image template — (series {series}, image {image})" loading="lazy" class="lightboxable"><figcaption>The Series/Image template — (series {series}, image {image})</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>When you want to reference a finding by series and image (&quot;series 4, image 52&quot;), this action reads those numbers off the screen for you: it screenshots the corner of the active InteleViewer viewport, runs OCR on the header text, extracts the series and image numbers, and inserts them into the Mosaic report at your cursor — formatted through your template.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Map the <strong>Capture Series/Image</strong> action to a mic button or hotkey under Settings → Keys &amp; Buttons.</li>
+<li>Optionally customize the output under Settings → Text Templates → <strong>Series/Image</strong>, using the <code>{series}</code> and <code>{image}</code> placeholders (e.g. <code>(series {series}, image {image})</code>).</li>
+</ol>
+<h2>Using it</h2>
+<ol>
+<li>Have the image you want to reference up in InteleViewer.</li>
+<li>Trigger the action. MosaicTools locates the active viewport (it looks for InteleViewer&#39;s yellow active-viewport marker; if none is found it captures around your mouse cursor instead).</li>
+<li>A &quot;Capturing...&quot; toast appears, then &quot;Inserted: …&quot; with the formatted text — which lands in the report editor without you touching the keyboard. With CDP enabled the insertion goes straight into the editor DOM; without it, Mosaic is focused first.</li>
+</ol>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>OCR needs the viewport header text to be legible — if the overlay text is disabled or the capture misses, you&#39;ll get a &quot;Could not extract series/image&quot; toast; click into the viewport (so the yellow marker is where you expect) and try again.</li>
+<li>The action is blocked while an addendum is open (&quot;Cannot paste into addendum&quot;), since inserting there would edit the wrong document.</li>
+<li>The fallback capture region is centered on your mouse — if the yellow box isn&#39;t detected, park the cursor near the series/image text before triggering.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Capture Series/Image</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Text Templates → Series/Image</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/measurement.html">📏 Measurement &amp; Imaging</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/auto-measure.html">Auto Measure</a></li><li><a href="../features/ruler-overlay.html">Draggable Ruler Overlay</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

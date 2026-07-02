@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Critical Findings — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/worklist.html">Worklist &amp; Productivity</a></div>
+    <h1>Critical Findings</h1>
+    <p class="brief">One button press scrapes the Clario exam note, formats the critical-communication details (who, when), and pastes a ready-made documentation line into your Mosaic report.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/keys-buttons.png" alt="The Critical Findings template with {name}/{time}/{date} placeholders" loading="lazy" class="lightboxable"><figcaption>The Critical Findings template with {name}/{time}/{date} placeholders</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>When a study has a critical-communication note in Clario, this action reads the exam note directly from Clario, extracts the contact name and time, formats them into your documentation template, and pastes the result into the Mosaic report — no window switching, no retyping names and timestamps.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Map the <strong>Critical Findings</strong> action to a mic button or hotkey in <strong>Settings → Keys &amp; Buttons → Open Keys Configuration...</strong></li>
+<li>Customize the output in <strong>Settings → Text &amp; Templates → Templates → Critical Findings</strong>. The template supports the placeholders <code>{name}</code>, <code>{time}</code>, and <code>{date}</code>.</li>
+<li>In <strong>Settings → Profile</strong>, set <strong>Doctor Name</strong> to your name as it appears in Clario — this filters your <em>own</em> notes out of the results so the pasted contact is the person you spoke to, not you.</li>
+<li>Optional: the <strong>Timezone</strong> setting in Profile converts note times to a specific timezone; <strong>(Keep original)</strong> preserves whatever the note says.</li>
+</ol>
+<h2>Using it</h2>
+<p>Open the study in Mosaic, press your mapped button, and the formatted line appears at the cursor. If MosaicTools created the Clario note itself (see Critical Notes), the study is also added to the session&#39;s critical-studies tracker.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The scrape needs the study&#39;s exam note to actually exist in Clario; on a study with no note you&#39;ll get nothing to paste.</li>
+<li>Debugging: hold the <strong>Win</strong> key while triggering the action to see the raw scraped data in a dialog. There&#39;s also <strong>right-click the bar → Debug → Copy Critical Findings Debug</strong>.</li>
+<li>Works via Clario CDP when configured (instant JS reads) with UI Automation as the fallback.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Critical Findings</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Text &amp; Templates → Templates → Critical Findings</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/worklist.html">📈 Worklist &amp; Productivity</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/critical-notes.html">Critical Notes</a></li><li><a href="../features/critical-studies-tracker.html">Critical Studies Tracker</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

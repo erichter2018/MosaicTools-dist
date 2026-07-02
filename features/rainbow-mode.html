@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rainbow Mode — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By surface</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
+    <h1>Rainbow Mode</h1>
+    <p class="brief">Colors each impression point and its matching findings sentences the same color, so you can see at a glance that everything important made it into the impression.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/rainbow-in-editor.png" alt="Rainbow correlation live in the Final Report (synthetic study)" loading="lazy" class="lightboxable"><figcaption>Rainbow correlation live in the Final Report (synthetic study)</figcaption></figure>
+<figure class="shot"><img src="../img/settings-report-display.png" alt="Rainbow Mode toggle in Report Display settings" loading="lazy" class="lightboxable"><figcaption>Rainbow Mode toggle in Report Display settings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>Rainbow Mode correlates your FINDINGS and IMPRESSION sections and color-codes the matches: impression point 1 and the findings sentences that support it get one color, point 2 and its findings another, and so on (colors are stable per body-part category, so the liver is always the same hue). One glance tells you whether every significant finding is represented in the impression — and which impression points have no visible support.</p>
+<p>It works in two places:</p>
+<ul>
+<li><strong>The report popup</strong> — click the popup to cycle into Rainbow mode (see the Report Popup page).</li>
+<li><strong>Live in the Mosaic report editor</strong> — with CDP enabled, three small buttons (No Highlight / Regular / Rainbow) sit at the bottom-right of the report editor. Pick Rainbow and the Final Report itself is colored, updating with a ~2-second debounce as you edit.</li>
+</ul>
+<h2>How to turn it on / set it up</h2>
+<p>Settings → Report Display → check <strong>Rainbow Mode (findings-impression correlation)</strong> for the popup. The in-editor buttons require <strong>Use CDP for Mosaic interaction</strong> (Settings → Experimental).</p>
+<h2>Using it</h2>
+<p>After Process Report, scan the colors: matched pairs share a hue; anything uncolored in FINDINGS didn&#39;t correlate to an impression point. As of 5.5.1, <strong>any mention of the appendix or uterus is always highlighted</strong> — those structures are never in the default CT abdomen/pelvis templates, so any comment about them (even &quot;normal appendix&quot;) is new information worth a look. The template&#39;s boilerplate &quot;No evidence of appendicitis&quot; is intentionally not affected.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Since 5.5.1 your chosen highlight mode (None / Regular / Rainbow) persists across restarts and study changes — it no longer resets to Regular each launch.</li>
+<li>Rainbow is a heuristic term-matcher, not an AI read — use it as a coverage check, not a guarantee.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Report Display → Rainbow Mode (findings-impression correlation)</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.5</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/report-popup.html">Report Popup</a></li><li><a href="../features/visual-enhancements.html">Visual Report Enhancements</a></li><li><a href="../features/dictated-text-highlighting.html">Dictated Text Highlighting</a></li><li><a href="../features/findings-impression-checker.html">Findings/Impression Mismatch</a></li><li><a href="../features/cdp-integration.html">CDP Integration</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
