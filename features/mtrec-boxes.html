@@ -58,6 +58,13 @@
 <p><strong>Settings → MTRec → &quot;Show MTRec boxes after Process Report&quot;</strong> — on by default once the MTRec engine itself is enabled. The manual <strong>MTRec Recommendations</strong> key keeps working exactly as before and is unaffected by this toggle.</p>
 <h2>Using it</h2>
 <p>Process the report, glance right of &quot;Final Report&quot;. No boxes = MTRec found nothing actionable. A green &quot;+ thyroid&quot; means a guideline follow-up is one click away; click it, check the wording in the impression, move on. An amber &quot;⚠ cirrhosis&quot; is a nudge, not text — hover for the missing companions or click for the checklist.</p>
+<h2>Debug information (optional)</h2>
+<p><strong>Settings → MTRec → &quot;Include debug information on the boxes&quot;</strong> (available when the boxes are on) adds a look-under-the-hood layer:</p>
+<ul>
+<li><strong>Hover</strong> a box to see the recommendation, a divider, and the exact dictated FINDINGS text the recommendation was based on — so you can tell at a glance <em>why</em> MTRec fired.</li>
+<li><strong>Right-click</strong> any box to copy the full, de-identified MTRec debug for the whole study to the clipboard (a small &quot;debug copied&quot; note pops up). Left-click still inserts as normal.</li>
+</ul>
+<p>This replaces the old standalone &quot;Copy MTRec Debug&quot; action — the same information now lives on the boxes.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>The boxes wait for the impression to generate — on a slow processing pass they appear a beat after the report does.</li>
@@ -79,7 +86,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-02</div>
+  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-03</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
