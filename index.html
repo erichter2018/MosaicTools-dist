@@ -48,20 +48,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.3</h2>
+    <h2>✨ New in v5.5.4</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.4</span><span class="spot-title">MTRec impression improvements, dictation accuracy, and display fixes</span></div>
+        <ul><li>Thyroid, ovarian, and renal cysts and nodules are now ALWAYS carried into the impression, independent of the &quot;move recommendations&quot; setting. Incidental cystic/nodular findings you dictate always get their impression l…</li><li>The pulmonary-embolism completeness checklist now triggers even when the PE is described only as a &quot;filling defect&quot; in a pulmonary artery (previously it needed the word &quot;embolism&quot;). Positive CT-PE studies no longer sl…</li><li>Trauma and fracture checklists no longer fire on old, chronic, or healed fractures.</li><li>Renal: the impression now keeps the largest cyst's measurement, and no longer prints a duplicate renal-cyst line when the cyst is phrased as a &quot;simple cyst.&quot;</li><li>MTRec boxes: a new opt-in box-level debug mode (replaces the old &quot;Copy MTRec Debug&quot; action), a &quot;no actionable items&quot; info box shown in debug mode, the boxes now wait for the finalized impression before appearing, and …</li><li>Added keyterms so the ensemble stops mis-hearing &quot;endotracheal&quot; (as &quot;and the tracheal&quot;) and circle-of-Willis / neck-vessel terms (internal carotid, posterior communicating artery, and others).</li><li>The ensemble health drawer now shows the actual re-arranged ensemble after a failover — including a promoted anchor — and distinguishes a member that was dropped with no backup from one that was replaced.</li><li>The full red &quot;recording&quot; outline now shows with independent column scrolling on. (5.5.3 freed part of it; this release un-clips the actual container that was cutting it to corner dots.)</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.3</span><span class="spot-title">Final Report display fixes (stacked layout + recording indicator)</span></div>
         <ul><li>The MTRec boxes next to &quot;Final Report&quot; (e.g. &quot;+ renal&quot;) now appear in the stacked (top/bottom) layout too. Previously they only showed in the side-by-side layout; the box now anchors correctly regardless of layout ori…</li><li>With independent column scrolling on, Mosaic's native red &quot;recording&quot; outline around the panel was being clipped to just tiny dots in the corners. The full red border now shows while recording, matching the scrolling-…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.2</span><span class="spot-title">MTRec accuracy: pancreatic-cyst follow-up, lung-nodule/consolidation fix, hydronephrosis &amp; cirrhosis triggers</span></div>
         <ul><li>MTRec now stops recommending pancreatic-cyst surveillance in patients age 80+ when there are no worrisome or high-risk features — consistent with the ACR 2017 incidental-findings white paper and ACG 2018 (surveillance…</li><li>A pancreatic cyst described as slightly enlarging is no longer treated as a worrisome feature on its own (worrisome growth is rate-defined: Kyoto 2024 ≥2.5 mm/yr, Fukuoka 2017 ≥5 mm/2 yr). Instead of jumping to EUS, u…</li><li>Lung nodule fix: a real pulmonary nodule was being silently dropped when the very next sentence was a normal line such as &quot;No focal consolidation&quot; — the negated word &quot;consolidation&quot; was tripping the infection/consolid…</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.1</span><span class="spot-title">Rainbow highlighting for appendix/uterus, stroke-note fix, persistent highlight mode, dictation dedup</span></div>
-        <ul><li>Rainbow mode now always highlights any mention of the appendix or uterus. These structures are never in the CT abdomen/pelvis default template, so any comment about them is new — and it's now highlighted even when you…</li><li>The final-report highlight mode you pick (None / Regular / Rainbow) now persists across restarts and study changes instead of resetting to Regular each launch.</li><li>Stroke critical note: the automatic note is now created only when YOU press Process Report, not on the automatic drafted-study processing that runs shortly after a study is displayed. (The manual Create Critical Note …</li></ul>
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.3</strong> · built 2026-07-03</div>
+  <div>Documents <strong>MosaicTools v5.5.4</strong> · built 2026-07-03</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
