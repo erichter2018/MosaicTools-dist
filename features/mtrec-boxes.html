@@ -62,7 +62,8 @@
 <p><strong>Settings → MTRec → &quot;Include debug information on the boxes&quot;</strong> (available when the boxes are on) adds a look-under-the-hood layer:</p>
 <ul>
 <li><strong>Hover</strong> a box to see the recommendation, a divider, and the exact dictated FINDINGS text the recommendation was based on — so you can tell at a glance <em>why</em> MTRec fired.</li>
-<li><strong>Right-click</strong> any box to copy the full, de-identified MTRec debug for the whole study to the clipboard (a small &quot;debug copied&quot; note pops up). Left-click still inserts as normal.</li>
+<li><strong>Right-click</strong> any box to copy the full, de-identified MTRec debug for the whole study to the clipboard (a small &quot;debug copied&quot; note pops up). Left-click still inserts as normal. The copied debug includes the <strong>entire dictation</strong> (every section, de-identified), not just the parsed FINDINGS — so a recommendation MTRec <em>missed</em> can be spotted from the full text.</li>
+<li><strong>&quot;no MTRec actionable items&quot;</strong> — when debug is on and MTRec ran but found no recommendation or association gap, a neutral box says so, so you&#39;re never left wondering whether it ran. Right-click it to copy the same debug (useful when you <em>expected</em> something and want to see why nothing matched).</li>
 </ul>
 <p>This replaces the old standalone &quot;Copy MTRec Debug&quot; action — the same information now lives on the boxes.</p>
 <h2>Tips &amp; gotchas</h2>
