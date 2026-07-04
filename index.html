@@ -48,20 +48,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.5</h2>
+    <h2>✨ New in v5.5.6</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.6</span><span class="spot-title">MTRec diagnostics logging</span></div>
+        <ul><li>MTRec now records a de-identified summary of each run — the findings it evaluated and which recommendations fired (including cases where nothing fired) — to the opt-in diagnostics corpus, so recommendation behavior ca…</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.5</span><span class="spot-title">MTRec: no more dropped bilateral/multiple lesions, clearer recommendations; dictation garble &amp; false-start fixes</span></div>
-        <ul><li>Bilateral and multiple lesions are no longer dropped. Adrenal, thyroid, liver, lymph node, and pancreatic findings now report EVERY lesion — previously only the first was carried into the impression, so a second (ofte…</li><li>Multiple renal/liver lesions phrased in the plural (&quot;lesions&quot;) now fire — the solid-mass recommendation was only matching the singular &quot;lesion,&quot; so any &quot;multiple ... lesions&quot; finding was missed entirely.</li><li>MTRec recommendations can now be auto-inserted into the impression on Process Report (opt-in, Settings → MTRec). This is a separate toggle from showing the MTRec boxes.</li><li>Ovarian: a simple cyst ≥10 cm now recommends MRI and gynecology referral (O-RADS 3) instead of just ultrasound (ultrasound can't reliably characterize a cyst that large). Bilateral ovarian cysts are combined into one …</li><li>Lung nodule: the recommendation now keeps the location when it's the apex/base or a named lung (&quot;in the left apex&quot;) instead of dropping it; a multi-nodule finding reads &quot;Multiple pulmonary nodules, the largest measuri…</li><li>Thoracic aortic aneurysm recommendation rewritten for clarity — the finding, the action (dedicated study, then surveillance), and the surgical threshold are now separate points instead of one run-on.</li><li>Guideline value refinements (verified against primary sources): splenic-lesion follow-up intervals, AAST Grade I lacerations, gallbladder-polyp surveillance intervals, adrenal/liver sub-centimeter size gates, and the …</li><li>Associations: the cholecystitis and pulmonary-embolism checklists now trigger on the imaging signs and on a diagnosis stated only in the impression, not just the named diagnosis in the findings.</li></ul>
+        <ul><li>Bilateral and multiple lesions are no longer dropped. Adrenal, thyroid, liver, lymph node, and pancreatic findings now report EVERY lesion — previously only the first was carried into the impression, so a second (ofte…</li><li>Multiple renal/liver lesions phrased in the plural (&quot;lesions&quot;) now fire — the solid-mass recommendation was only matching the singular &quot;lesion,&quot; so any &quot;multiple ... lesions&quot; finding was missed entirely.</li><li>MTRec recommendations can now be auto-inserted into the impression on Process Report (opt-in, Settings → MTRec). This is a separate toggle from showing the MTRec boxes.</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.4</span><span class="spot-title">MTRec impression improvements, dictation accuracy, and display fixes</span></div>
         <ul><li>Thyroid, ovarian, and renal cysts and nodules are now ALWAYS carried into the impression, independent of the &quot;move recommendations&quot; setting. Incidental cystic/nodular findings you dictate always get their impression l…</li><li>The pulmonary-embolism completeness checklist now triggers even when the PE is described only as a &quot;filling defect&quot; in a pulmonary artery (previously it needed the word &quot;embolism&quot;). Positive CT-PE studies no longer sl…</li><li>Trauma and fracture checklists no longer fire on old, chronic, or healed fractures.</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.3</span><span class="spot-title">Final Report display fixes (stacked layout + recording indicator)</span></div>
-        <ul><li>The MTRec boxes next to &quot;Final Report&quot; (e.g. &quot;+ renal&quot;) now appear in the stacked (top/bottom) layout too. Previously they only showed in the side-by-side layout; the box now anchors correctly regardless of layout ori…</li><li>With independent column scrolling on, Mosaic's native red &quot;recording&quot; outline around the panel was being clipped to just tiny dots in the corners. The full red border now shows while recording, matching the scrolling-…</li></ul>
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.5</strong> · built 2026-07-04</div>
+  <div>Documents <strong>MosaicTools v5.5.6</strong> · built 2026-07-04</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
