@@ -56,6 +56,7 @@
 </ul>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → MTRec → &quot;Show MTRec boxes after Process Report&quot;</strong> — on by default once the MTRec engine itself is enabled. The manual <strong>MTRec Recommendations</strong> key keeps working exactly as before and is unaffected by this toggle.</p>
+<p><strong>Auto-insert (new in 5.5.5):</strong> a separate peer toggle, <strong>Settings → MTRec → &quot;Automatically insert recommendations on Process Report&quot;</strong>, skips the click entirely — MTRec&#39;s green-box recommendations are merged into the impression automatically when you Process Report. It&#39;s independent of showing the boxes (you can have either, both, or neither), off by default, and Ctrl+Z still undoes an insert.</p>
 <h2>Using it</h2>
 <p>Process the report, glance right of &quot;Final Report&quot;. No boxes = MTRec found nothing actionable. A green &quot;+ thyroid&quot; means a guideline follow-up is one click away; click it, check the wording in the impression, move on. An amber &quot;⚠ cirrhosis&quot; is a nudge, not text — hover for the missing companions or click for the checklist.</p>
 <h2>Debug information (optional)</h2>
@@ -72,6 +73,7 @@
 <li>Since 5.5.3 the boxes anchor correctly in the <strong>stacked (top/bottom) layout</strong> too, not just side-by-side.</li>
 <li>Box labels are displayed all-lowercase (as are the tooltips and checklist) — that&#39;s cosmetic, since 5.5.0.</li>
 <li>Clicking green inserts exactly what the manual MTRec key would have inserted for that finding, citation included.</li>
+<li>Since 5.5.5, <strong>bilateral and multiple lesions</strong> each get a recommendation — adrenal, thyroid, liver, lymph node, and pancreatic findings no longer report only the first lesion; same-management lesions combine into one line, different work-ups stay separate.</li>
 </ul>
 
     </div>
@@ -87,7 +89,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.4</strong> · built 2026-07-03</div>
+  <div>Documents <strong>MosaicTools v5.5.5</strong> · built 2026-07-04</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
