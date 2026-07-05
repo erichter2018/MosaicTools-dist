@@ -48,20 +48,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.6</h2>
+    <h2>✨ New in v5.5.7</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.7</span><span class="spot-title">MTRec: clearer thoracic-aorta follow-up + renal cyst size/count fixes</span></div>
+        <ul><li>Thoracic aorta follow-up now specifies a &quot;dedicated ECG-gated CTA or MRA&quot; at every size. On a routine (non-gated) chest CTA the ascending-aorta caliber is blurred by cardiac motion, so the recommendation was reading l…</li><li>Renal cysts described only as low-attenuation lesions (no literal &quot;cyst&quot; word) now capture their size and count correctly — e.g. &quot;Multiple renal cysts, the largest measuring 2.1 cm&quot; instead of a generic singular note …</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.6</span><span class="spot-title">MTRec diagnostics logging</span></div>
         <ul><li>MTRec now records a de-identified summary of each run — the findings it evaluated and which recommendations fired (including cases where nothing fired) — to the opt-in diagnostics corpus, so recommendation behavior ca…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.5</span><span class="spot-title">MTRec: no more dropped bilateral/multiple lesions, clearer recommendations; dictation garble &amp; false-start fixes</span></div>
         <ul><li>Bilateral and multiple lesions are no longer dropped. Adrenal, thyroid, liver, lymph node, and pancreatic findings now report EVERY lesion — previously only the first was carried into the impression, so a second (ofte…</li><li>Multiple renal/liver lesions phrased in the plural (&quot;lesions&quot;) now fire — the solid-mass recommendation was only matching the singular &quot;lesion,&quot; so any &quot;multiple ... lesions&quot; finding was missed entirely.</li><li>MTRec recommendations can now be auto-inserted into the impression on Process Report (opt-in, Settings → MTRec). This is a separate toggle from showing the MTRec boxes.</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.4</span><span class="spot-title">MTRec impression improvements, dictation accuracy, and display fixes</span></div>
-        <ul><li>Thyroid, ovarian, and renal cysts and nodules are now ALWAYS carried into the impression, independent of the &quot;move recommendations&quot; setting. Incidental cystic/nodular findings you dictate always get their impression l…</li><li>The pulmonary-embolism completeness checklist now triggers even when the PE is described only as a &quot;filling defect&quot; in a pulmonary artery (previously it needed the word &quot;embolism&quot;). Positive CT-PE studies no longer sl…</li><li>Trauma and fracture checklists no longer fire on old, chronic, or healed fractures.</li></ul>
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.6</strong> · built 2026-07-04</div>
+  <div>Documents <strong>MosaicTools v5.5.7</strong> · built 2026-07-05</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
