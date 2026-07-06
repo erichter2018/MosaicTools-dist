@@ -49,8 +49,8 @@
       <div class="shots"><figure class="shot"><img src="../img/settings-mtrec.png" alt="The MTRec settings tab" loading="lazy" class="lightboxable"><figcaption>The MTRec settings tab</figcaption></figure>
 <figure class="shot"><img src="../img/mtrec-boxes.png" alt="A recommendation box next to Final Report" loading="lazy" class="lightboxable"><figcaption>A recommendation box next to Final Report</figcaption></figure></div>
       <h2>What it does</h2>
-<p>MTRec reads your FINDINGS and IMPRESSION and, on one keypress, inserts guideline follow-up recommendations for the incidental findings it detects — pulmonary nodules, thyroid, adrenal, renal, ovarian, liver, gallbladder, spleen, lymph nodes, biliary, pancreatic, AAA/thoracic aorta, plus trauma grading. Every recommendation ends with its source: Fleischner 2017, Bosniak v2019, ACR TI-RADS, O-RADS, the ACR Incidental Findings white papers, SRU gallbladder consensus, SVS aorta guidelines, AAST organ injury scaling (2025 kidney update), and more.</p>
-<p>The safety contract is the point: <strong>no AI ever authors a clinical number</strong>. Every threshold comes from verified guideline tables, the engine runs entirely offline inside MosaicTools, and its behavior is pinned by 480+ self-tests. It replaced the external RecoMD service — no agent, no window-scraping, instant.</p>
+<p>MTRec reads your FINDINGS and IMPRESSION and, on one keypress, inserts guideline follow-up recommendations for the incidental findings it detects — pulmonary nodules, thyroid, adrenal, renal, ovarian, liver, gallbladder, spleen, lymph nodes, biliary, pancreatic, AAA/thoracic aorta, plus trauma grading. Every recommendation ends with its source: Fleischner 2017, Bosniak v2019, ACR TI-RADS, O-RADS, the ACR Incidental Findings white papers, SRU gallbladder consensus, SVS aorta guidelines, AAST organ injury scaling (spleen/liver/kidney, 2025 kidney update, plus chest-wall injury grading), and more.</p>
+<p>The safety contract is the point: <strong>no AI ever authors a clinical number</strong>. Every threshold comes from verified guideline tables, the engine runs entirely offline inside MosaicTools, and its behavior is pinned by 530+ self-tests. It replaced the external RecoMD service — no agent, no window-scraping, instant.</p>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → MTRec → Enable MTRec recommendation engine</strong>, then assign <strong>MTRec Recommendations</strong> to a key or mic button under <strong>Keys &amp; Buttons</strong>. Optional settings on the same tab:</p>
 <ul>
@@ -59,7 +59,7 @@
 </ul>
 <h2>Using it</h2>
 <p>Press the key after your findings are in; recommendations merge into the impression, placed last. It&#39;s smart about noise: it reports the largest lesion with multiplicity/laterality, respects stability (&quot;unchanged for 3 years&quot; clears the guideline window instead of restarting the clock), reads the clinical history (no incidental-nodule follow-up in a known-cancer study), and replaces a matching point already in your impression rather than duplicating it. <strong>Ctrl+Z undoes the whole insert.</strong></p>
-<p><strong>Thyroid, ovarian, and renal cysts and nodules are always carried into the impression</strong> (since 5.5.4), independent of the relocate-recommendations setting — so an incidental cyst or nodule you dictate always gets its impression line, even when it needs no guideline follow-up.</p>
+<p><strong>Thyroid, ovarian, renal, and — since 5.5.8 — simple hepatic cysts and nodules are always carried into the impression</strong> (renal/thyroid/ovarian since 5.5.4), independent of the relocate-recommendations setting — so an incidental cyst or nodule you dictate always gets its impression line, even when it needs no guideline follow-up.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>With <strong>Show MTRec boxes after Process Report</strong> on, you rarely need the manual key — see the MTRec boxes page.</li>
@@ -80,7 +80,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.7</strong> · built 2026-07-05</div>
+  <div>Documents <strong>MosaicTools v5.5.8</strong> · built 2026-07-06</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

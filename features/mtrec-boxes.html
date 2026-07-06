@@ -59,14 +59,14 @@
 <p><strong>Auto-insert (new in 5.5.5):</strong> a separate peer toggle, <strong>Settings → MTRec → &quot;Automatically insert recommendations on Process Report&quot;</strong>, skips the click entirely — MTRec&#39;s green-box recommendations are merged into the impression automatically when you Process Report. It&#39;s independent of showing the boxes (you can have either, both, or neither), off by default, and Ctrl+Z still undoes an insert.</p>
 <h2>Using it</h2>
 <p>Process the report, glance right of &quot;Final Report&quot;. No boxes = MTRec found nothing actionable. A green &quot;+ thyroid&quot; means a guideline follow-up is one click away; click it, check the wording in the impression, move on. An amber &quot;⚠ cirrhosis&quot; is a nudge, not text — hover for the missing companions or click for the checklist.</p>
-<h2>Debug information (optional)</h2>
-<p><strong>Settings → MTRec → &quot;Include debug information on the boxes&quot;</strong> (available when the boxes are on) adds a look-under-the-hood layer:</p>
+<h2>Debug information</h2>
+<p><strong>Since 5.5.8 the box debug is always on</strong> — no setting required.</p>
 <ul>
-<li><strong>Hover</strong> a box to see the recommendation, a divider, and the exact dictated FINDINGS text the recommendation was based on — so you can tell at a glance <em>why</em> MTRec fired.</li>
-<li><strong>Right-click</strong> any box to copy the full, de-identified MTRec debug for the whole study to the clipboard (a small &quot;debug copied&quot; note pops up). Left-click still inserts as normal. The copied debug includes the <strong>entire dictation</strong> (every section, de-identified), not just the parsed FINDINGS — so a recommendation MTRec <em>missed</em> can be spotted from the full text.</li>
-<li><strong>&quot;no MTRec actionable items&quot;</strong> — when debug is on and MTRec ran but found no recommendation or association gap, a neutral box says so, so you&#39;re never left wondering whether it ran. Right-click it to copy the same debug (useful when you <em>expected</em> something and want to see why nothing matched).</li>
+<li><strong>Hover</strong> a box to see the recommendation, a divider, and the exact dictated text it was based on — so you can tell at a glance <em>why</em> MTRec fired. For an AAST injury grade, it also names which finding set the grade (e.g. &quot;grade II driver: 3 rib fractures (≥3)&quot;).</li>
+<li><strong>Right-click</strong> any box to copy the full, de-identified MTRec debug for the whole study to the clipboard (a small &quot;debug copied&quot; note pops up). Left-click still inserts as normal. The copied debug includes the <strong>entire dictation</strong> (every section, de-identified) plus an <strong>Associations</strong> section — each triggered checklist with the sentence that fired it and which companion findings were already addressed versus still to look for.</li>
 </ul>
 <p>This replaces the old standalone &quot;Copy MTRec Debug&quot; action — the same information now lives on the boxes.</p>
+<p><strong>Settings → MTRec → &quot;Include debug information on the boxes&quot;</strong> now governs only the extra dev-diagnostic bits: the neutral <strong>&quot;no MTRec actionable items&quot;</strong> box (shown when MTRec ran but found nothing, so you&#39;re never left wondering whether it ran) and verbose per-run logging. The per-box &quot;why&quot; above is on regardless.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>The boxes wait for the impression to generate — on a slow processing pass they appear a beat after the report does.</li>
@@ -89,7 +89,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.7</strong> · built 2026-07-05</div>
+  <div>Documents <strong>MosaicTools v5.5.8</strong> · built 2026-07-06</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
