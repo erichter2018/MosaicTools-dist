@@ -48,20 +48,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.12</h2>
+    <h2>✨ New in v5.5.13</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.13</span><span class="spot-title">Accession reliability + MTRec boxes update on measurement edits</span></div>
+        <ul><li>Patient/accession reliability: fixed a case where the accession could momentarily read blank even though the study is open and the accession is right there on screen. MosaicTools was reading the browser's *rendered* t…</li><li>MTRec boxes now refresh when you change a finding's measurement in the report. Previously a same-length edit in the middle of the report (e.g. changing &quot;2 cm&quot; to &quot;5 cm&quot;) wasn't detected as a change, so the recommendat…</li><li>Added PHI-free diagnostics for both of the above so their behavior is visible in telemetry.</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.12</span><span class="spot-title">MTRec accuracy pass (full-corpus audit): fewer wrong / over-called recommendations</span></div>
-        <ul><li>Thyroid: no longer recommends ultrasound when the report explicitly says there are NO nodules (&quot;no discrete nodules&quot;, &quot;free of any mass lesions&quot;, &quot;unremarkable, no nodule&quot;), and no longer recommends ultrasound for sub…</li><li>Abdominal aorta: the recommendation now reflects the LARGEST segment measured (previously it could report a smaller segment and the wrong surveillance interval). &quot;Aneurysmal enlargement&quot; — a description of shape, not …</li><li>Liver/kidney cysts: a cyst explicitly called SIMPLE is no longer upgraded to &quot;possible malignancy / get MRI&quot; just because the patient has a cancer history. Acute findings (a ruptured cyst, or a renal hematoma) are no …</li><li>Lung nodules: Fleischner follow-up intervals no longer appear on plain chest X-rays — that guideline applies to CT (a chest-radiograph nodule warrants a characterizing CT, which the radiologist recommends).</li><li>Lymph nodes: a fat-containing (benign fatty-hilum) node no longer prompts a PET/biopsy note.</li><li>Chest-wall trauma: the grade's debug detail now cites the correct fracture (rib vs clavicle/sternum).</li><li>Cholecystitis association: the &quot;gallstones&quot; checklist item no longer false-matches &quot;no renal calculi&quot; (kidney stones).</li><li>MTRec boxes: a recommendation box you dismissed by removing the inserted text now reappears if the finding is still in the report.</li></ul>
+        <ul><li>Thyroid: no longer recommends ultrasound when the report explicitly says there are NO nodules (&quot;no discrete nodules&quot;, &quot;free of any mass lesions&quot;, &quot;unremarkable, no nodule&quot;), and no longer recommends ultrasound for sub…</li><li>Abdominal aorta: the recommendation now reflects the LARGEST segment measured (previously it could report a smaller segment and the wrong surveillance interval). &quot;Aneurysmal enlargement&quot; — a description of shape, not …</li><li>Liver/kidney cysts: a cyst explicitly called SIMPLE is no longer upgraded to &quot;possible malignancy / get MRI&quot; just because the patient has a cancer history. Acute findings (a ruptured cyst, or a renal hematoma) are no …</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.11</span><span class="spot-title">Patient/study info no longer flickers blank on an open study; MTRec box polish</span></div>
         <ul><li>Fixed the patient and accession info intermittently reading blank while a study is still open. On some Mosaic builds the study panel briefly tears down and rebuilds, and during those moments MosaicTools saw &quot;no study,…</li><li>The recommendation boxes now show the finding size on the chip (e.g. &quot;renal 2.0 cm&quot;), so when you re-measure a finding the box visibly updates instead of looking unchanged.</li><li>When an already-inserted recommendation goes out of date, the box now leads with a clear green &quot;UPDATED&quot; marker (visually distinct from the amber association reminders).</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.10</span><span class="spot-title">Ensemble health accuracy: normal reconnects no longer look like &quot;failures&quot;; punctuation-leak fix</span></div>
-        <ul><li>Fixed the ensemble health light and provider status over-reporting &quot;failures.&quot; Every streaming engine (Deepgram, AssemblyAI, Speechmatics, Soniox, OpenAI, and others) was counting its OWN normal session teardown — the…</li><li>Fixed occasional &quot;{,}&quot; or &quot;{.}&quot; appearing literally in the report. This happened when a backup engine (e.g. Chirp) took over as the primary and its spoken-punctuation format leaked through. Spoken &quot;comma&quot;/&quot;period&quot; now…</li><li>MTRec recommendation boxes now keep themselves up to date as you dictate. MTRec recomputes and shows its boxes whenever the Final Report changes and settles — you no longer have to use MosaicTools' Process Report acti…</li></ul>
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.12</strong> · built 2026-07-07</div>
+  <div>Documents <strong>MosaicTools v5.5.13</strong> · built 2026-07-07</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
