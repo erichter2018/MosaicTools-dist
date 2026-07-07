@@ -48,20 +48,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.10</h2>
+    <h2>✨ New in v5.5.11</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.11</span><span class="spot-title">Patient/study info no longer flickers blank on an open study; MTRec box polish</span></div>
+        <ul><li>Fixed the patient and accession info intermittently reading blank while a study is still open. On some Mosaic builds the study panel briefly tears down and rebuilds, and during those moments MosaicTools saw &quot;no study,…</li><li>The recommendation boxes now show the finding size on the chip (e.g. &quot;renal 2.0 cm&quot;), so when you re-measure a finding the box visibly updates instead of looking unchanged.</li><li>When an already-inserted recommendation goes out of date, the box now leads with a clear green &quot;UPDATED&quot; marker (visually distinct from the amber association reminders).</li><li>Tooltip cleanup: the recommendation and its &quot;why/debug&quot; details no longer print twice.</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.10</span><span class="spot-title">Ensemble health accuracy: normal reconnects no longer look like &quot;failures&quot;; punctuation-leak fix</span></div>
-        <ul><li>Fixed the ensemble health light and provider status over-reporting &quot;failures.&quot; Every streaming engine (Deepgram, AssemblyAI, Speechmatics, Soniox, OpenAI, and others) was counting its OWN normal session teardown — the…</li><li>Fixed occasional &quot;{,}&quot; or &quot;{.}&quot; appearing literally in the report. This happened when a backup engine (e.g. Chirp) took over as the primary and its spoken-punctuation format leaked through. Spoken &quot;comma&quot;/&quot;period&quot; now…</li><li>MTRec recommendation boxes now keep themselves up to date as you dictate. MTRec recomputes and shows its boxes whenever the Final Report changes and settles — you no longer have to use MosaicTools' Process Report acti…</li><li>If you already inserted a recommendation and then the finding changes (e.g. you re-measure a nodule so a different follow-up applies), MTRec now shows a &quot;↻ update&quot; box so your impression doesn't keep an out-of-date re…</li></ul>
+        <ul><li>Fixed the ensemble health light and provider status over-reporting &quot;failures.&quot; Every streaming engine (Deepgram, AssemblyAI, Speechmatics, Soniox, OpenAI, and others) was counting its OWN normal session teardown — the…</li><li>Fixed occasional &quot;{,}&quot; or &quot;{.}&quot; appearing literally in the report. This happened when a backup engine (e.g. Chirp) took over as the primary and its spoken-punctuation format leaked through. Spoken &quot;comma&quot;/&quot;period&quot; now…</li><li>MTRec recommendation boxes now keep themselves up to date as you dictate. MTRec recomputes and shows its boxes whenever the Final Report changes and settles — you no longer have to use MosaicTools' Process Report acti…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.9</span><span class="spot-title">MTRec: &quot;without nodules&quot; false-positive fix + boxes no longer overwrite each other</span></div>
         <ul><li>Fixed a false recommendation: a report stating &quot;…thyroid gland WITHOUT obvious thyroid nodules&quot; no longer triggers a &quot;multiple thyroid nodules — dedicated ultrasound recommended&quot; recommendation. The negation &quot;without&quot;…</li><li>Fixed MTRec boxes overwriting each other: on a study with two separate recommendations (e.g., cysts in different organs), clicking the second box could replace the first one you'd already inserted. Each box now append…</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.8</span><span class="spot-title">Dictation duplicate-garble fixes; MTRec liver cysts, chest-wall grading, clearer wording &amp; richer debug</span></div>
-        <ul><li>Fixed a class of duplicated / garbled phrases in merged dictation — repeated words (&quot;left basal basilar atelectasis&quot;), doubled sentence fragments, and a stray cardiac word landing in a spine finding (&quot;grade 1 atrial a…</li><li>Liver: a simple hepatic cyst is now always noted as benign with no follow-up (matching how renal, thyroid, and ovarian cysts are already handled) instead of being silently skipped.</li><li>New: AAST chest-wall injury grading on trauma studies (rib fractures, flail chest/segment, sternal / clavicular / scapular fractures).</li></ul>
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.10</strong> · built 2026-07-07</div>
+  <div>Documents <strong>MosaicTools v5.5.11</strong> · built 2026-07-07</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
