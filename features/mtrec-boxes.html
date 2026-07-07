@@ -56,6 +56,7 @@
 </ul>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → MTRec → &quot;Show MTRec boxes after Process Report&quot;</strong> — on by default once the MTRec engine itself is enabled. The manual <strong>MTRec Recommendations</strong> key keeps working exactly as before and is unaffected by this toggle.</p>
+<p><strong>Keep boxes current as you dictate (new in 5.5.10):</strong> <strong>Settings → MTRec → &quot;Keep recommendations up to date as the report changes&quot;</strong> — on by default. With this on, MTRec doesn&#39;t only run after the Process Report action — it recomputes and refreshes the boxes whenever the Final Report changes and settles. So the boxes appear and stay current even when you process the report <strong>directly in Mosaic</strong> (no MosaicTools Process Report action needed). It only <em>shows</em> boxes — it never auto-inserts — so the Process Report action remains the way to insert everything at once.</p>
 <p><strong>Auto-insert (new in 5.5.5):</strong> a separate peer toggle, <strong>Settings → MTRec → &quot;Automatically insert recommendations on Process Report&quot;</strong>, skips the click entirely — MTRec&#39;s green-box recommendations are merged into the impression automatically when you Process Report. It&#39;s independent of showing the boxes (you can have either, both, or neither), off by default, and Ctrl+Z still undoes an insert.</p>
 <h2>Using it</h2>
 <p>Process the report, glance right of &quot;Final Report&quot;. No boxes = MTRec found nothing actionable. A green &quot;+ thyroid&quot; means a guideline follow-up is one click away; click it, check the wording in the impression, move on. An amber &quot;⚠ cirrhosis&quot; is a nudge, not text — hover for the missing companions or click for the checklist.</p>
@@ -74,6 +75,7 @@
 <li>Box labels are displayed all-lowercase (as are the tooltips and checklist) — that&#39;s cosmetic, since 5.5.0.</li>
 <li>Clicking green inserts exactly what the manual MTRec key would have inserted for that finding, citation included.</li>
 <li>Since 5.5.5, <strong>bilateral and multiple lesions</strong> each get a recommendation — adrenal, thyroid, liver, lymph node, and pancreatic findings no longer report only the first lesion; same-management lesions combine into one line, different work-ups stay separate.</li>
+<li>Since 5.5.10, if you insert a recommendation and then <strong>the finding changes</strong> (e.g. you re-measure a nodule so a different follow-up applies), MTRec shows a <strong>&quot;↻ update&quot; box</strong> so your impression doesn&#39;t keep an out-of-date recommendation — click it to replace the old line with the current one. And when a finding is removed, its box <strong>clears on its own</strong> rather than lingering.</li>
 </ul>
 
     </div>
@@ -89,7 +91,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.9</strong> · built 2026-07-07</div>
+  <div>Documents <strong>MosaicTools v5.5.10</strong> · built 2026-07-07</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
