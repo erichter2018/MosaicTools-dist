@@ -48,20 +48,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.8</h2>
+    <h2>✨ New in v5.5.9</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.9</span><span class="spot-title">MTRec: &quot;without nodules&quot; false-positive fix + boxes no longer overwrite each other</span></div>
+        <ul><li>Fixed a false recommendation: a report stating &quot;…thyroid gland WITHOUT obvious thyroid nodules&quot; no longer triggers a &quot;multiple thyroid nodules — dedicated ultrasound recommended&quot; recommendation. The negation &quot;without&quot;…</li><li>Fixed MTRec boxes overwriting each other: on a study with two separate recommendations (e.g., cysts in different organs), clicking the second box could replace the first one you'd already inserted. Each box now append…</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.8</span><span class="spot-title">Dictation duplicate-garble fixes; MTRec liver cysts, chest-wall grading, clearer wording &amp; richer debug</span></div>
-        <ul><li>Fixed a class of duplicated / garbled phrases in merged dictation — repeated words (&quot;left basal basilar atelectasis&quot;), doubled sentence fragments, and a stray cardiac word landing in a spine finding (&quot;grade 1 atrial a…</li><li>Liver: a simple hepatic cyst is now always noted as benign with no follow-up (matching how renal, thyroid, and ovarian cysts are already handled) instead of being silently skipped.</li><li>New: AAST chest-wall injury grading on trauma studies (rib fractures, flail chest/segment, sternal / clavicular / scapular fractures).</li><li>Injury grades now read simply as &quot;AAST [organ] injury, grade III&quot; — the &quot;approx … (verify)&quot; hedging was dropped (verification is understood).</li><li>Ovarian cyst of indeterminate menopausal status now reads as one clean conditional line instead of two &quot;recommend …&quot; sentences, and no longer repeats its reference.</li><li>Renal: when cysts are bilateral, the impression now names the side of the largest one.</li><li>Debug: the MTRec box tooltip and copied debug now always show what each recommendation is based on — the source sentence, and for injury grades exactly which finding set the grade. Association checklists now also appe…</li><li>Fixed a stray date fragment (&quot;On 7/5&quot;) that could appear in the critical-communication note.</li></ul>
+        <ul><li>Fixed a class of duplicated / garbled phrases in merged dictation — repeated words (&quot;left basal basilar atelectasis&quot;), doubled sentence fragments, and a stray cardiac word landing in a spine finding (&quot;grade 1 atrial a…</li><li>Liver: a simple hepatic cyst is now always noted as benign with no follow-up (matching how renal, thyroid, and ovarian cysts are already handled) instead of being silently skipped.</li><li>New: AAST chest-wall injury grading on trauma studies (rib fractures, flail chest/segment, sternal / clavicular / scapular fractures).</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.7</span><span class="spot-title">MTRec: clearer thoracic-aorta follow-up + renal cyst size/count fixes</span></div>
         <ul><li>Thoracic aorta follow-up now specifies a &quot;dedicated ECG-gated CTA or MRA&quot; at every size. On a routine (non-gated) chest CTA the ascending-aorta caliber is blurred by cardiac motion, so the recommendation was reading l…</li><li>Renal cysts described only as low-attenuation lesions (no literal &quot;cyst&quot; word) now capture their size and count correctly — e.g. &quot;Multiple renal cysts, the largest measuring 2.1 cm&quot; instead of a generic singular note …</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.6</span><span class="spot-title">MTRec diagnostics logging</span></div>
-        <ul><li>MTRec now records a de-identified summary of each run — the findings it evaluated and which recommendations fired (including cases where nothing fired) — to the opt-in diagnostics corpus, so recommendation behavior ca…</li></ul>
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.8</strong> · built 2026-07-06</div>
+  <div>Documents <strong>MosaicTools v5.5.9</strong> · built 2026-07-07</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
