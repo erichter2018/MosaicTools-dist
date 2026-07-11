@@ -48,20 +48,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.17</h2>
+    <h2>✨ New in v5.5.18</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.18</span><span class="spot-title">Custom STT: engines that drop mid-dictation now recover on their own</span></div>
+        <ul><li>Fixed a case where a speech engine that lost its connection mid-dictation (Chirp, Amazon Medical, or Voxtral) could sit disconnected for the rest of your shift. The engine reported itself as still-connected, so Mosaic…</li><li>Added PHI-free diagnostics that flag an engine which is connected yet silently producing nothing, so any remaining edge case is visible in telemetry.</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.17</span><span class="spot-title">MTRec sizing accuracy + MosaicC discard &amp; drafted-popup fixes</span></div>
-        <ul><li>MTRec now reads each finding's measurement from that finding's OWN sentence, so a recommendation no longer borrows an adjacent finding's size. Fixes cases like a thyroid nodule picking up a nearby lymph node's measure…</li><li>Discard Study now works in MosaicC and stays reliable on current Mosaic. It invokes Mosaic's own discard action directly, so it no longer stalls on the &quot;Confirm Discard Action?&quot; dialog.</li><li>MosaicC drafted-findings popup: now reflects edits made to a draft after it was captured, and deleting an item from the popup removes the matching statement in the sidebar (it previously removed the top item).</li><li>Fixed a case where clinical history / drafted items stopped pulling after switching between MosaicC and current Mosaic in the same session — the platform is now re-detected on the switch.</li></ul>
+        <ul><li>MTRec now reads each finding's measurement from that finding's OWN sentence, so a recommendation no longer borrows an adjacent finding's size. Fixes cases like a thyroid nodule picking up a nearby lymph node's measure…</li><li>Discard Study now works in MosaicC and stays reliable on current Mosaic. It invokes Mosaic's own discard action directly, so it no longer stalls on the &quot;Confirm Discard Action?&quot; dialog.</li><li>MosaicC drafted-findings popup: now reflects edits made to a draft after it was captured, and deleting an item from the popup removes the matching statement in the sidebar (it previously removed the top item).</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.16</span><span class="spot-title">Custom STT: dictation now routes to the box you're actually in (report vs transcript)</span></div>
         <ul><li>Fixed custom-STT dictation landing in the wrong box — most often final-report dictation ending up in the transcript/dictation box (where it &quot;sits and never makes it into the report&quot;). Root cause: MosaicTools decided w…</li><li>Added PHI-free diagnostics that record the focus state at paste time, so any remaining mis-route is precisely visible in telemetry.</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.15</span><span class="spot-title">Faster signed-study handoff to RVUCounter + two MTRec clinical corrections</span></div>
-        <ul><li>RVUCounter now registers a signed study the instant you sign it, instead of a few seconds later. Previously the &quot;signed&quot; signal was found by polling, so a study you signed — especially with auto-advance off, where no …</li><li>MTRec clinical corrections (both from a four-way audit of the guideline thresholds):</li><li>Experimental (off by default): the endotracheal-tube position rewrite now also updates the drafted-findings popup, so the popup matches the &quot;{upper / middle / lower} third of the trachea&quot; phrasing shown in the transcr…</li></ul>
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.17</strong> · built 2026-07-11</div>
+  <div>Documents <strong>MosaicTools v5.5.18</strong> · built 2026-07-11</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
