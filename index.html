@@ -48,20 +48,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.15</h2>
+    <h2>✨ New in v5.5.16</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.16</span><span class="spot-title">Custom STT: dictation now routes to the box you're actually in (report vs transcript)</span></div>
+        <ul><li>Fixed custom-STT dictation landing in the wrong box — most often final-report dictation ending up in the transcript/dictation box (where it &quot;sits and never makes it into the report&quot;). Root cause: MosaicTools decided w…</li><li>Added PHI-free diagnostics that record the focus state at paste time, so any remaining mis-route is precisely visible in telemetry.</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.15</span><span class="spot-title">Faster signed-study handoff to RVUCounter + two MTRec clinical corrections</span></div>
-        <ul><li>RVUCounter now registers a signed study the instant you sign it, instead of a few seconds later. Previously the &quot;signed&quot; signal was found by polling, so a study you signed — especially with auto-advance off, where no …</li><li>MTRec clinical corrections (both from a four-way audit of the guideline thresholds):</li><li>Experimental (off by default): the endotracheal-tube position rewrite now also updates the drafted-findings popup, so the popup matches the &quot;{upper / middle / lower} third of the trachea&quot; phrasing shown in the transcr…</li><li>New &quot;Show highlight buttons in report&quot; option (Settings -&gt; Report Display, off by default): shows small No Highlight / Regular / Rainbow toggle buttons in the report for quick mode switching. Applies to Mosaic and Mos…</li><li>Under the hood: continued MosaicC (next-generation Mosaic) support — a MosaicC settings section plus several MosaicC-only display/dictation options, all dormant and off by default on current Mosaic. No effect on your …</li></ul>
+        <ul><li>RVUCounter now registers a signed study the instant you sign it, instead of a few seconds later. Previously the &quot;signed&quot; signal was found by polling, so a study you signed — especially with auto-advance off, where no …</li><li>MTRec clinical corrections (both from a four-way audit of the guideline thresholds):</li><li>Experimental (off by default): the endotracheal-tube position rewrite now also updates the drafted-findings popup, so the popup matches the &quot;{upper / middle / lower} third of the trachea&quot; phrasing shown in the transcr…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.14</span><span class="spot-title">Dictation reliability: Deepgram auto-reconnect + smarter failover</span></div>
         <ul><li>Deepgram now automatically retries its connection through brief network/proxy hiccups instead of immediately dropping to a backup engine. This targets the intermittent &quot;the primary engine keeps dropping&quot; behavior seen…</li><li>Ensemble failover no longer promotes a lower-confidence engine (e.g. Chirp) to the lead/anchor role when your primary engine drops. Previously a dropped primary could hand the lead to an engine that lacks per-word con…</li><li>Experimental, off by default: endotracheal-tube position phrasing — rewrites &quot;ET tube tip is X cm from the carina&quot; to the {upper / middle / lower}-third-of-the-trachea description. Enable under Settings → Experimental.</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.13</span><span class="spot-title">Accession reliability + MTRec boxes update on measurement edits</span></div>
-        <ul><li>Patient/accession reliability: fixed a case where the accession could momentarily read blank even though the study is open and the accession is right there on screen. MosaicTools was reading the browser's *rendered* t…</li><li>MTRec boxes now refresh when you change a finding's measurement in the report. Previously a same-length edit in the middle of the report (e.g. changing &quot;2 cm&quot; to &quot;5 cm&quot;) wasn't detected as a change, so the recommendat…</li><li>Added PHI-free diagnostics for both of the above so their behavior is visible in telemetry.</li></ul>
       </div>
     </div>
   </section>
@@ -92,7 +92,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.15</strong> · built 2026-07-11</div>
+  <div>Documents <strong>MosaicTools v5.5.16</strong> · built 2026-07-11</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
