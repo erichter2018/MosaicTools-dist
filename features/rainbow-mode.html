@@ -53,10 +53,10 @@
 <p>It works in two places:</p>
 <ul>
 <li><strong>The report popup</strong> — click the popup to cycle into Rainbow mode (see the Report Popup page).</li>
-<li><strong>Live in the Mosaic report editor</strong> — with CDP enabled, three small buttons (No Highlight / Regular / Rainbow) sit at the bottom-right of the report editor. Pick Rainbow and the Final Report itself is colored, updating with a ~2-second debounce as you edit.</li>
+<li><strong>Live in the Mosaic report editor</strong> — with CDP enabled, three small buttons (No Highlight / Regular / Rainbow) can sit at the bottom-right of the report editor. Pick Rainbow and the Final Report itself is colored, updating with a ~2-second debounce as you edit. As of 5.5.15 these buttons are <strong>off by default</strong> — turn them on with <strong>Show highlight buttons in report</strong> (Settings → Report Display); the option applies to both Mosaic and MosaicC.</li>
 </ul>
 <h2>How to turn it on / set it up</h2>
-<p>Settings → Report Display → check <strong>Rainbow Mode (findings-impression correlation)</strong> for the popup. The in-editor buttons require <strong>Use CDP for Mosaic interaction</strong> (Settings → Experimental).</p>
+<p>Settings → Report Display → check <strong>Rainbow Mode (findings-impression correlation)</strong> for the popup. The in-editor buttons require <strong>Use CDP for Mosaic interaction</strong> (Settings → Experimental) and, since 5.5.15, <strong>Show highlight buttons in report</strong> (Settings → Report Display, off by default).</p>
 <h2>Using it</h2>
 <p>After Process Report, scan the colors: matched pairs share a hue; anything uncolored in FINDINGS didn&#39;t correlate to an impression point. As of 5.5.1, <strong>any mention of the appendix or uterus is always highlighted</strong> — those structures are never in the default CT abdomen/pelvis templates, so any comment about them (even &quot;normal appendix&quot;) is new information worth a look. The template&#39;s boilerplate &quot;No evidence of appendicitis&quot; is intentionally not affected.</p>
 <h2>Tips &amp; gotchas</h2>
@@ -78,7 +78,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.13</strong> · built 2026-07-07</div>
+  <div>Documents <strong>MosaicTools v5.5.15</strong> · built 2026-07-11</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
