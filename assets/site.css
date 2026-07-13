@@ -56,6 +56,16 @@ h1, h2, h3, h4 { line-height: 1.25; font-weight: 650; letter-spacing: -.01em; }
 .nav-cats-menu a { display: block; padding: 8px 12px; border-radius: 8px; color: var(--txt); }
 .nav-cats-menu a:hover { background: var(--card-hi); text-decoration: none; }
 
+/* ── Companion-product cross-link (RADCounter) ── */
+.nav-external {
+  margin-left: auto; display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 13px; border-radius: 999px; font-weight: 600; font-size: 13.5px;
+  color: var(--violet); border: 1px solid var(--violet-deep);
+  background: var(--violet-bg); transition: color .15s, border-color .15s, box-shadow .15s, transform .15s;
+}
+.nav-external:hover { color: #c4b5fd; border-color: var(--violet); text-decoration: none; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(124,58,237,.28); }
+.nav-external .ext-arrow { font-size: 12px; opacity: .8; }
+
 /* ── Search ── */
 .searchbox { position: relative; width: 300px; }
 .searchbox input, .hero-search input {
