@@ -51,7 +51,7 @@
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The floating box showing corrected history + age/sex</figcaption></figure></div>
       <h2>What it does</h2>
 <p>A small floating window that follows your worklist: for each study it shows the <strong>clinical history</strong>, the patient&#39;s <strong>age and sex</strong>, and a green <strong>Drafted indicator</strong> border when the report already has an IMPRESSION (a draft in progress). It can also fix the history for you — when malformed history text is detected, MosaicTools auto-pastes a corrected version into the report, optionally prepending the patient&#39;s age (&quot;65-year-old&quot;) and sex.</p>
-<p>The same box is where MosaicTools&#39; alerts appear: its border changes color per trigger — pulsing yellow for patient mismatch, red for template mismatch, flashing red for gender check, pulsing orange for findings/impression mismatch, pulsing red for measurement &amp; laterality consistency, orange for Aidoc detections, purple for stroke studies. Each alert has its own page; this box is where you see them.</p>
+<p>The same box is where MosaicTools&#39; alerts appear: its border changes color per trigger — pulsing yellow for patient mismatch, red for template mismatch, flashing red for gender check, pulsing orange for findings/impression mismatch, pulsing red for measurement &amp; laterality consistency, orange for Aidoc detections, red-orange for a mosaicAI triage reason, purple for stroke studies. Each alert has its own page; this box is where you see them.</p>
 <h2>How to turn it on / set it up</h2>
 <p>Settings → Alerts → Notification Box:</p>
 <ul>
@@ -70,6 +70,7 @@
 <li>Alerts-only mode is popular with people who feel the box is one window too many — you keep the safety net without the always-on display.</li>
 <li>If the box shows nothing on studies with hyphenated accession numbers, update — parsing for those was fixed in 5.5.0.</li>
 <li>As of 5.5.20 the box no longer &quot;yells&quot;: a shouty ALL-CAPS coded reason (e.g. &quot;ATYPICAL FACIAL PAIN&quot;) is sentence-cased for readability, while medical abbreviations, eponyms (Crohn), and proper names keep their capitalization.</li>
+<li>As of 5.5.22 a study triaged by Mosaic&#39;s mosaicAI shows the triage <strong>reason</strong> (e.g. &quot;Suspected PE&quot;) in a red-orange banner — see the Triage Reason page.</li>
 </ul>
 
     </div>
@@ -79,13 +80,13 @@
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/priors.html">📚 Priors &amp; Clinical History</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v2.1</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/summarize-prior.html">Summarize Prior</a></li><li><a href="../features/gender-check.html">Gender Check</a></li><li><a href="../features/patient-mismatch.html">Patient Mismatch Alert</a></li><li><a href="../features/stroke-detection.html">Stroke Detection</a></li><li><a href="../features/aidoc-alerts.html">Aidoc Alerts</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li></ul>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/summarize-prior.html">Summarize Prior</a></li><li><a href="../features/gender-check.html">Gender Check</a></li><li><a href="../features/patient-mismatch.html">Patient Mismatch Alert</a></li><li><a href="../features/stroke-detection.html">Stroke Detection</a></li><li><a href="../features/aidoc-alerts.html">Aidoc Alerts</a></li><li><a href="../features/triage-reason.html">Triage Reason</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.20</strong> · built 2026-07-13</div>
+  <div>Documents <strong>MosaicTools v5.5.22</strong> · built 2026-07-14</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

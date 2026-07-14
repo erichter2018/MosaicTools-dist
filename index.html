@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.20</h2>
+    <h2>✨ New in v5.5.22</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.22</span><span class="spot-title">Triage reason in the notification box + MTRec stability &amp; display fixes</span></div>
+        <ul><li>Notification box now shows WHY a study was triaged: when Mosaic/mosaicAI flags a study (e.g. &quot;Suspected PE&quot;), the reason appears in a red-orange banner in the clinical-history / alert box — the same spot the old Aidoc…</li><li>MTRec &quot;no actionable items&quot; grey box no longer flashes and vanishes right after Process Report — it now stays put once the report settles.</li><li>Drafted-findings box: stops re-drawing once you begin dictating (it's a pre-dictation reference, so it no longer shifts under you mid-read), and if you close it for a study it stays closed for that study.</li><li>MTRec stability handling: a finding explicitly stable for more than 2 years no longer prompts a redundant work-up recommendation; when stability is unknown or shorter, MTRec still errs toward recommending appropriate …</li><li>MTRec emphysema → lung-cancer-screening recommendation now replaces your existing screening impression line instead of appending a duplicate (and never touches a &quot;subcutaneous emphysema&quot; line).</li><li>Critical Findings: recognizes more ways a negative result is worded (e.g. &quot;relayed&quot;/&quot;communicated&quot; the negative impression) so the note formats correctly.</li><li>Auto Measure: fewer measurement &quot;leaks&quot; across low-contrast or touching boundaries (a cyst measurement no longer occasionally balloons into adjacent tissue), and the measurement overlay again stays readable for 5 seco…</li><li>Custom STT: a speech engine that failed for billing/credit reasons now recovers on its own once you top the account back up (it re-probes instead of staying dropped for the shift); the failover drawer's language is si…</li></ul>
+      </div>
+      <div class="spot-ver">
+        <div class="spot-head"><span class="spot-vnum">v5.5.21</span><span class="spot-title">Fresh app icon + companion RADCounter website</span></div>
+        <ul><li>New app icon: the aurora &quot;mosaic-M&quot; from the documentation site now replaces the old icon everywhere — taskbar, windows, and system tray. (If your pinned taskbar/desktop shortcut still shows the old one, it's just Win…</li><li>Documentation site now cross-links with RADCounter's new companion site — a matching help/feature website for the RVU/TBWU tracker — so you can hop between the two. Find the MosaicTools site under Settings → Reference.</li><li>No functional changes to dictation, recommendations, or report processing in this release.</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.20</span><span class="spot-title">RVU counting accuracy + clinical-history readability + custom-STT correction reliability</span></div>
-        <ul><li>RVUCounter accuracy: fixed several ways a study could be mis-counted — a signed study counted more than once, a DISCARDED study counted as if it were signed, and a discarded-then-reworked-and-signed study not counted …</li><li>Clinical history readability: the displayed clinical history no longer &quot;yells&quot; — an ALL-CAPS coded reason (e.g. &quot;ATYPICAL FACIAL PAIN&quot;) is now sentence-cased for readability, while medical abbreviations, eponyms (Croh…</li><li>Custom STT: an ensemble correction — when the other engines overrule a mis-heard word — now reliably reaches the report instead of being silently dropped when it couldn't be placed on the first try; it retries as the …</li><li>Under the hood: the Chrome-DevTools scraping layer was consolidated into a shared library (no behavior change) so MosaicTools and RVUCounter read Mosaic identically, with a single source of truth for the report read.</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.19</span><span class="spot-title">MTRec pulmonary-nodule accuracy overhaul + MosaicC macro/prior/critical-findings insertion</span></div>
-        <ul><li>MTRec: a large accuracy pass on lung-nodule (Fleischner) recommendations, so the stated size, location, and follow-up match your report:</li><li>Custom STT / MosaicC: MosaicTools macros and Get Prior now insert through the same path as your dictation on MosaicC (instead of the wrong, hidden editor), and Critical Findings inserts its blurb verbatim into the rep…</li><li>Under the hood: PHI-free diagnostics improved — the ensemble roster (which engines and backups you have) is no longer truncated in telemetry, and the dictation focus/paste-target diagnostic is more robust.</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.18</span><span class="spot-title">Custom STT: engines that drop mid-dictation now recover on their own</span></div>
-        <ul><li>Fixed a case where a speech engine that lost its connection mid-dictation (Chirp, Amazon Medical, or Voxtral) could sit disconnected for the rest of your shift. The engine reported itself as still-connected, so Mosaic…</li><li>Added PHI-free diagnostics that flag an engine which is connected yet silently producing nothing, so any remaining edge case is visible in telemetry.</li></ul>
+        <ul><li>RVUCounter accuracy: fixed several ways a study could be mis-counted — a signed study counted more than once, a DISCARDED study counted as if it were signed, and a discarded-then-reworked-and-signed study not counted …</li><li>Clinical history readability: the displayed clinical history no longer &quot;yells&quot; — an ALL-CAPS coded reason (e.g. &quot;ATYPICAL FACIAL PAIN&quot;) is now sentence-cased for readability, while medical abbreviations, eponyms (Croh…</li><li>Custom STT: an ensemble correction — when the other engines overrule a mis-heard word — now reliably reaches the report instead of being silently dropped when it couldn't be placed on the first try; it retries as the …</li></ul>
       </div>
     </div>
   </section>
@@ -79,7 +79,7 @@
     <a class="catcard" href="category/priors.html"><div class="catcard-icon">📚</div><h3>Priors &amp; Clinical History</h3><p>Pull the relevant prior, AI-summarize it, and keep the corrected clinical history in view.</p><span class="catcard-n">3 features</span></a>
     <a class="catcard" href="category/display.html"><div class="catcard-icon">🌈</div><h3>Report Display &amp; Highlighting</h3><p>See your report the way you think — change highlighting, rainbow correlation, drafted-findings triage, and layout upgrades.</p><span class="catcard-n">7 features</span></a>
     <a class="catcard" href="category/measurement.html"><div class="catcard-icon">📏</div><h3>Measurement &amp; Imaging</h3><p>Auto-measure lesions, capture series/image numbers, and drive InteleViewer without touching it.</p><span class="catcard-n">5 features</span></a>
-    <a class="catcard" href="category/worklist.html"><div class="catcard-icon">📈</div><h3>Worklist &amp; Productivity</h3><p>TBWU pace tracking, critical-findings workflow, macros, and pick lists — the shift-management toolkit.</p><span class="catcard-n">10 features</span></a>
+    <a class="catcard" href="category/worklist.html"><div class="catcard-icon">📈</div><h3>Worklist &amp; Productivity</h3><p>TBWU pace tracking, critical-findings workflow, macros, and pick lists — the shift-management toolkit.</p><span class="catcard-n">11 features</span></a>
     <a class="catcard" href="category/platform.html"><div class="catcard-icon">⚙️</div><h3>Setup &amp; Platform</h3><p>Install, updates, button mapping, integrations, and exactly what telemetry does (and doesn't) leave your machine.</p><span class="catcard-n">10 features</span></a>
   </div>
 </section>
@@ -93,7 +93,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.20</strong> · built 2026-07-13</div>
+  <div>Documents <strong>MosaicTools v5.5.22</strong> · built 2026-07-14</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
