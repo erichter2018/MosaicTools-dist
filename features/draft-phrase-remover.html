@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Auto-Remove Draft Phrases — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Auto-Remove Draft Phrases</h1>
+    <p class="brief">Keep a checklist of exact statements the drafting AI keeps inserting that you never want, and MosaicTools deletes them from the draft automatically when the study opens.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-report-display.png" alt="The draft phrase checklist in Report Display settings" loading="lazy" class="lightboxable"><figcaption>The draft phrase checklist in Report Display settings</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>The drafting AI sometimes drops in the same throwaway line study after study — a boilerplate statement that&#39;s true-but-useless and that you&#39;d otherwise delete by hand every time. This lets you list those exact statements once. When a drafted (or capture) study opens, MosaicTools scans the draft and removes any statement on your list that appears <strong>verbatim</strong>, before you read it and before Process Report runs — so it never reaches the Final Report.</p>
+<p>Each phrase has its own checkmark, so you can keep a phrase in the list but switch it off without deleting it.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Go to <strong>Settings → Report Display → Auto-remove draft phrases</strong>.</p>
+<ul>
+<li><strong>Add…</strong> — paste the statement exactly as the AI writes it, including the trailing period. New entries start checked (active).</li>
+<li><strong>Checkmark</strong> — check to make a phrase active, uncheck to disable it while keeping it in the list.</li>
+<li><strong>Remove</strong> — delete the selected phrase from the list entirely.</li>
+</ul>
+<p>One phrase ships pre-loaded and <strong>unchecked</strong> as an example: <em>&quot;Calcified atherosclerosis at the skull base.&quot;</em> Check it if you want it removed, or add your own.</p>
+<h2>Using it</h2>
+<p>Open a drafted study. Any active phrase found verbatim in the draft is gone by the time you look — no extra step. It runs once per study, and the drafted-findings box shows the already-cleaned draft.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>The match is <strong>exact and case-sensitive</strong> — it only removes the statement you typed, character-for-character (including the period). If the AI&#39;s wording varies, add each variant as its own entry.</li>
+<li>It removes the statement text surgically; on current Mosaic a removed full-sentence line may briefly leave a blank line in the draft, which collapses when the report is processed.</li>
+<li>It targets the AI <strong>draft</strong> (the transcript editor), not your own dictation — anything you say is never touched.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Report Display → Auto-remove draft phrases</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.5.23</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/auto-process.html">Auto-Process on Open</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/process-report.html">Process Report</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.5.23</strong> · built 2026-07-15</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

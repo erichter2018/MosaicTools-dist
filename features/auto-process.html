@@ -63,6 +63,7 @@
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>Auto-process is <strong>skipped while you&#39;re actively dictating</strong> — it will not fire on studies you&#39;re talking into, only genuinely hands-off ones. It also skips addendums (macro-triggered variant).</li>
+<li>It also skips a study whose entire draft is just <em>&quot;COMPARISON: None available.&quot;</em> (since 5.5.23) — there&#39;s nothing to process, so it leaves the study alone (and still fires later if you dictate real content).</li>
 <li>The macro variant waits for <em>all</em> matching opening macros before processing, whether a study matches zero, one, or several.</li>
 <li>Combine with <strong>Auto-Stop/Auto-Restart Dictation</strong> and the sign warning for a fully guarded flow.</li>
 </ul>
@@ -74,13 +75,13 @@
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/worklist.html">📈 Worklist &amp; Productivity</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.1</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/process-report.html">Process Report</a></li><li><a href="../features/macros.html">Macros</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li></ul>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/process-report.html">Process Report</a></li><li><a href="../features/macros.html">Macros</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/draft-phrase-remover.html">Auto-Remove Draft Phrases</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.22</strong> · built 2026-07-14</div>
+  <div>Documents <strong>MosaicTools v5.5.23</strong> · built 2026-07-15</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

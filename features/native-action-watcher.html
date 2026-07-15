@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Patient Mismatch Alert — MosaicTools docs</title>
+<title>Native Process / Sign Watcher — MosaicTools docs</title>
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 
@@ -42,34 +42,37 @@
 <article class="feature">
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
-    <h1>Patient Mismatch Alert</h1>
-    <p class="brief">Pulsing yellow alert when InteleViewer is showing a different patient than the one open in Mosaic — the classic setup for dictating one patient's images into another's report.</p>
+    <h1>Native Process / Sign Watcher</h1>
+    <p class="brief">Runs MosaicTools' usual post-Process/Sign follow-up even when you Process or Sign natively in Mosaic instead of through a MosaicTools button or hotkey.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
-      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="Patient mismatch under Alert Triggers" loading="lazy" class="lightboxable"><figcaption>Patient mismatch under Alert Triggers</figcaption></figure></div>
+      
       <h2>What it does</h2>
-<p>The highest-stakes desynchronization on a PACS workstation is images and report belonging to two different people. MosaicTools continuously compares the patient name in Mosaic against the topmost InteleViewer window, and when they disagree the notification box gets a <strong>pulsing yellow</strong> border. It&#39;s the first-listed alert trigger for a reason.</p>
+<p>Normally MosaicTools&#39; follow-up actions — auto-showing the report, scrolling to the impression, stopping custom STT on sign — only run when <em>MosaicTools</em> triggers the Process or Sign. If you press Mosaic&#39;s own PROCESS REPORT or SIGN FINAL button (or its native hotkey), MosaicTools didn&#39;t know. With this on, MosaicTools detects the native action and runs the same follow-up regardless of how you triggered it:</p>
+<ul>
+<li><strong>Native Process</strong> → can auto-show the report and scroll to the impression (honoring your Report Display settings).</li>
+<li><strong>Native Sign</strong> → stops custom STT if it&#39;s still recording, and closes the MTRec Associations checklist.</li>
+</ul>
 <h2>How to turn it on / set it up</h2>
-<p><strong>Settings → Alerts → Alert Triggers → Patient mismatch.</strong> Requires the notification box to be enabled (<strong>Enable Notification Box</strong> on the same tab); the alert shows even in alerts-only mode.</p>
+<p><strong>Settings → Experimental → &quot;Run post-action effects on native Process / Sign.&quot;</strong> Off by default. Requires CDP (the direct-DOM connection to Mosaic).</p>
 <h2>Using it</h2>
-<p>It runs in the background off the normal scrape loop — you only see it when Mosaic and InteleViewer diverge. That legitimately happens for a moment whenever you advance one application before the other, so the useful signal is a pulse that <em>persists</em>: if the yellow border is still going once both apps have settled, stop and reconcile which patient you&#39;re actually reading before dictating another word.</p>
+<p>Process or sign however you like — the button, a mic key, or a MosaicTools action — and the same things happen afterward either way. It detects the Process button greying out, and the SIGN button changing as the study closes.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>Brief pulses during study transitions are normal and expected; they clear on their own as the two applications catch up.</li>
-<li>Name comparison is deliberately tolerant of formatting differences between the two systems, and false alerts were further tightened in 5.4.5 — a persistent alert deserves attention.</li>
-<li>It compares against the <em>topmost</em> InteleViewer window; with multiple InteleViewer windows open, make sure the one on top is the one you&#39;re reading from.</li>
-<li>This alert is about the viewer/reporter pair. Wrong-sex content already inside the report is the Gender check&#39;s job.</li>
+<li>MTRec recommendations already re-run on any report change, and RVU/signed counting already happens on study close — this fills the remaining <em>UI-effect</em> gap, and won&#39;t double-count anything.</li>
+<li>The MTRec Associations checklist also closes on any study change independently of this toggle; this is what closes it instantly when you sign a study that stays on screen (no auto-advance).</li>
+<li>Experimental — behavior may change.</li>
 </ul>
 
     </div>
     <aside class="feature-meta">
       <h4>At a glance</h4>
-      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Alerts → Alert Triggers → Patient mismatch</span></div>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Experimental → Run post-action effects on native Process / Sign</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
-    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Through the shift</span></div>
-    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v3.9</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/gender-check.html">Gender Check</a></li><li><a href="../features/template-correction.html">Template Mismatch &amp; Auto-Correct</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li></ul>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.5.23</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/process-report.html">Process Report</a></li><li><a href="../features/sign-warning.html">Unprocessed-Sign Warning</a></li><li><a href="../features/mtrec-associations.html">MTRec Associations</a></li><li><a href="../features/report-popup.html">Report Popup</a></li></ul>
     </aside>
   </div>
 </article>
