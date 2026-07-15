@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.23</h2>
+    <h2>✨ New in v5.5.24</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.24</span><span class="spot-title">Riesz'ed up Transcript spacing + MTRec emphysema/adrenal recommendation fixes</span></div>
+        <ul><li>Riesz'ed up Transcript (Settings → Report Display) now puts a blank line between each sentence, so the reflowed report is double-spaced and easier to scan. (It only reflows run-on paragraphs and stays pause-safe as be…</li><li>MTRec emphysema: the lung-cancer-screening recommendation now correctly REPLACES your existing emphysema/screening impression line instead of appending a duplicate — including when you phrase it &quot;centrilobular and par…</li><li>MTRec adrenal: a HETEROGENEOUS or necrotic adrenal nodule is now flagged as indeterminate and gets the washout-CT / chemical-shift-MRI recommendation even when no HU value is stated (a non-homogeneous nodule that isn'…</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.23</span><span class="spot-title">Native Process/Sign handling, auto-remove of unwanted draft phrases, faster popups &amp; renal-recommendation fixes</span></div>
-        <ul><li>New: Auto-remove draft phrases (Settings → Report Display). Keep a checklist of exact statements the drafting AI inserts that you never want — each with its own on/off checkmark — and MosaicTools deletes them from the…</li><li>New (Experimental, off by default): &quot;Run post-action effects on native Process / Sign.&quot; When on, MosaicTools runs its usual follow-up even when you Process or Sign natively in Mosaic (not via a MosaicTools button/hotk…</li><li>Fixed: the MTRec Associations checklist (and its report boxes) now close when you sign natively — or on any study change — not only when you sign through MosaicTools. Previously a native sign could leave the checklist…</li><li>Fixed: the red native-dictation border no longer collapses to just its corner dots in the landscape layout with the transcript stacked above the report (it already worked in portrait). The full outline stays visible w…</li><li>Faster: Process Report now starts instantly. It no longer pauses ~1.5 seconds before acting when you weren't actively dictating.</li><li>Faster: the drafted-findings box now appears about a second sooner when a study opens.</li><li>Auto-process on open now skips a study whose entire draft is just &quot;COMPARISON: None available.&quot; — there's nothing to process, so it leaves it alone.</li><li>MTRec renal: a hyperdense renal cyst is now treated as a benign cyst (Bosniak II — noted, no work-up) instead of being called complex/indeterminate; and the &quot;indeterminate solid renal mass&quot; recommendation now names th…</li></ul>
+        <ul><li>New: Auto-remove draft phrases (Settings → Report Display). Keep a checklist of exact statements the drafting AI inserts that you never want — each with its own on/off checkmark — and MosaicTools deletes them from the…</li><li>New (Experimental, off by default): &quot;Run post-action effects on native Process / Sign.&quot; When on, MosaicTools runs its usual follow-up even when you Process or Sign natively in Mosaic (not via a MosaicTools button/hotk…</li><li>Fixed: the MTRec Associations checklist (and its report boxes) now close when you sign natively — or on any study change — not only when you sign through MosaicTools. Previously a native sign could leave the checklist…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.22</span><span class="spot-title">Triage reason in the notification box + MTRec stability &amp; display fixes</span></div>
         <ul><li>Notification box now shows WHY a study was triaged: when Mosaic/mosaicAI flags a study (e.g. &quot;Suspected PE&quot;), the reason appears in a red-orange banner in the clinical-history / alert box — the same spot the old Aidoc…</li><li>MTRec &quot;no actionable items&quot; grey box no longer flashes and vanishes right after Process Report — it now stays put once the report settles.</li><li>Drafted-findings box: stops re-drawing once you begin dictating (it's a pre-dictation reference, so it no longer shifts under you mid-read), and if you close it for a study it stays closed for that study.</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.21</span><span class="spot-title">Fresh app icon + companion RADCounter website</span></div>
-        <ul><li>New app icon: the aurora &quot;mosaic-M&quot; from the documentation site now replaces the old icon everywhere — taskbar, windows, and system tray. (If your pinned taskbar/desktop shortcut still shows the old one, it's just Win…</li><li>Documentation site now cross-links with RADCounter's new companion site — a matching help/feature website for the RVU/TBWU tracker — so you can hop between the two. Find the MosaicTools site under Settings → Reference.</li><li>No functional changes to dictation, recommendations, or report processing in this release.</li></ul>
       </div>
     </div>
   </section>
@@ -77,7 +77,7 @@
     <a class="catcard" href="category/processing.html"><div class="catcard-icon">🧾</div><h3>Report Processing &amp; QA</h3><p>Process Report and the safety net around it — consistency checks, mismatch alerts, and sign-time guards.</p><span class="catcard-n">10 features</span></a>
     <a class="catcard" href="category/recommendations.html"><div class="catcard-icon">📋</div><h3>Recommendations</h3><p>MTRec: deterministic, guideline-cited follow-up recommendations and the Associations completeness checklist.</p><span class="catcard-n">5 features</span></a>
     <a class="catcard" href="category/priors.html"><div class="catcard-icon">📚</div><h3>Priors &amp; Clinical History</h3><p>Pull the relevant prior, AI-summarize it, and keep the corrected clinical history in view.</p><span class="catcard-n">3 features</span></a>
-    <a class="catcard" href="category/display.html"><div class="catcard-icon">🌈</div><h3>Report Display &amp; Highlighting</h3><p>See your report the way you think — change highlighting, rainbow correlation, drafted-findings triage, and layout upgrades.</p><span class="catcard-n">7 features</span></a>
+    <a class="catcard" href="category/display.html"><div class="catcard-icon">🌈</div><h3>Report Display &amp; Highlighting</h3><p>See your report the way you think — change highlighting, rainbow correlation, drafted-findings triage, and layout upgrades.</p><span class="catcard-n">8 features</span></a>
     <a class="catcard" href="category/measurement.html"><div class="catcard-icon">📏</div><h3>Measurement &amp; Imaging</h3><p>Auto-measure lesions, capture series/image numbers, and drive InteleViewer without touching it.</p><span class="catcard-n">5 features</span></a>
     <a class="catcard" href="category/worklist.html"><div class="catcard-icon">📈</div><h3>Worklist &amp; Productivity</h3><p>TBWU pace tracking, critical-findings workflow, macros, and pick lists — the shift-management toolkit.</p><span class="catcard-n">11 features</span></a>
     <a class="catcard" href="category/platform.html"><div class="catcard-icon">⚙️</div><h3>Setup &amp; Platform</h3><p>Install, updates, button mapping, integrations, and exactly what telemetry does (and doesn't) leave your machine.</p><span class="catcard-n">10 features</span></a>
@@ -93,7 +93,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.23</strong> · built 2026-07-15</div>
+  <div>Documents <strong>MosaicTools v5.5.24</strong> · built 2026-07-15</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
