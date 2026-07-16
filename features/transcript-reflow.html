@@ -43,23 +43,31 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
     <h1>Riesz'ed up Transcript</h1>
-    <p class="brief">Reflows the live report every few seconds so each sentence sits on its own line, separated by a blank line, for easier scanning — without moving your cursor.</p>
+    <p class="brief">Reflows the live transcript box so each sentence sits on its own line, separated by a blank line, for easier scanning — without moving your cursor.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
       
       <h2>What it does</h2>
-<p>When on, MosaicTools tidies the live report about every few seconds so each sentence sits on its own line, with a blank line between sentences (double-spaced) — so a wall of run-on text becomes easy to scan while you read and dictate. It only touches run-on paragraphs; a report already laid out one-sentence-per-line is left alone.</p>
+<p>When on, MosaicTools tidies the live <strong>transcript box</strong> so each sentence sits on its own line, with a blank line between sentences (double-spaced) — a wall of run-on dictation becomes easy to scan. It both splits run-on paragraphs into sentences and spaces out sentences that already sit on their own lines, so the double-spaced layout appears no matter how the text arrived. The final report is never touched.</p>
+<blockquote>
+<p><strong>Fixed in 5.5.25:</strong> in 5.5.22–5.5.24 this feature mistakenly reformatted the <strong>final report</strong> (most visibly the impression) instead of the transcript. If you had it on under those versions, glance at recent impressions for stray line breaks. As of 5.5.25 it targets the transcript only.</p>
+</blockquote>
 <h2>How to turn it on / set it up</h2>
-<p><strong>Settings → Report Display → &quot;Riesz&#39;ed up Transcript (one sentence per line).&quot;</strong> Off by default. Requires CDP (the direct-DOM connection to Mosaic); works on classic Mosaic&#39;s report editor.</p>
+<p><strong>Settings → Report Display → &quot;Riesz&#39;ed up Transcript (one sentence per line).&quot;</strong> Off by default. Requires CDP (the direct-DOM connection to Mosaic); works on classic Mosaic&#39;s transcript editor.</p>
+<p>Under the checkbox, pick <strong>when</strong> it runs <em>(since 5.5.25)</em>:</p>
+<ul>
+<li><strong>Automatic (every few seconds)</strong> — the default. The transcript reflows continuously while you dictate.</li>
+<li><strong>Only with Fix Transcript</strong> — nothing happens while you dictate; the reflow runs once each time you use the Fix Transcript action, after Mosaic&#39;s rewrite settles.</li>
+</ul>
 <h2>Using it</h2>
-<p>Just dictate. As sentences land, the report reflows itself in the background. Your cursor stays put — the split is applied through the editor&#39;s own transaction, which maps the caret through the change, so you never get bounced to a different spot.</p>
+<p>Just dictate. As sentences land, the transcript reflows itself in the background (or, in Fix-Transcript-only mode, snaps into shape after each Fix Transcript). Your cursor stays put — the change is applied through the editor&#39;s own transaction, which maps the caret through the edit, so you never get bounced to a different spot.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li><strong>Pause-safe</strong>: it won&#39;t reflow while your caret is mid-word (i.e. while you&#39;re actively typing/dictating into a word) — it waits for a natural break.</li>
-<li><strong>Idempotent</strong>: once each sentence is its own line it stops — it won&#39;t keep adding blank lines or re-splitting.</li>
+<li><strong>Idempotent</strong>: once each sentence is its own line with a blank line between, it stops — it won&#39;t keep adding blank lines or re-splitting.</li>
 <li>Sentence detection is radiology-aware: it doesn&#39;t break on decimals (&quot;1.8 cm&quot;), numbered list markers (&quot;1.&quot;), or common abbreviations.</li>
-<li>If it looks like it&#39;s &quot;doing nothing,&quot; check the toggle is on — and note that a report already formatted one-sentence-per-line has nothing to reflow.</li>
+<li>Only the transcript is reformatted. Processing the report (Mosaic&#39;s LLM step) consumes the transcript as usual — the extra line breaks don&#39;t change the drafted report.</li>
 </ul>
 
     </div>
@@ -69,13 +77,13 @@
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.5.22</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/report-popup.html">Report Popup</a></li><li><a href="../features/visual-enhancements.html">Visual Report Enhancements</a></li><li><a href="../features/independent-scrolling.html">Independent Column Scrolling</a></li></ul>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/fix-transcript.html">Fix Transcript</a></li><li><a href="../features/report-popup.html">Report Popup</a></li><li><a href="../features/visual-enhancements.html">Visual Report Enhancements</a></li><li><a href="../features/independent-scrolling.html">Independent Column Scrolling</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.24</strong> · built 2026-07-15</div>
+  <div>Documents <strong>MosaicTools v5.5.25</strong> · built 2026-07-16</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
