@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.25</h2>
+    <h2>✨ New in v5.5.26</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.26</span><span class="spot-title">New &quot;Drafting&quot; settings section + two new drafting fixups (central line tip, trailing zeros), MTRec chip cleanup</span></div>
+        <ul><li>New Settings section: &quot;Drafting&quot; — everything about AI-drafted studies now lives in one place: Auto-remove draft phrases, Auto-process on open (drafted &amp; capture), Inpatient XR handling, the Drafted Findings popup, an…</li><li>New fixup (off by default): &quot;Rewrite central line tip position.&quot; The drafting AI consistently places a central line tip one level DEEPER than it really is. When on, drafted tip positions shift one level up the SVC lad…</li><li>New fixup (off by default): &quot;Strip trailing zeros from drafted measurements.&quot; The drafting AI writes &quot;3.0 mm&quot; / &quot;11.0 x 8.0 cm&quot; on nearly one in five measurements — a classic misread hazard (&quot;2.0&quot; read as &quot;20&quot;). When …</li><li>MTRec: pressing the MTRec shortcut now clears the recommendation chips it just inserted (previously they lingered after a bulk insert) and correctly remembers what it inserted — so the &quot;update&quot; chip works when a findi…</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.25</span><span class="spot-title">Riesz'ed up Transcript fixed (now tidies the TRANSCRIPT box) + new mode picker, MTRec aorta catch, Clario TBWU colors</span></div>
-        <ul><li>Fixed: Riesz'ed up Transcript was reformatting the FINAL REPORT (most visibly the impression) instead of the transcript box. It now tidies the live transcript only — one sentence per line with a blank line between — a…</li><li>Riesz'ed up Transcript now also double-spaces sentences that already sat on their own lines. (Previously only run-on paragraphs got the treatment, so dictations pasted line-by-line looked untouched.)</li><li>New: choose WHEN the tidy runs — &quot;Automatic (every few seconds)&quot; or &quot;Only with Fix Transcript&quot; — radio buttons under the setting (Settings → Report Display). The Fix Transcript mode waits for Mosaic's rewrite to settl…</li><li>MTRec: a measured thoracic aortic aneurysm is now caught even when dictated without the word &quot;aorta&quot; — e.g. &quot;Mid ascending thoracic aneurysm measures 5 cm&quot; now gets the ACC/AHA surveillance recommendation (it was sile…</li><li>MTRec: chest wall injury recommendations now lead with the actual injury (e.g. &quot;Displaced fractures of the posterior lower right ribs; AAST chest wall injury, grade 2.&quot;) instead of only stating the grade.</li><li>Custom STT: fixed a rare merger garble that could paste &quot;10%% percent&quot; (doubled percent sign) — it now always collapses to a single &quot;percent&quot;.</li><li>Clario RVU strip (TBWU): now uses the same colors as the MosaicTools widget bar — green when ahead of pace, red when behind, and the /h rate turns red when below your RVU-per-hour goal.</li></ul>
+        <ul><li>Fixed: Riesz'ed up Transcript was reformatting the FINAL REPORT (most visibly the impression) instead of the transcript box. It now tidies the live transcript only — one sentence per line with a blank line between — a…</li><li>Riesz'ed up Transcript now also double-spaces sentences that already sat on their own lines. (Previously only run-on paragraphs got the treatment, so dictations pasted line-by-line looked untouched.)</li><li>New: choose WHEN the tidy runs — &quot;Automatic (every few seconds)&quot; or &quot;Only with Fix Transcript&quot; — radio buttons under the setting (Settings → Report Display). The Fix Transcript mode waits for Mosaic's rewrite to settl…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.24</span><span class="spot-title">Riesz'ed up Transcript spacing + MTRec emphysema/adrenal recommendation fixes</span></div>
         <ul><li>Riesz'ed up Transcript (Settings → Report Display) now puts a blank line between each sentence, so the reflowed report is double-spaced and easier to scan. (It only reflows run-on paragraphs and stays pause-safe as be…</li><li>MTRec emphysema: the lung-cancer-screening recommendation now correctly REPLACES your existing emphysema/screening impression line instead of appending a duplicate — including when you phrase it &quot;centrilobular and par…</li><li>MTRec adrenal: a HETEROGENEOUS or necrotic adrenal nodule is now flagged as indeterminate and gets the washout-CT / chemical-shift-MRI recommendation even when no HU value is stated (a non-homogeneous nodule that isn'…</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.23</span><span class="spot-title">Native Process/Sign handling, auto-remove of unwanted draft phrases, faster popups &amp; renal-recommendation fixes</span></div>
-        <ul><li>New: Auto-remove draft phrases (Settings → Report Display). Keep a checklist of exact statements the drafting AI inserts that you never want — each with its own on/off checkmark — and MosaicTools deletes them from the…</li><li>New (Experimental, off by default): &quot;Run post-action effects on native Process / Sign.&quot; When on, MosaicTools runs its usual follow-up even when you Process or Sign natively in Mosaic (not via a MosaicTools button/hotk…</li><li>Fixed: the MTRec Associations checklist (and its report boxes) now close when you sign natively — or on any study change — not only when you sign through MosaicTools. Previously a native sign could leave the checklist…</li></ul>
       </div>
     </div>
   </section>
@@ -74,7 +74,7 @@
   <h2>Browse by function</h2>
   <div class="catgrid">
     <a class="catcard" href="category/dictation.html"><div class="catcard-icon">🎙️</div><h3>Dictation &amp; Speech</h3><p>The custom speech-to-text ensemble: multiple engines voting on every word, with health monitoring, keyterm boosting, and instant paste.</p><span class="catcard-n">17 features</span></a>
-    <a class="catcard" href="category/processing.html"><div class="catcard-icon">🧾</div><h3>Report Processing &amp; QA</h3><p>Process Report and the safety net around it — consistency checks, mismatch alerts, and sign-time guards.</p><span class="catcard-n">10 features</span></a>
+    <a class="catcard" href="category/processing.html"><div class="catcard-icon">🧾</div><h3>Report Processing &amp; QA</h3><p>Process Report and the safety net around it — consistency checks, mismatch alerts, and sign-time guards.</p><span class="catcard-n">11 features</span></a>
     <a class="catcard" href="category/recommendations.html"><div class="catcard-icon">📋</div><h3>Recommendations</h3><p>MTRec: deterministic, guideline-cited follow-up recommendations and the Associations completeness checklist.</p><span class="catcard-n">5 features</span></a>
     <a class="catcard" href="category/priors.html"><div class="catcard-icon">📚</div><h3>Priors &amp; Clinical History</h3><p>Pull the relevant prior, AI-summarize it, and keep the corrected clinical history in view.</p><span class="catcard-n">3 features</span></a>
     <a class="catcard" href="category/display.html"><div class="catcard-icon">🌈</div><h3>Report Display &amp; Highlighting</h3><p>See your report the way you think — change highlighting, rainbow correlation, drafted-findings triage, and layout upgrades.</p><span class="catcard-n">8 features</span></a>
@@ -93,7 +93,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.25</strong> · built 2026-07-16</div>
+  <div>Documents <strong>MosaicTools v5.5.26</strong> · built 2026-07-16</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
