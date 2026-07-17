@@ -64,6 +64,7 @@
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>It measures what it can segment — a lesion with almost no contrast against its background may get a poor boundary. Always eyeball the overlay before dictating the number.</li>
+<li>Since 5.5.30 each measurement <strong>re-reads the current True Size Zoom</strong> at the moment you trigger it, so changing the on-screen zoom between measurements can no longer reuse a stale calibration and oversize the result (a 3 cm lesion could previously read ~4 cm off an old zoom). If the zoom can&#39;t be read it declines with &quot;cannot calibrate&quot; rather than pasting a wrong number.</li>
 <li>Works with InteleViewer rulers in either yellow or orange (used only for legacy calibration; the pitch-based calibration is the default).</li>
 <li>A side-by-side compare popup showing the SAM crop vs. the heuristic crop exists behind a developer flag (<code>SamCompareEnabled</code>) — it is not a user-facing setting.</li>
 </ul>
@@ -81,7 +82,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.29</strong> · built 2026-07-17</div>
+  <div>Documents <strong>MosaicTools v5.5.30</strong> · built 2026-07-17</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
