@@ -58,8 +58,9 @@
 <li><strong>Enable Notification Box</strong> — the master toggle (requires Mosaic scraping to be on).</li>
 <li><strong>Show clinical history in notification box</strong> — uncheck for alerts-only mode: the box stays hidden until an alert fires.</li>
 <li><strong>Hide when no study open</strong> — hides it between studies.</li>
-<li><strong>Auto-paste corrected history</strong> — pastes the corrected clinical history into Mosaic when malformed text is detected.</li>
-<li><strong>Add patient age</strong> / <strong>Add patient sex</strong> — prepend these when auto-pasting.</li>
+<li><strong>Auto-fix clinical history</strong> — two independent toggles: paste the corrected history into the <strong>transcript box</strong>, and/or rewrite the CLINICAL HISTORY section of the <strong>final report</strong> in place (re-applied automatically when Process Report re-pulls the raw worklist history).</li>
+<li><strong>Add patient age</strong> / <strong>Add patient sex</strong> — prepend these (&quot;55-year-old female. &quot;) wherever the auto-fix writes — transcript and/or final report <em>(final-report support since 5.5.28; previously these only worked with the transcript option)</em>. Never doubles up when the history already starts with demographics (&quot;65 yo M with…&quot;).</li>
+<li>Since 5.5.28 the cleaner also sentence-cases worklist Title-Case reasons (&quot;Line Placement&quot; → &quot;Line placement&quot;) — eponyms (Graves disease, Down syndrome), acronyms, and names keep their capitalization.</li>
 <li><strong>Show Drafted indicator</strong> — the green border for draft-in-progress studies.</li>
 </ul>
 <h2>Using it</h2>
@@ -86,7 +87,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.27</strong> · built 2026-07-16</div>
+  <div>Documents <strong>MosaicTools v5.5.28</strong> · built 2026-07-17</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

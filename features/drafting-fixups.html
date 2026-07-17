@@ -51,7 +51,13 @@
       <h2>What it does</h2>
 <p>A family of targeted, <strong>off-by-default</strong> corrections for things the drafting AI gets consistently wrong. Each one rewrites the <strong>drafted text in the transcript box</strong> (and the drafted-findings popup) once per study, the moment the draft loads — before you start editing. Your own dictation is never touched, and every fixup is deterministic (no AI rewriting AI).</p>
 <p><strong>Rewrite ETT position</strong> — the drafting AI reports a spurious &quot;tip is X cm from the carina&quot; measurement. This converts it to the tracheal-third description most reports actually want: <em>&quot;…tip is 4.2 cm from the carina&quot; → &quot;…tip is in the middle third of the trachea.&quot;</em> Below-carina (endobronchial) phrasings are left alone — those need your eyes.</p>
-<p><strong>Rewrite central line tip position</strong> <em>(new in 5.5.26)</em> — the drafting AI consistently places a central-line tip <strong>one level deeper</strong> than it really is. This shifts a drafted tip position one level back up the SVC ladder: right atrium → cavoatrial junction → lower third → middle third → upper third of the SVC. The upper third is the top of the ladder and is never rewritten further. Pacemaker/ICD leads and Swan-Ganz catheters are never touched (their tips legitimately sit deep), and any sentence describing two positions at once is skipped.</p>
+<p><strong>Rewrite central line tip statements</strong> <em>(new in 5.5.26; option matrix since 5.5.28)</em> — a mix-and-match set of three options, any combination:</p>
+<ul>
+<li><strong>Shift one level up</strong> — the drafting AI consistently places a central-line tip <strong>one level deeper</strong> than it really is; this shifts the drafted position one level back up the SVC ladder: right atrium → cavoatrial junction → lower third → middle third → upper third of the SVC. The upper third is the top and is never rewritten further.</li>
+<li><strong>Use &quot;overlies&quot; wording</strong> — projectional phrasing: <em>&quot;…overlies the cavoatrial junction&quot;</em> instead of <em>&quot;…terminates at / tip is in the cavoatrial junction&quot;</em> (participle-aware: <em>&quot;terminating&quot;</em> becomes <em>&quot;overlying&quot;</em>).</li>
+<li><strong>Simplify locations</strong> — collapses the vocabulary to just <strong>SVC / cavoatrial junction / right atrium</strong> (no thirds).</li>
+</ul>
+<p>A <strong>live example</strong> under the checkboxes runs your exact option combination through the real rewriter as you toggle, so the preview is the behavior. In every mode: pacemaker/ICD leads and Swan-Ganz catheters are never touched (their tips legitimately sit deep), a sentence describing two positions at once is skipped, and a bare anatomic mention (&quot;the SVC is patent&quot;) is never rewritten.</p>
 <p><strong>Strip trailing zeros from drafted measurements</strong> <em>(new in 5.5.26)</em> — the drafting AI writes whole-number measurements with a trailing zero (&quot;3.0 mm stone&quot;, &quot;11.0 x 8.0 cm&quot;) on nearly one in five of its measurements. Trailing zeros are a classic misread hazard (&quot;2.0&quot; read as &quot;20&quot;) and against AMA style. This drops the &quot;.0&quot; from whole numbers inside drafted measurements — numerically identical, just safer: <em>&quot;11.0 x 8.0 x 12.0 cm&quot; → &quot;11 x 8 x 12 cm&quot;</em>, <em>&quot;1.0-2.0 mm&quot; → &quot;1-2 mm&quot;</em>. Real decimals (2.5 cm) and leading zeros (0.2 cm) are untouched.</p>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → Drafting → Drafting Fixups (experimental).</strong> Each fixup is its own checkbox, all off by default — enable only the ones whose failure mode you&#39;ve seen. Requires CDP (the direct-DOM connection to Mosaic).</p>
@@ -77,7 +83,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.27</strong> · built 2026-07-16</div>
+  <div>Documents <strong>MosaicTools v5.5.28</strong> · built 2026-07-17</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
