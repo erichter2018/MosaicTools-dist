@@ -64,7 +64,7 @@
 <ul>
 <li>Ultrasound &quot;capture&quot; studies (OCR&#39;d tech worksheets) get a flat rendering instead: measurements bold, section labels dimmed, no acuity weighting.</li>
 <li>Custom loudness terms match whole words only — a custom &quot;cyst&quot; won&#39;t fire on &quot;cystitis&quot;.</li>
-<li>Lines beginning with macro/template markers (like &quot;--&quot; or &quot;##&quot;) are ignored so stray macro text doesn&#39;t show up as a finding.</li>
+<li>Lines beginning with macro/template markers (like &quot;--&quot; or &quot;##&quot;) are ignored so stray macro text doesn&#39;t show up as a finding. Since 5.5.29 the popup also strips whole lines that exactly match one of your enabled macros, so auto-inserted macro text (e.g. &quot;Please change default statement…&quot;) no longer appears as a drafted finding.</li>
 </ul>
 
     </div>
@@ -80,7 +80,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.28</strong> · built 2026-07-17</div>
+  <div>Documents <strong>MosaicTools v5.5.29</strong> · built 2026-07-17</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

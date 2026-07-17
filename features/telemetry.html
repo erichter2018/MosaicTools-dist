@@ -55,6 +55,14 @@
 <li><strong>Share app diagnostics to help troubleshoot issues</strong> (Settings → Profile) — a one-way stream of errors, crashes, config, and version info, so problems can be diagnosed without asking you to dig up log files. It contains <strong>no patient info, no report text, and no record of what or how much you read</strong> — by design, it cannot be a productivity tracker.</li>
 <li><strong>Share de-identified dictation to improve accuracy</strong> (Settings → Speech-to-Text → Data Sharing) — contributes anonymized dictation data used to tune the speech-recognition ensemble for everyone.</li>
 </ol>
+<h2>Anonymous usage statistics <em>(new in 5.5.29)</em></h2>
+<p>Separately from the two opt-in switches above, MosaicTools sends <strong>anonymous, patient-free usage statistics</strong> — which features are turned on and how often they&#39;re used — so development can focus on what people actually use and retire features nobody does. This stream:</p>
+<ul>
+<li>carries <strong>no patient data, no report or dictation text, no name, and no login</strong> — only feature on/off flags, app version, and counts of feature use;</li>
+<li>is keyed by a <strong>random per-install identifier that is separate from everything else</strong> — it is not your name and cannot be tied back to you or joined to the diagnostics stream above;</li>
+<li>is <strong>always on</strong> (it&#39;s how the fleet&#39;s feature usage is measured), precisely because it is anonymous and contains nothing sensitive.</li>
+</ul>
+<p>It is genuinely a <em>usage histogram</em>, not a record of your work: it cannot see your reports, your patients, or what or how much you read.</p>
 <h2>What leaves the machine — and what never does</h2>
 <p>De-identification happens <strong>on your computer, before anything is written or uploaded</strong>. Every free-text string passes through the scrubber first: patient and clinician names, MRNs, accession numbers, dates of service, phone numbers, emails, and even hospital/facility names are removed or replaced. Accession numbers never appear at all — only a salted one-way pseudonym, which cannot be reversed into a PACS lookup. Study descriptions are collapsed to coarse categories. What&#39;s <em>kept</em> is exactly the clinical content needed to judge transcription accuracy (measurements, anatomy, findings), because corrupting those would defeat the purpose.</p>
 <p>Upload is <strong>push-only</strong> to the developer&#39;s private storage — nothing on your machine can be browsed or pulled remotely; only what the scrubbed stream sends goes out.</p>
@@ -76,7 +84,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.28</strong> · built 2026-07-17</div>
+  <div>Documents <strong>MosaicTools v5.5.29</strong> · built 2026-07-17</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

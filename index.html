@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.28</h2>
+    <h2>✨ New in v5.5.29</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.5.29</span><span class="spot-title">Clinical-history one-paragraph fix, MTRec wording cleanups, custom-STT percent fix, anonymous usage stats</span></div>
+        <ul><li>Fixed: a multi-paragraph clinical history (e.g. the reason plus &quot;No obvious source identified.&quot; on a separate line) is now tidied into a single clean paragraph when age/sex is added to the report — instead of leaving …</li><li>MTRec: pulmonary nodules explicitly described as unchanged for 2+ years (e.g. &quot;These are unchanged since 2023&quot;) are now correctly called benign by stability with no follow-up — even when that stability statement is a …</li><li>MTRec: cleaner wording. Emphysema now reads &quot;Pulmonary emphysema, an independent lung-cancer risk factor; low-dose CT lung-cancer screening is recommended if the patient is eligible.&quot; (no repeated risk-factor note), a…</li><li>Custom STT: fixed a recurrence of the &quot;10%% percent&quot; doubled-percent paste. This addresses the deeper cause in the ensemble back-patch, so the percent sign no longer doubles up in the first place.</li><li>Drafted-findings popup: no longer shows your auto-inserted macro text (e.g. &quot;Please change default statement…&quot;) as if it were a drafted finding.</li><li>New: MosaicTools now sends anonymous, patient-free usage statistics — which features are turned on and used — to help guide development and retire features nobody uses. It carries no patient data, no name, and no logi…</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.28</span><span class="spot-title">Flexible central-line rewrite, age/sex now work in the final report, prior-copy feedback, cleaner histories</span></div>
-        <ul><li>Central line tip rewrite is now a mix-and-match option set (Settings → Drafting): &quot;Shift one level up&quot; (the AI's one-too-deep bias fix), &quot;Use overlies wording&quot; (&quot;…overlies the cavoatrial junction&quot; instead of &quot;terminat…</li><li>Fixed: &quot;Add patient age&quot; / &quot;Add patient sex&quot; now work with &quot;Auto-fix clinical history — in final report.&quot; Previously they only fed the transcript-paste option, so with report-only auto-fix they silently did nothing. T…</li><li>Clinical history: worklist Title-Case reasons are now sentence-cased (&quot;Line Placement&quot; → &quot;Line placement&quot;, &quot;Right Upper Quadrant Pain&quot; → &quot;Right upper quadrant pain&quot;). Eponyms (Graves disease, Down syndrome, Crohn), ac…</li><li>MTRec: ovarian recommendations no longer restate the threshold band — &quot;Left ovarian cyst measuring 5.1 cm; dedicated pelvic ultrasound…&quot; (the &quot;(&gt;5 cm)&quot; tag is gone). The one qualifier that carries real meaning renders…</li><li>Get Prior: when InteleViewer is slow to hand over the prior report (it fetches it from the PACS server on demand — occasionally 5+ seconds on a cold fetch), MosaicTools now shows &quot;Prior: waiting on InteleViewer (loadi…</li></ul>
+        <ul><li>Central line tip rewrite is now a mix-and-match option set (Settings → Drafting): &quot;Shift one level up&quot; (the AI's one-too-deep bias fix), &quot;Use overlies wording&quot; (&quot;…overlies the cavoatrial junction&quot; instead of &quot;terminat…</li><li>Fixed: &quot;Add patient age&quot; / &quot;Add patient sex&quot; now work with &quot;Auto-fix clinical history — in final report.&quot; Previously they only fed the transcript-paste option, so with report-only auto-fix they silently did nothing. T…</li><li>Clinical history: worklist Title-Case reasons are now sentence-cased (&quot;Line Placement&quot; → &quot;Line placement&quot;, &quot;Right Upper Quadrant Pain&quot; → &quot;Right upper quadrant pain&quot;). Eponyms (Graves disease, Down syndrome, Crohn), ac…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.27</span><span class="spot-title">MTRec: no more trailing zeros in recommendation sizes</span></div>
         <ul><li>MTRec recommendations now write whole-number sizes without a trailing zero — &quot;renal cyst measuring 5 cm&quot;, &quot;the largest measuring 1 cm&quot; — instead of &quot;5.0 cm&quot; / &quot;1.0 cm&quot; (the same misread-hazard rule as the new drafted-…</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.26</span><span class="spot-title">New &quot;Drafting&quot; settings section + two new drafting fixups (central line tip, trailing zeros), MTRec chip cleanup</span></div>
-        <ul><li>New Settings section: &quot;Drafting&quot; — everything about AI-drafted studies now lives in one place: Auto-remove draft phrases, Auto-process on open (drafted &amp; capture), Inpatient XR handling, the Drafted Findings popup, an…</li><li>New fixup (off by default): &quot;Rewrite central line tip position.&quot; The drafting AI consistently places a central line tip one level DEEPER than it really is. When on, drafted tip positions shift one level up the SVC lad…</li><li>New fixup (off by default): &quot;Strip trailing zeros from drafted measurements.&quot; The drafting AI writes &quot;3.0 mm&quot; / &quot;11.0 x 8.0 cm&quot; on nearly one in five measurements — a classic misread hazard (&quot;2.0&quot; read as &quot;20&quot;). When …</li></ul>
       </div>
     </div>
   </section>
@@ -93,7 +93,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.28</strong> · built 2026-07-17</div>
+  <div>Documents <strong>MosaicTools v5.5.29</strong> · built 2026-07-17</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
