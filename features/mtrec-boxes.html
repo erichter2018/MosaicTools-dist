@@ -77,6 +77,7 @@
 <li>Clicking green inserts exactly what the manual MTRec key would have inserted for that finding, citation included.</li>
 <li>Since 5.5.5, <strong>bilateral and multiple lesions</strong> each get a recommendation — adrenal, thyroid, liver, lymph node, and pancreatic findings no longer report only the first lesion; same-management lesions combine into one line, different work-ups stay separate.</li>
 <li>Since 5.5.10, if you insert a recommendation and then <strong>the finding changes</strong> (e.g. you re-measure a nodule so a different follow-up applies), MTRec shows a <strong>&quot;↻ update&quot; box</strong> so your impression doesn&#39;t keep an out-of-date recommendation — click it to replace the old line with the current one. And when a finding is removed, its box <strong>clears on its own</strong> rather than lingering.</li>
+<li><em>Fixed in 5.6.0:</em> an abdominal aortic aneurysm is now sized by its maximal <strong>diameter</strong>, never its craniocaudal length — a report giving &quot;…7 cm in length … 4.96 x 4.7 cm&quot; previously read as a 7 cm aneurysm (over-recommending surgical referral) and now correctly uses the 4.96 cm diameter with the matching surveillance recommendation.</li>
 </ul>
 
     </div>
@@ -92,7 +93,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.30</strong> · built 2026-07-18</div>
+  <div>Documents <strong>MosaicTools v5.6.0</strong> · built 2026-07-18</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

@@ -73,6 +73,7 @@
 <li>Since 5.5.29, a multi-paragraph clinical history is tidied into a single clean paragraph when age/sex is added to the report (earlier versions could leave blank lines between the sentences).</li>
 <li>As of 5.5.20 the box no longer &quot;yells&quot;: a shouty ALL-CAPS coded reason (e.g. &quot;ATYPICAL FACIAL PAIN&quot;) is sentence-cased for readability, while medical abbreviations, eponyms (Crohn), and proper names keep their capitalization.</li>
 <li>As of 5.5.22 a study triaged by Mosaic&#39;s mosaicAI shows the triage <strong>reason</strong> (e.g. &quot;Suspected PE&quot;) in a red-orange banner — see the Triage Reason page.</li>
+<li><em>Fixed in 5.6.0 (data loss):</em> a rare clinical-history cleanup could delete dictated <strong>transcript</strong> text when Mosaic briefly reordered its editors (usually around Process Report). The cleanup now identifies the report by its content rather than editor position and aborts safely if anything looks off, so it can never touch the transcript.</li>
 </ul>
 
     </div>
@@ -88,7 +89,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.30</strong> · built 2026-07-18</div>
+  <div>Documents <strong>MosaicTools v5.6.0</strong> · built 2026-07-18</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

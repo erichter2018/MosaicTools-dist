@@ -59,6 +59,7 @@
 </ul>
 <p>A <strong>live example</strong> under the checkboxes runs your exact option combination through the real rewriter as you toggle, so the preview is the behavior. In every mode: pacemaker/ICD leads and Swan-Ganz catheters are never touched (their tips legitimately sit deep), a sentence describing two positions at once is skipped, and a bare anatomic mention (&quot;the SVC is patent&quot;) is never rewritten.</p>
 <p><strong>Strip trailing zeros from drafted measurements</strong> <em>(new in 5.5.26)</em> — the drafting AI writes whole-number measurements with a trailing zero (&quot;3.0 mm stone&quot;, &quot;11.0 x 8.0 cm&quot;) on nearly one in five of its measurements. Trailing zeros are a classic misread hazard (&quot;2.0&quot; read as &quot;20&quot;) and against AMA style. This drops the &quot;.0&quot; from whole numbers inside drafted measurements — numerically identical, just safer: <em>&quot;11.0 x 8.0 x 12.0 cm&quot; → &quot;11 x 8 x 12 cm&quot;</em>, <em>&quot;1.0-2.0 mm&quot; → &quot;1-2 mm&quot;</em>. Real decimals (2.5 cm) and leading zeros (0.2 cm) are untouched.</p>
+<p><strong>Find &amp; replace in drafted text</strong> <em>(new in 5.6.0)</em> — your own list of literal find → replace pairs, applied to drafted text only. Use it for the drafting AI&#39;s pet phrasings you always fix by hand — a stock phrase you want reworded, a term the model spells differently than your group&#39;s convention. Each pair is a plain text substitution (not your dictation, never touched), applied once per study as the draft loads, alongside the other fixups.</p>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → Drafting → Drafting Fixups (experimental).</strong> Each fixup is its own checkbox, all off by default — enable only the ones whose failure mode you&#39;ve seen. Requires CDP (the direct-DOM connection to Mosaic).</p>
 <h2>Using it</h2>
@@ -77,14 +78,14 @@
       <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Drafting → Drafting Fixups (experimental)</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
-    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.5.26</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.6.0</span></div>
       <h4>Related</h4><ul class="rel-list"><li><a href="../features/draft-phrase-remover.html">Auto-Remove Draft Phrases</a></li><li><a href="../features/auto-process.html">Auto-Process on Open</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/process-report.html">Process Report</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.30</strong> · built 2026-07-18</div>
+  <div>Documents <strong>MosaicTools v5.6.0</strong> · built 2026-07-18</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

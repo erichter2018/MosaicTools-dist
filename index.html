@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.5.30</h2>
+    <h2>✨ New in v5.6.0</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.6.0</span><span class="spot-title">Clinical-history data-loss fix, MTRec aneurysm-diameter fix, cyst &amp; measurement improvements</span></div>
+        <ul><li>Fixed (data loss): a rare clinical-history cleanup could delete your dictated TRANSCRIPT text — roughly once every couple of shifts, usually around Process Report — when Mosaic briefly reordered its editors. The clean…</li><li>MTRec: an abdominal aortic aneurysm is now sized by its maximal DIAMETER, never its craniocaudal length. A report like &quot;…measures 7 cm in length … 4.96 x 4.7 cm&quot; was being read as a 7 cm aneurysm and over-recommending…</li><li>MTRec: renal-sinus (parapelvic / peripelvic) cysts are no longer flagged — they are a benign anatomic variant, not a Bosniak lesion.</li><li>MTRec: physiologic ovarian / adnexal cysts are now always mentioned in the impression (the old ≤3 cm pre- / ≤1 cm post-menopausal suppression is gone) — a benign cyst gets a clear &quot;no follow-up needed&quot; statement inste…</li><li>Custom STT: fixed a rare merger garble that could paste a doubled phrase — a stray low-confidence word is now suppressed before it reaches the paste, and the underlying back-patch bug behind it is fixed.</li><li>Auto Measure: no longer refuses a well-defined lesion just because there is CT noise nearby, so more measurements go through on the first try.</li><li>Drafting: new &quot;Find &amp; replace in drafted text&quot; — your own list of drafted-text-only substitutions (Settings → Drafting), applied alongside the ETT / central-line / trailing-zero fixups. It never touches your own dicta…</li><li>Notification box: right-click → &quot;Copy Drafted Debug&quot; now shows a per-fixup breakdown of every drafting change applied to the current study (support/diagnostics).</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.30</span><span class="spot-title">Auto Measure zoom fix, MTRec solid-ovarian-mass fix, central-line drafting fixups</span></div>
-        <ul><li>Auto Measure: each measurement now re-reads the current True Size Zoom, fixing occasional oversized results when the on-screen zoom had changed since your last measurement (a 3 cm lesion could otherwise read ~4 cm fro…</li><li>MTRec: a solid (&quot;non-cystic&quot;) ovarian or adnexal mass is no longer mislabeled an &quot;ovarian cyst.&quot; It now correctly recommends dedicated pelvic ultrasound plus gynecology/gyn-onc evaluation for a solid adnexal lesion.</li><li>Drafting &quot;Rewrite central line tip position&quot;: grammar and safety fixes — no more &quot;overlies at&quot; / &quot;is overlies&quot; / &quot;terminate overlies&quot; phrasings; keeps natural prepositions for &quot;extends/projects&quot;; leaves prior/comparis…</li><li>Drafting: the trailing-zero and central-line fixups now split a sentence that runs straight into a number (&quot;… atrium. 2nd wire …&quot;) so a following clause can't pull a device into the wrong sentence.</li></ul>
+        <ul><li>Auto Measure: each measurement now re-reads the current True Size Zoom, fixing occasional oversized results when the on-screen zoom had changed since your last measurement (a 3 cm lesion could otherwise read ~4 cm fro…</li><li>MTRec: a solid (&quot;non-cystic&quot;) ovarian or adnexal mass is no longer mislabeled an &quot;ovarian cyst.&quot; It now correctly recommends dedicated pelvic ultrasound plus gynecology/gyn-onc evaluation for a solid adnexal lesion.</li><li>Drafting &quot;Rewrite central line tip position&quot;: grammar and safety fixes — no more &quot;overlies at&quot; / &quot;is overlies&quot; / &quot;terminate overlies&quot; phrasings; keeps natural prepositions for &quot;extends/projects&quot;; leaves prior/comparis…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.5.29</span><span class="spot-title">Clinical-history one-paragraph fix, MTRec wording cleanups, custom-STT percent fix, anonymous usage stats</span></div>
         <ul><li>Fixed: a multi-paragraph clinical history (e.g. the reason plus &quot;No obvious source identified.&quot; on a separate line) is now tidied into a single clean paragraph when age/sex is added to the report — instead of leaving …</li><li>MTRec: pulmonary nodules explicitly described as unchanged for 2+ years (e.g. &quot;These are unchanged since 2023&quot;) are now correctly called benign by stability with no follow-up — even when that stability statement is a …</li><li>MTRec: cleaner wording. Emphysema now reads &quot;Pulmonary emphysema, an independent lung-cancer risk factor; low-dose CT lung-cancer screening is recommended if the patient is eligible.&quot; (no repeated risk-factor note), a…</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.28</span><span class="spot-title">Flexible central-line rewrite, age/sex now work in the final report, prior-copy feedback, cleaner histories</span></div>
-        <ul><li>Central line tip rewrite is now a mix-and-match option set (Settings → Drafting): &quot;Shift one level up&quot; (the AI's one-too-deep bias fix), &quot;Use overlies wording&quot; (&quot;…overlies the cavoatrial junction&quot; instead of &quot;terminat…</li><li>Fixed: &quot;Add patient age&quot; / &quot;Add patient sex&quot; now work with &quot;Auto-fix clinical history — in final report.&quot; Previously they only fed the transcript-paste option, so with report-only auto-fix they silently did nothing. T…</li><li>Clinical history: worklist Title-Case reasons are now sentence-cased (&quot;Line Placement&quot; → &quot;Line placement&quot;, &quot;Right Upper Quadrant Pain&quot; → &quot;Right upper quadrant pain&quot;). Eponyms (Graves disease, Down syndrome, Crohn), ac…</li></ul>
       </div>
     </div>
   </section>
@@ -93,7 +93,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.5.30</strong> · built 2026-07-18</div>
+  <div>Documents <strong>MosaicTools v5.6.0</strong> · built 2026-07-18</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
