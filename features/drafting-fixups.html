@@ -60,6 +60,7 @@
 <p>A <strong>live example</strong> under the checkboxes runs your exact option combination through the real rewriter as you toggle, so the preview is the behavior. In every mode: pacemaker/ICD leads and Swan-Ganz catheters are never touched (their tips legitimately sit deep), a sentence describing two positions at once is skipped, and a bare anatomic mention (&quot;the SVC is patent&quot;) is never rewritten.</p>
 <p><strong>Strip trailing zeros from drafted measurements</strong> <em>(new in 5.5.26)</em> — the drafting AI writes whole-number measurements with a trailing zero (&quot;3.0 mm stone&quot;, &quot;11.0 x 8.0 cm&quot;) on nearly one in five of its measurements. Trailing zeros are a classic misread hazard (&quot;2.0&quot; read as &quot;20&quot;) and against AMA style. This drops the &quot;.0&quot; from whole numbers inside drafted measurements — numerically identical, just safer: <em>&quot;11.0 x 8.0 x 12.0 cm&quot; → &quot;11 x 8 x 12 cm&quot;</em>, <em>&quot;1.0-2.0 mm&quot; → &quot;1-2 mm&quot;</em>. Real decimals (2.5 cm) and leading zeros (0.2 cm) are untouched.</p>
 <p><strong>Find &amp; replace in drafted text</strong> <em>(new in 5.6.0)</em> — your own list of literal find → replace pairs, applied to drafted text only. Use it for the drafting AI&#39;s pet phrasings you always fix by hand — a stock phrase you want reworded, a term the model spells differently than your group&#39;s convention. Each pair is a plain text substitution (not your dictation, never touched), applied once per study as the draft loads, alongside the other fixups.</p>
+<p>Manage the list with <strong>Add… / Edit… / Remove</strong>. <strong>Edit…</strong> <em>(new in 5.6.1)</em> opens the selected pair pre-filled so you can correct a typo or reword a replacement in place — the entry keeps its position in the list and its checkbox state, instead of having to be removed and re-added. The same <strong>Edit…</strong> button is on the auto-remove draft phrase list (Settings → Drafting → Auto-remove draft phrases).</p>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → Drafting → Drafting Fixups (experimental).</strong> Each fixup is its own checkbox, all off by default — enable only the ones whose failure mode you&#39;ve seen. Requires CDP (the direct-DOM connection to Mosaic).</p>
 <h2>Using it</h2>
@@ -68,6 +69,7 @@
 <ul>
 <li><strong>These are position/format rewrites of AI-drafted text — always verify against the image.</strong> The central-line shift in particular encodes an observed bias (one-level-too-deep); if a draft happens to be right, the shift makes it wrong by one level in the other direction. That&#39;s why it&#39;s off by default and experimental.</li>
 <li><em>Refined in 5.5.30:</em> the central-line rewrite got a round of grammar and safety fixes — it no longer produces &quot;overlies at&quot; / &quot;is overlies&quot; / &quot;terminate overlies&quot; phrasings, keeps the natural preposition for verbs like &quot;extends&quot;/&quot;projects&quot;, leaves prior/comparison lines (&quot;previously the PICC terminated…&quot;) untouched, skips ambiguous &quot;in the SVC … right atrium&quot; sentences, now also excludes pacing/epicardial wires, PA catheters, femoral/IVC lines and laparoscopic &quot;port sites,&quot; and never re-shifts a tip when you revisit an earlier study.</li>
+<li><em>Refined in 5.6.1:</em> the central-line rewrite now recognizes <strong>brand-name and implanted ports</strong> — MediPort, PowerPort, Infusaport, Bard/Life/Vital ports, and &quot;implanted / implantable / subcutaneous / venous access / infusion port&quot;. Previously only a bare &quot;port&quot; matched, so a sentence like <em>&quot;Right internal jugular MediPort terminates in the lower third of the SVC.&quot;</em> was skipped entirely and its tip position was never adjusted. A laparoscopic <strong>&quot;port site&quot;</strong> is still never rewritten.</li>
 <li>The fixups run <strong>once per study</strong> on the drafted prelim. Text you dictate afterwards is never rewritten — dictating &quot;two point zero&quot; keeps the .0 you asked for.</li>
 <li>The trailing-zero strip is the safe one of the family: it never changes a value, only its rendering.</li>
 </ul>
@@ -85,7 +87,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.6.0</strong> · built 2026-07-18</div>
+  <div>Documents <strong>MosaicTools v5.6.1</strong> · built 2026-07-19</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

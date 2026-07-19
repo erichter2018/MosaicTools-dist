@@ -63,6 +63,7 @@
 <ul>
 <li>Run the wizard rather than entering keys by hand — it validates each key with a real connection to the provider.</li>
 <li>One engine works; the ensemble is where the accuracy gain lives.</li>
+<li><strong>False starts inside a sentence are now collapsed (5.6.1).</strong> When you abandon a phrase and restart it mid-sentence, the abandoned words are dropped before the paste: <em>&quot;…there are diffuse flowing os there are diffuse flowing osteophytes throughout…&quot;</em> pastes as just the completed phrase. This previously only worked when the two halves arrived in separate pastes — both halves landing in one paste went through uncorrected.</li>
 <li>If dictation misbehaves, check the ensemble health light on the toolbar first — a dead engine (usually billing) is the most common cause.</li>
 </ul>
 
@@ -79,7 +80,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.6.0</strong> · built 2026-07-18</div>
+  <div>Documents <strong>MosaicTools v5.6.1</strong> · built 2026-07-19</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
