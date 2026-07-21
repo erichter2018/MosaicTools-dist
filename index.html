@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.6.1</h2>
+    <h2>✨ New in v5.7.2</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
-        <div class="spot-head"><span class="spot-vnum">v5.6.1</span><span class="spot-title">MTRec part-solid nodule fix, brand-name ports, dictation false-start cleanup</span></div>
-        <ul><li>MTRec (important): a part-solid (&quot;semisolid&quot;) pulmonary nodule is no longer managed as a PURE ground-glass nodule. A nodule described as &quot;semisolid&quot; now follows the part-solid Fleischner pathway — CT at 3-6 months to …</li><li>MTRec: the solid component of a part-solid nodule is measured from the number attached to it. Previously, when the whole-nodule size sat closer in the sentence (&quot;…measuring 0.9 x 1.0 cm with a solid component measurin…</li><li>Drafting &quot;Rewrite central line tip position&quot;: brand-name ports are now recognized — MediPort, PowerPort, Infusaport, Bard/Life/Vital ports, and &quot;implanted / implantable / subcutaneous / venous access / infusion port&quot;.…</li><li>Custom STT: when you abandon a phrase and restart it mid-sentence, the abandoned words are now dropped from the paste. &quot;…there are diffuse flowing os there are diffuse flowing osteophytes throughout…&quot; now pastes only …</li><li>Settings → Drafting: both phrase lists (auto-remove phrases and find→replace) now have an &quot;Edit…&quot; button, so an entry can be changed in place instead of deleted and re-added.</li><li>Copy Drafted Debug: fixed a false &quot;evaluated, no matching content (0 edits)&quot;. On a study that opened already drafted, the drafting fixups' edit records were erased moments after they were written, so real edits were r…</li></ul>
+        <div class="spot-head"><span class="spot-vnum">v5.7.2</span><span class="spot-title">Spine Labeling: AI option + fully editable labels</span></div>
+        <ul><li>NEW — Spine Labeling AI: a second way to label the spine that sends the (de-identified) sagittal image to a vision model and gets back the vertebral bodies. Map the &quot;Spine Labeling AI&quot; action to a button or hotkey. It…</li><li>Spine Labeling — the proposed labels are now fully editable before you accept: drag any label to reposition it, drag &quot;Move all&quot; to shift them together (up/down and side to side), click the red ✕ on a label to delete i…</li><li>Spine Labeling — reads the spine region from the study description more reliably: cervical / thoracic / lumbar, and the associated body studies (neck → cervical, chest → thoracic, abdomen-pelvis → lumbar).</li><li>Spine Labeling — many detection improvements at the L5–S1 junction and the sacrum, and steadier centerline tracking. Where it cannot anchor a level it now shows the bodies without inventing a number, rather than guess…</li><li>Ensemble health dot: now reappears correctly when you turn Custom STT on AFTER the app has started (previously it stayed hidden until the next restart).</li></ul>
       </div>
       <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.6.0</span><span class="spot-title">Clinical-history data-loss fix, MTRec aneurysm-diameter fix, cyst &amp; measurement improvements</span></div>
-        <ul><li>Fixed (data loss): a rare clinical-history cleanup could delete your dictated TRANSCRIPT text — roughly once every couple of shifts, usually around Process Report — when Mosaic briefly reordered its editors. The clean…</li><li>MTRec: an abdominal aortic aneurysm is now sized by its maximal DIAMETER, never its craniocaudal length. A report like &quot;…measures 7 cm in length … 4.96 x 4.7 cm&quot; was being read as a 7 cm aneurysm and over-recommending…</li><li>MTRec: renal-sinus (parapelvic / peripelvic) cysts are no longer flagged — they are a benign anatomic variant, not a Bosniak lesion.</li></ul>
+        <div class="spot-head"><span class="spot-vnum">v5.7.1</span><span class="spot-title">Spine Labeling, cleaner clinical history, Missing Lesion fix, Clario in Edge</span></div>
+        <ul><li>NEW — Spine Labeling: map the &quot;Spine Labeling&quot; action to a button or hotkey, press it, then click once on the vertebral column of a sagittal image. It detects the vertebral bodies and proposes a numbering. Scroll to c…</li><li>NEW — Clario CDP in Microsoft Edge: Settings → Experimental now offers &quot;Setup Edge CDP Shortcut&quot; alongside the Chrome one. The Chrome shortcut shares your real Chrome profile, which means that while Clario CDP is runn…</li><li>Clinical history: the ordered EXAM NAME and the order numbers are no longer shown as history. An abdominal x-ray arriving as &quot;Pain. XR Abdomen 1 View kidney, ureter, bladder; 11595625809; 11595625777. Pain.&quot; now reads…</li></ul>
       </div>
       <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.5.30</span><span class="spot-title">Auto Measure zoom fix, MTRec solid-ovarian-mass fix, central-line drafting fixups</span></div>
-        <ul><li>Auto Measure: each measurement now re-reads the current True Size Zoom, fixing occasional oversized results when the on-screen zoom had changed since your last measurement (a 3 cm lesion could otherwise read ~4 cm fro…</li><li>MTRec: a solid (&quot;non-cystic&quot;) ovarian or adnexal mass is no longer mislabeled an &quot;ovarian cyst.&quot; It now correctly recommends dedicated pelvic ultrasound plus gynecology/gyn-onc evaluation for a solid adnexal lesion.</li><li>Drafting &quot;Rewrite central line tip position&quot;: grammar and safety fixes — no more &quot;overlies at&quot; / &quot;is overlies&quot; / &quot;terminate overlies&quot; phrasings; keeps natural prepositions for &quot;extends/projects&quot;; leaves prior/comparis…</li></ul>
+        <div class="spot-head"><span class="spot-vnum">v5.7.0</span><span class="spot-title">MTRec DDx (AI differential diagnosis), central LLM settings, measurement linter</span></div>
+        <ul><li>NEW — MTRec DDx: a differential diagnosis for any impression item. Map the &quot;MTRec DDx&quot; action to a button or hotkey, press it, pick one impression item, and an AI proposes a differential ranked most common first. Unch…</li><li>NEW — Settings → LLM: one place for every AI key (Gemini, OpenAI, Anthropic, Groq, Grok), each with a &quot;Test&quot; button that checks the key without spending a request. Your existing keys move across automatically — nothin…</li><li>NEW — dangling-measurement warnings: when dictation drops the NUMBER out of a measurement (&quot;the appendix measures cm&quot;, &quot;2.4 x cm&quot;), the clinical history box now flags it. That mistake is easy to miss because the sente…</li></ul>
       </div>
     </div>
   </section>
@@ -78,7 +78,7 @@
     <a class="catcard" href="category/recommendations.html"><div class="catcard-icon">📋</div><h3>Recommendations</h3><p>MTRec: deterministic, guideline-cited follow-up recommendations and the Associations completeness checklist.</p><span class="catcard-n">5 features</span></a>
     <a class="catcard" href="category/priors.html"><div class="catcard-icon">📚</div><h3>Priors &amp; Clinical History</h3><p>Pull the relevant prior, AI-summarize it, and keep the corrected clinical history in view.</p><span class="catcard-n">3 features</span></a>
     <a class="catcard" href="category/display.html"><div class="catcard-icon">🌈</div><h3>Report Display &amp; Highlighting</h3><p>See your report the way you think — change highlighting, rainbow correlation, drafted-findings triage, and layout upgrades.</p><span class="catcard-n">8 features</span></a>
-    <a class="catcard" href="category/measurement.html"><div class="catcard-icon">📏</div><h3>Measurement &amp; Imaging</h3><p>Auto-measure lesions, capture series/image numbers, and drive InteleViewer without touching it.</p><span class="catcard-n">5 features</span></a>
+    <a class="catcard" href="category/measurement.html"><div class="catcard-icon">📏</div><h3>Measurement &amp; Imaging</h3><p>Auto-measure lesions, capture series/image numbers, and drive InteleViewer without touching it.</p><span class="catcard-n">6 features</span></a>
     <a class="catcard" href="category/worklist.html"><div class="catcard-icon">📈</div><h3>Worklist &amp; Productivity</h3><p>TBWU pace tracking, critical-findings workflow, macros, and pick lists — the shift-management toolkit.</p><span class="catcard-n">11 features</span></a>
     <a class="catcard" href="category/platform.html"><div class="catcard-icon">⚙️</div><h3>Setup &amp; Platform</h3><p>Install, updates, button mapping, integrations, and exactly what telemetry does (and doesn't) leave your machine.</p><span class="catcard-n">10 features</span></a>
   </div>
@@ -93,7 +93,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.6.1</strong> · built 2026-07-19</div>
+  <div>Documents <strong>MosaicTools v5.7.2</strong> · built 2026-07-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
