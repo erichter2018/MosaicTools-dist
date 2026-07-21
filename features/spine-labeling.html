@@ -61,12 +61,16 @@
 <p>Press the action, then click once on the vertebral column of a sagittal image. The proposal appears with a control bar, and everything is editable before you accept:</p>
 <ul>
 <li><strong>Scroll wheel</strong> (or ↑ / ↓) shifts the whole numbering one level at a time.</li>
-<li><strong>Drag a label&#39;s handle</strong> to reposition just that one; <strong>✥ Move all</strong> drags every label together — up/down and side to side.</li>
-<li><strong>✕ on a label</strong> deletes it and renumbers the rest automatically, keeping the S1/caudal end fixed — so removing a spuriously-detected body pulls the numbers back into place.</li>
+<li><strong>Drag a label&#39;s handle</strong> to reposition just that one; the <strong>▲ / ▼</strong> chips beside it drag that label plus everything above / below it as a group; <strong>✥ Move all</strong> drags every label together.</li>
+<li><strong>Right-drag</strong> a body handle to <strong>bend the whole column</strong> onto the vertebrae (the far end stays fixed); right-drag a <strong>▲ / ▼</strong> chip to <strong>re-space</strong> that run (spread or compress the levels) and nudge it sideways.</li>
+<li><strong>＋ Add level</strong> — drag this button onto the spine to drop in a body the detector missed; the rest renumber.</li>
+<li><strong>✕ on a label</strong> deletes it and renumbers the rest automatically, keeping the S1/caudal end fixed.</li>
 <li><strong>↔ Flip labels</strong> moves the numbers to the other side of the spine.</li>
 <li><strong>✓ Accept</strong> commits; <strong>✕ Reject</strong> discards. These are explicit buttons — a stray click no longer accepts by accident.</li>
 </ul>
 <p>After you accept, the labels freeze into thin click-through ink beside the column, so you can keep scrolling axials elsewhere while you read. Trigger the action again to remove them; they also clear when the study changes.</p>
+<h2>Heuristic, AI, or both</h2>
+<p>You can run either detector directly (map <strong>Spine Labeling</strong> and/or <strong>Spine Labeling AI</strong>), switch between them <strong>by hand</strong> on any proposal (&quot;Switch to AI&quot; / &quot;Switch to Fast&quot;), or let MosaicTools choose: turn on <strong>Settings → Experimental → &quot;Spine Labeling: fall back to AI when confidence is low&quot;</strong> and the regular action runs the fast/free heuristic first, calling the AI vision model only when the heuristic isn&#39;t confident — so the easy cases stay instant and free and AI handles the hard ones (cervical, MR, degenerated).</p>
 <h2>Good to know</h2>
 <ul>
 <li>REFERENCE ONLY — nothing is written to the report, and the proposal is only a proposal: confirm the level yourself before you rely on it.</li>
@@ -88,7 +92,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.7.2</strong> · built 2026-07-21</div>
+  <div>Documents <strong>MosaicTools v5.7.3</strong> · built 2026-07-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

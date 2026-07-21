@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.7.2</h2>
+    <h2>✨ New in v5.7.3</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.7.3</span><span class="spot-title">Spine Labeling: full on-image editing + AI/heuristic switching</span></div>
+        <ul><li>Spine Labeling — the proposal is now fully editable before you accept: add a level the detector missed (drag the &quot;Add level&quot; button onto the vertebral body), delete a level (the rest renumber automatically), move a si…</li><li>Spine Labeling — reads the spine region from the study description (cervical / thoracic / lumbar, plus the associated body studies: neck → cervical, chest → thoracic, abdomen-pelvis → lumbar). If the region-specific r…</li><li>Spine Labeling — NEW optional AI fallback (Settings → Experimental → &quot;fall back to AI when confidence is low&quot;): the fast, free heuristic runs first and only calls the Spine AI vision model when it isn't confident — so…</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.7.2</span><span class="spot-title">Spine Labeling: AI option + fully editable labels</span></div>
-        <ul><li>NEW — Spine Labeling AI: a second way to label the spine that sends the (de-identified) sagittal image to a vision model and gets back the vertebral bodies. Map the &quot;Spine Labeling AI&quot; action to a button or hotkey. It…</li><li>Spine Labeling — the proposed labels are now fully editable before you accept: drag any label to reposition it, drag &quot;Move all&quot; to shift them together (up/down and side to side), click the red ✕ on a label to delete i…</li><li>Spine Labeling — reads the spine region from the study description more reliably: cervical / thoracic / lumbar, and the associated body studies (neck → cervical, chest → thoracic, abdomen-pelvis → lumbar).</li><li>Spine Labeling — many detection improvements at the L5–S1 junction and the sacrum, and steadier centerline tracking. Where it cannot anchor a level it now shows the bodies without inventing a number, rather than guess…</li><li>Ensemble health dot: now reappears correctly when you turn Custom STT on AFTER the app has started (previously it stayed hidden until the next restart).</li></ul>
+        <ul><li>NEW — Spine Labeling AI: a second way to label the spine that sends the (de-identified) sagittal image to a vision model and gets back the vertebral bodies. Map the &quot;Spine Labeling AI&quot; action to a button or hotkey. It…</li><li>Spine Labeling — the proposed labels are now fully editable before you accept: drag any label to reposition it, drag &quot;Move all&quot; to shift them together (up/down and side to side), click the red ✕ on a label to delete i…</li><li>Spine Labeling — reads the spine region from the study description more reliably: cervical / thoracic / lumbar, and the associated body studies (neck → cervical, chest → thoracic, abdomen-pelvis → lumbar).</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.7.1</span><span class="spot-title">Spine Labeling, cleaner clinical history, Missing Lesion fix, Clario in Edge</span></div>
         <ul><li>NEW — Spine Labeling: map the &quot;Spine Labeling&quot; action to a button or hotkey, press it, then click once on the vertebral column of a sagittal image. It detects the vertebral bodies and proposes a numbering. Scroll to c…</li><li>NEW — Clario CDP in Microsoft Edge: Settings → Experimental now offers &quot;Setup Edge CDP Shortcut&quot; alongside the Chrome one. The Chrome shortcut shares your real Chrome profile, which means that while Clario CDP is runn…</li><li>Clinical history: the ordered EXAM NAME and the order numbers are no longer shown as history. An abdominal x-ray arriving as &quot;Pain. XR Abdomen 1 View kidney, ureter, bladder; 11595625809; 11595625777. Pain.&quot; now reads…</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.7.0</span><span class="spot-title">MTRec DDx (AI differential diagnosis), central LLM settings, measurement linter</span></div>
-        <ul><li>NEW — MTRec DDx: a differential diagnosis for any impression item. Map the &quot;MTRec DDx&quot; action to a button or hotkey, press it, pick one impression item, and an AI proposes a differential ranked most common first. Unch…</li><li>NEW — Settings → LLM: one place for every AI key (Gemini, OpenAI, Anthropic, Groq, Grok), each with a &quot;Test&quot; button that checks the key without spending a request. Your existing keys move across automatically — nothin…</li><li>NEW — dangling-measurement warnings: when dictation drops the NUMBER out of a measurement (&quot;the appendix measures cm&quot;, &quot;2.4 x cm&quot;), the clinical history box now flags it. That mistake is easy to miss because the sente…</li></ul>
       </div>
     </div>
   </section>
@@ -93,7 +93,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.7.2</strong> · built 2026-07-21</div>
+  <div>Documents <strong>MosaicTools v5.7.3</strong> · built 2026-07-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
