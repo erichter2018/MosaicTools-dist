@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Enable True Size Zoom (InteleViewer setup) — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/measurement.html">Measurement &amp; Imaging</a></div>
+    <h1>Enable True Size Zoom (InteleViewer setup)</h1>
+    <p class="brief">One-time InteleViewer setup that Spine Labeling and Auto Measure both need — add the True Size Zoom Factor to the CT image overlay so MosaicTools can convert pixels to real centimeters.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/iv-truesize-1-preferences.jpg" alt="InteleViewer → Utilities → User Preferences… (Ctrl+U)" loading="lazy" class="lightboxable"><figcaption>InteleViewer → Utilities → User Preferences… (Ctrl+U)</figcaption></figure>
+<figure class="shot"><img src="../img/iv-truesize-2-modality-ct.jpg" alt="User Preferences → Modality → CT" loading="lazy" class="lightboxable"><figcaption>User Preferences → Modality → CT</figcaption></figure>
+<figure class="shot"><img src="../img/iv-truesize-3-text-overlay.jpg" alt="Text Overlay tab → add &quot;True Size Zoom Factor&quot; to an overlay corner (Overlay Lower Right)" loading="lazy" class="lightboxable"><figcaption>Text Overlay tab → add &quot;True Size Zoom Factor&quot; to an overlay corner (Overlay Lower Right)</figcaption></figure></div>
+      <h2>Why this is needed</h2>
+<p><strong>Spine Labeling</strong> and <strong>Auto Measure</strong> both work in <em>real-world</em> size, not pixels. Spine Labeling
+spaces vertebral bodies using their physical height in centimeters, and Auto Measure reports a lesion&#39;s
+long and short axes in millimeters. To do that, MosaicTools has to know how many millimeters one screen
+pixel represents at the zoom you&#39;re currently viewing — the image&#39;s <strong>calibration</strong>.</p>
+<p>InteleViewer already computes this as its <strong>True Size Zoom Factor</strong>, but it only exposes it where MosaicTools
+can read it if you add it to the <strong>image text overlay</strong>. Once it&#39;s on the overlay, MosaicTools reads it
+automatically each time you trigger the tool — no ruler, no manual step.</p>
+<p><strong>Without True Size Zoom on the overlay, both tools decline rather than guess:</strong></p>
+<ul>
+<li>Spine Labeling refuses with <strong>&quot;needs True Size Zoom.&quot;</strong></li>
+<li>Auto Measure declines with <strong>&quot;cannot calibrate&quot;</strong> instead of pasting a wrong number.</li>
+</ul>
+<p>This is a one-time, per-workstation setup. Do it once in InteleViewer and both tools light up.</p>
+<blockquote>
+<p><strong>Tip:</strong> Auto Measure re-reads the True Size Zoom at the moment you trigger it, so it stays correct even
+if you change the on-screen zoom between measurements — as long as the factor is on the overlay.</p>
+</blockquote>
+<h2>Setup steps</h2>
+<p>Follow the three screenshots below in order.</p>
+<ol>
+<li><p><strong>Open User Preferences.</strong> In InteleViewer, go to <strong>Utilities → User Preferences…</strong> (or press <strong>Ctrl+U</strong>).</p>
+</li>
+<li><p><strong>Pick the CT modality.</strong> In the left-hand tree, under <strong>Modality</strong>, select <strong>CT</strong>. (Repeat for any other
+modality you measure on — e.g. MR — using that modality&#39;s own section.)</p>
+</li>
+<li><p><strong>Add &quot;True Size Zoom Factor&quot; to the overlay.</strong> Open the <strong>Text Overlay</strong> tab. In the list of
+<strong>Available Overlay Elements</strong>, find <strong>True Size Zoom Factor</strong> and add it to one of the overlay corners
+(the screenshot uses <strong>Overlay Lower Right</strong>). Apply/OK to save.</p>
+</li>
+</ol>
+<p>That&#39;s it. Reload a study and you&#39;ll see <strong>True Size Zoom Factor</strong> in the corner of the CT image — Spine
+Labeling and Auto Measure will now calibrate automatically.</p>
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>Still says &quot;needs True Size Zoom&quot; / &quot;cannot calibrate&quot;:</strong> confirm the element is on the overlay for the
+modality you&#39;re viewing (CT settings don&#39;t apply to MR), and that the overlay text isn&#39;t hidden. If
+<strong>&quot;Hide overlay elements with no DICOM values&quot;</strong> is checked, the factor still shows because InteleViewer
+computes it live — but verify it&#39;s actually visible on the image.</li>
+<li><strong>Wrong-looking measurements:</strong> make sure you didn&#39;t add a plain <em>Zoom Factor</em> instead of <strong>True Size Zoom
+Factor</strong> — they are different rows in the list.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/measurement.html">📏 Measurement &amp; Imaging</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.7</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/spine-labeling.html">Spine Labeling</a></li><li><a href="../features/auto-measure.html">Auto Measure</a></li><li><a href="../features/ruler-overlay.html">Draggable Ruler Overlay</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.7.3</strong> · built 2026-07-22</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
