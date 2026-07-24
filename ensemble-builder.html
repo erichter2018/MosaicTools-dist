@@ -37,6 +37,7 @@ th{color:#8b97ad;font-size:11px;text-transform:uppercase;letter-spacing:.04em}tr
 .tierbtn:hover{border-color:#67e8f9}.tierbtn .tw{font-size:22px;font-weight:800;background:linear-gradient(120deg,#67e8f9,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent;float:right;line-height:1}
 .tierbtn .tt{font-weight:700;font-size:13px}.tierbtn .td{font-size:11.5px;color:#8b97ad;margin-top:3px}.tierbtn .tn{font-size:11px;color:#c9925f;margin-top:4px}
 #keymodal{position:fixed;inset:0;background:rgba(4,7,14,.72);display:flex;align-items:center;justify-content:center;z-index:50}
+#keymodal[hidden]{display:none}   /* id selector's display beats [hidden]'s — this restores it so the modal starts hidden */
 #keymodal .kmc{background:#111a2e;border:1px solid #2b4a6e;border-radius:12px;padding:20px;width:min(440px,92vw)}
 #keymodal h3{margin:0 0 4px;font-size:16px}#keymodal .kmsub{color:#8b97ad;font-size:12.5px;margin:0 0 12px}
 #keymodal a{color:#67e8f9}#keymodal input{width:100%;background:#0a0e1a;border:1px solid #2a3a58;border-radius:7px;color:#dce4f2;padding:9px;font:13px/1 inherit;margin:6px 0}
