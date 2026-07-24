@@ -44,6 +44,13 @@ th{color:#8b97ad;font-size:11px;text-transform:uppercase;letter-spacing:.04em}tr
 </div>
 
 <div id=tab-builder hidden>
+<div id=appbar hidden style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:linear-gradient(135deg,#12233a,#101a2e);border:1px solid #2b4a6e;border-radius:10px;padding:12px 14px;margin:0 0 14px">
+  <b style="color:#67e8f9">Your ensemble</b>
+  <button id=apprec style="background:#173a3f;color:#a7f3e8;border:1px solid #2f6a72;border-radius:8px;padding:7px 14px;font:600 13px/1 inherit;cursor:pointer">⭐ Select Recommended (for your keys)</button>
+  <button id=appsave style="background:#0078d7;color:#fff;border:none;border-radius:8px;padding:7px 16px;font:600 13px/1 inherit;cursor:pointer">💾 Save as my ensemble</button>
+  <span id=appstatus style="color:#8b97ad;font-size:12px"></span>
+  <span style="color:#6b7890;font-size:12px;flex-basis:100%">Greyed models have no API key configured. Saving turns on ensemble mode and updates the slot picker.</span>
+</div>
 <div class=controls>
   <label title="verified gold = only the clips a radiologist personally confirmed (unbiased human truth, ~70). all = every clip incl. ones whose truth is the machine consensus (bigger sample, but mildly circular since it's model-derived).">Reference ⓘ: <select id=refset><option value=gold>verified gold only</option><option value=all>all clips w/ truth</option></select></label>
   <label title="Family = the SAME underlying engine reached different ways (native Chirp vs Chirp-via-OpenRouter, or a streaming vs batch variant). They're near-duplicates that make the same errors — default 1 keeps an engine from being double-counted in the vote.">Max per family ⓘ: <select id=cap><option selected>1</option><option>2</option><option>3</option></select></label>
@@ -82,6 +89,12 @@ th{color:#8b97ad;font-size:11px;text-transform:uppercase;letter-spacing:.04em}tr
 <script id=modelwer type="application/json">[{"m":"medasr","micro":3.76,"med":0,"n":70,"arch":"cnf"},{"m":"or-chirp-3","micro":5.39,"med":1.09,"n":70,"arch":"cnf"},{"m":"chirp","micro":6.14,"med":0,"n":70,"arch":"cnf"},{"m":"assemblyai-batch","micro":6.78,"med":0,"n":70,"arch":"cnf"},{"m":"mai-transcribe","micro":7.17,"med":0,"n":70,"arch":"?"},{"m":"soniox-async","micro":7.57,"med":2.94,"n":70,"arch":"cnf"},{"m":"or-qwen-asr","micro":8.02,"med":3.74,"n":70,"arch":"llm"},{"m":"or-mai-1.5","micro":8.71,"med":2.94,"n":70,"arch":"?"},{"m":"assemblyai","micro":9.01,"med":0,"n":68,"arch":"cnf"},{"m":"deepgram","micro":9.05,"med":6,"n":70,"arch":"cnf"},{"m":"soniox","micro":10.49,"med":8.7,"n":70,"arch":"cnf"},{"m":"corti","micro":10.54,"med":5.56,"n":70,"arch":"cnf"},{"m":"speechmatics","micro":11.48,"med":6.5,"n":70,"arch":"cnf"},{"m":"openai","micro":13.26,"med":0,"n":70,"arch":"llm"},{"m":"voxtral-batch","micro":13.95,"med":7.35,"n":70,"arch":"llm"},{"m":"or-whisper-turbo","micro":14,"med":10,"n":70,"arch":"llm"},{"m":"or-whisper-v3","micro":15.78,"med":8.33,"n":70,"arch":"llm"},{"m":"elevenlabs","micro":16.67,"med":12.5,"n":70,"arch":"llm"},{"m":"smallestai","micro":20.98,"med":15.22,"n":70,"arch":"cnf"},{"m":"or-parakeet","micro":21.77,"med":14.71,"n":70,"arch":"cnf"},{"m":"amazonmedical","micro":22.86,"med":21.43,"n":70,"arch":"cnf"}]</script>
 <script>
 const D=JSON.parse(document.getElementById('corpus').textContent),RANK=JSON.parse(document.getElementById('rankings').textContent),RECS=JSON.parse(document.getElementById('recs').textContent),MODELWER=JSON.parse(document.getElementById('modelwer').textContent);
+// [app-embed] When hosted inside MosaicTools' WebView2, window.MT_APP=true, window.MT_KEYS={model:hasKey} is injected
+// (models without a configured key are greyed), and window.MT_CURRENT={a,v} preselects the saved ensemble. On the
+// public web page these are undefined → all models available, no Save bar. One page, both contexts.
+const MT_APP=(typeof window!=='undefined')&&window.MT_APP===true;
+const MT_KEYS=(typeof window!=='undefined'&&window.MT_KEYS)||{};
+const keyed=m=>!MT_APP||MT_KEYS[m]!==false;   // web: everything; app: only key-configured models (medasr always true)
 const famOf={};for(const[f,ms]of Object.entries(D.families))for(const m of ms)famOf[m]=f;
 const FAMCOLOR={chirp:'#4fd1e8',mai:'#e879a6',whisper:'#e0954a',assemblyai:'#9b87e8',soniox:'#6fae5a'};
 const FAMNAME={chirp:'Chirp',mai:'MAI',whisper:'Whisper',assemblyai:'AssemblyAI',soniox:'Soniox'};
@@ -108,15 +121,15 @@ function famCount(fam){let n=0;for(const v of voters)if(famOf[v]===fam)n++;if(an
 function archCount(a){let n=0;for(const v of voters)if(ARCH[v]===a)n++;return n;}  // voters only
 function render(){const cap=+document.getElementById('cap').value,acap=+document.getElementById('acap').value;
   const av=document.getElementById('anchors');av.innerHTML='';
-  for(const m of D.streamingAnchors){const on=anchor===m,dis=(m==='chirp');const l=document.createElement('label');l.className='pill'+(on?' anchoron':'')+(dis?' disabled':'');
-    if(dis)l.title="Chirp isn't recommended as an anchor — no per-word confidence, emits brace-punctuation, and only finalizes at end-of-session, so as the merge spine it ships live garbles (the app deprioritizes it too). It's still a strong voter below.";
+  for(const m of D.streamingAnchors){const nokey=!keyed(m),on=anchor===m,dis=(m==='chirp')||nokey;const l=document.createElement('label');l.className='pill'+(on?' anchoron':'')+(dis?' disabled':'');
+    l.title=nokey?('No API key configured for '+m+' — add it in the STT settings'):(m==='chirp'?"Chirp isn't recommended as an anchor — no per-word confidence, emits brace-punctuation, and only finalizes at end-of-session, so as the merge spine it ships live garbles (the app deprioritizes it too). It's still a strong voter below.":'');
     l.innerHTML=`<input type=radio name=anchor ${on?'checked':''} ${dis?'disabled':''}> ${m} <span class="tag stream">stream</span>`;
     if(!dis)l.querySelector('input').onchange=()=>{anchor=m;voters.delete(m);compute();};av.appendChild(l);}
   const vv=document.getElementById('voters');vv.innerHTML='';const groups={native:[],local:[],openrouter:[]};
   for(const m of D.models){const g=isOR(m)?'openrouter':(LOCAL.has(m)?'local':'native');groups[g].push(m);}
   for(const[g,ms]of Object.entries(groups)){if(!ms.length)continue;const wrap=document.createElement('div');wrap.className='mgrp';wrap.innerHTML='<div class=lbl>'+g+'</div>';
-    for(const m of ms){const on=voters.has(m),isA=anchor===m,fam=famOf[m],am=ARCH[m],atCap=fam&&!on&&famCount(fam)>=cap,atArch=am&&!on&&archCount(am)>=acap,dis=isA||atCap||atArch;const l=document.createElement('label');l.className='pill'+(on?' on':'')+(dis?' disabled':'');
-      l.title=isA?'currently the anchor':(atCap?'family cap reached ('+FAMNAME[fam]+')':(atArch?'architecture cap reached ('+ARCHNAME[am]+')':''));
+    for(const m of ms){const nokey=!keyed(m),on=voters.has(m),isA=anchor===m,fam=famOf[m],am=ARCH[m],atCap=fam&&!on&&famCount(fam)>=cap,atArch=am&&!on&&archCount(am)>=acap,dis=isA||atCap||atArch||(nokey&&!on);const l=document.createElement('label');l.className='pill'+(on?' on':'')+(dis?' disabled':'');
+      l.title=nokey?'No API key configured — add it in the STT settings':(isA?'currently the anchor':(atCap?'family cap reached ('+FAMNAME[fam]+')':(atArch?'architecture cap reached ('+ARCHNAME[am]+')':'')));
       if(fam)l.style.borderColor=FAMCOLOR[fam];  // color-coded outline by family
       const dot=fam?'<span style="width:8px;height:8px;border-radius:50%;background:'+FAMCOLOR[fam]+';display:inline-block"></span> ':'';
       const tag=isOR(m)?'<span class="tag or">OR</span>':(LOCAL.has(m)?'<span class="tag local">local</span>':(STREAM.has(m)?'<span class="tag stream">stream</span>':''));
@@ -148,5 +161,22 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>switchTab(b.dataset.t
 document.getElementById('meta').textContent='('+D.clips.length+' clips, '+D.models.length+' models · data: '+D.generated+')';
 document.getElementById('refset').onchange=compute;document.getElementById('cap').onchange=()=>{renderLegend();compute();};document.getElementById('acap').onchange=()=>{renderLegend();compute();};
 if(RANK.length){anchor=RANK[0].a;RANK[0].v.forEach(v=>voters.add(v));}
+// [app-embed] Save bar wiring — posts the chosen {anchor,voters} to the host app, which writes the ensemble slots.
+function appStatus(msg,err){const el=document.getElementById('appstatus');if(el){el.textContent=msg;el.style.color=err?'#f0a04a':'#7fae6a';}}
+function appSave(){ if(!anchor){appStatus('Pick a streaming anchor first',true);return;}
+  if(voters.size<2){appStatus('Add at least 2 voters — the merge needs ≥2 to do anything',true);return;}
+  try{ window.chrome.webview.postMessage(JSON.stringify({type:'save',anchor,voters:[...voters]})); appStatus('Saved ✓ — ensemble mode on, slot picker updated'); }
+  catch(e){ appStatus('Save failed: '+e.message,true); } }
+function appSelectRecommended(){ const r=RANK.find(r=>keyed(r.a)&&r.v.every(keyed));
+  if(r){loadCfg(r.a,r.v);appStatus('Recommended for your keys — '+r.micro.toFixed(1)+'% WER');} else appStatus('No full config from your current keys — add more keys',true); }
+if(MT_APP){
+  document.getElementById('appbar').hidden=false;
+  document.getElementById('appsave').onclick=appSave;
+  document.getElementById('apprec').onclick=appSelectRecommended;
+  const cur=(typeof window!=='undefined')&&window.MT_CURRENT;   // preselect the saved ensemble, else best keyed config
+  if(cur&&cur.a){anchor=keyed(cur.a)?cur.a:anchor;voters.clear();(cur.v||[]).filter(keyed).forEach(v=>voters.add(v));}
+  else{const r=RANK.find(r=>keyed(r.a)&&r.v.every(keyed));if(r){anchor=r.a;voters.clear();r.v.forEach(v=>voters.add(v));}}
+  switchTab('builder');
+}
 renderLegend();render();compute();renderRec();renderRank();renderModels();
 </script></body></html>
