@@ -52,7 +52,6 @@ th{color:#8b97ad;font-size:11px;text-transform:uppercase;letter-spacing:.04em}tr
 </div>
 <div class=grid>
   <div class=card><h3>Anchor <span style=color:#a78bfa>(streaming, required)</span></h3><div id=anchors></div>
-    <div class=note style="margin-top:6px;color:#6b7890">Chirp isn't an anchor option — it has no per-word confidence, emits brace-punctuation, and only finalizes at end-of-session, so as the merge spine it ships live garbles (the app deprioritizes it too). It's still a strong <b>voter</b> below.</div>
     <h3 style=margin-top:16px>Voters</h3><div id=voters></div></div>
   <div>
     <div class="card result"><div class=big id=wer>--</div>
@@ -109,7 +108,10 @@ function famCount(fam){let n=0;for(const v of voters)if(famOf[v]===fam)n++;if(an
 function archCount(a){let n=0;for(const v of voters)if(ARCH[v]===a)n++;return n;}  // voters only
 function render(){const cap=+document.getElementById('cap').value,acap=+document.getElementById('acap').value;
   const av=document.getElementById('anchors');av.innerHTML='';
-  for(const m of ANCHORS){const on=anchor===m;const l=document.createElement('label');l.className='pill'+(on?' anchoron':'');l.innerHTML=`<input type=radio name=anchor ${on?'checked':''}> ${m} <span class="tag stream">stream</span>`;l.querySelector('input').onchange=()=>{anchor=m;voters.delete(m);compute();};av.appendChild(l);}
+  for(const m of D.streamingAnchors){const on=anchor===m,dis=(m==='chirp');const l=document.createElement('label');l.className='pill'+(on?' anchoron':'')+(dis?' disabled':'');
+    if(dis)l.title="Chirp isn't recommended as an anchor — no per-word confidence, emits brace-punctuation, and only finalizes at end-of-session, so as the merge spine it ships live garbles (the app deprioritizes it too). It's still a strong voter below.";
+    l.innerHTML=`<input type=radio name=anchor ${on?'checked':''} ${dis?'disabled':''}> ${m} <span class="tag stream">stream</span>`;
+    if(!dis)l.querySelector('input').onchange=()=>{anchor=m;voters.delete(m);compute();};av.appendChild(l);}
   const vv=document.getElementById('voters');vv.innerHTML='';const groups={native:[],local:[],openrouter:[]};
   for(const m of D.models){const g=isOR(m)?'openrouter':(LOCAL.has(m)?'local':'native');groups[g].push(m);}
   for(const[g,ms]of Object.entries(groups)){if(!ms.length)continue;const wrap=document.createElement('div');wrap.className='mgrp';wrap.innerHTML='<div class=lbl>'+g+'</div>';
