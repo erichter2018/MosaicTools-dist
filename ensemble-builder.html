@@ -180,7 +180,7 @@ function compute(){render();const clips=activeClips();document.getElementById('r
   const b=new Array(20).fill(0);for(const w of wers){b[Math.min(19,Math.floor(w*100/2.5))]++;}const mx=Math.max(...b,1);
   document.getElementById('dist').innerHTML=b.map(v=>'<div style="height:'+(100*v/mx)+'%" title="'+v+' clips"></div>').join('');
   document.getElementById('selnote').textContent=wers.filter(w=>w===0).length+' clips perfect · worst '+(Math.max(...wers)*100).toFixed(0)+'%';}
-function loadCfg(a,v){anchor=a;voters.clear();v.forEach(x=>voters.add(x));document.getElementById('refset').value='gold';switchTab('builder');compute();}
+function loadCfg(a,v){anchor=a;voters.clear();v.forEach(x=>voters.add(x));switchTab('builder');compute();}
 function renderRec(){document.getElementById('recgrid').innerHTML=RECS.map((r,i)=>`<div class="rec${i===1?' best':''}" data-i=${i}><div class=rw>${r.micro.toFixed(1)}%</div><h4>${r.name}${i===1?' ⭐':''}</h4><div class=eff>${r.effort} · median ${r.med.toFixed(1)}%</div><div class=why>${r.why}</div><div><span class=chip style="border-color:#a78bfa">⚓ ${r.a}</span> ${r.v.map(v=>'<span class=chip>'+v+'</span>').join('')}</div></div>`).join('');
   document.querySelectorAll('.rec').forEach(el=>el.onclick=()=>{const r=RECS[+el.dataset.i];loadCfg(r.a,r.v);});}
 function renderRank(){document.getElementById('rkgold').textContent=D.clips.filter(c=>c.v).length;
@@ -190,7 +190,7 @@ function renderModels(){document.getElementById('mwbody').innerHTML=MODELWER.map
 function switchTab(t){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t===t));document.getElementById('tab-rec').hidden=t!=='rec';document.getElementById('tab-builder').hidden=t!=='builder';document.getElementById('tab-rankings').hidden=t!=='rankings';document.getElementById('tab-models').hidden=t!=='models';}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>switchTab(b.dataset.t));
 document.getElementById('meta').textContent='('+D.clips.length+' clips, '+D.models.length+' models · data: '+D.generated+')';
-document.getElementById('refset').onchange=compute;document.getElementById('cap').onchange=()=>{renderLegend();compute();};document.getElementById('acap').onchange=()=>{renderLegend();compute();};
+document.getElementById('refset').onchange=()=>{compute();if(MT_APP)renderTiers();};document.getElementById('cap').onchange=()=>{renderLegend();compute();};document.getElementById('acap').onchange=()=>{renderLegend();compute();};
 if(RANK.length){anchor=RANK[0].a;RANK[0].v.forEach(v=>voters.add(v));}
 // [app-embed] Save bar, three key-aware tiers, and the right-click add-key flow.
 const MT_SIGNUP=(typeof window!=='undefined'&&window.MT_SIGNUP)||{};       // {model:signupUrl}
@@ -198,6 +198,8 @@ const MT_MULTIKEY=(typeof window!=='undefined'&&window.MT_MULTIKEY)||{};   // {m
 const HARDADD=new Set(['chirp','mai-transcribe','corti','amazonmedical']); // Google/Azure/AWS/enterprise — not a one-key add
 const obtainable=m=>keyed(m)||!HARDADD.has(m);                              // keyed OR easy single-key add
 const missingOf=(a,v)=>[a,...v].filter(m=>!keyed(m));
+// micro WER of a config over the CURRENTLY-selected reference set (gold vs all) — so tier numbers track Reference.
+function microFor(a,v){const clips=activeClips();let te=0,tr=0;for(const c of clips){const at=tok(c.m[a]);if(!at.length)continue;const vt=v.map(x=>tok(c.m[x])).filter(t=>t.length);const o=vt.length?consensus(at,vt):at;const r=tok(c.t);if(!r.length)continue;te+=werC(r,o);tr+=r.length;}return tr?100*te/tr:0;}
 function appStatus(msg,err){const el=document.getElementById('appstatus');if(el){el.textContent=msg;el.style.color=err?'#f0a04a':'#7fae6a';}}
 function appSave(){ if(!anchor){appStatus('Pick a streaming anchor first',true);return;}
   if(voters.size<2){appStatus('Add at least 2 voters — the merge needs ≥2 to do anything',true);return;}
@@ -207,9 +209,9 @@ function appSave(){ if(!anchor){appStatus('Pick a streaming anchor first',true);
   catch(e){ appStatus('Save failed: '+e.message,true); } }
 function fillTier(id,title,desc,cfg){const el=document.getElementById(id);if(!el)return;
   if(!cfg){el.innerHTML='<div class=tt>'+title+'</div><div class=td>'+desc+'</div><div class=tn>no complete config available</div>';el.disabled=true;el.onclick=null;return;}
-  el.disabled=false;const miss=[...new Set(missingOf(cfg.a,cfg.v))];
-  el.innerHTML='<span class=tw>'+cfg.micro.toFixed(1)+'%</span><div class=tt>'+title+'</div><div class=td>'+desc+'</div><div class=tn>'+(miss.length?('needs: '+miss.join(', ')):'ready with your keys ✓')+'</div>';
-  el.onclick=()=>{loadCfg(cfg.a,cfg.v);appStatus(title+' loaded — '+cfg.micro.toFixed(1)+'% WER'+(miss.length?' · right-click greyed models to add keys':''));};}
+  el.disabled=false;const miss=[...new Set(missingOf(cfg.a,cfg.v))];const wer=microFor(cfg.a,cfg.v);
+  el.innerHTML='<span class=tw>'+wer.toFixed(1)+'%</span><div class=tt>'+title+'</div><div class=td>'+desc+'</div><div class=tn>'+(miss.length?('needs: '+miss.join(', ')):'ready with your keys ✓')+'</div>';
+  el.onclick=()=>{loadCfg(cfg.a,cfg.v);appStatus(title+' loaded — '+microFor(cfg.a,cfg.v).toFixed(1)+'% WER'+(miss.length?' · right-click greyed models to add keys':''));};}
 function renderTiers(){
   fillTier('tier-you','⭐ Recommended for you','uses only the keys you already have',RANK.find(r=>keyed(r.a)&&r.v.every(keyed)));
   fillTier('tier-min','🔑 Minimal-effort best','best you can reach with easy one-key adds',RANK.find(r=>obtainable(r.a)&&r.v.every(obtainable)));
