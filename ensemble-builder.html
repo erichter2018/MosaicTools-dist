@@ -47,14 +47,9 @@ th{color:#8b97ad;font-size:11px;text-transform:uppercase;letter-spacing:.04em}tr
 </style></head><body><div class=wrap>
 <h1>STT Ensemble Builder</h1>
 <p class=sub>Real consensus merge + compound-aware WER over a clean radiology corpus. <span id=meta></span></p>
-<div class=tabs><button class="tab on" data-t=rec>⭐ Recommended</button><button class=tab data-t=builder>🎛️ Builder</button><button class=tab data-t=rankings>🏆 Rankings</button><button class=tab data-t=models>📊 Models</button></div>
+<div class=tabs><button class="tab on" data-t=builder>🎛️ Builder</button><button class=tab data-t=rankings>🏆 Rankings</button><button class=tab data-t=models>📊 Models</button></div>
 
-<div id=tab-rec>
-  <p class=note style=margin-top:0>Presets by setup effort. Each shows its <b>micro WER</b> on the verified-gold corpus. Click one to load it into the Builder and tweak.</p>
-  <div class=recgrid id=recgrid></div>
-</div>
-
-<div id=tab-builder hidden>
+<div id=tab-builder>
 <div id=appbar hidden style="background:linear-gradient(135deg,#12233a,#101a2e);border:1px solid #2b4a6e;border-radius:10px;padding:12px 14px;margin:0 0 14px">
   <div style="color:#67e8f9;font-weight:600;margin-bottom:8px">Start from a recommendation, then tweak below</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px">
@@ -69,7 +64,6 @@ th{color:#8b97ad;font-size:11px;text-transform:uppercase;letter-spacing:.04em}tr
   <div style="color:#6b7890;font-size:12px;margin-top:8px">Greyed models have no API key. <b style="color:#8b97ad">Right-click a greyed model to add its key</b> — or pick a tier above and add what it needs. Saving turns on ensemble mode + updates the slot picker.</div>
 </div>
 <div class=controls>
-  <label title="verified gold = only the clips a radiologist personally confirmed (unbiased human truth, ~70). all = every clip incl. ones whose truth is the machine consensus (bigger sample, but mildly circular since it's model-derived).">Reference ⓘ: <select id=refset><option value=gold>verified gold only</option><option value=all>all clips w/ truth</option></select></label>
   <label title="Family = the SAME underlying engine reached different ways (native Chirp vs Chirp-via-OpenRouter, or a streaming vs batch variant). They're near-duplicates that make the same errors — default 1 keeps an engine from being double-counted in the vote.">Max per family ⓘ: <select id=cap><option selected>1</option><option>2</option><option>3</option></select></label>
   <label title="Architecture = the broad model type: LLM/seq2seq decoders (Whisper, gpt-4o, Voxtral, Qwen, MAI) vs conformer/transducer streamers (Chirp, Deepgram, AssemblyAI, Soniox, medASR…). Different engines of the SAME type still err in correlated ways — LLMs hallucinate fluent wrong words together. This caps voters per type to force cross-architecture diversity. Anchors are always conformer, so this counts voters only.">Max per architecture ⓘ: <select id=acap><option>2</option><option>3</option><option selected>4</option><option>5</option></select></label>
   <span id=refn></span>
@@ -143,14 +137,19 @@ function consensus(aTok,vToks){const al=vToks.map(v=>align(aTok,v));const out=[]
   const ci=pos=>{const c={};for(const a of al)for(const t of(a.insv[pos]||[]))c[t]=(c[t]||0)+1;for(const[t,n]of Object.entries(c))if(n>=2)out.push(t);};
   for(let i=0;i<aTok.length;i++){ci(i);let e=0;const cand={};for(const a of al){const t=a.at[i];if(t==null)continue;if(t===aTok[i])e++;else cand[t]=(cand[t]||0)+1;}let bt=null,bc=0;for(const[t,n]of Object.entries(cand))if(n>bc){bc=n;bt=t;}out.push((bt!=null&&bc>=2&&bc>e)?bt:aTok[i]);}ci(aTok.length);return out;}
 let anchor=null;const voters=new Set();const tok=s=>s?s.split(' '):[];
-function activeClips(){const g=document.getElementById('refset').value==='gold';return D.clips.filter(c=>(!g||c.v));}
+function activeClips(){return D.clips;}   // [2026-07-24] always ALL clips — the gold/all reference selector was removed (confusing). Matches the app scorecard, which is baked over all clips.
 function famCount(fam){let n=0;for(const v of voters)if(famOf[v]===fam)n++;if(anchor&&famOf[anchor]===fam)n++;return n;}
 function archCount(a){let n=0;for(const v of voters)if(ARCH[v]===a)n++;return n;}  // voters only
+// [unify] Friendly display names — MATCH the wizard's Display() so the same engine reads the same in both
+// surfaces (the builder id 'or-chirp-3' shows as 'Chirp 3 (OpenRouter)', etc.). dn() is DISPLAY ONLY; the
+// underlying model id (voters.add/keyed/anchor=) is never changed.
+const DISP={deepgram:'Deepgram',assemblyai:'AssemblyAI','assemblyai-batch':'AssemblyAI (batch)',speechmatics:'Speechmatics',openai:'OpenAI',medasr:'MedASR','voxtral-batch':'Voxtral (Mistral)','mai-transcribe':'Microsoft MAI-Transcribe',chirp:'Google Chirp 3',soniox:'Soniox','soniox-async':'Soniox (async)',corti:'Corti',amazonmedical:'Amazon Medical',smallestai:'Smallest.ai',elevenlabs:'ElevenLabs','or-chirp-3':'Chirp 3 (OpenRouter)','or-mai-1.5':'MAI 1.5 (OpenRouter)','or-qwen-asr':'Qwen-ASR (OpenRouter)','or-whisper-v3':'Whisper v3 (OpenRouter)','or-whisper-turbo':'Whisper Turbo (OpenRouter)','or-parakeet':'Parakeet (OpenRouter)'};
+function dn(m){return DISP[m]||m;}
 function render(){const cap=+document.getElementById('cap').value,acap=+document.getElementById('acap').value;
   const av=document.getElementById('anchors');av.innerHTML='';
   for(const m of D.streamingAnchors){const nokey=!keyed(m),on=anchor===m,dis=(m==='chirp')||nokey;const l=document.createElement('label');l.className='pill'+(on?' anchoron':'')+(dis?' disabled':'');
     l.title=nokey?('No API key configured for '+m+' — add it in the STT settings'):(m==='chirp'?"Chirp isn't recommended as an anchor — no per-word confidence, emits brace-punctuation, and only finalizes at end-of-session, so as the merge spine it ships live garbles (the app deprioritizes it too). It's still a strong voter below.":'');
-    l.innerHTML=`<input type=radio name=anchor ${on?'checked':''} ${dis?'disabled':''}> ${m} <span class="tag stream">stream</span>`;
+    l.innerHTML=`<input type=radio name=anchor ${on?'checked':''} ${dis?'disabled':''}> ${dn(m)} <span class="tag stream">stream</span>`;
     if(!dis)l.querySelector('input').onchange=()=>{anchor=m;voters.delete(m);compute();};
     if(MT_APP&&!keyed(m))l.oncontextmenu=e=>{e.preventDefault();openKeyModal(m);};
     av.appendChild(l);}
@@ -162,14 +161,14 @@ function render(){const cap=+document.getElementById('cap').value,acap=+document
       if(fam)l.style.borderColor=FAMCOLOR[fam];  // color-coded outline by family
       const dot=fam?'<span style="width:8px;height:8px;border-radius:50%;background:'+FAMCOLOR[fam]+';display:inline-block"></span> ':'';
       const tag=isOR(m)?'<span class="tag or">OR</span>':(LOCAL.has(m)?'<span class="tag local">local</span>':(STREAM.has(m)?'<span class="tag stream">stream</span>':''));
-      l.innerHTML=`<input type=checkbox ${on?'checked':''} ${dis?'disabled':''}> ${dot}${m} ${archBadge(ARCH[m])} ${tag}`;l.querySelector('input').onchange=e=>{if(e.target.checked)voters.add(m);else voters.delete(m);compute();};
+      l.innerHTML=`<input type=checkbox ${on?'checked':''} ${dis?'disabled':''}> ${dot}${dn(m)} ${archBadge(ARCH[m])} ${tag}`;l.querySelector('input').onchange=e=>{if(e.target.checked)voters.add(m);else voters.delete(m);compute();};
       if(MT_APP&&!keyed(m))l.oncontextmenu=e=>{e.preventDefault();openKeyModal(m);};
       wrap.appendChild(l);}
     vv.appendChild(wrap);}}
 function median(a){const s=[...a].sort((x,y)=>x-y);return s.length?s[Math.floor(s.length/2)]:NaN;}
 function compute(){render();const clips=activeClips();document.getElementById('refn').textContent=clips.length+' clips in scope';
   const mix=anchor?('<div class=note style=margin-top:8px>architecture mix (voters): <b style="color:'+ARCHCOLOR.cnf+'">'+archCount('cnf')+' conformer</b> · <b style="color:'+ARCHCOLOR.llm+'">'+archCount('llm')+' LLM</b>'+((archCount('cnf')&&archCount('llm'))?' — decorrelated ✓':' — <span style=color:#c9925f>single-architecture</span>')+'</div>'):'';
-  document.getElementById('summary').innerHTML=anchor?('<span class=chip style="border-color:#a78bfa">⚓ '+anchor+'</span> '+[...voters].map(v=>'<span class=chip>'+v+'</span>').join(' ')+mix):'none';
+  document.getElementById('summary').innerHTML=anchor?('<span class=chip style="border-color:#a78bfa">⚓ '+dn(anchor)+'</span> '+[...voters].map(v=>'<span class=chip>'+dn(v)+'</span>').join(' ')+mix):'none';
   if(!anchor){document.getElementById('wer').textContent='--';document.getElementById('warn').innerHTML='<div class=warnbox>Pick a streaming anchor to compute WER.</div>';return;}
   const vl=[...voters],wers=[];let te=0,tr=0;
   document.getElementById('warn').innerHTML=vl.length===1?'<div class=warnbox>⚠ Only 1 voter — consensus needs ≥2 voters to agree before it can override the anchor, so this voter changes nothing and the result is just the anchor transcript. Add a 2nd voter for a real merge.</div>':(vl.length===0?'<div class=warnbox>No voters — result is the raw anchor transcript. Add ≥2 voters to form an ensemble.</div>':'');
@@ -181,16 +180,16 @@ function compute(){render();const clips=activeClips();document.getElementById('r
   document.getElementById('dist').innerHTML=b.map(v=>'<div style="height:'+(100*v/mx)+'%" title="'+v+' clips"></div>').join('');
   document.getElementById('selnote').textContent=wers.filter(w=>w===0).length+' clips perfect · worst '+(Math.max(...wers)*100).toFixed(0)+'%';}
 function loadCfg(a,v){anchor=a;voters.clear();v.forEach(x=>voters.add(x));switchTab('builder');compute();}
-function renderRec(){document.getElementById('recgrid').innerHTML=RECS.map((r,i)=>`<div class="rec${i===1?' best':''}" data-i=${i}><div class=rw>${r.micro.toFixed(1)}%</div><h4>${r.name}${i===1?' ⭐':''}</h4><div class=eff>${r.effort} · median ${r.med.toFixed(1)}%</div><div class=why>${r.why}</div><div><span class=chip style="border-color:#a78bfa">⚓ ${r.a}</span> ${r.v.map(v=>'<span class=chip>'+v+'</span>').join('')}</div></div>`).join('');
+function renderRec(){document.getElementById('recgrid').innerHTML=RECS.map((r,i)=>`<div class="rec${i===1?' best':''}" data-i=${i}><div class=rw>${r.micro.toFixed(1)}%</div><h4>${r.name}${i===1?' ⭐':''}</h4><div class=eff>${r.effort} · median ${r.med.toFixed(1)}%</div><div class=why>${r.why}</div><div><span class=chip style="border-color:#a78bfa">⚓ ${dn(r.a)}</span> ${r.v.map(v=>'<span class=chip>'+dn(v)+'</span>').join('')}</div></div>`).join('');
   document.querySelectorAll('.rec').forEach(el=>el.onclick=()=>{const r=RECS[+el.dataset.i];loadCfg(r.a,r.v);});}
 function renderRank(){document.getElementById('rkgold').textContent=D.clips.filter(c=>c.v).length;
-  document.getElementById('rktbody').innerHTML=RANK.map((r,i)=>`<tr class=rk data-i=${i}><td>${i+1}</td><td class=w>${r.micro.toFixed(1)}%</td><td>${r.med.toFixed(1)}%</td><td>${r.v.length}</td><td>⚓ ${r.a}</td><td>${r.v.map(v=>'<span class=chip>'+v+'</span>').join('')||'<i style=color:#6b7890>anchor only</i>'}</td></tr>`).join('');
+  document.getElementById('rktbody').innerHTML=RANK.map((r,i)=>`<tr class=rk data-i=${i}><td>${i+1}</td><td class=w>${r.micro.toFixed(1)}%</td><td>${r.med.toFixed(1)}%</td><td>${r.v.length}</td><td>⚓ ${dn(r.a)}</td><td>${r.v.map(v=>'<span class=chip>'+dn(v)+'</span>').join('')||'<i style=color:#6b7890>anchor only</i>'}</td></tr>`).join('');
   document.querySelectorAll('tr.rk').forEach(tr=>tr.onclick=()=>{const r=RANK[+tr.dataset.i];loadCfg(r.a,r.v);});}
-function renderModels(){document.getElementById('mwbody').innerHTML=MODELWER.map((r,i)=>{const fam=famOf[r.m],dot=fam?'<span style="width:8px;height:8px;border-radius:50%;background:'+FAMCOLOR[fam]+';display:inline-block;margin-right:5px"></span>':'<span style="width:8px;height:8px;border-radius:50%;border:1px solid #3a4a68;display:inline-block;margin-right:5px"></span>';const acc=isOR(r.m)?'OpenRouter':(LOCAL.has(r.m)?'local':(STREAM.has(r.m)?'native · streaming':'native'));return `<tr class=mw><td>${i+1}</td><td class=w>${r.micro.toFixed(1)}%</td><td>${r.med.toFixed(1)}%</td><td>${dot}${r.m}</td><td>${archBadge(r.arch)} ${ARCHNAME[r.arch]||'<span style=color:#6b7890>undisclosed</span>'}</td><td style=color:#8b97ad>${acc}</td><td style=color:#6b7890>${r.n}</td></tr>`;}).join('');}
-function switchTab(t){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t===t));document.getElementById('tab-rec').hidden=t!=='rec';document.getElementById('tab-builder').hidden=t!=='builder';document.getElementById('tab-rankings').hidden=t!=='rankings';document.getElementById('tab-models').hidden=t!=='models';}
+function renderModels(){document.getElementById('mwbody').innerHTML=MODELWER.map((r,i)=>{const fam=famOf[r.m],dot=fam?'<span style="width:8px;height:8px;border-radius:50%;background:'+FAMCOLOR[fam]+';display:inline-block;margin-right:5px"></span>':'<span style="width:8px;height:8px;border-radius:50%;border:1px solid #3a4a68;display:inline-block;margin-right:5px"></span>';const acc=isOR(r.m)?'OpenRouter':(LOCAL.has(r.m)?'local':(STREAM.has(r.m)?'native · streaming':'native'));return `<tr class=mw><td>${i+1}</td><td class=w>${r.micro.toFixed(1)}%</td><td>${r.med.toFixed(1)}%</td><td>${dot}${dn(r.m)}</td><td>${archBadge(r.arch)} ${ARCHNAME[r.arch]||'<span style=color:#6b7890>undisclosed</span>'}</td><td style=color:#8b97ad>${acc}</td><td style=color:#6b7890>${r.n}</td></tr>`;}).join('');}
+function switchTab(t){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t===t));document.getElementById('tab-builder').hidden=t!=='builder';document.getElementById('tab-rankings').hidden=t!=='rankings';document.getElementById('tab-models').hidden=t!=='models';}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>switchTab(b.dataset.t));
 document.getElementById('meta').textContent='('+D.clips.length+' clips, '+D.models.length+' models · data: '+D.generated+')';
-document.getElementById('refset').onchange=()=>{compute();if(MT_APP)renderTiers();};document.getElementById('cap').onchange=()=>{renderLegend();compute();};document.getElementById('acap').onchange=()=>{renderLegend();compute();};
+document.getElementById('cap').onchange=()=>{renderLegend();compute();};document.getElementById('acap').onchange=()=>{renderLegend();compute();};
 if(RANK.length){anchor=RANK[0].a;RANK[0].v.forEach(v=>voters.add(v));}
 // [app-embed] Save bar, three key-aware tiers, and the right-click add-key flow.
 const MT_SIGNUP=(typeof window!=='undefined'&&window.MT_SIGNUP)||{};       // {model:signupUrl}
@@ -208,18 +207,28 @@ function appSave(){ if(!anchor){appStatus('Pick a streaming anchor first',true);
   try{ window.chrome.webview.postMessage(JSON.stringify({type:'save',anchor,voters:[...voters]})); appStatus('Saved ✓ — ensemble mode on, slot picker updated'); }
   catch(e){ appStatus('Save failed: '+e.message,true); } }
 function fillTier(id,title,desc,cfg){const el=document.getElementById(id);if(!el)return;
-  if(!cfg){el.innerHTML='<div class=tt>'+title+'</div><div class=td>'+desc+'</div><div class=tn>no complete config available</div>';el.disabled=true;el.onclick=null;return;}
-  el.disabled=false;const miss=[...new Set(missingOf(cfg.a,cfg.v))];const wer=microFor(cfg.a,cfg.v);
+  if(!cfg||!cfg.a){el.innerHTML='<div class=tt>'+title+'</div><div class=td>'+desc+'</div><div class=tn>no complete config available</div>';el.disabled=true;el.onclick=null;return;}
+  // wer: prefer the canonical value the app injected (EnsembleScorecard); fall back to the local sweep on the website.
+  el.disabled=false;const miss=[...new Set(missingOf(cfg.a,cfg.v))];const wer=(cfg.wer!=null?cfg.wer:microFor(cfg.a,cfg.v));
   el.innerHTML='<span class=tw>'+wer.toFixed(1)+'%</span><div class=tt>'+title+'</div><div class=td>'+desc+'</div><div class=tn>'+(miss.length?('needs: '+miss.join(', ')):'ready with your keys ✓')+'</div>';
-  el.onclick=()=>{loadCfg(cfg.a,cfg.v);appStatus(title+' loaded — '+microFor(cfg.a,cfg.v).toFixed(1)+'% WER'+(miss.length?' · right-click greyed models to add keys':''));};}
+  el.onclick=()=>{loadCfg(cfg.a,cfg.v);appStatus(title+' loaded — '+wer.toFixed(1)+'% WER'+(miss.length?' · right-click greyed models to add keys':''));};}
 function renderTiers(){
+  // [unify] In-app: the tiers come from the ONE canonical engine (EnsembleScorecard, injected as MT_REC) — NOT
+  // this page's raw RANK sweep, so the modal and the wizard never disagree. Website (no MT_REC) keeps the sweep.
+  const R=(typeof window!=='undefined')&&window.MT_REC;
+  if(R){
+    fillTier('tier-you','⭐ Recommended for you','uses only the keys you already have',R.you);
+    fillTier('tier-min','🔑 Minimal-effort best','best you can reach with easy one-key adds',R.min);
+    fillTier('tier-best','🚀 Very best possible','the global best — may need Google/Azure/AWS keys',R.best);
+    return;
+  }
   fillTier('tier-you','⭐ Recommended for you','uses only the keys you already have',RANK.find(r=>keyed(r.a)&&r.v.every(keyed)));
   fillTier('tier-min','🔑 Minimal-effort best','best you can reach with easy one-key adds',RANK.find(r=>obtainable(r.a)&&r.v.every(obtainable)));
   fillTier('tier-best','🚀 Very best possible','the global best — may need Google/Azure/AWS keys',RANK[0]); }
 // right-click a greyed model → key modal
 let _kmModel='';
 function openKeyModal(model){ _kmModel=model; const multi=MT_MULTIKEY[model]===true, url=MT_SIGNUP[model]||'';
-  document.getElementById('km-title').textContent=model;
+  document.getElementById('km-title').textContent=dn(model);
   document.getElementById('km-sub').textContent=multi?'This provider needs multiple credentials (service-account file, or client id/secret, etc.).':'Paste the API key and Save — the model switches on immediately.';
   const get=document.getElementById('km-get');get.style.display=url?'inline-block':'none';get.onclick=e=>{e.preventDefault();try{window.chrome.webview.postMessage(JSON.stringify({type:'openurl',url}));}catch(_){}};
   document.getElementById('km-single').style.display=multi?'none':'';document.getElementById('km-save').style.display=multi?'none':'';
@@ -239,8 +248,8 @@ if(MT_APP){
   renderTiers();
   const cur=(typeof window!=='undefined')&&window.MT_CURRENT;   // preselect the saved ensemble (keep unkeyed picks — shown greyed, addable), else best keyed config
   if(cur&&cur.a){anchor=cur.a;voters.clear();(cur.v||[]).forEach(v=>voters.add(v));}
-  else{const r=RANK.find(r=>keyed(r.a)&&r.v.every(keyed));if(r){anchor=r.a;voters.clear();r.v.forEach(v=>voters.add(v));}}
+  else{const r=(window.MT_REC&&window.MT_REC.you)||RANK.find(r=>keyed(r.a)&&r.v.every(keyed));if(r&&r.a){anchor=r.a;voters.clear();r.v.forEach(v=>voters.add(v));}}
   switchTab('builder');
 }
-renderLegend();render();compute();renderRec();renderRank();renderModels();
+renderLegend();render();compute();renderRank();renderModels();
 </script></body></html>

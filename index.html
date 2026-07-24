@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.7.6</h2>
+    <h2>✨ New in v5.8.0</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.8.0</span><span class="spot-title">OpenRouter dictation, rebuilt setup wizard + Graphical Ensemble Builder</span></div>
+        <ul><li>Dictation setup, rebuilt around OpenRouter — the Quick Setup wizard's two hardest steps (Google Chirp via Google Cloud, and Microsoft MAI via Azure) are replaced by a single OpenRouter key. That one key unlocks severa…</li><li>Quick Setup review screen — decluttered. The recommended ensemble and the keep-vs-switch choice are now at the top instead of buried under a long list; the per-engine checklist is tucked into an &quot;Adjust engines&quot; expan…</li><li>NEW — Graphical Ensemble Builder (Settings → Speech-to-Text). A visual builder keyed to the engines you actually have: pick an anchor and voters, see the live word-error estimate, right-click a greyed engine to add it…</li><li>Smarter recommendation — it now recommends the lowest word-error ensemble and never stacks two variants of the same engine (e.g. AssemblyAI streaming + AssemblyAI batch). Rebuilt over a larger corpus that now includes…</li><li>Automatic failover — now covers ALL the engines you've set up, including the OpenRouter voters (it previously ignored them). If a dictation engine has an outage mid-shift, any other engine you've configured automatica…</li><li>MTRec — optional &quot;insert recommendations into Findings&quot;: incidental-finding recommendations can be placed in the Findings section (with the guideline reference inline) instead of merged into the Impression. Off by def…</li><li>Direct Mosaic access (CDP) is now ON by default for new setups, and all CDP settings moved into their own &quot;CDP&quot; section (out of Experimental). Existing users who deliberately turned it off are left alone.</li><li>Fixes — the record button hitting Mosaic's own recorder on some non-dictation-brand USB mics (e.g. Blue Snowball) is fixed; a crash while beautifying clinical history is fixed; Amazon Medical now returns text on far m…</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.7.6</span><span class="spot-title">Speech-time audio contribution + STT auto-recover</span></div>
         <ul><li>Audio contribution — now measured by ACTUAL SPEECH TIME, not wall-clock. Long silent gaps in a recording are trimmed before it's banked, so a 7-minute dictation with 30 seconds of speech counts as ~30 seconds against …</li><li>STT — optional automatic recovery when dictation quality degrades (Settings → Speech, OFF by default): a two-tier safety net that first recycles the ensemble in place and, if you opt into the stronger tier, can restar…</li><li>Dictation formatting — optional &quot;no blank line between sentences&quot; (single-spaced) for report text, global and off by default. Turn it on if you prefer sentences packed without an empty line between them.</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.7.5</span><span class="spot-title">Macros: optional &quot;keep cursor at top&quot;</span></div>
         <ul><li>Macros — NEW option (Settings → Text &amp; Templates → Macros, OFF by default): &quot;Keep cursor at top (macro inserts below)&quot;. When on, an auto-inserted study macro lands BELOW where the cursor started and the cursor is retu…</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.7.4</span><span class="spot-title">Auto True-Size calibration, Settings 2.0, more STT voters</span></div>
-        <ul><li>Spine Labeling &amp; Auto Measure — now read your monitor's pixel size automatically from the display itself, so True Size calibration works with no setup on your part. Before, if InteleViewer's own monitor calibration co…</li><li>NEW — Settings 2.0 (opt-in): a second, rebuilt Settings window is available from the menu alongside the current one, with all tabs present and bound to the same configuration. Try it if you like; the classic Settings …</li><li>NEW — more speech engines via OpenRouter: Chirp, MAI, Qwen, Whisper and Parakeet can now be added as ensemble voters through a single OpenRouter key. When a provider isn't configured natively, the app steers you to it…</li></ul>
       </div>
     </div>
   </section>
@@ -79,7 +79,7 @@
 <section class="module">
   <h2>Browse by function</h2>
   <div class="catgrid">
-    <a class="catcard" href="category/dictation.html"><div class="catcard-icon">🎙️</div><h3>Dictation &amp; Speech</h3><p>The custom speech-to-text ensemble: multiple engines voting on every word, with health monitoring, keyterm boosting, and instant paste.</p><span class="catcard-n">17 features</span></a>
+    <a class="catcard" href="category/dictation.html"><div class="catcard-icon">🎙️</div><h3>Dictation &amp; Speech</h3><p>The custom speech-to-text ensemble: multiple engines voting on every word, with health monitoring, keyterm boosting, and instant paste.</p><span class="catcard-n">18 features</span></a>
     <a class="catcard" href="category/processing.html"><div class="catcard-icon">🧾</div><h3>Report Processing &amp; QA</h3><p>Process Report and the safety net around it — consistency checks, mismatch alerts, and sign-time guards.</p><span class="catcard-n">11 features</span></a>
     <a class="catcard" href="category/recommendations.html"><div class="catcard-icon">📋</div><h3>Recommendations</h3><p>MTRec: deterministic, guideline-cited follow-up recommendations and the Associations completeness checklist.</p><span class="catcard-n">5 features</span></a>
     <a class="catcard" href="category/priors.html"><div class="catcard-icon">📚</div><h3>Priors &amp; Clinical History</h3><p>Pull the relevant prior, AI-summarize it, and keep the corrected clinical history in view.</p><span class="catcard-n">3 features</span></a>
@@ -99,7 +99,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.7.6</strong> · built 2026-07-24</div>
+  <div>Documents <strong>MosaicTools v5.8.0</strong> · built 2026-07-24</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>

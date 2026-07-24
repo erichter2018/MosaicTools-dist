@@ -54,12 +54,14 @@
 <h2>How to turn it on / set it up</h2>
 <p>Settings → Speech-to-Text → <strong>⚡ Quick Setup Wizard</strong>. It&#39;s safe to re-run any time; it remembers your previous answers.</p>
 <h2>Using it</h2>
-<p>Beyond the key steps, the wizard also: turns on the two prerequisites (Custom dictation and Direct Mosaic access) with one click if they&#39;re off; adds the free on-device medASR model; offers an optional <strong>Advanced</strong> section for Microsoft MAI-Transcribe and Google Chirp 3; offers a <strong>Backup engines</strong> step for failover resilience; and switches Mosaic&#39;s &quot;Auto Transcript Record&quot; off so Mosaic doesn&#39;t grab the microphone first. If the recommended line-up changes in a future update, you get a one-time tip to re-run it.</p>
+<p>Beyond the key steps, the wizard also: turns on the two prerequisites (Custom dictation and Direct Mosaic access) with one click if they&#39;re off; adds the free on-device medASR model; offers a single <strong>OpenRouter</strong> step; and switches Mosaic&#39;s &quot;Auto Transcript Record&quot; off so Mosaic doesn&#39;t grab the microphone first. If the recommended line-up changes in a future update, you get a one-time tip to re-run it.</p>
+<p>The <strong>review screen</strong> at the end leads with the recommended ensemble and a simple keep-vs-switch choice; the full per-engine checklist is tucked behind an &quot;Adjust engines&quot; expander you open only if you want to fine-tune.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
+<li><strong>One OpenRouter key replaces the old cloud-account steps.</strong> Setting up Google Chirp used to mean a Google Cloud service account, and MAI meant an Azure resource. Now a single OpenRouter key unlocks Chirp 3, Qwen-ASR and MAI 1.5 as voting engines at once — no cloud consoles. Chirp 3 via OpenRouter is the single lowest-error voter on our test corpus.</li>
 <li>A rejected key blocks the Next button on purpose — the wizard tells you plainly whether the key is bad or it looks like a network problem.</li>
+<li>The recommendation is the <strong>lowest word-error</strong> ensemble it can build from your engines, and it never stacks two variants of the same engine. It matches the Graphical Ensemble Builder exactly (same underlying engine).</li>
 <li>On the finish step it lists any engine you set up that the recommended stack won&#39;t use, and whether leaving it idle is free (pay-per-use) or could keep charging you (e.g. an ElevenLabs monthly plan to cancel).</li>
-<li>Skip the Advanced engines freely — dictation works well without them.</li>
 </ul>
 
     </div>
@@ -75,7 +77,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.7.6</strong> · built 2026-07-24</div>
+  <div>Documents <strong>MosaicTools v5.8.0</strong> · built 2026-07-24</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

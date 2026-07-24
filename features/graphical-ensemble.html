@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Dictation Data Sharing (Opt-in) — MosaicTools docs</title>
+<title>Graphical Ensemble Builder — MosaicTools docs</title>
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 
@@ -42,34 +42,33 @@
 <article class="feature">
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
-    <h1>Dictation Data Sharing (Opt-in)</h1>
-    <p class="brief">Strictly opt-in sharing of de-identified dictation data to improve recognition accuracy — all PHI is stripped on your own machine before anything leaves it.</p>
+    <h1>Graphical Ensemble Builder</h1>
+    <p class="brief">A visual builder for your dictation ensemble — pick an anchor and voters, see the live word-error estimate, add a missing key on the spot, and save.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
-      <div class="shots"><figure class="shot"><img src="../img/settings-stt-sharing.png" alt="The Data Sharing opt-in — de-identified on this PC first" loading="lazy" class="lightboxable"><figcaption>The Data Sharing opt-in — de-identified on this PC first</figcaption></figure></div>
+      
       <h2>What it does</h2>
-<p>Recognition problems are fixed by looking at real dictations — which engine misheard what, and how the merge decided. <strong>Share de-identified dictation to improve accuracy</strong> contributes anonymized dictation data for exactly that tuning. The critical part is <em>where</em> de-identification happens: <strong>on your computer, before anything is shared</strong>. Names, dates, MRNs, accession numbers, and hospital/facility names are removed locally; nothing identifiable ever leaves your machine. Sharing is one-way (push only) and off by default.</p>
-<p>A second, narrower opt-in — <strong>Contribute ~30 min of de-identified dictation audio to improve engine recommendations</strong> — is only visible to testers who have arranged it with the developer. Audio can&#39;t be scrubbed the way text can, so each clip is checked on your machine first and any clip with a detected identifier is dropped and never uploaded; it stops automatically at about 30 minutes total.</p>
+<p>The Graphical Ensemble Builder is a visual way to assemble or fine-tune your multi-engine dictation stack, keyed to the engines you actually have. It shows a streaming <strong>anchor</strong> row and a <strong>voters</strong> list; pick a combination and it estimates the resulting word-error rate live against our radiology test corpus. Engines you don&#39;t have a key for are greyed. Three ready-made tiers sit at the top — <strong>Recommended for you</strong> (from the keys you already have), <strong>Minimal-effort best</strong> (with easy one-key additions), and <strong>Very best possible</strong> (assuming you add every key) — and they come from the exact same recommendation engine as the Quick Setup wizard, so the two never disagree.</p>
 <h2>How to turn it on / set it up</h2>
-<p>Settings → Speech-to-Text → <strong>Data Sharing</strong>. Both boxes default to off; check the first if you&#39;re willing to contribute. Nothing else to do.</p>
+<p>Settings → Speech-to-Text → <strong>🎛️ Graphical Ensemble</strong>. It opens keyed to your current setup.</p>
 <h2>Using it</h2>
-<p>Invisible in daily work. The practical benefit flows back to you: engine misfires seen in the shared data drive keyterm additions, merge fixes, and ensemble recommendations in subsequent releases.</p>
+<p>Click a tier to load it, or hand-build: choose an anchor, tick voters, and watch the word-error estimate update. <strong>Right-click a greyed engine</strong> to add its API key without leaving the builder — the moment it&#39;s keyed, it lights up. <strong>Save as my ensemble</strong> writes the configuration, turns on ensemble mode, and updates the slot picker. Anchors are limited to the strong streaming engines (Deepgram, AssemblyAI, Speechmatics) because the anchor is the merge spine — a weak anchor drags the whole ensemble down.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>Independent of this, ensemble mode keeps a local de-identified diagnostics log (<code>dictation_log.jsonl</code>, next to the main log) that never leaves your machine unless you personally send it — right-click the bar → Show Log to find it.</li>
-<li>You can switch either opt-in off at any time; it stops immediately.</li>
-<li>What&#39;s shared is dictation/diagnostic data — never raw patient reports with identifiers.</li>
+<li>The recommendation is the <strong>lowest word-error</strong> stack it can build, and it never puts two variants of the same engine in one ensemble (e.g. AssemblyAI streaming + AssemblyAI batch) — those are correlated and don&#39;t add a real second opinion.</li>
+<li>The number you see is measured over the full radiology corpus — the same number the app uses internally, so what you pick is what you get.</li>
+<li>You don&#39;t need to configure backups here: failover is automatic and draws on every engine you&#39;ve set up (see Failover backups).</li>
 </ul>
 
     </div>
     <aside class="feature-meta">
       <h4>At a glance</h4>
-      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Speech-to-Text → Data Sharing → Share de-identified dictation to improve accuracy</span></div>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Speech-to-Text → 🎛️ Graphical Ensemble</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
-    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.0</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/telemetry.html">Diagnostics &amp; Data Sharing</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/keyterms.html">Keyterms &amp; Auto-Learning</a></li></ul>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.8</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/stt-setup-wizard.html">Quick Setup Wizard</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/stt-providers.html">Speech Engines (Providers)</a></li><li><a href="../features/failover-backups.html">Failover Backup Engines</a></li><li><a href="../features/ensemble-health.html">Ensemble Health Light</a></li></ul>
     </aside>
   </div>
 </article>
