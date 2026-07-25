@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.8.1</h2>
+    <h2>✨ New in v5.8.2</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.8.2</span><span class="spot-title">Dictation recommendations rebuilt on fully-reviewed data</span></div>
+        <ul><li>The ensemble recommendations (Quick Setup wizard + Graphical Ensemble Builder) have been rebuilt on a fully human-reviewed corpus. Every one of the 184 test dictations now has a radiologist-confirmed reference transcr…</li><li>The builder now compares EVERY ensemble size — from a single engine up to all of them at once — rather than stopping partway.</li><li>NEW for audio contributors — a &quot;Speakers&quot; selector in the Graphical Ensemble Builder. If you've contributed voice clips, you can now see the ensemble tuned to YOUR dictation specifically, not the group average. Speake…</li><li>The per-clip error chart is readable now: it has labelled axes, per-bar tooltips telling you how many clips fall in each error band, and a plain-language summary instead of a bare &quot;worst 41%&quot;.</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.8.1</span><span class="spot-title">Findings/Impression checker rewrite + dictation fixes</span></div>
-        <ul><li>Findings vs Impression checker — rewritten. It now catches a FINDINGS section that contradicts ITSELF, which it previously could not see: a stale templated line like &quot;no bowel obstruction&quot; left sitting beside a correc…</li><li>Flashing alert text is working again. It had stopped fleet-wide for ALL the report alerts — the findings/impression check, the gender mismatch alert and the consistency alerts — so those warnings were appearing withou…</li><li>OpenRouter dictation engines now actually work. Every OpenRouter voter (Chirp 3, Qwen-ASR, MAI 1.5, Whisper, Parakeet) was silently returning NOTHING because of a malformed upload, so if you set one up in 5.8.0 it con…</li><li>Quiet microphones — silence trimming was skipped entirely on quieter recordings, because the detector's threshold was tuned for a loud microphone and decided the whole recording was silence. That meant long stretches …</li><li>Amazon Transcribe Medical — now returns the END of your dictation. It was frequently dropping the last few words (and occasionally garbling a phrase) because it never detected that you'd stopped speaking. Word error r…</li></ul>
+        <ul><li>Findings vs Impression checker — rewritten. It now catches a FINDINGS section that contradicts ITSELF, which it previously could not see: a stale templated line like &quot;no bowel obstruction&quot; left sitting beside a correc…</li><li>Flashing alert text is working again. It had stopped fleet-wide for ALL the report alerts — the findings/impression check, the gender mismatch alert and the consistency alerts — so those warnings were appearing withou…</li><li>OpenRouter dictation engines now actually work. Every OpenRouter voter (Chirp 3, Qwen-ASR, MAI 1.5, Whisper, Parakeet) was silently returning NOTHING because of a malformed upload, so if you set one up in 5.8.0 it con…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.8.0</span><span class="spot-title">OpenRouter dictation, rebuilt setup wizard + Graphical Ensemble Builder</span></div>
         <ul><li>Dictation setup, rebuilt around OpenRouter — the Quick Setup wizard's two hardest steps (Google Chirp via Google Cloud, and Microsoft MAI via Azure) are replaced by a single OpenRouter key. That one key unlocks severa…</li><li>Quick Setup review screen — decluttered. The recommended ensemble and the keep-vs-switch choice are now at the top instead of buried under a long list; the per-engine checklist is tucked into an &quot;Adjust engines&quot; expan…</li><li>NEW — Graphical Ensemble Builder (Settings → Speech-to-Text). A visual builder keyed to the engines you actually have: pick an anchor and voters, see the live word-error estimate, right-click a greyed engine to add it…</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.7.6</span><span class="spot-title">Speech-time audio contribution + STT auto-recover</span></div>
-        <ul><li>Audio contribution — now measured by ACTUAL SPEECH TIME, not wall-clock. Long silent gaps in a recording are trimmed before it's banked, so a 7-minute dictation with 30 seconds of speech counts as ~30 seconds against …</li><li>STT — optional automatic recovery when dictation quality degrades (Settings → Speech, OFF by default): a two-tier safety net that first recycles the ensemble in place and, if you opt into the stronger tier, can restar…</li><li>Dictation formatting — optional &quot;no blank line between sentences&quot; (single-spaced) for report text, global and off by default. Turn it on if you prefer sentences packed without an empty line between them.</li></ul>
       </div>
     </div>
   </section>
@@ -99,7 +99,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.1</strong> · built 2026-07-25</div>
+  <div>Documents <strong>MosaicTools v5.8.2</strong> · built 2026-07-25</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
