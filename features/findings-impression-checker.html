@@ -43,13 +43,19 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
     <h1>Findings/Impression Mismatch</h1>
-    <p class="brief">Catches outright contradictions between FINDINGS and IMPRESSION — &quot;no bowel obstruction&quot; in the findings with &quot;bowel obstruction&quot; in the impression — and pulses an alert until you fix or dismiss it.</p>
+    <p class="brief">Catches outright contradictions between FINDINGS and IMPRESSION — and, since 5.8.1, a FINDINGS section that contradicts itself — then pulses an alert until you fix or dismiss it.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="Findings/Impression mismatch under Alert Triggers" loading="lazy" class="lightboxable"><figcaption>Findings/Impression mismatch under Alert Triggers</figcaption></figure></div>
       <h2>What it does</h2>
 <p>After both sections exist, MosaicTools compares FINDINGS and IMPRESSION for contradictions of assertion: one section negates a concept the other asserts. The classic case is a normal-template findings line (&quot;No evidence of bowel obstruction&quot;) surviving next to a dictated impression point (&quot;Small bowel obstruction&quot;) — usually the residue of an edited template or a processing hiccup. When it finds one, the notification box pulses (the settings label marks it <strong>pulsing orange</strong>) and names the contradiction.</p>
+<p><strong>Rewritten in 5.8.1.</strong> The check previously compared the two sections only against each other, so it was blind to a FINDINGS section contradicting <em>itself</em> — and in practice it only fired when a report was dictated non-literally. It now also catches:</p>
+<ul>
+<li><strong>Stale template negation</strong> — a leftover templated &quot;no bowel obstruction&quot; sitting in the findings while the <em>same</em> section (or the impression) describes the obstruction you actually dictated. This is the common real-world case: the template line was never removed.</li>
+<li><strong>Impression declares normal</strong> — an impression that calls the study normal or unremarkable when the findings describe something that isn&#39;t.</li>
+</ul>
+<p>It&#39;s deliberately quiet: across a 6,078-report corpus it fires on 28 reports (0.46%), so an alert is worth reading rather than reflex-dismissing.</p>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → Alerts → Alert Triggers → Findings/Impression mismatch.</strong> It requires the notification box (<strong>Enable Notification Box</strong>, same tab) and appears even in alerts-only mode.</p>
 <h2>Using it</h2>
@@ -74,7 +80,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.0</strong> · built 2026-07-24</div>
+  <div>Documents <strong>MosaicTools v5.8.1</strong> · built 2026-07-25</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
