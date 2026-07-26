@@ -49,20 +49,20 @@
 </section>
 
   <section class="module">
-    <h2>✨ New in v5.8.5</h2>
+    <h2>✨ New in v5.8.6</h2>
     <div class="spotlight">
       
       <div class="spot-ver spot-newest">
+        <div class="spot-head"><span class="spot-vnum">v5.8.6</span><span class="spot-title">Accuracy figures rebuilt on fully human-checked dictations</span></div>
+        <ul><li>Every dictation in the accuracy corpus has now been listened to and corrected by hand. Until now some references were the ensemble's own best guess, which quietly flattered the merged result and understated strong ind…</li><li>Because of that, the recommended setups have CHANGED. medASR (the free local engine) now earns a place in the recommended ensemble for most speakers, where the smaller test set had been leaving it out. If you are foll…</li><li>Accuracy data now refreshes itself. When new dictations are added to the corpus, updated recommendations reach you on your next start WITHOUT waiting for an app update. The version bundled with the app is always used …</li><li>MTRec — a nodule described as spiculated is no longer downgraded just because several nodules are present; a dominant suspicious nodule keeps its recommendation.</li><li>MTRec — a recommendation will no longer replace an impression line that already states a tissue diagnosis. Your established diagnosis outranks a generic follow-up suggestion.</li><li>Settings (new layout) — buttons that open other windows (key mappings, button studio, macro editor, pick lists, audio setup, voice enrolment) did nothing when clicked. They now work, and the layout check has been exte…</li><li>Settings (new layout) — the sidebar now follows as you scroll, and changing a setting no longer jumps you back to the top of the page.</li><li>Ensemble Builder — the window is wider, with the extra room given to the engine list. With the longer engine names the checkboxes had been stacking one per row and needed constant scrolling.</li></ul>
+      </div>
+      <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.8.5</span><span class="spot-title">MTRec hybrid placement, per-server Clario shortcuts, clearer engine names</span></div>
-        <ul><li>MTRec — NEW &quot;hybrid&quot; placement mode. Recommendations are now routed by what they actually tell you to do: a disposition that closes the matter out (&quot;no further follow-up needed&quot;) is placed inline in FINDINGS next to t…</li><li>MTRec fix — deleting a recommendation that had been inserted into Findings left its button stuck grey, so you couldn't re-insert it. It now notices the line is gone and re-arms itself.</li><li>MTRec fix — a splenic recommendation could sit BESIDE your own impression line instead of replacing it, leaving an impression that called the same lesion both a benign cyst and an indeterminate lesion needing MRI foll…</li><li>Clario — separate &quot;SW&quot; and &quot;MW&quot; shortcut buttons, so the two servers each get their own Edge shortcut and their own status dot instead of one shortcut you had to keep re-pointing by hand. The status dots also no longe…</li><li>NEW dictation engine — xAI Grok STT, available as a voting engine. It streams, and it needs no new key if you already use Grok for the AI features. Note that on our test corpus it does NOT improve accuracy, so it is n…</li><li>Engine names now carry version numbers everywhere — &quot;Google Chirp 3&quot;, &quot;AssemblyAI Universal-3 Pro&quot;, &quot;Mistral Voxtral Mini Transcribe V2&quot; — and read identically in the setup wizard, both settings screens and the Ensemb…</li><li>Fixed — choosing certain dictation engines from a settings dropdown silently did nothing and fell back to the default. This affected the newest engines and would have affected more of them as names changed.</li><li>Ensemble Builder — the Models tab now leads with the engine name and adds a plain-language line under each one describing what it's good and bad at. Streaming engines that can't serve as your main engine are now liste…</li></ul>
+        <ul><li>MTRec — NEW &quot;hybrid&quot; placement mode. Recommendations are now routed by what they actually tell you to do: a disposition that closes the matter out (&quot;no further follow-up needed&quot;) is placed inline in FINDINGS next to t…</li><li>MTRec fix — deleting a recommendation that had been inserted into Findings left its button stuck grey, so you couldn't re-insert it. It now notices the line is gone and re-arms itself.</li><li>MTRec fix — a splenic recommendation could sit BESIDE your own impression line instead of replacing it, leaving an impression that called the same lesion both a benign cyst and an indeterminate lesion needing MRI foll…</li></ul>
       </div>
       <div class="spot-ver">
         <div class="spot-head"><span class="spot-vnum">v5.8.4</span><span class="spot-title">Complete evaluation matrix, per-speaker views, Capture Series diagnostics</span></div>
         <ul><li>Every dictation engine has now been run against every test clip — a complete 3,864-cell matrix (21 engines x 184 dictations). Two engines were previously scored on only a fraction of the clips, which made their accura…</li><li>NEW for audio contributors — a &quot;Speakers&quot; selector in the Graphical Ensemble Builder. If you've contributed voice clips, you can see the ensemble tuned to YOUR dictation rather than the group average. Speakers are sho…</li><li>NEW — a &quot;Worst 20 configurations&quot; table, and a one-line worst-case figure beside your current ensemble. Useful for a sense of the spread, and as a sanity check that a badly-chosen stack really does look bad.</li></ul>
-      </div>
-      <div class="spot-ver">
-        <div class="spot-head"><span class="spot-vnum">v5.8.2</span><span class="spot-title">Dictation recommendations rebuilt on fully-reviewed data</span></div>
-        <ul><li>The ensemble recommendations (Quick Setup wizard + Graphical Ensemble Builder) have been rebuilt on a fully human-reviewed corpus. Every one of the 184 test dictations now has a radiologist-confirmed reference transcr…</li><li>The builder now compares EVERY ensemble size — from a single engine up to all of them at once — rather than stopping partway.</li><li>NEW for audio contributors — a &quot;Speakers&quot; selector in the Graphical Ensemble Builder. If you've contributed voice clips, you can now see the ensemble tuned to YOUR dictation specifically, not the group average. Speake…</li></ul>
       </div>
     </div>
   </section>
@@ -99,7 +99,7 @@
 </section>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.5</strong> · built 2026-07-26</div>
+  <div>Documents <strong>MosaicTools v5.8.6</strong> · built 2026-07-26</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
