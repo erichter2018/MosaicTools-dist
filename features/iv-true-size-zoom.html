@@ -43,13 +43,15 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/measurement.html">Measurement &amp; Imaging</a></div>
     <h1>Enable True Size Zoom (InteleViewer setup)</h1>
-    <p class="brief">One-time InteleViewer setup that Spine Labeling and Auto Measure both need — add the True Size Zoom Factor to the CT image overlay so MosaicTools can convert pixels to real centimeters.</p>
+    <p class="brief">One-time InteleViewer setup that Spine Labeling and Auto Measure both need — calibrate your monitors' pixel pitch and add the True Size Zoom Factor to the CT image overlay, so MosaicTools can convert pixels to real centimeters.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
-      <div class="shots"><figure class="shot"><img src="../img/iv-truesize-1-preferences.jpg" alt="InteleViewer → Utilities → User Preferences… (Ctrl+U)" loading="lazy" class="lightboxable"><figcaption>InteleViewer → Utilities → User Preferences… (Ctrl+U)</figcaption></figure>
-<figure class="shot"><img src="../img/iv-truesize-2-modality-ct.jpg" alt="User Preferences → Modality → CT" loading="lazy" class="lightboxable"><figcaption>User Preferences → Modality → CT</figcaption></figure>
-<figure class="shot"><img src="../img/iv-truesize-3-text-overlay.jpg" alt="Text Overlay tab → add &quot;True Size Zoom Factor&quot; to an overlay corner (Overlay Lower Right)" loading="lazy" class="lightboxable"><figcaption>Text Overlay tab → add &quot;True Size Zoom Factor&quot; to an overlay corner (Overlay Lower Right)</figcaption></figure></div>
+      <div class="shots"><figure class="shot"><img src="../img/iv-truesize-4-monitor-calibration.png" alt="PART 1 · InteleViewer → Utilities → Monitor Calibration…" loading="lazy" class="lightboxable"><figcaption>PART 1 · InteleViewer → Utilities → Monitor Calibration…</figcaption></figure>
+<figure class="shot"><img src="../img/iv-truesize-5-pixel-pitch.png" alt="PART 1 · Enter the pixel pitch (mm) for EVERY monitor you read on — not just one" loading="lazy" class="lightboxable"><figcaption>PART 1 · Enter the pixel pitch (mm) for EVERY monitor you read on — not just one</figcaption></figure>
+<figure class="shot"><img src="../img/iv-truesize-1-preferences.jpg" alt="PART 2 · InteleViewer → Utilities → User Preferences… (Ctrl+U)" loading="lazy" class="lightboxable"><figcaption>PART 2 · InteleViewer → Utilities → User Preferences… (Ctrl+U)</figcaption></figure>
+<figure class="shot"><img src="../img/iv-truesize-2-modality-ct.jpg" alt="PART 2 · User Preferences → Modality → CT" loading="lazy" class="lightboxable"><figcaption>PART 2 · User Preferences → Modality → CT</figcaption></figure>
+<figure class="shot"><img src="../img/iv-truesize-3-text-overlay.jpg" alt="PART 2 · Text Overlay tab → add &quot;True Size Zoom Factor&quot; to an overlay corner (Overlay Lower Right)" loading="lazy" class="lightboxable"><figcaption>PART 2 · Text Overlay tab → add &quot;True Size Zoom Factor&quot; to an overlay corner (Overlay Lower Right)</figcaption></figure></div>
       <h2>Why this is needed</h2>
 <p><strong>Spine Labeling</strong> and <strong>Auto Measure</strong> both work in <em>real-world</em> size, not pixels. Spine Labeling
 spaces vertebral bodies using their physical height in centimeters, and Auto Measure reports a lesion&#39;s
@@ -63,12 +65,39 @@ automatically each time you trigger the tool — no ruler, no manual step.</p>
 <li>Spine Labeling refuses with <strong>&quot;needs True Size Zoom.&quot;</strong></li>
 <li>Auto Measure declines with <strong>&quot;cannot calibrate&quot;</strong> instead of pasting a wrong number.</li>
 </ul>
-<p>This is a one-time, per-workstation setup. Do it once in InteleViewer and both tools light up.</p>
+<p>This is a one-time, per-workstation setup, and it has <strong>two parts</strong> — both required:</p>
+<ol>
+<li><strong>Calibrate your monitors</strong> so InteleViewer knows the physical size of a screen pixel.</li>
+<li><strong>Add the True Size Zoom Factor to the overlay</strong> so MosaicTools can read the zoom.</li>
+</ol>
+<p>Part 2 alone is not enough. The True Size Zoom Factor is a <em>percentage</em>; it only becomes millimetres when
+combined with your monitor&#39;s pixel pitch. Without calibration there is no pitch to combine it with.</p>
 <blockquote>
 <p><strong>Tip:</strong> Auto Measure re-reads the True Size Zoom at the moment you trigger it, so it stays correct even
 if you change the on-screen zoom between measurements — as long as the factor is on the overlay.</p>
 </blockquote>
-<h2>Setup steps</h2>
+<h2>Part 1 — Calibrate your monitors (required)</h2>
+<p>InteleViewer needs to know how many millimetres wide one screen pixel physically is. That number is the
+<strong>pixel pitch</strong>, and you set it in <strong>Utilities → Monitor Calibration…</strong>.</p>
+<ol>
+<li><p><strong>Open Monitor Calibration.</strong> In InteleViewer, go to <strong>Utilities → Monitor Calibration…</strong></p>
+</li>
+<li><p><strong>Enter the pixel pitch for every monitor you read on.</strong> The dialog lists each display with its
+resolution and position. Fill in the <strong>Pixel Pitch (mm)</strong> column and click <strong>Ok</strong>. Diagnostic monitors
+and consumer monitors usually differ — a 1536×2048 diagnostic panel might be <code>0.211</code> while a 1920×1080
+monitor beside it is <code>0.248</code>. Your monitor&#39;s specification sheet lists it; it is sometimes called <em>dot
+pitch</em> or <em>pixel size</em>.</p>
+</li>
+</ol>
+<p>InteleViewer saves these to its own <code>workstation.config</code>, and MosaicTools reads the pitch from there for
+whichever monitor the image is on — no separate MosaicTools setting to keep in sync.</p>
+<blockquote>
+<p><strong>Calibrate every monitor, not just one.</strong> If you measure on a monitor that has no pitch entered,
+MosaicTools falls back to the first calibrated monitor in the list. It will not warn you — it will
+quietly measure with the wrong scale. Between a <code>0.248</code> and a <code>0.211</code> panel that is a <strong>~17 % error</strong> in
+every measurement.</p>
+</blockquote>
+<h2>Part 2 — Add True Size Zoom Factor to the overlay</h2>
 <p>Follow the three screenshots below in order.</p>
 <ol>
 <li><p><strong>Open User Preferences.</strong> In InteleViewer, go to <strong>Utilities → User Preferences…</strong> (or press <strong>Ctrl+U</strong>).</p>
@@ -89,8 +118,12 @@ Labeling and Auto Measure will now calibrate automatically.</p>
 modality you&#39;re viewing (CT settings don&#39;t apply to MR), and that the overlay text isn&#39;t hidden. If
 <strong>&quot;Hide overlay elements with no DICOM values&quot;</strong> is checked, the factor still shows because InteleViewer
 computes it live — but verify it&#39;s actually visible on the image.</li>
-<li><strong>Wrong-looking measurements:</strong> make sure you didn&#39;t add a plain <em>Zoom Factor</em> instead of <strong>True Size Zoom
-Factor</strong> — they are different rows in the list.</li>
+<li><strong>Wrong-looking measurements:</strong> two likely causes. Either you added a plain <em>Zoom Factor</em> instead of
+<strong>True Size Zoom Factor</strong> (different rows in the list), or the monitor you were measuring on has no pixel
+pitch set — check <strong>Utilities → Monitor Calibration…</strong> and confirm <em>every</em> row has a value.</li>
+<li><strong>Measurements off by a consistent percentage:</strong> that is the signature of the wrong pixel pitch, not a bad
+detection. A measurement that is uniformly ~15–20 % out usually means the tool fell back to a different
+monitor&#39;s pitch. Compare the pitch values of the monitor you read on and the first one in the list.</li>
 </ul>
 
     </div>
@@ -105,7 +138,7 @@ Factor</strong> — they are different rows in the list.</li>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.6</strong> · built 2026-07-26</div>
+  <div>Documents <strong>MosaicTools v5.8.24</strong> · built 2026-07-30</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
