@@ -72,6 +72,8 @@ th{color:#8b97ad;font-size:11px;text-transform:uppercase;letter-spacing:.04em}tr
     <button class=spkbtn data-s="2">2</button>
     <button class=spkbtn data-s="3">3</button>
     <button class=spkbtn data-s="4">4</button>
+    <button class=spkbtn data-s="5">5</button>
+    
     <span class=spknote id=spknote></span>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px">
@@ -157,7 +159,7 @@ const keyed=m=>!MT_APP||MT_KEYS[m]!==false;   // web: everything; app: only key-
 const famOf={};for(const[f,ms]of Object.entries(D.families))for(const m of ms)famOf[m]=f;
 const FAMCOLOR={chirp:"#4fd1e8",mai:"#e879a6",whisper:"#e0954a",assemblyai:"#9b87e8",soniox:"#6fae5a","nvidia-conformer":"#76b56e",grok:"#d98c5f"};
 const FAMNAME={chirp:"Chirp",mai:"MAI",whisper:"Whisper",assemblyai:"AssemblyAI",soniox:"Soniox","nvidia-conformer":"NVIDIA",grok:"Grok"};
-const ARCH={chirp:"cnf","or-chirp-3":"cnf",deepgram:"cnf",assemblyai:"cnf","assemblyai-batch":"cnf",soniox:"cnf","soniox-async":"cnf",speechmatics:"cnf",medasr:"cnf",amazonmedical:"cnf","or-parakeet":"cnf",nemotron:"cnf",openai:"llm","or-whisper-v3":"llm","or-whisper-turbo":"llm","voxtral-batch":"llm","or-qwen-asr":"llm",corti:"llm",elevenlabs:"llm",smallestai:"llm","grok-stt":"llm","grok-or":"llm"};  /* MAI (mai-transcribe/or-mai-1.5) intentionally UNCLASSIFIED — Microsoft doesn't publish the architecture; no badge, not counted toward the arch cap */
+const ARCH={chirp:"cnf","or-chirp-3":"cnf",deepgram:"cnf",assemblyai:"cnf","assemblyai-batch":"cnf",soniox:"cnf","soniox-async":"cnf",speechmatics:"cnf",medasr:"cnf",amazonmedical:"cnf","or-parakeet":"cnf",nemotron:"cnf",openai:"llm","or-whisper-v3":"llm","or-whisper-turbo":"llm","voxtral-batch":"llm","or-qwen-asr":"llm",corti:"llm",elevenlabs:"llm",smallestai:"llm","grok-stt":"llm","grok-or":"llm","or-gemini-36":"llm","or-inkling":"llm","or-mimo":"llm","or-fish-transcribe1":"llm"};  /* MAI (mai-transcribe/or-mai-1.5) intentionally UNCLASSIFIED — Microsoft doesn't publish the architecture; no badge, not counted toward the arch cap */
 const ARCHNAME={llm:'LLM / seq2seq',cnf:'Conformer / transducer'},ARCHCOLOR={llm:'#c08bef',cnf:'#5fb0c9'};
 const STREAM=new Set(D.streamingAnchors),LOCAL=new Set(['medasr']),isOR=m=>m.startsWith('or-');
 const ANCHORS=D.streamingAnchors.filter(a=>a!=='chirp');   // Chirp excluded as anchor (no per-word confidence / brace-punct / finals-at-end → live garbles as the spine); stays a voter
