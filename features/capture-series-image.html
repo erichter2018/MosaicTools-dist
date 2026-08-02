@@ -58,14 +58,13 @@
 <h2>Using it</h2>
 <ol>
 <li>Have the image you want to reference up in InteleViewer.</li>
-<li>Trigger the action. MosaicTools locates the active viewport (it looks for InteleViewer&#39;s yellow active-viewport marker; if none is found it captures around your mouse cursor instead).</li>
+<li>Click the viewport so InteleViewer outlines it in yellow, then trigger the action. MosaicTools validates that yellow rectangle and reads only the top-left overlay inside it.</li>
 <li>A &quot;Capturing...&quot; toast appears, then &quot;Inserted: …&quot; with the formatted text — which lands in the report editor without you touching the keyboard. With CDP enabled the insertion goes straight into the editor DOM; without it, Mosaic is focused first.</li>
 </ol>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>OCR needs the viewport header text to be legible — if the overlay text is disabled or the capture misses, you&#39;ll get a &quot;Could not extract series/image&quot; toast; click into the viewport (so the yellow marker is where you expect) and try again.</li>
+<li>OCR needs the viewport header text to be legible. If the yellow outline is incomplete, the overlay is disabled, or both <code>Se:</code> and <code>Im:</code> cannot be validated together, nothing is inserted; click the viewport and try again.</li>
 <li>The action is blocked while an addendum is open (&quot;Cannot paste into addendum&quot;), since inserting there would edit the wrong document.</li>
-<li>The fallback capture region is centered on your mouse — if the yellow box isn&#39;t detected, park the cursor near the series/image text before triggering.</li>
 </ul>
 
     </div>
@@ -82,7 +81,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.25</strong> · built 2026-07-31</div>
+  <div>Documents <strong>MosaicTools v5.8.27</strong> · built 2026-08-02</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
