@@ -71,7 +71,7 @@
 <a class="card" href="features/graphical-ensemble.html">
     <div class="card-top"><span class="card-cat">🎙️ Dictation &amp; Speech</span><span class="card-since">since 5.8</span></div>
     <h3>Graphical Ensemble Builder</h3>
-    <p>A visual builder for your dictation ensemble — pick an anchor and voters, see the live word-error estimate, add a missing key on the spot, and save.</p>
+    <p>A visual builder for your dictation ensemble — pick an anchor and voters, see the live word-error estimate and what it costs per dictated hour, add a missing key on the spot, and save.</p>
   </a>
 <a class="card" href="features/headless-mode.html">
     <div class="card-top"><span class="card-cat">⚙️ Setup &amp; Platform</span><span class="card-since">since 2.1</span></div>
@@ -358,7 +358,12 @@
     <p>Beeps and shows a red warning box when you press Sign while dictation is still sitting unprocessed in the transcript box — press Sign again to sign anyway, or Process Report to capture it first.</p>
   </a></div></section>
 <section class="stage"><div class="stage-head"><h2>Through the shift</h2><p>Always-on background helpers and trackers.</p></div>
-<div class="cardgrid"><a class="card" href="features/connectivity-monitor.html">
+<div class="cardgrid"><a class="card" href="features/failover-backups.html">
+    <div class="card-top"><span class="card-cat">🎙️ Dictation &amp; Speech</span><span class="card-since">since 5.2</span></div>
+    <h3>Automatic Failover</h3>
+    <p>When a dictation engine has a sustained outage, MosaicTools re-picks the best ensemble from the engines you have keys for — automatically, between dictations, with nothing to configure.</p>
+  </a>
+<a class="card" href="features/connectivity-monitor.html">
     <div class="card-top"><span class="card-cat">⚙️ Setup &amp; Platform</span><span class="badge-wip">in development</span><span class="card-since">since 2.8</span></div>
     <h3>Connectivity Monitor</h3>
     <p>Four tiny status dots on the bar — Mirth, Mosaic, Clario, InteleViewer — so when things feel slow you can see in one glance whether it's the network or you. In development — not functional yet.</p>
@@ -372,11 +377,6 @@
     <div class="card-top"><span class="card-cat">🎙️ Dictation &amp; Speech</span><span class="card-since">since 5.2</span></div>
     <h3>Ensemble Health Light</h3>
     <p>A green/yellow/red dot on the main bar shows your speech engines' health at a glance; click it for a per-engine drawer with a plain-language reason when something is wrong.</p>
-  </a>
-<a class="card" href="features/failover-backups.html">
-    <div class="card-top"><span class="card-cat">🎙️ Dictation &amp; Speech</span><span class="card-since">since 5.2</span></div>
-    <h3>Failover Backup Engines</h3>
-    <p>Spare engines you've set up but don't run in your ensemble automatically swap in when a member fails mid-shift — dictation keeps its full strength, then hands back when the engine recovers.</p>
   </a>
 <a class="card" href="features/gender-check.html">
     <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 2.3</span></div>
@@ -411,7 +411,7 @@
 </div>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.28</strong> · built 2026-08-02</div>
+  <div>Documents <strong>MosaicTools v5.8.29</strong> · built 2026-08-02</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>

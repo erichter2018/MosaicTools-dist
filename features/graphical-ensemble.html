@@ -43,13 +43,14 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
     <h1>Graphical Ensemble Builder</h1>
-    <p class="brief">A visual builder for your dictation ensemble — pick an anchor and voters, see the live word-error estimate, add a missing key on the spot, and save.</p>
+    <p class="brief">A visual builder for your dictation ensemble — pick an anchor and voters, see the live word-error estimate and what it costs per dictated hour, add a missing key on the spot, and save.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
       
       <h2>What it does</h2>
-<p>The Graphical Ensemble Builder is a visual way to assemble or fine-tune your multi-engine dictation stack, keyed to the engines you actually have. It shows a streaming <strong>anchor</strong> row and a <strong>voters</strong> list; pick a combination and it estimates the resulting word-error rate live against our radiology test corpus. Engines you don&#39;t have a key for are greyed. Three ready-made tiers sit at the top — <strong>Recommended for you</strong> (from the keys you already have), <strong>Minimal-effort best</strong> (with easy one-key additions), and <strong>Very best possible</strong> (assuming you add every key) — and they come from the exact same recommendation engine as the Quick Setup wizard, so the two never disagree.</p>
+<p>The Graphical Ensemble Builder is a visual way to assemble or fine-tune your multi-engine dictation stack, keyed to the engines you actually have. It shows a streaming <strong>anchor</strong> row and a <strong>voters</strong> list; pick a combination and it estimates the resulting word-error rate live against our radiology test corpus. Engines you don&#39;t have a key for are greyed. Ready-made tiers sit at the top — <strong>Recommended for you</strong> (from the keys you already have), <strong>Best value</strong> (the most accuracy per dollar), <strong>Minimal-effort best</strong> (with easy one-key additions), and <strong>Very best possible</strong> (assuming you add every key) — and they come from the exact same recommendation engine as the Quick Setup wizard, so the two never disagree.</p>
+<p>Every accuracy figure is a <strong>WER</strong> (word error rate) and every price is <strong>per hour of dictated audio, not per hour of shift</strong> — a radiologist who dictates 90 minutes across an eight-hour shift pays for 90 minutes.</p>
 <h2>How to turn it on / set it up</h2>
 <p>Settings → Speech-to-Text → <strong>🎛️ Graphical Ensemble</strong>. It opens keyed to your current setup.</p>
 <h2>Using it</h2>
@@ -58,6 +59,8 @@
 <ul>
 <li>The recommendation is the <strong>lowest word-error</strong> stack it can build, and it never puts two variants of the same engine in one ensemble (e.g. AssemblyAI streaming + AssemblyAI batch) — those are correlated and don&#39;t add a real second opinion.</li>
 <li>The number you see is measured over the full radiology corpus — the same number the app uses internally, so what you pick is what you get.</li>
+<li><strong>Two setups can tie on accuracy at very different prices.</strong> When they tie, the cheaper one is ranked first and is the one chosen as &quot;Best&quot; — so the top of the list is never needlessly expensive. The <strong>Rankings</strong> and <strong>Models</strong> tabs both show cost per dictated hour beside the WER. (5.8.29)</li>
+<li>Prices come from each vendor&#39;s published rate. A handful of models are billed by token rather than by audio, so those are measured across the corpus instead — the tooltip says which. (5.8.29)</li>
 <li>You don&#39;t need to configure backups here: failover is automatic and draws on every engine you&#39;ve set up (see Failover backups).</li>
 </ul>
 
@@ -68,13 +71,13 @@
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.8</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/stt-setup-wizard.html">Quick Setup Wizard</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/stt-providers.html">Speech Engines (Providers)</a></li><li><a href="../features/failover-backups.html">Failover Backup Engines</a></li><li><a href="../features/ensemble-health.html">Ensemble Health Light</a></li></ul>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/stt-setup-wizard.html">Quick Setup Wizard</a></li><li><a href="../features/stt-ensemble.html">STT Ensemble</a></li><li><a href="../features/stt-providers.html">Speech Engines (Providers)</a></li><li><a href="../features/failover-backups.html">Automatic Failover</a></li><li><a href="../features/ensemble-health.html">Ensemble Health Light</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.28</strong> · built 2026-08-02</div>
+  <div>Documents <strong>MosaicTools v5.8.29</strong> · built 2026-08-02</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

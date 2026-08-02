@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Failover Backup Engines — MosaicTools docs</title>
+<title>Automatic Failover — MosaicTools docs</title>
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 
@@ -42,23 +42,30 @@
 <article class="feature">
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
-    <h1>Failover Backup Engines</h1>
-    <p class="brief">Spare engines you've set up but don't run in your ensemble automatically swap in when a member fails mid-shift — dictation keeps its full strength, then hands back when the engine recovers.</p>
+    <h1>Automatic Failover</h1>
+    <p class="brief">When a dictation engine has a sustained outage, MosaicTools re-picks the best ensemble from the engines you have keys for — automatically, between dictations, with nothing to configure.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
-      <div class="shots"><figure class="shot"><img src="../img/ensemble-slots.png" alt="The failover backup pool listed under the ensemble slots" loading="lazy" class="lightboxable"><figcaption>The failover backup pool listed under the ensemble slots</figcaption></figure></div>
+      <div class="shots"><figure class="shot"><img src="../img/ensemble-slots.png" alt="The ensemble slots — there is nothing to configure for failover" loading="lazy" class="lightboxable"><figcaption>The ensemble slots — there is nothing to configure for failover</figcaption></figure></div>
       <h2>What it does</h2>
-<p>Cloud engines have outages, and API keys run out of credit — usually mid-shift. Failover turns every engine you&#39;ve configured but <em>aren&#39;t</em> running in your ensemble into a <strong>backup pool</strong>: when any ensemble member goes down (provider outage, exhausted credits, or an engine that stays connected but silently stops producing transcripts), a suitable spare swaps into its slot automatically. Your dictation continues at full ensemble strength instead of quietly running a voter short. When the failed engine recovers, your normal ensemble is restored.</p>
+<p>Cloud engines have outages, and API keys run out of credit — usually mid-shift. MosaicTools watches every engine in your ensemble and, when one is genuinely down, rebuilds the lineup around it so your dictation keeps its strength instead of quietly running a voter short.</p>
+<p>Three things count as an outage: a hard failure (authentication, billing, or policy), a sustained error rate, and — the one that used to go unnoticed — an engine that <strong>stays connected but stops producing transcripts</strong>. That last case raises no error at all, so it&#39;s caught by noticing that other engines heard speech this one missed.</p>
+<p>MosaicTools then re-runs its accuracy table over the engines that are still healthy <em>and</em> that you hold a key for, and switches to the best ensemble it can actually build. That can mean promoting a different engine to the streaming driver role and refilling the voters around it — it isn&#39;t a like-for-like slot swap.</p>
 <h2>How to turn it on / set it up</h2>
-<p>Nothing to enable — any spare configured engine is automatically part of the pool. Settings → Speech-to-Text shows your current pool read-only under the <strong>Failover backups</strong> divider at the bottom of the ensemble section. The Quick Setup Wizard has an optional <strong>Backup engines</strong> step that explains this and helps you add a spare for resilience.</p>
+<p><strong>Nothing.</strong> As of v5.8.29 there are no failover settings and no per-slot backup pickers.</p>
+<p>Every engine you hold a key for is automatically in the pool. Assigning a backup by hand could only ever name a <em>subset</em> of what failover already considers, so those pickers were removed, along with the tuning thresholds — which are now fixed internally rather than exposed.</p>
+<p>The one useful thing you can do is <strong>hold a key you don&#39;t otherwise use</strong>. Pay-per-use engines cost nothing while idle, so a spare key is cheap insurance that widens the pool.</p>
 <h2>Using it</h2>
+<p>Switches happen <strong>between dictations</strong>, never in the middle of one — an engine that dies mid-recording is ridden out for that recording.</p>
 <p>You&#39;ll usually learn a failover happened from the health light: the toolbar dot becomes a split circle (left half = configured ensemble, right half = what&#39;s actually running), and the health drawer names the substitution — &quot;replaced by …&quot;. Fix the underlying account when convenient; nothing is urgent while the backup is covering.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>Failovers hold steady deliberately — hysteresis prevents flip-flopping every time an engine&#39;s health briefly wavers.</li>
+<li><strong>A widespread outage does not trigger a failover.</strong> If several engines go red at once it&#39;s your network, not the providers — every cloud backup would be equally affected — so MosaicTools holds its lineup and lets the connections recover.</li>
+<li>A switch is held for a few minutes before another is allowed, so a wavering engine can&#39;t make the ensemble thrash. The exception: if the streaming driver itself is failing, it switches immediately rather than riding a dead one.</li>
+<li>An engine in a sustained outage is retried periodically, so topping up a depleted account brings it back on its own.</li>
 <li>A backup can only cover a role it&#39;s capable of (a batch-only engine can&#39;t stand in as the streaming driver).</li>
-<li>The best cheap insurance is one extra key you never otherwise use — pay-per-use engines cost nothing while idle.</li>
+<li>Separately: if most of your engines go dead at once and you&#39;re not dictating, MosaicTools rebuilds all speech connections in place — the same recovery as quitting and reopening, without losing your study. That&#39;s always on. Restarting the application if that <em>still</em> doesn&#39;t help stays an explicit opt-in under Settings → Speech-to-Text → Recovery.</li>
 </ul>
 
     </div>
@@ -73,7 +80,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.28</strong> · built 2026-08-02</div>
+  <div>Documents <strong>MosaicTools v5.8.29</strong> · built 2026-08-02</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
