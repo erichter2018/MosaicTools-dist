@@ -43,7 +43,7 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/measurement.html">Measurement &amp; Imaging</a></div>
     <h1>Spine Labeling</h1>
-    <p class="brief">Click once on a sagittal spine image and get every vertebral body labeled — by a measurement-based detector or a vision AI — then drag, add, delete, flip and renumber the labels before you accept.</p>
+    <p class="brief">Get every vertebral body labeled in the sagittal viewport you are already looking at — by a measurement-based detector or a vision AI — then drag, add, delete, flip and renumber the labels before you accept.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
@@ -57,6 +57,10 @@
 </ul>
 <h2>How to turn it on / set it up</h2>
 <p>Map <strong>Spine Labeling</strong> (and optionally <strong>Spine Labeling AI</strong>) to a PowerMic/SpeechMike button or hotkey under Settings → Keys &amp; Buttons. Spine Labeling AI needs a vision-model API key (Settings → Experimental). There&#39;s no separate enable toggle — the action does the work.</p>
+<h2>Click-free (since 5.8.34)</h2>
+<p>You no longer have to click on the spine. Trigger Spine Labeling and it finds the vertebral column in the
+sagittal viewport you are already looking at. If no image is active, click anywhere in the one you want
+and it works from there — the old click-to-seed behaviour still applies as the fallback.</p>
 <h2>Using it</h2>
 <p>Press the action, then click once on the vertebral column of a sagittal image. The proposal appears with a control bar, and everything is editable before you accept:</p>
 <ul>
@@ -92,7 +96,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.33</strong> · built 2026-08-03</div>
+  <div>Documents <strong>MosaicTools v5.8.34</strong> · built 2026-08-03</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
