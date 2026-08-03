@@ -60,6 +60,16 @@
 <li><strong>Click the red X</strong> (or the finding&#39;s text) to delete that finding from the report — the deletion is propagated into the Mosaic transcript editor via CDP.</li>
 <li>Left-click elsewhere dismisses it for the current case; it re-appears on the next drafted case, and it closes automatically when you sign or discard.</li>
 </ul>
+<h2>Abnormal measurement colors (since 5.8.32)</h2>
+<p>Measurements are checked against published normal ranges and colored by how they sit against them:</p>
+<ul>
+<li><strong>Light pink</strong> — above the accepted upper limit.</li>
+<li><strong>Red</strong> — well above it (a per-measurement threshold: aorta at 5.0 cm, approaching the repair threshold; liver at 18 cm; otherwise 50% over).</li>
+<li><strong>Light blue / deeper blue</strong> — <em>below</em> a lower limit. A thinned renal cortex or a low portal vein velocity matters as much as a high number, so these are called out too.</li>
+</ul>
+<p>Covered to start (abdominal / right-upper-quadrant ultrasound): liver length, gallbladder length and wall thickness, common bile duct, kidney length, renal cortical thickness, aorta, portal vein diameter and velocity, spleen, pancreatic duct, IVC. The common bile duct limit <strong>adjusts for age</strong> (it widens about 1 mm per decade after 60) and lifts further if the report mentions a prior cholecystectomy.</p>
+<p><strong>An uncolored number means there is no rule for it — not that it is normal.</strong> Only the measurements listed above are checked, and a measurement of a mass, cyst, nodule or stone is deliberately never colored, because a lesion has no normal range.</p>
+<p>Turn it off in Settings → Drafting → &quot;Color abnormal measurements in the popup&quot;.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>Ultrasound &quot;capture&quot; studies (OCR&#39;d tech worksheets) get a flat rendering instead: measurements bold, section labels dimmed, no acuity weighting.</li>
@@ -80,7 +90,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.31</strong> · built 2026-08-03</div>
+  <div>Documents <strong>MosaicTools v5.8.32</strong> · built 2026-08-03</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
