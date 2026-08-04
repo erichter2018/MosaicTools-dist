@@ -57,6 +57,16 @@
 <li><strong>Auto-update on startup</strong> — check for and install updates when the app launches.</li>
 <li><strong>Check Now</strong> — manual check.</li>
 <li><strong>Rollback to Previous Version</strong> — pick any earlier release and install it; auto-update is disabled afterwards so it doesn&#39;t immediately re-update you.</li>
+<li><strong>Install Beta Build</strong> <em>(since 5.8.36)</em> — only when the developer asks. Installs a targeted build made for a problem you are actively reporting, so a fix can reach you the same day instead of waiting for the next release.</li>
+<li><strong>Return to Standard Version</strong> <em>(since 5.8.36)</em> — reinstalls the current normal release straight away, so you&#39;re never stuck on a beta build.</li>
+</ul>
+<h2>Beta builds</h2>
+<p>Sometimes a problem can only be diagnosed on <em>your</em> machine — a message nobody else gets, a monitor arrangement that behaves differently. Rather than shipping a half-understood change to everyone, MosaicTools can hand one radiologist a build made for exactly that problem.</p>
+<ul>
+<li>Beta builds are <strong>invisible to everyone else</strong> and are <strong>never installed automatically</strong>. You only ever get one by pressing <strong>Install Beta Build</strong> when asked to.</li>
+<li>Before it installs, you&#39;re shown the build number and what&#39;s in it, so you always know what you&#39;re getting.</li>
+<li><strong>You go back on your own.</strong> A beta is numbered off the version you&#39;re already on (5.8.35 → 5.8.35.1), so the next ordinary release is newer and returns you to the standard version automatically. There&#39;s nothing to remember to switch off.</li>
+<li>Want off immediately? <strong>Return to Standard Version</strong>.</li>
 </ul>
 <h2>Using it</h2>
 <p>Mostly nothing: long-running sessions also check hourly in the background, <strong>stage</strong> the update silently, and apply it at a dictation lull — never mid-dictation. After an update you get the <strong>What&#39;s New</strong> popup summarizing everything since the version you last saw (skip three updates, see all three sets of notes). The full history is always available via the <strong>🆕 What&#39;s New</strong> button at the top of Settings.</p>
@@ -81,7 +91,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.35</strong> · built 2026-08-03</div>
+  <div>Documents <strong>MosaicTools v5.8.36</strong> · built 2026-08-04</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
