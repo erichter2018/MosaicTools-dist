@@ -69,10 +69,16 @@ and it works from there — the old click-to-seed behaviour still applies as the
 <li><strong>Right-drag</strong> a body handle to <strong>bend the whole column</strong> onto the vertebrae (the far end stays fixed); right-drag a <strong>▲ / ▼</strong> chip to <strong>re-space</strong> that run (spread or compress the levels) and nudge it sideways.</li>
 <li><strong>＋ Add level</strong> — click it to turn on <strong>Adding levels</strong> mode (the button lights up and reads &quot;Adding levels...&quot;). While it is on, <strong>every left click places a body</strong> and <strong>right click undoes the last one</strong>, so you can fill in a whole run of missed levels without returning to the button. The rest renumber as you go. Click the button again, or press <strong>Esc</strong>, to turn the mode off. <em>(Before 5.8.31 this was a drag-the-button-onto-the-spine gesture, one body per drag.)</em></li>
 <li><strong>✕ on a label</strong> deletes it and renumbers the rest automatically, keeping the S1/caudal end fixed.</li>
+<li><strong>▲ New numbering</strong> <em>(since 5.8.37)</em> — start the numbering over. It clears every label and drops straight into placing mode, and the button itself tells you which body to click FIRST: <strong>C2</strong> on a cervical, <strong>T1</strong> on a thoracic, <strong>S1</strong> on a lumbar. Everything you place after that is numbered from it, so a study that came back on the wrong level is re-numbered in a few clicks rather than nudged one label at a time. The region comes from the Auto / C / T / L selector; if the region is still unknown the button asks you to pick one rather than guess, because seeding a lumbar spine with C2 would mislabel every body on it.</li>
+<li><strong>Bend the column in one drag</strong> <em>(since 5.8.37)</em> — while editing, a light-yellow line runs down the column with three grab points (top, middle, bottom). Click and hold <strong>anywhere on the image</strong> and the nearest one moves; the other two stay pinned, so the top control tilts the upper half, the bottom control tilts the lower half, and the middle one bows the column. One drag replaces three or four individual label moves. The line disappears once you accept.</li>
 <li><strong>↔ Flip labels</strong> moves the numbers to the other side of the spine. Since 5.8.35 they start on the <strong>left</strong> of the column; if the spine sits too far left for the labels to fit beside it, they go on the right instead.</li>
 <li><strong>✓ Accept</strong> commits; <strong>✕ Reject</strong> discards. These are explicit buttons — a stray click no longer accepts by accident.</li>
 </ul>
 <p>After you accept, the labels freeze into thin click-through ink beside the column, so you can keep scrolling axials elsewhere while you read. Trigger the action again to remove them; they also clear when the study changes.</p>
+<h2>Smart hide labels <em>(since 5.8.37)</em></h2>
+<p>Labels show only on the slices that actually contain the vertebrae you labelled — the way InteleViewer&#39;s own spine labelling behaves. Scroll off the spine and they disappear; scroll back and they return. Without it they stay on screen wherever you scroll to, sitting over anatomy they do not describe.</p>
+<p>It works this out from the image number InteleViewer prints in the viewport corner (&quot;Im: 42/78&quot;), compared with the slice you labelled and how far the spine reaches through the stack (a lumbar MR is a narrow slab centred on the spine, so almost every slice contains it; a body CT sweeps the whole abdomen, so only a narrow band does). <strong>InteleViewer&#39;s Text Overlay must be on for that modality.</strong></p>
+<p><strong>It never hides more than it should.</strong> If the slice number cannot be read for any reason — overlay off, unusual layout, anything — nothing is hidden and the labels behave exactly as they always have. Turn it off in Settings → Spine Labeling to keep labels on screen whichever slice you are on.</p>
 <h2>Heuristic, AI, or both</h2>
 <p>You can run either detector directly (map <strong>Spine Labeling</strong> and/or <strong>Spine Labeling AI</strong>), switch between them <strong>by hand</strong> on any proposal (&quot;Switch to AI&quot; / &quot;Switch to Fast&quot;), or let MosaicTools choose: turn on <strong>Settings → Experimental → &quot;Spine Labeling: fall back to AI when confidence is low&quot;</strong> and the regular action runs the fast/free heuristic first, calling the AI vision model only when the heuristic isn&#39;t confident — so the easy cases stay instant and free and AI handles the hard ones (cervical, MR, degenerated).</p>
 <h2>Good to know</h2>
@@ -96,7 +102,7 @@ and it works from there — the old click-to-seed behaviour still applies as the
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.36</strong> · built 2026-08-04</div>
+  <div>Documents <strong>MosaicTools v5.8.37</strong> · built 2026-08-05</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
