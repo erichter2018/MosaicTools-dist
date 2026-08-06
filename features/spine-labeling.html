@@ -81,6 +81,38 @@ and it works from there — the old click-to-seed behaviour still applies as the
 <p><strong>It never hides more than it should.</strong> If the slice number cannot be read for any reason — overlay off, unusual layout, anything — nothing is hidden and the labels behave exactly as they always have. Turn it off in Settings → Spine Labeling to keep labels on screen whichever slice you are on.</p>
 <h2>Heuristic, AI, or both</h2>
 <p>You can run either detector directly (map <strong>Spine Labeling</strong> and/or <strong>Spine Labeling AI</strong>), switch between them <strong>by hand</strong> on any proposal (&quot;Switch to AI&quot; / &quot;Switch to Fast&quot;), or let MosaicTools choose: turn on <strong>Settings → Experimental → &quot;Spine Labeling: fall back to AI when confidence is low&quot;</strong> and the regular action runs the fast/free heuristic first, calling the AI vision model only when the heuristic isn&#39;t confident — so the easy cases stay instant and free and AI handles the hard ones (cervical, MR, degenerated).</p>
+<h2>How accurate is it?</h2>
+<p>Measured against a review corpus of 157 radiologist-marked studies, on this hardware:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>studies where it finds the spine</td>
+<td><strong>157 / 157</strong></td>
+</tr>
+<tr>
+<td>vertebrae it lands on, of those you marked</td>
+<td><strong>95.1%</strong></td>
+</tr>
+<tr>
+<td>studies numbered exactly right end to end</td>
+<td><strong>99 / 157</strong></td>
+</tr>
+<tr>
+<td>time to label a study</td>
+<td>~27 ms</td>
+</tr>
+</tbody></table>
+<p><em>(5.8.40, up from 94.1% and 93 / 157 in 5.8.39.)</em> Cervical CT improved most in that release: three checks
+now look at the neighbouring vertebral bodies before deciding where a level sits, so a mark that drifted
+onto a disc or a shoulder-shadowed edge is pulled back onto the bone. Each fires only when the surrounding
+bodies agree, so a level that is already correct is left alone.</p>
+<p>Every number above is re-measured on Windows against the same corpus before each release — the labels you
+correct are what the corpus is made of, which is why reporting a wrong one is worth the ten seconds.</p>
 <h2>Good to know</h2>
 <ul>
 <li>REFERENCE ONLY — nothing is written to the report, and the proposal is only a proposal: confirm the level yourself before you rely on it.</li>
@@ -102,7 +134,7 @@ and it works from there — the old click-to-seed behaviour still applies as the
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.8.37</strong> · built 2026-08-05</div>
+  <div>Documents <strong>MosaicTools v5.8.40</strong> · built 2026-08-06</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
