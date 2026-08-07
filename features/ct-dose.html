@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Insert DLP — MosaicTools docs</title>
+<title>CT Dose — MosaicTools docs</title>
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 
@@ -42,7 +42,7 @@
 <article class="feature">
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
-    <h1>Insert DLP</h1>
+    <h1>CT Dose</h1>
     <p class="brief">Reads CTDIvol and DLP off the scanner's own dose report and files them into TECHNIQUE and your transcript — the dose statement California sites are required to carry.</p>
   </div>
   <div class="feature-cols">
@@ -50,13 +50,16 @@
       
       <h2>What it does</h2>
 <p>California requires the CT dose indices — CTDIvol and DLP — to be recorded in the report. In practice they get entered inconsistently, and the sites that need them have been getting reports without them.</p>
-<p>Insert DLP reads them off the scanner&#39;s own dose-report series and files them two ways at once: an instruction line in the <strong>transcript</strong>, for whoever types the report, and the finished sentence placed directly into the <strong>TECHNIQUE</strong> section, so you can sign as you are. You do not have to know in advance which of those two you&#39;ll want.</p>
+<p>CT Dose reads them off the scanner&#39;s own dose-report series and files them two ways at once: an instruction line in the <strong>transcript</strong>, for whoever types the report, and the finished sentence placed directly into the <strong>TECHNIQUE</strong> section, so you can sign as you are. You do not have to know in advance which of those two you&#39;ll want.</p>
 <p>The sentence it files looks like:</p>
 <blockquote>
 <p>CTDIvol 6.83 mGy and DLP 366.64 mGy-cm.</p>
 </blockquote>
 <h2>How to turn it on / set it up</h2>
-<p>Map <strong>Insert DLP</strong> to a key or a mic button in <strong>Settings → Keys &amp; Buttons</strong>. That is the only step needed to use the action.</p>
+<p>Map <strong>CT Dose</strong> to a key or a mic button in <strong>Settings → Keys &amp; Buttons</strong>. That is the only step needed to use the action.</p>
+<blockquote>
+<p><strong>Renamed in 5.9.1.</strong> This action was called <strong>Insert DLP</strong> in 5.9.0. It reads CTDIvol as well as DLP, so the old name only described half of it. If you had already mapped it, your key, mic button or toolbar assignment moved across on its own — there is nothing to remap.</p>
+</blockquote>
 <p>The reminders are separate and live in <strong>Settings → CT Dose (California)</strong>. They apply only to sites on the California list, which ships with MosaicTools and updates itself.</p>
 <h2>Using it</h2>
 <p>Put the dose report series on screen and trigger the action. It does <strong>not</strong> have to be the selected viewport — the whole workspace is scanned, across every monitor, in about a second.</p>
@@ -64,7 +67,10 @@
 <p>At a California site, two reminders appear on a CT that is still missing its dose: the clinical history box outlines in <strong>pink</strong>, and signing shows a message. <strong>Neither ever blocks you</strong> — you can always sign. Nothing happens at all on a non-CT study, or at a site that is not on the list.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li><strong>It refuses rather than guesses.</strong> The numbers are read from the sheet&#39;s CTDIvol and DLP <em>columns</em>, then added up and compared against the &quot;Total Exam DLP&quot; the scanner printed. If those disagree, something was misread and the whole reading is thrown away — a wrong radiation dose in a signed report is worse than no dose. You&#39;ll see the reason in the message.</li>
+<li><strong>It refuses rather than guesses.</strong> The numbers are read from the sheet&#39;s CTDIvol and DLP <em>columns</em>, then added up and compared against the total DLP the scanner printed. If those disagree, something was misread and the whole reading is thrown away — a wrong radiation dose in a signed report is worse than no dose. You&#39;ll see the reason in the message.</li>
+<li><strong>Since 5.9.1 it catches several more ways a reading can go wrong</strong>, each found on a real sheet: a decimal point lost on the way in (28.4 read as 284 — a ten-fold overstatement, caught because the DLP and CTDIvol together imply a scan length that no longer makes sense), a dose column it could only read part of (which would understate the total), and ordinary text on screen that merely <em>mentions</em> CTDIvol and DLP — including this feature&#39;s own sentence in a prior report. A sheet that prints no total of its own is also refused now, because there is then nothing to check the reading against.</li>
+<li><strong>Two-page dose reports.</strong> Canon and Toshiba scanners split the dose report across two images: one states the exam totals, the other lists each series, and only one of them may carry both numbers. If the page on screen is the wrong one, you are told which to show rather than getting silence.</li>
+<li><strong>A sheet from a different study can be used deliberately.</strong> It is still refused by default, but the message now names the accession it found, and pressing again within 30 seconds files it anyway — useful when one scan covers two orders and the scanner filed the dose under the sibling. The confirmation names the source, so it is never a silent substitution.</li>
 <li><strong>A prior&#39;s dose sheet won&#39;t be filed into today&#39;s report.</strong> Each sheet carries its own accession, and one belonging to a different study is refused. If two dose tables are on screen and neither names its study, it refuses rather than pick one.</li>
 <li><strong>Where several series contributed, the CTDIvol is the sum and says so</strong> — &quot;(sum of 3 series)&quot;. CTDIvol is an average dose index for a single acquisition and is not physically additive, so that combined figure appears nowhere on the scanner&#39;s own sheet. The DLP is the scanner&#39;s own printed total wherever it printed one.</li>
 <li><strong>The TECHNIQUE insert needs a TECHNIQUE section to attach to.</strong> If the report doesn&#39;t have one yet, the transcript instruction still goes out on its own.</li>
@@ -75,7 +81,7 @@
     </div>
     <aside class="feature-meta">
       <h4>At a glance</h4>
-      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Insert DLP</code> — map it under Keys &amp; Buttons</span></div>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>CT Dose</code> — map it under Keys &amp; Buttons</span></div>
     <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → CT Dose (California)</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
@@ -86,7 +92,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.0</strong> · built 2026-08-07</div>
+  <div>Documents <strong>MosaicTools v5.9.1</strong> · built 2026-08-07</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
