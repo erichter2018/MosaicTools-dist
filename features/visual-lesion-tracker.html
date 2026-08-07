@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Visual Lesion Tracker — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/measurement.html">Measurement &amp; Imaging</a></div>
+    <h1>Visual Lesion Tracker</h1>
+    <p class="brief">Mark the same lesion on several studies and get them side by side — captured at the same physical scale and measured by the same algorithm every time, so a size change is a real change and not measurement variation.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      
+      <h2>What it does</h2>
+<p>Comparing a lesion across studies usually means trusting two measurements made by two different people on two different days. This removes that variable: you click the same lesion on each study, and MosaicTools captures each one at the same <strong>physical</strong> scale and measures every one of them with the same algorithm.</p>
+<p>You get a card per click — a zoomed image of what you clicked, the study date read from that viewport, and a measured size — newest first, with the trend across them.</p>
+<p>As of 5.9.0 it is joined up with <strong>MTRec lesion tracking</strong>: a lesion you measure here populates MTRec live, each surface shows the other&#39;s numbers, and a measured size can rewrite the size stated in your report.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Map <strong>Visual Lesion Tracker</strong> to a key or mic button in <strong>Settings → Keys &amp; Buttons</strong>. Nothing else is required.</p>
+<p><strong>Settings → Visual Lesion Tracker</strong> has one option, for when the study date can&#39;t be read off the viewport. InteleViewer draws some viewports&#39; overlay on a low-contrast plate where the built-in reader gets the day and year but loses the month. With the fallback on, one line of that overlay text is sent to a vision model to fill in what wasn&#39;t read — never the image, and never the patient block, which InteleViewer paints in the opposite corner and is not part of the crop.</p>
+<h2>Using it</h2>
+<p>Trigger it, then click the same lesion on each study you want to compare — any order, up to four. Right-click undoes the last click; Esc cancels. The fourth click finishes automatically, or trigger it again to finish sooner.</p>
+<p>On the results card:</p>
+<ul>
+<li><strong>Drag any caliper endpoint</strong> to adjust a measurement. The sizes and the trend update as you drag.</li>
+<li><strong>The mouse wheel re-cuts</strong> a larger or smaller view around your click, and the measurement re-runs a second after you stop — useful when the lesion is bigger than the captured window.</li>
+<li><strong>Done</strong> commits; <strong>Close</strong> dismisses.</li>
+</ul>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li><strong>Matching is yours, not the software&#39;s.</strong> It measures what you clicked; it does not try to work out which lesion on the prior is the same one. That correspondence is the hard part and it is deliberately left to you.</li>
+<li>Lung lesions are sized by the <strong>mean of the axes</strong>, which is the convention MTRec&#39;s Fleischner logic uses — so 3.2 × 2.4 cm reads as 28 mm, not 32. The card shows that same mean with a legend, so the two surfaces always agree.</li>
+<li>A study whose date can&#39;t be read still gets a card; it shows what was read (often just the year) and re-sorts itself if the date arrives later. The card never waits.</li>
+<li>If the model&#39;s answer contradicts a year or day that <em>was</em> read on screen, it is rejected rather than trusted.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Visual Lesion Tracker</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Visual Lesion Tracker</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/measurement.html">📏 Measurement &amp; Imaging</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.8</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/auto-measure.html">Auto Measure</a></li><li><a href="../features/mtrec.html">MTRec Recommendations</a></li><li><a href="../features/mtrec-boxes.html">MTRec Boxes</a></li><li><a href="../features/capture-series-image.html">Capture Series/Image</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.9.0</strong> · built 2026-08-07</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

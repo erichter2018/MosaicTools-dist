@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Insert DLP — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Insert DLP</h1>
+    <p class="brief">Reads CTDIvol and DLP off the scanner's own dose report and files them into TECHNIQUE and your transcript — the dose statement California sites are required to carry.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      
+      <h2>What it does</h2>
+<p>California requires the CT dose indices — CTDIvol and DLP — to be recorded in the report. In practice they get entered inconsistently, and the sites that need them have been getting reports without them.</p>
+<p>Insert DLP reads them off the scanner&#39;s own dose-report series and files them two ways at once: an instruction line in the <strong>transcript</strong>, for whoever types the report, and the finished sentence placed directly into the <strong>TECHNIQUE</strong> section, so you can sign as you are. You do not have to know in advance which of those two you&#39;ll want.</p>
+<p>The sentence it files looks like:</p>
+<blockquote>
+<p>CTDIvol 6.83 mGy and DLP 366.64 mGy-cm.</p>
+</blockquote>
+<h2>How to turn it on / set it up</h2>
+<p>Map <strong>Insert DLP</strong> to a key or a mic button in <strong>Settings → Keys &amp; Buttons</strong>. That is the only step needed to use the action.</p>
+<p>The reminders are separate and live in <strong>Settings → CT Dose (California)</strong>. They apply only to sites on the California list, which ships with MosaicTools and updates itself.</p>
+<h2>Using it</h2>
+<p>Put the dose report series on screen and trigger the action. It does <strong>not</strong> have to be the selected viewport — the whole workspace is scanned, across every monitor, in about a second.</p>
+<p>What you get back depends on what is already there. If neither the report nor the transcript has the dose, both are filled. If one of them already has it, that one is left alone and the other is filled in. Pressing it twice will not duplicate anything.</p>
+<p>At a California site, two reminders appear on a CT that is still missing its dose: the clinical history box outlines in <strong>pink</strong>, and signing shows a message. <strong>Neither ever blocks you</strong> — you can always sign. Nothing happens at all on a non-CT study, or at a site that is not on the list.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li><strong>It refuses rather than guesses.</strong> The numbers are read from the sheet&#39;s CTDIvol and DLP <em>columns</em>, then added up and compared against the &quot;Total Exam DLP&quot; the scanner printed. If those disagree, something was misread and the whole reading is thrown away — a wrong radiation dose in a signed report is worse than no dose. You&#39;ll see the reason in the message.</li>
+<li><strong>A prior&#39;s dose sheet won&#39;t be filed into today&#39;s report.</strong> Each sheet carries its own accession, and one belonging to a different study is refused. If two dose tables are on screen and neither names its study, it refuses rather than pick one.</li>
+<li><strong>Where several series contributed, the CTDIvol is the sum and says so</strong> — &quot;(sum of 3 series)&quot;. CTDIvol is an average dose index for a single acquisition and is not physically additive, so that combined figure appears nowhere on the scanner&#39;s own sheet. The DLP is the scanner&#39;s own printed total wherever it printed one.</li>
+<li><strong>The TECHNIQUE insert needs a TECHNIQUE section to attach to.</strong> If the report doesn&#39;t have one yet, the transcript instruction still goes out on its own.</li>
+<li>The pink outline is deliberately ranked below the red and flashing alerts — a template mismatch or a patient mismatch still wins the border.</li>
+<li>If a site of yours is missing from the list, or one is on it that shouldn&#39;t be, add or remove it under <strong>Settings → CT Dose (California) → Extra sites</strong>. Start a line with a minus sign to switch a site off. You don&#39;t have to wait for an update.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Insert DLP</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → CT Dose (California)</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.9.0</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/capture-series-image.html">Capture Series/Image</a></li><li><a href="../features/sign-warning.html">Unprocessed-Sign Warning</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.9.0</strong> · built 2026-08-07</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
