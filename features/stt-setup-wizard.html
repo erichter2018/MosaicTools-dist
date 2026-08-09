@@ -56,6 +56,10 @@
 <h2>Using it</h2>
 <p>Beyond the key steps, the wizard also: turns on the two prerequisites (Custom dictation and Direct Mosaic access) with one click if they&#39;re off; adds the free on-device medASR model; offers a single <strong>OpenRouter</strong> step; and switches Mosaic&#39;s &quot;Auto Transcript Record&quot; off so Mosaic doesn&#39;t grab the microphone first. If the recommended line-up changes in a future update, you get a one-time tip to re-run it.</p>
 <p>The <strong>review screen</strong> at the end leads with the recommended ensemble and a simple keep-vs-switch choice; the full per-engine checklist is tucked behind an &quot;Adjust engines&quot; expander you open only if you want to fine-tune.</p>
+<h2>Updated in 5.9.2</h2>
+<p>The recommended line-up was re-measured across the full dictation corpus, and one long-standing flaw was corrected: the recommender could put two AssemblyAI engines in the same ensemble. Because those two hear the same audio the same way, they voted as two independent opinions when they were really one — enough to outvote your main engine. They are no longer paired.</p>
+<p>A new engine, <strong>OpenAI GPT Transcribe</strong>, is also available through the same single OpenRouter step. It is markedly more accurate than the older OpenAI engine it replaces, it stays quiet during silence rather than transcribing room noise into a sentence, and it costs about a fifth as much.</p>
+<p>Because the recommendation itself changed, the wizard offers the updated line-up once even if you have already run it. Accepting is optional — your current setup keeps working.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li><strong>One OpenRouter key replaces the old cloud-account steps.</strong> Setting up Google Chirp used to mean a Google Cloud service account, and MAI meant an Azure resource. Now a single OpenRouter key unlocks Chirp 3, Qwen-ASR and MAI 1.5 as voting engines at once — no cloud consoles. Chirp 3 via OpenRouter is the single lowest-error voter on our test corpus.</li>

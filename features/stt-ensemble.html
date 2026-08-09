@@ -61,6 +61,9 @@
 <li>Batch engines (Voxtral, Soniox Async, gpt-4o-transcribe) can&#39;t drive — the Driver must stream.</li>
 <li>A guard prevents late corrections from re-inserting sentences already in your report.</li>
 </ul>
+<h2>Updated in 5.9.2</h2>
+<p>A new voter is available — <strong>OpenAI GPT Transcribe</strong>, reached through OpenRouter. On our own radiology recordings it is roughly twice as accurate as the older OpenAI engine, and it does not invent speech during silence.</p>
+<p>The recommendation logic behind the ensemble was also corrected so it can no longer seat two AssemblyAI engines together. Two engines that hear alike do not provide two independent opinions, and when they agreed on a mistake they could outvote the driver.</p>
 
     </div>
     <aside class="feature-meta">
