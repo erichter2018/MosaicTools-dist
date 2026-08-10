@@ -120,6 +120,25 @@ correct are what the corpus is made of, which is why reporting a wrong one is wo
 <li>Where the measurement-based detector can&#39;t anchor a level, it shows the bodies without inventing a number rather than guessing. MR is best served by the AI detector today.</li>
 <li>Please report anything it gets wrong — it is young and will make mistakes.</li>
 </ul>
+<h2>Updated in 5.9.3 — it learned what a spine looks like</h2>
+<p>Until now the labeler measured the image: it looked for the rhythm of bright endplates and dark discs and
+reasoned about spacing. Two new engines were <strong>trained</strong> instead, on thousands of vertebral bodies marked by
+a radiologist on real studies from this worklist. They are small enough to run on your PC in about a second,
+and nothing leaves your machine.</p>
+<p>The labeler now uses the best engine automatically, and falls back to the next one if it is not confident.
+You do not have to do anything differently.</p>
+<p><strong>How much better:</strong> measured on studies the engines had never seen, the new one places roughly five marks
+in six within one level of the right vertebra, against fewer than half for the previous detector. Cervical
+spines and studies with no usable study description — the two cases the old detector struggled with most —
+improved the most.</p>
+<p><strong>Comparing engines.</strong> Buttons marked <strong>S1</strong>, <strong>S2</strong> and <strong>S3</strong> appear beside the region buttons. They swap
+between the three labelers <em>without closing the box</em>, so you can look at each proposal and keep whichever
+you prefer. The box names the engine you are looking at and how long it took, and if an engine is not
+confident it now says why rather than appearing to do nothing.</p>
+<p><strong>Switching region</strong> (Auto / C / T / L) also re-reads the spine in place now, instead of closing and
+reopening the box.</p>
+<p><strong>Still true:</strong> it is a proposal, not a finding. Confirm the level yourself, and please report anything it
+gets wrong — the engines learn from exactly those corrections.</p>
 
     </div>
     <aside class="feature-meta">
@@ -134,7 +153,7 @@ correct are what the corpus is made of, which is why reporting a wrong one is wo
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.2</strong> · built 2026-08-09</div>
+  <div>Documents <strong>MosaicTools v5.9.3</strong> · built 2026-08-10</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
