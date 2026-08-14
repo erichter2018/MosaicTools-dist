@@ -53,6 +53,7 @@
 <p>When a study arrives with an AI preliminary draft, this popup shows you the drafted findings as a prioritized list before you start reading: findings are classified and grouped <strong>Acute → Devices &amp; Hardware → Degenerative &amp; Chronic</strong>, with &quot;loud&quot; findings (measurements, acuity terms) rendered bold and bright while chronic/incidental boilerplate is dimmed and italicized. Within each section, findings are sorted head-to-toe anatomically, tailored per study type, and the prior-study Comparison line stays pinned at the top. The idea: in one glance you know what the draft thinks matters, before you&#39;ve scrolled anything.</p>
 <h2>How to turn it on / set it up</h2>
 <p>Settings → Drafting → <strong>Show glanceable drafted findings popup</strong> <em>(moved from Behavior in 5.5.26)</em>. The popup is movable (drag from anywhere), auto-resizes to its content, and remembers its position between sessions.</p>
+<p><strong>Remember a separate position for each modality</strong> <em>(new in 5.9.7, off by default)</em> — underneath the main toggle. Off, one remembered position is used for every study. On, the popup&#39;s position is remembered per modality (CT, MR, US, XR, NM, MG, PET) and it moves to that modality&#39;s spot as studies change; CTA counts as CT, and MRA/MRV as MR. A modality you have not placed yet leaves the popup where it is rather than jumping, and the next time you drag it there that spot is claimed. Turning the option back off returns the popup to the single shared position, and your per-modality layout is kept in case you turn it on again.</p>
 <h2>Using it</h2>
 <ul>
 <li>It appears automatically for drafted studies and updates when the draft changes.</li>
@@ -90,7 +91,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.6</strong> · built 2026-08-13</div>
+  <div>Documents <strong>MosaicTools v5.9.7</strong> · built 2026-08-14</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
