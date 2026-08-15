@@ -67,7 +67,8 @@
 <li>The extraction is text-based: if InteleViewer&#39;s prior text is oddly formatted or nothing prior-like is on screen, nothing pastes — check that the prior is actually the active/selected study in InteleViewer and try again.</li>
 <li>Occasionally the copy takes several seconds — that&#39;s InteleViewer fetching the prior&#39;s report text from the PACS server on demand (a cold fetch to a slow site), not MosaicTools. <em>Since 5.5.28</em> you&#39;ll see &quot;Prior: waiting on InteleViewer (loading report)…&quot; during a slow fetch, and MosaicTools waits patiently instead of giving up.</li>
 <li>Get Prior gives you the <em>reference line</em>; if you want to know what the prior actually <em>said</em>, use <strong>Summarize Prior</strong> — it opens the full prior report with an AI summary on top. The two actions complement each other and many people map both.</li>
-<li>The <code>{time}</code> placeholder is there for sites/modalities where same-day priors matter (e.g. ICU chest films); most people&#39;s templates use just <code>{date}</code> and <code>{description}</code>.</li>
+<li>The <code>{time}</code> placeholder is there for sites/modalities where same-day priors matter (e.g. ICU chest films); most people&#39;s templates use just <code>{date}</code> and <code>{description}</code>. The time is only filled in for priors from the last couple of days — an older prior leaves it blank, which is why the same template can produce a line with a time on one study and without on the next.</li>
+<li><em>Fixed in 5.9.8:</em> the exam could be missing from the pasted line, leaving just <code>COMPARISON: 2/1/2024.</code> with the date right and no study named. It happened when InteleViewer returned the prior with no status word on the end of its row — a normal shape for some studies — and it affected every modality. If you have been seeing bare dates in your comparison lines, that was this.</li>
 </ul>
 
     </div>
@@ -84,7 +85,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.7</strong> · built 2026-08-14</div>
+  <div>Documents <strong>MosaicTools v5.9.8</strong> · built 2026-08-15</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
