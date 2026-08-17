@@ -66,6 +66,11 @@
 <li>With <strong>Show MTRec boxes after Process Report</strong> on, you rarely need the manual key — see the MTRec boxes page.</li>
 <li><em>Fixed in 5.6.1:</em> a nodule described as <strong>&quot;semisolid&quot;</strong> was being managed as a pure ground-glass nodule. It now follows the <strong>part-solid</strong> Fleischner pathway — CT at 3-6 months to confirm, then annual CT for 5 years — rather than the ground-glass schedule (6-12 months, then every 2 years). Any nodule that names a <strong>solid component</strong> is treated as part-solid, whatever the wording.</li>
 <li><em>Fixed in 5.6.1:</em> the <strong>solid component</strong> of a part-solid nodule is now sized from the number attached to it. Previously, when the whole-nodule size sat closer in the sentence — <em>&quot;…measuring 0.9 x 1.0 cm with a solid component measuring 0.3 cm&quot;</em> — the whole-nodule size could be read as the component, turning a 3 mm component into 10 mm and wrongly recommending PET/CT or tissue sampling.</li>
+<li><em>Fixed in 5.9.9 — stability is only claimed when the priors measured it.</em> MTRec compared the current size against the oldest prior that gave a number, but quoted the span back to the oldest prior that merely <em>mentioned</em> the lesion. A cyst measured once a month ago, in a record going back three years, was reported as &quot;unchanged for approximately 3 years&quot;. If the measurements do not cover the time, nothing is said about stability at all — and the lesion box quotes the same measured span, so the two always agree.</li>
+<li><em>Fixed in 5.9.9 — liver trauma could grade one level low.</em> A laceration was graded on &quot;depth unstated&quot; even when the depth was dictated, if the organ word sat between &quot;laceration&quot; and the measurement: <em>&quot;a laceration involving the medial aspect of the liver measuring 3.8 cm&quot;</em> graded II instead of III. Spleen and kidney were affected the same way.</li>
+<li><em>New in 5.9.9 — juxtahepatic venous injury grades V.</em> Injury to the retrohepatic cava or the hepatic veins is AAST Grade V. Only an <strong>injury</strong> counts: a laceration that reaches, abuts or lies adjacent to the vessel stays on the depth grade.</li>
+<li><em>Fixed in 5.9.9 — no Bosniak category without contrast.</em> The classification is defined for contrast-enhanced studies, so it is no longer named on a non-contrast exam. The cyst is still called likely benign and still needs no follow-up.</li>
+<li><em>Fixed in 5.9.9:</em> &quot;multiple cysts within the liver&quot; is no longer reported as a single cyst, and choledocholithiasis is no longer glossed as &quot;(bile-duct stone)&quot;.</li>
 <li>A recommendation you disagree with is a keypress to undo — and the opt-in box-level debug mode (MTRec settings) captures the case for a fix.</li>
 </ul>
 
@@ -83,7 +88,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.8</strong> · built 2026-08-15</div>
+  <div>Documents <strong>MosaicTools v5.9.9</strong> · built 2026-08-17</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

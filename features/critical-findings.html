@@ -64,6 +64,7 @@
 <li>The scrape needs the study&#39;s exam note to actually exist in Clario; on a study with no note you&#39;ll get nothing to paste.</li>
 <li>Debugging: hold the <strong>Win</strong> key while triggering the action to see the raw scraped data in a dialog. There&#39;s also <strong>right-click the bar → Debug → Copy Critical Findings Debug</strong>.</li>
 <li>Works via Clario CDP when configured (instant JS reads) with UI Automation as the fallback.</li>
+<li><em>Fixed in 5.9.9:</em> the physician&#39;s name could be missing from the pasted line, leaving <code>...acknowledged by Dr  at 10:35 PM</code>. It happened when Clario returned the name with an empty last-name field, and it affected the one line whose purpose is recording who was told. The name is kept now — and if it genuinely cannot be read, the line says <code>[Name not found]</code> rather than printing a bare title, so a note that names nobody is visible instead of silent.</li>
 </ul>
 
     </div>
@@ -80,7 +81,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.8</strong> · built 2026-08-15</div>
+  <div>Documents <strong>MosaicTools v5.9.9</strong> · built 2026-08-17</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
