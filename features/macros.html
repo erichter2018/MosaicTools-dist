@@ -71,6 +71,7 @@
 <li>If you use drafted-only macros, <em>non</em>-drafted studies pay the full <strong>Drafted-state wait</strong> (default 5000 ms) at open while MosaicTools waits to see whether the drafted flag appears.</li>
 <li>Macros can be referenced from pick-list nodes by ID; the editor preserves those references across edits.</li>
 <li>MosaicTools&#39; own macro insertions don&#39;t count as &quot;unprocessed dictation&quot; for the premature-sign warning.</li>
+<li><em>New in 5.9.10:</em> MosaicTools now records what happens to every automatic insertion — that it landed, that no macro matched the study, or that a study waited too long and which step held it up. Nothing about how macros behave has changed. It means that if macros ever stop going in on you, saying so is now enough for the cause to be found afterwards; previously only the failures were noted, and several ways insertion can quietly stop were not recorded at all.</li>
 </ul>
 
     </div>
@@ -86,7 +87,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.9</strong> · built 2026-08-17</div>
+  <div>Documents <strong>MosaicTools v5.9.10</strong> · built 2026-08-18</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
