@@ -72,9 +72,14 @@
 <p>Measurements come back in well under a second.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>It measures what it can segment — a lesion with almost no contrast against its background may get a poor boundary. Always eyeball the overlay before dictating the number.</li>
-<li>Since 5.5.30 each measurement <strong>re-reads the current True Size Zoom</strong> at the moment you trigger it, so changing the on-screen zoom between measurements can no longer reuse a stale calibration and oversize the result (a 3 cm lesion could previously read ~4 cm off an old zoom). If the zoom can&#39;t be read it declines with &quot;cannot calibrate&quot; rather than pasting a wrong number.</li>
-<li>Works with InteleViewer rulers in either yellow or orange (used only for legacy calibration; the pitch-based calibration is the default).</li>
+<li><p>It measures what it can segment — a lesion with almost no contrast against its background may get a poor boundary. Always eyeball the overlay before dictating the number.</p>
+</li>
+<li><p>Since 5.5.30 each measurement <strong>re-reads the current True Size Zoom</strong> at the moment you trigger it, so changing the on-screen zoom between measurements can no longer reuse a stale calibration and oversize the result (a 3 cm lesion could previously read ~4 cm off an old zoom). If the zoom can&#39;t be read it declines with &quot;cannot calibrate&quot; rather than pasting a wrong number.</p>
+</li>
+<li><p>Works with InteleViewer rulers in either yellow or orange (used only for legacy calibration; the pitch-based calibration is the default).</p>
+</li>
+<li><p><em>Retrained in 5.9.12:</em> the measurement model was retrained on every caliper you accepted or corrected in the Measure Editor. How the feature works is unchanged - only the model behind it.</p>
+</li>
 </ul>
 
     </div>
@@ -90,7 +95,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.11</strong> · built 2026-08-19</div>
+  <div>Documents <strong>MosaicTools v5.9.12</strong> · built 2026-08-20</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
