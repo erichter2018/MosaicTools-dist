@@ -58,11 +58,14 @@
 <li><strong>Search</strong>: the <em>Search settings...</em> box at the top filters sections and options as you type, including hidden alias terms (&quot;autostart&quot;, &quot;spine labeling&quot;), so you don&#39;t need to know which tab something lives on.</li>
 <li><strong>🆕 What&#39;s New</strong> (top bar): opens the full scrollable version history — every release&#39;s notes, not just the latest.</li>
 <li><strong>Tooltips</strong>: hover any control for an explanation. Turn them off with <strong>Show tooltips throughout settings</strong> in Profile if you find them noisy.</li>
-<li><strong>Backup / Restore</strong>: right-click the widget bar → <strong>Backup Settings</strong> saves your entire configuration (mappings, macros, pick lists, templates, STT setup) to a <code>.backup</code> file; <strong>Restore Settings</strong> loads one and reloads the app. Settings are stored as JSON in <code>%LOCALAPPDATA%\MosaicTools\</code>.</li>
+<li><strong>Backup / Restore</strong> (5.9.14): right-click the widget bar (or the tray icon) → <strong>Backup Settings</strong> writes a single <code>.backup</code> file holding your whole setup — mappings, macros, pick lists, templates, STT setup and API keys, plus your <strong>learned report templates</strong>, the <strong>learned dictation corrections for every speech provider</strong>, and your Google Chirp key file. <strong>Restore Settings</strong> loads one, confirms what it found (date and profile), backs up your current setup first so the restore can be undone, and restarts the app. Backups live in <code>%LOCALAPPDATA%\MosaicTools\Backups\</code> and the newest ten are kept; settings themselves are JSON in <code>%LOCALAPPDATA%\MosaicTools\</code>.</li>
 </ul>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>Back up before big experiments and before moving to a new workstation — restoring the backup on the new box carries everything over.</li>
+<li>Back up before big experiments and before moving to a new workstation — restoring the backup on the new box carries everything over, including the months of learning that used to be left behind.</li>
+<li>A <code>.backup</code> contains your API keys in plain text. Keep it where you keep passwords; don&#39;t email it.</li>
+<li>Two things deliberately do <strong>not</strong> travel between machines: your screen calibration (an imported value from another monitor could never correct itself and would quietly mis-scale measurements), and, when the backup belongs to a colleague, their enrolled voiceprint — the speaker gate would drop your speech against someone else&#39;s voice, so it is dropped and the gate turned off.</li>
+<li>Backups made before 5.9.14 sat next to <code>MosaicTools.exe</code>. They still restore, and the Restore window will still look there if that&#39;s where yours are.</li>
 <li>Sub-editors (Macro Editor, Pick List Editor, Impression Fixer editor, Key Mappings, Button Studio) open as their own windows from their sections and save independently.</li>
 <li>If Settings won&#39;t open at all on a locked-down PC, it&#39;s usually the Windows RichEdit component failing to load — see the error dialog&#39;s guidance, or reinstall to a local (non-synced) folder.</li>
 </ul>
@@ -79,7 +82,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.13</strong> · built 2026-08-21</div>
+  <div>Documents <strong>MosaicTools v5.9.14</strong> · built 2026-08-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

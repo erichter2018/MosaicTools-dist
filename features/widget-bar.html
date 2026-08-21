@@ -68,16 +68,17 @@
 <li><strong>Settings</strong> — the settings window (also: click the title).</li>
 <li><strong>Show Log</strong> — opens the log folder with the log files selected, for sending in a bug report.</li>
 <li><strong>Reload</strong> — restarts the app in place.</li>
-<li><strong>Backup Settings</strong> / <strong>Restore Settings</strong> — save or restore your entire configuration as a <code>.backup</code> file.</li>
+<li><strong>Backup Settings</strong> / <strong>Restore Settings</strong> — save or restore your whole setup as a <code>.backup</code> file, including learned templates and learned dictation corrections (5.9.14). Restore confirms first and is undoable.</li>
 <li><strong>Debug</strong> — copy diagnostic snapshots (template, clinical history, Get Prior, Critical Findings, alerts) to the clipboard.</li>
 <li><strong>Exit</strong>.</li>
 </ul>
-<p>A system-tray icon is always present too, with Settings / Show Log / Exit; double-click it to open Settings.</p>
+<p>A system-tray icon is always present too, with Settings / Show Log / <strong>Backup Settings</strong> / <strong>Restore Settings</strong> / Exit; double-click it to open Settings. (Backup and Restore were added to the tray menu in 5.9.14 so they can be reached in headless mode.)</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>If the bar ends up on a disconnected monitor, Reload brings it back to a visible screen.</li>
 <li>The health dot is split-colored during an STT failover: left half shows the original ensemble&#39;s health, right half the currently active stack.</li>
-<li>Take a settings backup before experimenting — Restore + automatic reload gets you back in seconds.</li>
+<li>Take a settings backup before experimenting — Restore + automatic restart gets you back in seconds.</li>
+<li><strong>Reload</strong> and <strong>Restore</strong> both relaunch MosaicTools properly as of 5.9.14. Before that they could leave the app closed instead of reopening it.</li>
 </ul>
 
     </div>
@@ -92,7 +93,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.13</strong> · built 2026-08-21</div>
+  <div>Documents <strong>MosaicTools v5.9.14</strong> · built 2026-08-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
