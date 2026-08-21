@@ -162,6 +162,16 @@ corners (was 44). The labeller now gets 98.3% of levels right across the corpus,
 gets every level in a study right 85.6% of the time. The outliner&#39;s corner error on studies it had
 never seen improved from 4.33 to 3.66 pixels. Nothing about how the feature works has changed - only
 the models behind it.</p>
+<p><strong>Fixed in 5.9.13 — compression percentages on cervical studies.</strong> A normal cervical spine could report
+40 to 55 percent height loss at several levels at once. The percentages are worked out against how tall
+each body ought to be, and on a study running from the neck into the upper chest that comparison was
+being made against a thoracic body. T1 really is about twice the height of C5, so what came out as
+compression was ordinary anatomy. MosaicTools now reports nothing at all when body height changes with
+position quickly enough for the comparison to be meaningless — no number is the right answer there.</p>
+<p><strong>Also in 5.9.13:</strong> the compression and listhesis readouts share one column instead of stepping
+diagonally across the anatomy, and <strong>Settings → Spine Labeling</strong> gains separate checkboxes for anterior
+compression, posterior compression and listhesis. Those change the display only — the measurement is
+still taken and still written to the diagnostic record.</p>
 
     </div>
     <aside class="feature-meta">
@@ -176,7 +186,7 @@ the models behind it.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.12</strong> · built 2026-08-20</div>
+  <div>Documents <strong>MosaicTools v5.9.13</strong> · built 2026-08-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

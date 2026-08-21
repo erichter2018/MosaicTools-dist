@@ -71,6 +71,7 @@
 <li>Global hotkeys are disabled in headless mode — mic buttons still work there.</li>
 <li>MosaicTools tags its own injected keystrokes so an Alt-key mapping can&#39;t re-trigger itself.</li>
 <li><em>Changed in 5.9.11:</em> a keyboard shortcut must include <strong>Ctrl, Alt or Shift</strong>. A shortcut that was just a single letter or number fired whenever you typed that character in ANY program - one radiologist had Critical Findings on the letter A and saw MosaicTools acting up while typing in a different app. Existing single-character shortcuts are switched off, and MosaicTools tells you which so you can re-map them. Function keys, Space, Insert, the arrows, Delete and Escape are unaffected.</li>
+<li><em>Fixed in 5.9.13:</em> when studies are combined or associated in Clario — an ultrasound with a separate Doppler code, or CTA chest with abdomen and pelvis — the mic could fail to switch itself on for the new study, silently, so the first thing you said was lost. Stopping the previous dictation takes a moment, and a combined study opens two studies close enough together that MosaicTools mistook &quot;still finishing the last one&quot; for &quot;already listening&quot;. It now waits, then starts.</li>
 </ul>
 
     </div>
@@ -86,7 +87,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.12</strong> · built 2026-08-20</div>
+  <div>Documents <strong>MosaicTools v5.9.13</strong> · built 2026-08-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
