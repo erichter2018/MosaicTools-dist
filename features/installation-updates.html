@@ -50,7 +50,20 @@
       <div class="shots"><figure class="shot"><img src="../img/settings-desktop.png" alt="Auto-update, Check Now, and Rollback in Desktop Mode settings" loading="lazy" class="lightboxable"><figcaption>Auto-update, Check Now, and Rollback in Desktop Mode settings</figcaption></figure>
 <figure class="shot"><img src="../img/whatsnew.png" alt="The What’s New popup after an update" loading="lazy" class="lightboxable"><figcaption>The What’s New popup after an update</figcaption></figure></div>
       <h2>What it does</h2>
-<p>MosaicTools is one <code>MosaicTools.exe</code> — no installer, no admin rights, no services. Drop it in a folder and run it. It updates itself from GitHub Releases: new versions download as a ZIP (which corporate antivirus tolerates far better than a bare exe download) and install via a rename trick — the running exe is renamed aside, the new one takes its place, and the app restarts into it.</p>
+<p>MosaicTools is one <code>MosaicTools.exe</code> — no installer, no admin rights, no services. Drop it in a folder and run it (on a new PC, run <code>run me first.bat</code> once first — see below). It updates itself from GitHub Releases: new versions download as a ZIP (which corporate antivirus tolerates far better than a bare exe download) and install via a rename trick — the running exe is renamed aside, the new one takes its place, and the app restarts into it.</p>
+<h2>First install on a new PC — run &quot;run me first.bat&quot;</h2>
+<p><em>(since 5.9.15)</em> Windows marks every file that comes out of a downloaded ZIP as having come from the
+internet, and recent Windows 11 no longer offers the &quot;More info → Run anyway&quot; escape for an unsigned
+program. The result is that double-clicking <code>MosaicTools.exe</code> on a brand-new machine does nothing at all.</p>
+<p>The ZIP therefore contains a second file, <strong><code>run me first.bat</code></strong>. Unzip both into the same folder,
+double-click that once, and it clears the marker from everything in the folder — then offers to start
+MosaicTools for you. It needs no administrator rights and changes no Windows security setting; it only
+touches the files sitting in its own folder, and it is safe to run again.</p>
+<p>MosaicTools already strips this marker from its own updates, but it can only do that once it is running,
+so this covers the very first launch.</p>
+<p>If it reports <strong>&quot;Nothing was blocked&quot;</strong> and MosaicTools still won&#39;t start, the cause is a company policy
+(AppLocker or Smart App Control) rather than the download marker — that one needs your IT department, and
+the exact wording of the Windows message is the useful thing to pass on.</p>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → Desktop Mode → Updates</strong>:</p>
 <ul>
@@ -91,7 +104,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.14</strong> · built 2026-08-21</div>
+  <div>Documents <strong>MosaicTools v5.9.15</strong> · built 2026-08-22</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
