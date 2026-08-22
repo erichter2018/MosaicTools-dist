@@ -62,9 +62,9 @@
 </ul>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>Back up before big experiments and before moving to a new workstation — restoring the backup on the new box carries everything over, including the months of learning that used to be left behind.</li>
+<li><em>(since 5.9.16)</em> Moving to another workstation no longer needs a manual backup at all — see <strong>Settings Sync</strong>, which carries all of this to any computer you sit down at, automatically. Backup/Restore remains the tool for point-in-time snapshots: back up before big experiments, and before changing anything you might want to undo.</li>
 <li>A <code>.backup</code> contains your API keys in plain text. Keep it where you keep passwords; don&#39;t email it.</li>
-<li>Two things deliberately do <strong>not</strong> travel between machines: your screen calibration (an imported value from another monitor could never correct itself and would quietly mis-scale measurements), and, when the backup belongs to a colleague, their enrolled voiceprint — the speaker gate would drop your speech against someone else&#39;s voice, so it is dropped and the gate turned off.</li>
+<li>Two things deliberately do <strong>not</strong> travel between machines (Settings Sync holds back more — see that page): your screen calibration (an imported value from another monitor could never correct itself and would quietly mis-scale measurements), and, when the backup belongs to a colleague, their enrolled voiceprint — the speaker gate would drop your speech against someone else&#39;s voice, so it is dropped and the gate turned off.</li>
 <li>Backups made before 5.9.14 sat next to <code>MosaicTools.exe</code>. They still restore, and the Restore window will still look there if that&#39;s where yours are.</li>
 <li>Sub-editors (Macro Editor, Pick List Editor, Impression Fixer editor, Key Mappings, Button Studio) open as their own windows from their sections and save independently.</li>
 <li>If Settings won&#39;t open at all on a locked-down PC, it&#39;s usually the Windows RichEdit component failing to load — see the error dialog&#39;s guidance, or reinstall to a local (non-synced) folder.</li>
@@ -76,13 +76,13 @@
       <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v2.1</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/widget-bar.html">Widget Bar</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li><li><a href="../features/installation-updates.html">Installation &amp; Updates</a></li></ul>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/settings-sync.html">Settings Sync</a></li><li><a href="../features/widget-bar.html">Widget Bar</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li><li><a href="../features/installation-updates.html">Installation &amp; Updates</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.15</strong> · built 2026-08-22</div>
+  <div>Documents <strong>MosaicTools v5.9.16</strong> · built 2026-08-22</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

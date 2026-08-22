@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Settings Sync — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
+    <h1>Settings Sync</h1>
+    <p class="brief">Your macros, templates, hotkeys and dictation setup follow you to any workstation, at any hospital — including the provider keys most services will only ever show you once. No code, no password, no account.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-window.png" alt="The sync switch sits under General, next to your name" loading="lazy" class="lightboxable"><figcaption>The sync switch sits under General, next to your name</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>If you read at more than one hospital, or you don&#39;t always get the same workstation, MosaicTools now carries your setup with you. Sit down at another computer, start MosaicTools, and your macros, templates, pick lists, hotkeys, button mappings and dictation configuration are already there.</p>
+<p>The part that matters most is your <strong>speech provider keys</strong>. Most services show you a key exactly once, at the moment you create it — after that, even they can&#39;t show it to you again. Until now the copy inside MosaicTools was often the only copy in existence, and moving to a new computer meant creating new keys from scratch. It now travels with everything else.</p>
+<p>Your <strong>learned data</strong> comes too: the report templates MosaicTools has learned, and the dictation corrections it has learned for every speech provider. That is months of accumulated learning that used to be left behind on the old machine.</p>
+<h2>There is nothing new to remember</h2>
+<p>No sync code. No password. No account to create.</p>
+<p>MosaicTools files your settings under the last name you already type the first time you run it — the same name it uses to read Clario notes. That is the whole setup.</p>
+<h2>What you will actually see</h2>
+<ul>
+<li><strong>On a computer you have used before</strong> — nothing to do. Your settings load as MosaicTools starts, and a short message tells you where they came from. If the copy on this computer is already the newest one, nothing changes.</li>
+<li><strong>On a computer that is new to you</strong> — it asks once, showing the name and the date the settings were saved. Say yes and MosaicTools restarts with everything in place. It asks rather than assuming so that a colleague who happens to share your last name can never be loaded by mistake.</li>
+</ul>
+<h2>What stays behind, on purpose</h2>
+<p>Some settings describe the <em>computer</em>, not you, and carrying them between hospitals would do harm rather than good. These always keep the local machine&#39;s own value:</p>
+<ul>
+<li>your <strong>microphone</strong> choice, and the separate device the recording beep plays through</li>
+<li><strong>window and popup positions</strong>, the recording indicator, and the floating toolbar — a position remembered from a four-monitor reading room lands off-screen on a single-monitor workstation</li>
+<li><strong>screen calibration</strong> used for measurements</li>
+<li>your enrolled <strong>voiceprint</strong> for the speaker gate</li>
+</ul>
+<p>So your macros arrive at the other hospital without dragging the wrong microphone along with them.</p>
+<h2>When it saves</h2>
+<p>Every few minutes, quietly, in the background — and only when something has actually changed, so an ordinary day costs nothing. It never uploads while you are dictating.</p>
+<p>It deliberately does <strong>not</strong> wait until you close MosaicTools. A hospital reboot, a crash, or a PC that gets switched off at the wall never gives an application the chance to shut down properly, and a day of changes would be lost every time that happened.</p>
+<p>If you change something on two computers on the same day, the most recent save wins. MosaicTools takes a full backup of what was on the machine before it applies anything, so nothing is ever replaced without a way back.</p>
+<h2>Where it goes, and how it is protected</h2>
+<p>Into a <strong>private</strong> store that only MosaicTools can reach — not a public page, not a shared folder, and nothing you have to sign in to. Your settings are <strong>encrypted on your computer before they are sent</strong>, and they are filed under a scrambled name rather than yours, so the store cannot be browsed to see who uses MosaicTools.</p>
+<p>Worth being straightforward about the limit: this protects your settings from anyone looking at the store. It is not designed to withstand someone who takes MosaicTools apart. That is a deliberate trade — the alternative is a password you would have to remember, and forgetting it would destroy the very API keys this feature exists to protect. It is also strictly safer than what came before, because those keys have always sat unencrypted in a file on every workstation you use.</p>
+<h2>Turning it off</h2>
+<p><strong>Settings → General → &quot;Sync my settings across workstations.&quot;</strong> Switch it off and nothing leaves the computer. Backup and Restore still work exactly as before.</p>
+<h2>Tips</h2>
+<ul>
+<li>Enter your name the first time MosaicTools asks. If you skip it, sync has nothing to file your settings under and stays switched off.</li>
+<li>Give it a few minutes on the first computer before expecting your settings on the second — the first save is on a timer, not instant.</li>
+<li>Moving to a brand-new PC? Download, run <code>run me first.bat</code> once, start MosaicTools, type your name, and say yes when it offers your settings.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → General → Sync my settings across workstations</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.9.16</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/settings-window.html">Settings Window</a></li><li><a href="../features/installation-updates.html">Installation &amp; Updates</a></li><li><a href="../features/keys-buttons.html">Keys &amp; Buttons</a></li><li><a href="../features/telemetry.html">Diagnostics &amp; Data Sharing</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.9.16</strong> · built 2026-08-22</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
