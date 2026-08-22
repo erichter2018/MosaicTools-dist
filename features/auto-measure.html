@@ -66,15 +66,29 @@
 <ol>
 <li>Hover your cursor over the lesion in InteleViewer.</li>
 <li>Trigger Auto Measure.</li>
-<li>The measurement overlay appears over the lesion and <strong>auto-dismisses after about 5 seconds</strong> (click to dismiss early) — unless you have turned on contributing above, in which case it waits for Accept or Reject. Focus returns to InteleViewer the moment the measurement appears, so your tool-select mouse button keeps working — no need to click the image first.</li>
+<li>The measurement overlay appears over the lesion and <strong>auto-dismisses after a few seconds</strong> — three by default, and adjustable since 5.9.17 in Settings → Auto Measure (click, or press any mouse button, to dismiss early) — unless you have turned on contributing above, in which case it waits for Accept or Reject. Focus returns to InteleViewer the moment the measurement appears, so your tool-select mouse button keeps working — no need to click the image first.</li>
 <li>The measurement is available to paste into the report.</li>
 </ol>
 <p>Measurements come back in well under a second.</p>
+<h2>Settings</h2>
+<p><em>(new in 5.9.17 — Settings → Auto Measure, just under Spine Labeling)</em></p>
+<p>Auto Measure previously had no settings page of its own; its two controls were stranded in other sections, which is why they were hard to find.</p>
+<ul>
+<li><p><strong>Time left on screen</strong> — how long a measurement stays visible before fading. Three seconds by default (it used to be a fixed five). Whatever you set, the measurement still disappears the instant you press a mouse button, so reaching for an InteleViewer tool is never blocked. This is only the idle timeout.</p>
+</li>
+<li><p><strong>Leave measurements on screen</strong> <em>(experimental)</em> — instead of fading, each measurement stays painted on the image you took it on. MosaicTools records which image you measured and watches InteleViewer&#39;s image counter, so a measurement is drawn only while that exact image is displayed: scroll off it and the caliper goes, scroll back and it returns.</p>
+<p>Every measurement in the study is kept, so scrolling through a series lights each one up as you reach it — including measurements in different series in different viewports, which are tracked separately. They are cleared when you move to the next study, and measuring the same lesion again replaces the old answer rather than leaving both on screen.</p>
+<p>It needs InteleViewer&#39;s image counter (<code>Im: 12/240</code>) visible in the viewport — without it there is nothing to watch, and measurements fade as usual.</p>
+<p>Why experimental: the caliper is pinned to a position on screen, so panning or zooming the image moves the anatomy out from under ink that stays where it was.</p>
+</li>
+</ul>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li><p>It measures what it can segment — a lesion with almost no contrast against its background may get a poor boundary. Always eyeball the overlay before dictating the number.</p>
 </li>
 <li><p>Since 5.5.30 each measurement <strong>re-reads the current True Size Zoom</strong> at the moment you trigger it, so changing the on-screen zoom between measurements can no longer reuse a stale calibration and oversize the result (a 3 cm lesion could previously read ~4 cm off an old zoom). If the zoom can&#39;t be read it declines with &quot;cannot calibrate&quot; rather than pasting a wrong number.</p>
+</li>
+<li><p>With <strong>Leave measurements on screen</strong> on, panning or zooming moves the image but not the painted caliper. Scroll away and back to clear it, or re-measure.</p>
 </li>
 <li><p>Works with InteleViewer rulers in either yellow or orange (used only for legacy calibration; the pitch-based calibration is the default).</p>
 </li>
@@ -86,6 +100,7 @@
     <aside class="feature-meta">
       <h4>At a glance</h4>
       <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Auto Measure</code> — map it under Keys &amp; Buttons</span></div>
+    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Auto Measure</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/measurement.html">📏 Measurement &amp; Imaging</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v4.3</span></div>
@@ -95,7 +110,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.16</strong> · built 2026-08-22</div>
+  <div>Documents <strong>MosaicTools v5.9.17</strong> · built 2026-08-22</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
