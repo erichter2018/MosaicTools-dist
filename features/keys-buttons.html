@@ -74,7 +74,7 @@
 </li>
 <li><p>MosaicTools tags its own injected keystrokes so an Alt-key mapping can&#39;t re-trigger itself.</p>
 </li>
-<li><p><strong>A keyboard shortcut must include Ctrl, Alt or Shift.</strong> MosaicTools listens for its shortcuts <em>everywhere</em>, not only in Mosaic, so a shortcut with no modifier fires while you are simply typing. One radiologist had Critical Findings on the letter <code>A</code> and saw MosaicTools acting up while typing in a different app.</p>
+<li><p><strong>A keyboard shortcut must include Ctrl, Alt or Shift.</strong> MosaicTools listens for its shortcuts <em>everywhere</em>, not only in Mosaic, so a shortcut with no modifier fires while you are simply typing. A shortcut like a bare <code>A</code> would fire every time you typed that letter, in any application.</p>
 <p><em>(5.9.11 refused bare letters and numbers. Since 5.9.18 this covers <strong>every</strong> bare key — Space, Home, End, the arrows, Insert, Delete and the function keys included. A bare Space was the worst of them: it fires on every word you type anywhere. If you had one assigned, MosaicTools switches it off at startup and tells you which action it was.)</em></p>
 </li>
 <li><p><strong>Shortcuts that belong to something else are refused</strong> <em>(since 5.9.18)</em>. Taking <code>Ctrl+V</code> would not give MosaicTools a shortcut — it would take <strong>paste away from every program on the computer</strong>. The editor declines them and tells you what owns the one you pressed:</p>
