@@ -88,6 +88,8 @@
 </li>
 <li><p><strong>Two actions cannot share one shortcut</strong> <em>(since 5.9.18)</em>. Before, the second one was accepted and then simply never worked, with nothing said. The editor now names the action already holding it, so you know where to go and clear it.</p>
 </li>
+<li><p><strong>A shortcut you already had saved is reported at startup if it can no longer be used</strong> <em>(since 5.9.19)</em>. All three rules above are enforced as you type a shortcut into the editor — but a shortcut saved <em>before</em> those rules existed, or brought in by Settings Sync from another workstation, is only switched off when MosaicTools starts. Until 5.9.19 it said so in a message that faded after eight seconds, and MosaicTools usually starts before you sit down, so the first anyone knew of it was pressing a key and getting nothing back. A window now lists every shortcut that was switched off, what took it (paste, <code>Alt+Tab</code>, Mosaic&#39;s <code>Alt+P</code>, or another MosaicTools action), and why — with <strong>Open Key Mappings</strong> to go straight there. It stays on screen until you deal with it, and comes back at every startup while the shortcut is still one of the refused ones, because that action does not work until you change it.</p>
+</li>
 <li><p><em>Fixed in 5.9.13:</em> when studies are combined or associated in Clario — an ultrasound with a separate Doppler code, or CTA chest with abdomen and pelvis — the mic could fail to switch itself on for the new study, silently, so the first thing you said was lost. Stopping the previous dictation takes a moment, and a combined study opens two studies close enough together that MosaicTools mistook &quot;still finishing the last one&quot; for &quot;already listening&quot;. It now waits, then starts.</p>
 </li>
 </ul>
@@ -105,7 +107,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.18</strong> · built 2026-08-24</div>
+  <div>Documents <strong>MosaicTools v5.9.19</strong> · built 2026-08-24</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
