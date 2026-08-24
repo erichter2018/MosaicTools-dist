@@ -66,12 +66,30 @@
 <p>Press the button; the action runs. MosaicTools reads the mic&#39;s HID interface directly, so mappings work regardless of which window has focus, and focus is saved/restored around Mosaic interactions.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>The settings page also lists the <strong>Hardcoded Mic Buttons</strong> — a default set (e.g. PowerMic Skip Back → Process Report, Record Button → Start/Stop Dictation, Checkmark → Sign Report; SpeechMike Ins/Ovr, -i-, Record, EoL for the same four) so a fresh install works before you customize anything.</li>
-<li>SpeechMike works in Event mode; use Philips SpeechControl if you want the front mouse-style buttons behaving as hotkeys.</li>
-<li>Global hotkeys are disabled in headless mode — mic buttons still work there.</li>
-<li>MosaicTools tags its own injected keystrokes so an Alt-key mapping can&#39;t re-trigger itself.</li>
-<li><em>Changed in 5.9.11:</em> a keyboard shortcut must include <strong>Ctrl, Alt or Shift</strong>. A shortcut that was just a single letter or number fired whenever you typed that character in ANY program - one radiologist had Critical Findings on the letter A and saw MosaicTools acting up while typing in a different app. Existing single-character shortcuts are switched off, and MosaicTools tells you which so you can re-map them. Function keys, Space, Insert, the arrows, Delete and Escape are unaffected.</li>
-<li><em>Fixed in 5.9.13:</em> when studies are combined or associated in Clario — an ultrasound with a separate Doppler code, or CTA chest with abdomen and pelvis — the mic could fail to switch itself on for the new study, silently, so the first thing you said was lost. Stopping the previous dictation takes a moment, and a combined study opens two studies close enough together that MosaicTools mistook &quot;still finishing the last one&quot; for &quot;already listening&quot;. It now waits, then starts.</li>
+<li><p>The settings page also lists the <strong>Hardcoded Mic Buttons</strong> — a default set (e.g. PowerMic Skip Back → Process Report, Record Button → Start/Stop Dictation, Checkmark → Sign Report; SpeechMike Ins/Ovr, -i-, Record, EoL for the same four) so a fresh install works before you customize anything.</p>
+</li>
+<li><p>SpeechMike works in Event mode; use Philips SpeechControl if you want the front mouse-style buttons behaving as hotkeys.</p>
+</li>
+<li><p>Global hotkeys are disabled in headless mode — mic buttons still work there.</p>
+</li>
+<li><p>MosaicTools tags its own injected keystrokes so an Alt-key mapping can&#39;t re-trigger itself.</p>
+</li>
+<li><p><strong>A keyboard shortcut must include Ctrl, Alt or Shift.</strong> MosaicTools listens for its shortcuts <em>everywhere</em>, not only in Mosaic, so a shortcut with no modifier fires while you are simply typing. One radiologist had Critical Findings on the letter <code>A</code> and saw MosaicTools acting up while typing in a different app.</p>
+<p><em>(5.9.11 refused bare letters and numbers. Since 5.9.18 this covers <strong>every</strong> bare key — Space, Home, End, the arrows, Insert, Delete and the function keys included. A bare Space was the worst of them: it fires on every word you type anywhere. If you had one assigned, MosaicTools switches it off at startup and tells you which action it was.)</em></p>
+</li>
+<li><p><strong>Shortcuts that belong to something else are refused</strong> <em>(since 5.9.18)</em>. Taking <code>Ctrl+V</code> would not give MosaicTools a shortcut — it would take <strong>paste away from every program on the computer</strong>. The editor declines them and tells you what owns the one you pressed:</p>
+<ul>
+<li>clipboard and undo — <code>Ctrl+C</code> <code>Ctrl+V</code> <code>Ctrl+X</code> <code>Ctrl+Z</code> <code>Ctrl+Y</code></li>
+<li>document — <code>Ctrl+A</code> <code>Ctrl+S</code> <code>Ctrl+P</code> <code>Ctrl+F</code> <code>Ctrl+H</code> <code>Ctrl+N</code> <code>Ctrl+O</code> <code>Ctrl+W</code></li>
+<li>report formatting — <code>Ctrl+B</code> <code>Ctrl+I</code> <code>Ctrl+U</code></li>
+<li>Windows — <code>Alt+Tab</code> <code>Alt+F4</code> <code>Alt+Space</code> <code>Ctrl+Esc</code> <code>Ctrl+Shift+Esc</code> <code>Ctrl+Tab</code></li>
+<li>Mosaic&#39;s own — <code>Alt+P</code> <code>Alt+F</code> <code>Alt+R</code> <code>Alt+C</code> (Process, Sign, Record, Copy), which MosaicTools also sends</li>
+</ul>
+</li>
+<li><p><strong>Two actions cannot share one shortcut</strong> <em>(since 5.9.18)</em>. Before, the second one was accepted and then simply never worked, with nothing said. The editor now names the action already holding it, so you know where to go and clear it.</p>
+</li>
+<li><p><em>Fixed in 5.9.13:</em> when studies are combined or associated in Clario — an ultrasound with a separate Doppler code, or CTA chest with abdomen and pelvis — the mic could fail to switch itself on for the new study, silently, so the first thing you said was lost. Stopping the previous dictation takes a moment, and a combined study opens two studies close enough together that MosaicTools mistook &quot;still finishing the last one&quot; for &quot;already listening&quot;. It now waits, then starts.</p>
+</li>
 </ul>
 
     </div>
@@ -87,7 +105,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.17</strong> · built 2026-08-22</div>
+  <div>Documents <strong>MosaicTools v5.9.18</strong> · built 2026-08-24</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
