@@ -43,7 +43,7 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
     <h1>Drafted Findings Popup</h1>
-    <p class="brief">A glanceable, prioritized list of a pre-drafted study's findings — acute lines loud and bright, chronic/incidental lines dimmed — with per-term loudness tuning and one-click deletion.</p>
+    <p class="brief">A glanceable, prioritized list of a pre-drafted study's findings — acute lines loud and bright, chronic/incidental lines dimmed — with per-term loudness tuning, one-click deletion, and an optional organ-rail layout that puts the body part at the left edge.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
@@ -71,6 +71,21 @@
 <p>Covered to start (abdominal / right-upper-quadrant ultrasound): liver length, gallbladder length and wall thickness, common bile duct, kidney length, renal cortical thickness, aorta, portal vein diameter and velocity, spleen, pancreatic duct, IVC. The common bile duct limit <strong>adjusts for age</strong> (it widens about 1 mm per decade after 60) and lifts further if the report mentions a prior cholecystectomy.</p>
 <p><strong>An uncolored number means there is no rule for it — not that it is normal.</strong> Only the measurements listed above are checked, and a measurement of a mass, cyst, nodule or stone is deliberately never colored, because a lesion has no normal range.</p>
 <p>Turn it off in Settings → Drafting → &quot;Color abnormal measurements in the popup&quot;.</p>
+<h2>Alternate appearance (since 5.9.20)</h2>
+<p>Settings → Drafting → <strong>Alternate appearance</strong>, underneath the main toggle. <strong>Off by default</strong> — turn it on to try it, turn it off to go straight back.</p>
+<p>Instead of a block of sentences, each finding gets its <strong>body part as a coloured tag in a fixed left column</strong>, so the left edge of the box becomes a list of anatomy you can scan without reading a word. &quot;Did I say anything about the kidneys?&quot; is answered by looking, not reading.</p>
+<p>Three things ride along with it:</p>
+<ul>
+<li><strong>A red bar</strong> down the left of the loud findings.</li>
+<li><strong>Measurements bold and bright</strong>, so a size is the thing your eye lands on.</li>
+<li><strong>A whispered tail.</strong> A throwaway qualifier — &quot;…, too small to characterize, probably a benign cyst.&quot; — drops to a small grey. On a typical abdomen that boilerplate was about a third of the lit pixels while adding nothing you act on.</li>
+</ul>
+<p>Nothing is reworded, reordered differently, or removed. A hedge is only ever <strong>dimmed, never deleted</strong>, only when it fully matches a short list of harmless qualifiers, and <strong>never</strong> on a loud finding or one that says something like &quot;cannot exclude&quot; or &quot;suspicious for&quot;.</p>
+<p>The columns are fixed, so they do not shift as you move between studies, and the box stays where you put it — a study too tall for the space scrolls rather than moving. You can drag its left or right edge to change the width; the width is remembered.</p>
+<h2>Sentences dictated together stay together (since 5.9.20)</h2>
+<p>The drafting AI writes <strong>one organ system per line</strong> — a chest line, a renal line, a spine line. The popup used to split every line into sentences and re-sort each one on its own, so half a chest paragraph could end up under &quot;Degenerative &amp; Chronic&quot; while the other half sat at the top, and an unrelated sentence could land in the middle of a group.</p>
+<p>Now a paragraph moves as a unit: it is filed under the section of its most urgent member, and sorts at the position of its body part. Each sentence still gets <strong>its own line, in the order it was drafted</strong>.</p>
+<p>If a draft arrives as a single paragraph there is nothing to hold together, so it falls back to the previous sentence-by-sentence ordering.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>Ultrasound &quot;capture&quot; studies (OCR&#39;d tech worksheets) get a flat rendering instead: measurements bold, section labels dimmed, no acuity weighting.</li>
@@ -91,7 +106,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.19</strong> · built 2026-08-24</div>
+  <div>Documents <strong>MosaicTools v5.9.20</strong> · built 2026-08-25</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

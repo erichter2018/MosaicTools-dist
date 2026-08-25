@@ -62,6 +62,8 @@
 </ul>
 <h2>Tips &amp; gotchas</h2>
 <ul>
+<li><em>(fixed in 5.9.20)</em> The section links down the left side could scroll to the wrong section, and a large empty gap could appear above the first section. Both came from the page being re-laid-out while it was scrolled — the commonest way to hit it was to scroll down, close Settings, and open it again.</li>
+<li><em>(fixed in 5.9.20)</em> Searching and then clearing the search could leave controls on screen that are meant to be hidden — most visibly in Experimental, where several LLM provider option groups share the same space and were drawn on top of each other. Search now also returns to the top of the page, so the first match is the one you land on.</li>
 <li><em>(since 5.9.16)</em> Moving to another workstation no longer needs a manual backup at all — see <strong>Settings Sync</strong>, which carries all of this to any computer you sit down at, automatically. Backup/Restore remains the tool for point-in-time snapshots: back up before big experiments, and before changing anything you might want to undo.</li>
 <li>A <code>.backup</code> contains your API keys in plain text. Keep it where you keep passwords; don&#39;t email it.</li>
 <li>Two things deliberately do <strong>not</strong> travel between machines (Settings Sync holds back more — see that page): your screen calibration (an imported value from another monitor could never correct itself and would quietly mis-scale measurements), and, when the backup belongs to a colleague, their enrolled voiceprint — the speaker gate would drop your speech against someone else&#39;s voice, so it is dropped and the gate turned off.</li>
@@ -82,7 +84,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.19</strong> · built 2026-08-24</div>
+  <div>Documents <strong>MosaicTools v5.9.20</strong> · built 2026-08-25</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
