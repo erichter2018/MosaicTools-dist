@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Alternate Drafting Popup — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
+    <h1>Alternate Drafting Popup</h1>
+    <p class="brief">On a drafted study, the findings you have already dictated are struck through in the popup and taken out of the transcript, so Mosaic's Process Report reads your words rather than the drafting AI's.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The drafted findings list this works on</figcaption></figure></div>
+      <h2>What it does</h2>
+<p>On a drafted study the transcript box holds <strong>two authors</strong> — the drafting AI&#39;s findings and your
+dictation — and Mosaic&#39;s Process Report LLM has no reliable way to tell them apart. That is why it
+does not always prefer what you actually said.</p>
+<p>This feature settles it before Process Report runs. As you dictate, each drafted statement is
+compared against your words. When you have plainly covered one, it is <strong>struck through and dimmed</strong>
+in the popup and <strong>removed from the transcript</strong>, so only your version reaches the LLM. Statements
+you have partly covered stay, with a short blue note saying what is still missing — a side, a size,
+a location — so you can see why it was left alone.</p>
+<p>Nothing is invented or reworded. A drafted statement is only ever removed, never rewritten.</p>
+<h2>How to turn it on / set it up</h2>
+<p>Settings → Drafting → <strong>Alternate drafting popup</strong>. Off by default; it is marked EXPERIMENTAL.</p>
+<h2>Using it</h2>
+<p><strong>Click a struck-through line to bring it back.</strong> It returns to the popup un-struck and to the
+transcript, and it will not be removed again for that study. That is the escape hatch: if the engine
+takes something you wanted, one click undoes it.</p>
+<p>The strikethrough is deliberately visible rather than a silent deletion, so you can see everything
+that was taken and correct it.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li><strong>Your editor is the truth.</strong> Correct yourself and the old wording stops counting — say &quot;left&quot;,
+fix it to &quot;right&quot;, and the note follows the correction. Words you type in after dictating count too.</li>
+<li>A drafted finding is <strong>never</strong> removed because you ruled it out. Saying &quot;no aneurysm&quot; leaves a
+drafted aneurysm standing, flagged as a disagreement.</li>
+<li>Plurals carry meaning: &quot;pleural effusions&quot; and &quot;in the lungs&quot; are read as both sides, so you are
+not asked for a side you already gave.</li>
+<li>It only matches on words it knows. If a drafted finding you clearly covered is not removed, the
+wording is probably one the engine has not been taught yet — worth reporting.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Drafting → Alternate drafting popup</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.9.21</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/drafting-fixups.html">Drafting Fixups</a></li><li><a href="../features/draft-phrase-remover.html">Auto-Remove Draft Phrases</a></li><li><a href="../features/auto-process.html">Auto-Process on Open</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v5.9.21</strong> · built 2026-08-26</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

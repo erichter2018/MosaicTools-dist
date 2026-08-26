@@ -74,6 +74,12 @@
 <li><em>New in 5.9.10:</em> MosaicTools now records what happens to every automatic insertion — that it landed, that no macro matched the study, or that a study waited too long and which step held it up. Nothing about how macros behave has changed. It means that if macros ever stop going in on you, saying so is now enough for the cause to be found afterwards; previously only the failures were noted, and several ways insertion can quietly stop were not recorded at all.</li>
 <li><em>Fixed in 5.9.11:</em> macros could fail to insert for one kind of study while working normally for every other kind - on CT head, neither the general macros nor the exam-specific ones went in. MosaicTools waits for the report to load before inserting and recognised only one spelling of the history heading, so a template beginning &quot;HISTORY:&quot; or &quot;INDICATION&quot; was never seen as loaded and every macro for that study type was skipped silently.</li>
 <li><em>New in 5.9.11:</em> the macro editor warns when a macro has no criteria at all. Such a macro is inserted into EVERY study, including other body parts - easy to do by accident, since a new macro starts with the criteria empty and enabled.</li>
+<li><em>New in 5.9.20:</em> <strong>Collapse macros to a short name</strong> (Settings → Text &amp; Templates, under Macros). A long
+LLM instruction block sitting in the transcript is hard to dictate around. Turn this on, give a macro a
+short name in the macro editor&#39;s <strong>Shows as (short name)</strong> box, and the transcript shows a small coloured
+tag like <code>[PET protocol]</code> instead of the whole block; at Process Report it expands to the full text so
+Mosaic reads it, then shrinks back. Macros with no short name are unaffected. Two enabled macros must not
+share a name — while they do, NEITHER expands, and the editor warns you.</li>
 </ul>
 
     </div>
@@ -89,7 +95,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v5.9.20</strong> · built 2026-08-25</div>
+  <div>Documents <strong>MosaicTools v5.9.21</strong> · built 2026-08-26</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
