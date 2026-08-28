@@ -60,6 +60,16 @@
 <li><strong>Tooltips</strong>: hover any control for an explanation. Turn them off with <strong>Show tooltips throughout settings</strong> in Profile if you find them noisy.</li>
 <li><strong>Backup / Restore</strong> (5.9.14): right-click the widget bar (or the tray icon) → <strong>Backup Settings</strong> writes a single <code>.backup</code> file holding your whole setup — mappings, macros, pick lists, templates, STT setup and API keys, plus your <strong>learned report templates</strong>, the <strong>learned dictation corrections for every speech provider</strong>, and your Google Chirp key file. <strong>Restore Settings</strong> loads one, confirms what it found (date and profile), backs up your current setup first so the restore can be undone, and restarts the app. Backups live in <code>%LOCALAPPDATA%\MosaicTools\Backups\</code> and the newest ten are kept; settings themselves are JSON in <code>%LOCALAPPDATA%\MosaicTools\</code>.</li>
 </ul>
+<h2>Fixed in 6.0.2 — Settings refusing to open</h2>
+<p>Some people saw <strong>&quot;Error opening settings: Value of &#39;0&#39; is not valid for &#39;Value&#39;&quot;</strong> and the classic
+Settings window would not open at all, while <strong>Settings 2.0</strong> still worked.</p>
+<p>The cause: a handful of settings could be SAVED with a value their control would not ACCEPT when read back.
+Report-highlight opacity and overlay transparency are both 0-100 settings whose sliders start at 10 and 5,
+so a zero was legal to store and illegal to load — and because it failed while the window was being built,
+one bad number stopped the entire dialog. 2.0 was unaffected because it does not build those controls.</p>
+<p>Every stored value is now clamped on load: a number outside a control&#39;s range shows as the nearest allowed
+one instead of failing. And a section that cannot build is skipped and named in the log rather than taking
+the window down with it.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li><em>(fixed in 5.9.20)</em> The section links down the left side could scroll to the wrong section, and a large empty gap could appear above the first section. Both came from the page being re-laid-out while it was scrolled — the commonest way to hit it was to scroll down, close Settings, and open it again.</li>
@@ -84,7 +94,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.1</strong> · built 2026-08-28</div>
+  <div>Documents <strong>MosaicTools v6.0.2</strong> · built 2026-08-28</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
