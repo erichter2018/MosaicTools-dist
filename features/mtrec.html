@@ -61,6 +61,13 @@
 <h2>Using it</h2>
 <p>Press the key after your findings are in; recommendations merge into the impression, placed last. It&#39;s smart about noise: it reports the largest lesion with multiplicity/laterality, respects stability (&quot;unchanged for 3 years&quot; clears the guideline window instead of restarting the clock), reads the clinical history (no incidental-nodule follow-up in a known-cancer study), and replaces a matching point already in your impression rather than duplicating it. <strong>Ctrl+Z undoes the whole insert.</strong></p>
 <p><strong>Thyroid, ovarian, renal, and — since 5.5.8 — simple hepatic cysts and nodules are always carried into the impression</strong> (renal/thyroid/ovarian since 5.5.4), independent of the relocate-recommendations setting — so an incidental cyst or nodule you dictate always gets its impression line, even when it needs no guideline follow-up. Since 5.5.30 a <strong>solid (&quot;non-cystic&quot;) ovarian/adnexal mass</strong> is no longer mislabeled an &quot;ovarian cyst&quot; — it correctly routes to the solid-lesion recommendation (dedicated pelvic ultrasound plus gynecology/gyn-onc evaluation).</p>
+<h2>Fixed in 6.0.1 — adrenal nodules follow the largest</h2>
+<p>Two adrenal nodules where only the larger needs work-up now give <strong>one</strong> recommendation, on the largest —
+the same rule thyroid, renal, liver and ovarian already followed. Before this you could get &quot;adrenal-protocol
+CT is recommended&quot; on one line and, underneath it, an optional 12-month follow-up for the other gland. One
+adrenal CT images both.</p>
+<p>A <strong>smaller</strong> lesion that genuinely needs more than the larger one still keeps its own recommendation — a
+suspicious nodule is never absorbed by a benign one.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>With <strong>Show MTRec boxes after Process Report</strong> on, you rarely need the manual key — see the MTRec boxes page.</li>
@@ -88,7 +95,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.0</strong> · built 2026-08-27</div>
+  <div>Documents <strong>MosaicTools v6.0.1</strong> · built 2026-08-28</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

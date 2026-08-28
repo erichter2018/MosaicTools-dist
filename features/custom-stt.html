@@ -59,6 +59,15 @@
 <p>Cost honesty: the cloud engines are paid, on your own account — typically fractions of a cent per minute of dictation, pay-per-use. The on-device medASR engine is free.</p>
 <h2>Using it</h2>
 <p>Dictate exactly as before. Text appears near-instantly (see Turbo Paste) and quietly refines as the other engines weigh in. A floating indicator shows live transcription, beeps confirm start/stop, and <strong>Auto-start on case open</strong> can begin recording automatically when a new study opens (stopping on Sign Report).</p>
+<h2>Fixed in 6.0.1 — dictation is never discarded</h2>
+<p>MosaicTools waits a few seconds after you stop for the engines to agree on the final text. If that merge
+arrived <strong>after</strong> the wait expired, the finished dictation used to be <strong>thrown away silently</strong> — nothing on
+screen said so, and on most machines nothing was even written to the log.</p>
+<p>Now late text is <strong>pasted anyway</strong>. The one exception is when you have already started dictating again: two
+dictations must not interleave, so it goes to your <strong>clipboard</strong> with a message telling you to paste it.
+Either way it cannot vanish.</p>
+<p>A slow merge usually means one engine in the ensemble is struggling — the <strong>Ensemble health</strong> light on the
+widget bar names which one.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>Run the wizard rather than entering keys by hand — it validates each key with a real connection to the provider.</li>
@@ -80,7 +89,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.0</strong> · built 2026-08-27</div>
+  <div>Documents <strong>MosaicTools v6.0.1</strong> · built 2026-08-28</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

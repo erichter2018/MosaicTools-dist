@@ -43,7 +43,7 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/priors.html">Priors &amp; Clinical History</a></div>
     <h1>Get Prior</h1>
-    <p class="brief">Grabs the relevant prior study's date, time, and description from InteleViewer, formats it as your COMPARISON line, and pastes it into Mosaic — one button, no typing.</p>
+    <p class="brief">Grabs the relevant prior study's date, time, and description from InteleViewer and folds it into ONE comparison line at the top of your transcript — newest study first, however many priors you pull.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
@@ -62,10 +62,26 @@
 <li>The formatted COMPARISON text lands in your Mosaic report. Done — carry on dictating.</li>
 </ol>
 <p>The same prior information also feeds the Comparison line pinned at the top of the drafted-findings popup, so drafted cases show what the draft was compared against.</p>
+<h2>One comparison line <em>(6.0.1)</em></h2>
+<p>Every prior you pull goes into a <strong>single</strong> statement at the top of the transcript, always in the same shape:</p>
+<pre><code>COMPARISON: 8/26/2026 CT abdomen and pelvis, 8/14/2026 CT head.
+</code></pre>
+<ul>
+<li><strong>Newest study first</strong>, comma separated.</li>
+<li>Pull a second prior and it is <strong>added to that line</strong>, not pasted as another one.</li>
+<li>A line that says <strong>&quot;None available&quot;</strong> is replaced outright.</li>
+<li>Pull the <strong>same prior twice</strong> and nothing changes — you get &quot;Already in the comparison line&quot; instead.</li>
+<li>A comparison the drafting AI wrote as a <strong>bare date</strong> is replaced by the real one, so the same study never
+appears twice.</li>
+<li>The automatic Clario comparison insert feeds the <strong>same</strong> line, so a report can never grow two.</li>
+<li>Since 6.0.1 the line looks identical whether or not a comparison was already there — the leading <code>--</code>
+marker that used to distinguish a manual pull is gone.</li>
+</ul>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>The extraction is text-based: if InteleViewer&#39;s prior text is oddly formatted or nothing prior-like is on screen, nothing pastes — check that the prior is actually the active/selected study in InteleViewer and try again.</li>
 <li>Occasionally the copy takes several seconds — that&#39;s InteleViewer fetching the prior&#39;s report text from the PACS server on demand (a cold fetch to a slow site), not MosaicTools. <em>Since 5.5.28</em> you&#39;ll see &quot;Prior: waiting on InteleViewer (loading report)…&quot; during a slow fetch, and MosaicTools waits patiently instead of giving up.</li>
+<li><em>(6.0.1)</em> If a drafted comparison line is replaced by a different merged one, the original is struck through in the drafted findings popup, so you can see what it said before.</li>
 <li>Get Prior gives you the <em>reference line</em>; if you want to know what the prior actually <em>said</em>, use <strong>Summarize Prior</strong> — it opens the full prior report with an AI summary on top. The two actions complement each other and many people map both.</li>
 <li>The <code>{time}</code> placeholder is there for sites/modalities where same-day priors matter (e.g. ICU chest films); most people&#39;s templates use just <code>{date}</code> and <code>{description}</code>. The time is only filled in for priors from the last couple of days — an older prior leaves it blank, which is why the same template can produce a line with a time on one study and without on the next.</li>
 <li><em>Fixed in 5.9.8:</em> the exam could be missing from the pasted line, leaving just <code>COMPARISON: 2/1/2024.</code> with the date right and no study named. It happened when InteleViewer returned the prior with no status word on the end of its row — a normal shape for some studies — and it affected every modality. If you have been seeing bare dates in your comparison lines, that was this.</li>
@@ -85,7 +101,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.0</strong> · built 2026-08-27</div>
+  <div>Documents <strong>MosaicTools v6.0.1</strong> · built 2026-08-28</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
