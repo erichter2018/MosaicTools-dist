@@ -43,23 +43,29 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/recommendations.html">Recommendations</a></div>
     <h1>RecoMD Integration <span class="badge-dep badge-dep-lg">legacy / deprecated</span></h1>
-    <p class="brief">Legacy integration with the external RecoMD recommendation service — superseded by the built-in MTRec engine.</p>
+    <p class="brief">Removed in 6.0.3 — the RecoMD service was discontinued. MTRec is the built-in replacement.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
-      <div class="shots"><figure class="shot"><img src="../img/settings-alerts.png" alt="The legacy RecoMD integration toggles under Alerts" loading="lazy" class="lightboxable"><figcaption>The legacy RecoMD integration toggles under Alerts</figcaption></figure></div>
-      <h2>What it does</h2>
-<p>RecoMD is an external best-practice recommendation service. MosaicTools can send it report data (<strong>Settings → Alerts → RecoMD integration</strong>, with an <strong>Auto-send on Process Report</strong> sub-option) and paste its recommendations back via two mappable actions, <strong>Trigger RecoMD</strong> and <strong>Paste RecoMD</strong>. Paste RecoMD deduplicates against your existing impression points, verifies the copy actually happened, and restores your mouse position.</p>
-<h2>Why it&#39;s deprecated</h2>
-<p>MTRec (5.3.0) is the in-house replacement: offline, instant, no external agent or window-scraping, with every recommendation drawn from verified guideline tables and closed with its citation. If you still have RecoMD wired to a button, the MTRec pages are where to start — enable the engine under <strong>Settings → MTRec</strong> and either use the <strong>MTRec Recommendations</strong> key or the automatic MTRec boxes after Process Report.</p>
-<p>The RecoMD integration remains functional for workstations that still run the service (note the settings hint: it requires &quot;Wait for Impression&quot; to be OFF in RecoMD&#39;s own settings), but it receives no further development.</p>
+      
+      <h2>Removed in 6.0.3</h2>
+<p>RecoMD has been discontinued, so support for it has been taken out of MosaicTools entirely. The
+<strong>RecoMD integration</strong> and <strong>Auto-send on Process Report</strong> settings are gone, and the two mappable
+actions — <strong>Trigger RecoMD</strong> and <strong>Paste RecoMD</strong> — no longer exist.</p>
+<p>If you had either action on a microphone button or a hotkey, that binding is released automatically
+when you update; the button is simply free again, and you can map anything you like to it. Nothing
+else about Process Report changes.</p>
+<h2>What replaces it</h2>
+<p><strong>MTRec</strong> is the in-house engine and has been the recommended path since 5.3.0: offline, instant, no
+external agent and no window-scraping, with every recommendation drawn from verified guideline tables
+and closed with its citation.</p>
+<p>Turn it on under <strong>Settings → MTRec</strong>, then either press the <strong>MTRec Recommendations</strong> key or let the
+MTRec boxes appear automatically after Process Report.</p>
 
     </div>
     <aside class="feature-meta">
       <h4>At a glance</h4>
-      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Trigger RecoMD</code> — map it under Keys &amp; Buttons</span></div>
-    <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Alerts → RecoMD integration</span></div>
-    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/recommendations.html">📋 Recommendations</a></span></div>
+      <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/recommendations.html">📋 Recommendations</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">After Process Report</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v3.5</span></div>
       <h4>Related</h4><ul class="rel-list"><li><a href="../features/mtrec.html">MTRec Recommendations</a></li><li><a href="../features/mtrec-boxes.html">MTRec Boxes</a></li></ul>
@@ -68,7 +74,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.2</strong> · built 2026-08-28</div>
+  <div>Documents <strong>MosaicTools v6.0.3</strong> · built 2026-08-31</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
