@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Comparison Impressions — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
+    <h1>Comparison Impressions</h1>
+    <p class="brief">A separate window listing this study's comparisons by date — click a date to read that prior's IMPRESSION, with the most recent one shown first. Read-only; it never writes to your report.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      
+      <h2>What it is</h2>
+<p>The comparison studies&#39; impressions, in a window of their own. The top line is the comparisons as
+<strong>dates</strong>, and clicking one shows that study&#39;s IMPRESSION underneath. The most recent is shown when the
+window opens, because that is the one you usually want.</p>
+<p>A prior with no impression on file says so in plain words. It never shows an empty box and leaves you
+wondering whether the study has nothing or MosaicTools is broken.</p>
+<p><strong>Off by default.</strong> Turn it on in <strong>Settings → Drafting → Show impression for comparisons</strong>.</p>
+<h2>It never writes to your report</h2>
+<p>This is the difference between this window and the impression list inside the drafting popup. That one
+edits your report — delete a point, drag to reorder — which is why it is off by default and carries a
+warning. This window only ever <em>displays</em> a prior study&#39;s text. There is no path from it back into the
+editor.</p>
+<h2>Where the list comes from</h2>
+<p>The <code>COMPARISON:</code> line of the report you are dictating. Whatever put that line there — Get Prior, the
+Clario auto-comparison, or the InteleViewer study-list scan — this window reads the same line, so it can
+never disagree with what your report says. It refreshes if the line changes while you work.</p>
+<p>Each date is then matched to the exam in Clario and that report&#39;s impression is pulled in.</p>
+<h2>When it shows nothing for a date</h2>
+<p>Two cases, both deliberate:</p>
+<ul>
+<li><strong>Clario has no record of that prior.</strong> Its list only holds what came through Clario, while
+InteleViewer shows the whole PACS history including outside studies.</li>
+<li><strong>Two studies share that date and the comparison text does not say which one is meant.</strong> Rather than
+guess, it shows nothing. The rule is the same one the comparison line itself follows: a wrong prior is
+worse than no prior.</li>
+</ul>
+<h2>The window itself</h2>
+<p>Same handling as the drafting popup, so the two behave alike side by side:</p>
+<ul>
+<li>drag it by the handle at the top</li>
+<li>resize it by either edge</li>
+<li>its position and size are remembered <strong>per study type</strong>, so CT and XR can each sit where they suit you</li>
+</ul>
+<p>It closes when you sign or discard the study.</p>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Drafting → Show impression for comparisons</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v6.0.4</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/summarize-prior.html">Summarize Prior</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v6.0.4</strong> · built 2026-09-08</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
