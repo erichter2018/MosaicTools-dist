@@ -170,7 +170,14 @@ around five percent of compression on every thoracic body, and at L3 to L5 it co
 compression <strong>at all</strong>. A genuine 20 percent loss at L5 came out as 1 percent, which is why lumbar
 compressions were never flagged. Replayed over the reference set, the correction removed 11 false calls
 and revealed 2 real ones that had been invisible.</p>
-<p><strong>Also in 6.0.5:</strong> the reporting threshold is <strong>15 percent</strong>, raised from 10, which matches the published
+<p><strong>Fixed in 6.0.6 — a normal L5 could be reported as a compression fracture.</strong> A vertebra&#39;s height was
+measured as how far the bone dropped <strong>down the screen</strong>, which is its true height only when the bone
+stands upright. At the bottom of the lumbar spine the vertebrae lean: a normal L5 leaning 40 degrees
+measured 77 percent of its real height, and the missing quarter was reported as a fracture. Heights are
+now measured <strong>along the bone</strong>, the way vertebral fractures are graded. Checked over 821 vertebrae from
+433 studies, the two ways of measuring agree everywhere the spine stands upright and differ only where it
+bends — which is exactly where the false calls were coming from.
+<strong>Also in 6.0.5:</strong> the reporting threshold is <strong>15 percent</strong>, raised from 10, which matches the published
 grading where anything below 15 is normal — you can still change it in <strong>Settings → Spine Labeling</strong>. Only
 one number is drawn now, labelled <strong>&quot;compression&quot;</strong> rather than &quot;ant&quot;; posterior compression is still
 measured and still written to the diagnostic record, it is simply no longer shown. Spine labelling is also
@@ -199,7 +206,7 @@ still taken and still written to the diagnostic record.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.5</strong> · built 2026-09-09</div>
+  <div>Documents <strong>MosaicTools v6.0.6</strong> · built 2026-09-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

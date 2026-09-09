@@ -93,6 +93,11 @@ again when you move to the next study.</p>
 <p>The drafting AI writes <strong>one organ system per line</strong> — a chest line, a renal line, a spine line. The popup used to split every line into sentences and re-sort each one on its own, so half a chest paragraph could end up under &quot;Degenerative &amp; Chronic&quot; while the other half sat at the top, and an unrelated sentence could land in the middle of a group.</p>
 <p>Now a paragraph moves as a unit: it is filed under the section of its most urgent member, and sorts at the position of its body part. Each sentence still gets <strong>its own line, in the order it was drafted</strong>.</p>
 <p>If a draft arrives as a single paragraph there is nothing to hold together, so it falls back to the previous sentence-by-sentence ordering.</p>
+<h2>The comparison line stays current <span>6.0.6</span></h2>
+<p>The popup takes its picture of the draft when the study opens — but the <code>COMPARISON:</code> line is often
+written a few seconds later, and you may pull another prior with <strong>Get Prior</strong> halfway through the case.
+It now follows that line for the whole case instead of showing the one that happened to be there at the
+start. A comparison that arrives late is no longer mistaken for something you dictated, either.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>Ultrasound &quot;capture&quot; studies (OCR&#39;d tech worksheets) get a flat rendering instead: measurements bold, section labels dimmed, no acuity weighting.</li>
@@ -107,13 +112,13 @@ again when you move to the next study.</p>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.0</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/auto-process.html">Auto-Process on Open</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/drafting-fixups.html">Drafting Fixups</a></li><li><a href="../features/drafting-collision.html">Alternate Drafting Popup</a></li></ul>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/auto-process.html">Auto-Process on Open</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/drafting-fixups.html">Drafting Fixups</a></li><li><a href="../features/drafting-collision.html">Alternate Drafting Popup</a></li><li><a href="../features/auto-comparison.html">Automatic Comparison</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.5</strong> · built 2026-09-09</div>
+  <div>Documents <strong>MosaicTools v6.0.6</strong> · built 2026-09-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
