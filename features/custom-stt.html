@@ -66,6 +66,13 @@ screen said so, and on most machines nothing was even written to the log.</p>
 <p>Now late text is <strong>pasted anyway</strong>. The one exception is when you have already started dictating again: two
 dictations must not interleave, so it goes to your <strong>clipboard</strong> with a message telling you to paste it.
 Either way it cannot vanish.</p>
+<p><strong>Fixed in 6.0.5.</strong> For one build — 6.0.4 — that exception fired far too readily. A check added to stop
+dictation landing on the wrong study also treated <em>&quot;I cannot tell which study this belongs to&quot;</em> as a
+reason to divert, and it cannot tell for a few seconds after every study change, while Mosaic is still
+being read. Anyone who starts dictating in that window saw <strong>&quot;Dictation arrived after the study or
+recording changed&quot;</strong> on every case, with the text on the clipboard instead of in the report; reloading
+MosaicTools cleared it for exactly one case. Dictation is now held back only when there is real evidence
+the study actually changed.</p>
 <p>A slow merge usually means one engine in the ensemble is struggling — the <strong>Ensemble health</strong> light on the
 widget bar names which one.</p>
 <h2>Tips &amp; gotchas</h2>
@@ -89,7 +96,7 @@ widget bar names which one.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.4</strong> · built 2026-09-08</div>
+  <div>Documents <strong>MosaicTools v6.0.5</strong> · built 2026-09-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

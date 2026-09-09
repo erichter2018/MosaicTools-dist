@@ -86,9 +86,9 @@ and it works from there — the old click-to-seed behaviour still applies as the
 <p><strong>⚡ Quick Accept</strong> is the yellow button between Accept and Reject. It takes the best answer available and commits it in one press: the newest working detector for the levels, the newest working fitter for the endplates, and anterior forced to the left so the compression and listhesis wording reads correctly without you reaching for Flip.</p>
 <p>The point of it is what it does <strong>not</strong> do. Quick Accept writes <strong>nothing</strong> — no teaching record, no upload — so you can use spine labeling freely on any study without thinking about whether it belongs in the training data. A normal Accept still contributes, and that is what keeps the detectors improving; Quick Accept is for the studies where you just want the numbers.</p>
 <p><strong>Spine Labeling Quick</strong> is the same thing as a mappable action: press it and the labels simply appear, with no proposal box and nothing to click.</p>
-<h3>Two detectors instead of one, on the quick path</h3>
-<p>Both endplate fitters run at the same time on this path, and wherever they disagree about a <strong>compression</strong> or a <strong>listhesis</strong>, the more conservative number is the one you see — the smaller height loss, the smaller slip. A slip only one of them found is dropped. They are imperfect in different ways and both tend to overcall, so taking the milder reading removes most of that without hiding anything a body only one of them could measure.</p>
-<p>Turn it off with <strong>Settings → Spine Labeling → &quot;Two-detector consensus on Quick Accept&quot;</strong> to get a single detector&#39;s own numbers back.</p>
+<h3>One detector on the quick path</h3>
+<p>Quick Accept measures the endplates with the newest fitter and shows <strong>its own numbers, undamped</strong>.</p>
+<p>It used to run two fitters and keep whichever called less — the smaller height loss, the smaller slip. That was dropped: a blended number could not be traced back to a set of corners you could look at and disagree with. One detector&#39;s coherent numbers are easier to check, and the accuracy work in 6.0.5 below removes most of what the damping was hiding.</p>
 <h2>How accurate is it?</h2>
 <p>Measured against a review corpus of 157 radiologist-marked studies, on this hardware:</p>
 <table>
@@ -162,6 +162,19 @@ corners (was 44). The labeller now gets 98.3% of levels right across the corpus,
 gets every level in a study right 85.6% of the time. The outliner&#39;s corner error on studies it had
 never seen improved from 4.33 to 3.66 pixels. Nothing about how the feature works has changed - only
 the models behind it.</p>
+<p><strong>Improved in 6.0.5 — compression is now measured level by level.</strong> A normal vertebral body is not a
+rectangle, and how far it departs from one changes down the spine. The lower back is normally <strong>taller at
+the front</strong> — lordosis — while the mid-back is slightly shorter at the front. The old calculation ignored
+that and simply compared front height to back height, so it was wrong in both directions: it invented
+around five percent of compression on every thoracic body, and at L3 to L5 it could not see a real
+compression <strong>at all</strong>. A genuine 20 percent loss at L5 came out as 1 percent, which is why lumbar
+compressions were never flagged. Replayed over the reference set, the correction removed 11 false calls
+and revealed 2 real ones that had been invisible.</p>
+<p><strong>Also in 6.0.5:</strong> the reporting threshold is <strong>15 percent</strong>, raised from 10, which matches the published
+grading where anything below 15 is normal — you can still change it in <strong>Settings → Spine Labeling</strong>. Only
+one number is drawn now, labelled <strong>&quot;compression&quot;</strong> rather than &quot;ant&quot;; posterior compression is still
+measured and still written to the diagnostic record, it is simply no longer shown. Spine labelling is also
+about three times quicker end to end.</p>
 <p><strong>Fixed in 5.9.13 — compression percentages on cervical studies.</strong> A normal cervical spine could report
 40 to 55 percent height loss at several levels at once. The percentages are worked out against how tall
 each body ought to be, and on a study running from the neck into the upper chest that comparison was
@@ -186,7 +199,7 @@ still taken and still written to the diagnostic record.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.4</strong> · built 2026-09-08</div>
+  <div>Documents <strong>MosaicTools v6.0.5</strong> · built 2026-09-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
