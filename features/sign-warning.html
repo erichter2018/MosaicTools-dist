@@ -62,6 +62,17 @@
 <li><strong>Start dictating again</strong> — the box closes and gets out of your way.</li>
 </ul>
 <p>It&#39;s draggable and remembers its position between sessions.</p>
+<h2>Fixed in 6.0.7 — it no longer fires when you have not dictated</h2>
+<p>This warning is about <strong>unprocessed dictation</strong>. It was appearing on studies where nothing had been
+dictated at all — most often ultrasounds, where the transcript already holds the technologist&#39;s
+worksheet before you say a word, and on drafted studies where the only text was the AI draft.</p>
+<p>The check compares the transcript against a baseline taken when the study opened. That baseline is only
+taken when <strong>Trust the initial drafted transcript as a baseline</strong> is on, and it is off by default — so
+on most machines there was no baseline, the check failed closed, and every drafted or capture study
+warned.</p>
+<p>If you have not dictated on a study, there is nothing of yours to be unprocessed, and the warning no
+longer appears. The <strong>transcript changed after processing</strong> warning is unchanged: that one has a real
+baseline and real movement away from it.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>MosaicTools&#39; own inserts into the transcript (a macro, a corrected clinical history) don&#39;t count as unprocessed dictation — only text you actually dictated or edited triggers it, which keeps false warnings rare.</li>
@@ -84,7 +95,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.6</strong> · built 2026-09-09</div>
+  <div>Documents <strong>MosaicTools v6.0.7</strong> · built 2026-09-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

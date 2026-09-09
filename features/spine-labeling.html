@@ -170,7 +170,11 @@ around five percent of compression on every thoracic body, and at L3 to L5 it co
 compression <strong>at all</strong>. A genuine 20 percent loss at L5 came out as 1 percent, which is why lumbar
 compressions were never flagged. Replayed over the reference set, the correction removed 11 false calls
 and revealed 2 real ones that had been invisible.</p>
-<p><strong>Fixed in 6.0.6 — a normal L5 could be reported as a compression fracture.</strong> A vertebra&#39;s height was
+<p><strong>Fixed in 6.0.7 — the prior-impressions window could close MosaicTools.</strong> Not spine labelling itself,
+but it took the whole application down while you were reading, so it is worth knowing it is gone. The
+window was filled with text before its window actually existed, and the control underneath could fault
+during that — the kind of failure that cannot be caught, so the application simply vanished.
+<strong>Fixed in 6.0.6 — a normal L5 could be reported as a compression fracture.</strong> A vertebra&#39;s height was
 measured as how far the bone dropped <strong>down the screen</strong>, which is its true height only when the bone
 stands upright. At the bottom of the lumbar spine the vertebrae lean: a normal L5 leaning 40 degrees
 measured 77 percent of its real height, and the missing quarter was reported as a fracture. Heights are
@@ -206,7 +210,7 @@ still taken and still written to the diagnostic record.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.6</strong> · built 2026-09-09</div>
+  <div>Documents <strong>MosaicTools v6.0.7</strong> · built 2026-09-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

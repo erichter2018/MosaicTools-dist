@@ -88,6 +88,22 @@ are both at least chest CT angiograms, so they combine under the narrower name.<
 <p>When the priors are genuinely different studies it writes one statement per kind. When the shared name
 is only part of the truth — some angiograms, some plain — it says so: <em>chest CT studies from …</em>.</p>
 <p>It also folds in a prior you pull with <strong>Get Prior</strong> part-way through the case, on the spot.</p>
+<h2>What counts as technique, not a study <span>6.0.7</span></h2>
+<p>A comparison line names WHICH priors you compared to. How the film was taken is not part of that, so
+these all drop out of a combined name:</p>
+<ul>
+<li>view counts — &quot;1 view&quot;, &quot;2 views&quot;, &quot;single view&quot;, &quot;3 or more views&quot;</li>
+<li><strong>PA and lateral</strong>, and other view pairs</li>
+<li><strong>portable</strong>, upright, erect, supine</li>
+<li><strong>adult</strong>, pediatric — and stat, routine</li>
+<li>the reconstruction note (&quot;+Recon&quot;, &quot;and reconstructions&quot;)</li>
+<li>contrast wording, when the priors disagree about it</li>
+</ul>
+<p>⚠️ <strong>&quot;limited&quot; and &quot;screening&quot; are deliberately kept.</strong> Those change what the study IS — a limited
+ultrasound and a complete one are different examinations — and folding them together would claim a
+comparison you never made. A lone &quot;lateral&quot; is kept too: on its own it is a location, not a view.</p>
+<p>Two more things that used to reach the report and no longer do: InteleViewer&#39;s <strong>timezone stamp</strong>
+(&quot;00:41 EDT&quot;), and a bracketed repeat of the body part (&quot;chest radiographs (chest)&quot;).</p>
 <h2>When it leaves your line alone</h2>
 <p>Deliberately, and without saying anything:</p>
 <ul>
@@ -114,7 +130,7 @@ into one statement</strong> underneath the InteleViewer one if you want the shor
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.6</strong> · built 2026-09-09</div>
+  <div>Documents <strong>MosaicTools v6.0.7</strong> · built 2026-09-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
