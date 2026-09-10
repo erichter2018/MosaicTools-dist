@@ -68,6 +68,29 @@ CT is recommended&quot; on one line and, underneath it, an optional 12-month fol
 adrenal CT images both.</p>
 <p>A <strong>smaller</strong> lesion that genuinely needs more than the larger one still keeps its own recommendation — a
 suspicious nodule is never absorbed by a benign one.</p>
+<h2>&quot;No acute findings.&quot; when MTRec takes the whole impression <span>6.0.8</span></h2>
+<p><strong>Settings → MTRec → Add &quot;No acute findings.&quot; when MTRec replaces every impression point.</strong>
+<strong>Off by default.</strong></p>
+<p>Sometimes the drafted impression is nothing but incidental findings, and MTRec replaces every one of
+them with a recommendation. The signed impression then says only what MTRec had to say about things
+nobody asked about — and nothing about what the study was for.</p>
+<p>With this on, and <strong>only</strong> when every drafted point was replaced, MTRec leads the impression with
+&quot;No acute findings.&quot; If a single point of your own survives, nothing is added: that impression answers
+for itself. Nothing is added when a recommendation already says as much, or when the impression was
+empty to begin with.</p>
+<p>It writes a clinical assertion nobody dictated, which is why it is off unless you turn it on.</p>
+<h2>Two adrenal nodules, one recommendation <span>6.0.8</span></h2>
+<p>A 1 cm indeterminate nodule and a 7 mm one on the other side produced two impression points — the
+second saying nothing needs doing. They now collapse into one, because the adrenal CT that answers the
+larger nodule images both glands.</p>
+<p>The rule that does this already existed. It did not fire because the sub-centimetre adrenal line is the
+only one in the engine that says &quot;no dedicated adrenal <strong>work-up</strong>&quot; rather than &quot;no further follow-up&quot;,
+and the rule did not know that phrasing.</p>
+<h2>It no longer restates the threshold <span>6.0.8</span></h2>
+<p>Recommendations used to end by telling you which side of a published cut-off your own measurement fell
+on — &quot;(below the ACR incidental-adrenal 1 cm threshold)&quot;. That is gone from the adrenal, thyroid, liver,
+gallbladder and Fleischner lines. You give the size; MTRec gives the disposition, and the Reference
+already names the guideline. A myelolipoma is likewise named once, not called a nodule and then defined.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>With <strong>Show MTRec boxes after Process Report</strong> on, you rarely need the manual key — see the MTRec boxes page.</li>
@@ -95,7 +118,7 @@ suspicious nodule is never absorbed by a benign one.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.7</strong> · built 2026-09-09</div>
+  <div>Documents <strong>MosaicTools v6.0.8</strong> · built 2026-09-10</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

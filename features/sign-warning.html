@@ -73,6 +73,27 @@ warned.</p>
 <p>If you have not dictated on a study, there is nothing of yours to be unprocessed, and the warning no
 longer appears. The <strong>transcript changed after processing</strong> warning is unchanged: that one has a real
 baseline and real movement away from it.</p>
+<h2>Sign no longer refuses you <span>6.0.8</span></h2>
+<p>There is a second, separate check before Sign — not about <strong>unprocessed</strong> dictation, but about whether
+your last dictation had finished being <strong>inserted</strong>. When a speech provider was slow to confirm the end
+of a turn, or a paste reported a failure, that check used to cancel the sign outright with a small toast
+and no way through. Pressing Sign again did the same thing.</p>
+<p>Two things changed.</p>
+<p><strong>A minute of silence stands it down completely.</strong> Every part of that check inspects a paste that is
+still arriving. If you have not dictated for a minute, nothing can still be arriving — it either landed
+or it never will, and you have been looking at the report longer than the check has existed. So it
+releases entirely, with no warning and no second press.</p>
+<p><strong>Inside that minute it warns instead of refusing.</strong> You get the same movable red box, worded for what
+actually happened, and <strong>pressing Sign again signs</strong>. There is no longer any state that can refuse a
+sign twice.</p>
+<p>The box says one of three things:</p>
+<ul>
+<li><strong>Dictation end not confirmed</strong> — everything the provider sent is in the report; it just never
+confirmed it had nothing more to send.</li>
+<li><strong>Dictation may be missing</strong> — a final paste actually reported a failure. Read the report before you
+press Sign again.</li>
+<li><strong>Transcription still finishing</strong> — your last dictation has not finished being inserted yet.</li>
+</ul>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>MosaicTools&#39; own inserts into the transcript (a macro, a corrected clinical history) don&#39;t count as unprocessed dictation — only text you actually dictated or edited triggers it, which keeps false warnings rare.</li>
@@ -95,7 +116,7 @@ baseline and real movement away from it.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.7</strong> · built 2026-09-09</div>
+  <div>Documents <strong>MosaicTools v6.0.8</strong> · built 2026-09-10</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

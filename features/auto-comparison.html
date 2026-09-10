@@ -104,6 +104,14 @@ ultrasound and a complete one are different examinations — and folding them to
 comparison you never made. A lone &quot;lateral&quot; is kept too: on its own it is a location, not a view.</p>
 <p>Two more things that used to reach the report and no longer do: InteleViewer&#39;s <strong>timezone stamp</strong>
 (&quot;00:41 EDT&quot;), and a bracketed repeat of the body part (&quot;chest radiographs (chest)&quot;).</p>
+<h2>The right study on a busy day <span>6.0.8</span></h2>
+<p>When InteleViewer showed a CT and a radiograph on the same date and only the <strong>CT</strong> was loaded,
+MosaicTools picked the CT correctly and then wrote it up as a <strong>radiograph</strong>.</p>
+<p>It looks up proper wording in the worklist, and the worklist held only the radiograph for that day —
+it only carries what came through it, while InteleViewer shows the whole PACS history. With exactly one
+study on that date, MosaicTools took it without checking anything.</p>
+<p>A lone same-day match now has to agree on <strong>modality</strong> before its wording is used. If it disagrees,
+MosaicTools falls back to the viewer&#39;s own text or a bare date — never another study&#39;s description.</p>
 <h2>When it leaves your line alone</h2>
 <p>Deliberately, and without saying anything:</p>
 <ul>
@@ -130,7 +138,7 @@ into one statement</strong> underneath the InteleViewer one if you want the shor
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.7</strong> · built 2026-09-09</div>
+  <div>Documents <strong>MosaicTools v6.0.8</strong> · built 2026-09-10</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
