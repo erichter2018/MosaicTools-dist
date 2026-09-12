@@ -49,7 +49,14 @@
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-mtrec.png" alt="The MTRec settings tab" loading="lazy" class="lightboxable"><figcaption>The MTRec settings tab</figcaption></figure>
 <figure class="shot"><img src="../img/mtrec-boxes.png" alt="A recommendation box next to Final Report" loading="lazy" class="lightboxable"><figcaption>A recommendation box next to Final Report</figcaption></figure></div>
-      <h2>What it does</h2>
+      <h2>What changed in 6.0.9</h2>
+<ul>
+<li>A sternal or chest wall fracture is reported as a finding. The 6.0.x sternal fix never actually fired.</li>
+<li>A hemangioma you have NAMED is treated as your diagnosis, not as something to work up. &quot;Atypical&quot; is
+no longer read as &quot;typical&quot;.</li>
+<li>Adrenal recommendations keep the noun you used and read the density you actually wrote.</li>
+</ul>
+<h2>What it does</h2>
 <p>MTRec reads your FINDINGS and IMPRESSION and, on one keypress, inserts guideline follow-up recommendations for the incidental findings it detects — pulmonary nodules, thyroid, adrenal, renal, ovarian, liver, gallbladder, spleen, lymph nodes, biliary, pancreatic, AAA/thoracic aorta, plus trauma grading. Every recommendation ends with its source: Fleischner 2017, Bosniak v2019, ACR TI-RADS, O-RADS, the ACR Incidental Findings white papers, SRU gallbladder consensus, SVS aorta guidelines, AAST organ injury scaling (spleen/liver/kidney, 2025 kidney update, plus chest-wall injury grading), and more.</p>
 <p>The safety contract is the point: <strong>no AI ever authors a clinical number</strong>. Every threshold comes from verified guideline tables, the engine runs entirely offline inside MosaicTools, and its behavior is pinned by 530+ self-tests. It replaced the external RecoMD service — no agent, no window-scraping, instant.</p>
 <h2>How to turn it on / set it up</h2>
@@ -118,7 +125,7 @@ already names the guideline. A myelolipoma is likewise named once, not called a 
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.8</strong> · built 2026-09-10</div>
+  <div>Documents <strong>MosaicTools v6.0.9</strong> · built 2026-09-12</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

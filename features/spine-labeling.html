@@ -48,7 +48,13 @@
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/keymappings.png" alt="Assign Spine Labeling to a key or mic button in Key Mappings" loading="lazy" class="lightboxable"><figcaption>Assign Spine Labeling to a key or mic button in Key Mappings</figcaption></figure></div>
-      <h2>What it does</h2>
+      <h2>What changed in 6.0.9</h2>
+<p><strong>Pressing the key always labels.</strong> 6.0.8 added a confidence bar so that a label MosaicTools offers
+<em>unasked</em> has to be right or absent. That bar was also gating labels you asked for by hand, so a press
+could come back with nothing on a spine the engine was not sure about. The bar now applies only to the
+unbidden case; your key press is never refused.</p>
+<p><strong>&quot;Processing spine&quot; no longer sticks on screen</strong> after the automatic attempt stands down.</p>
+<h2>What it does</h2>
 <p>Spine Labeling puts vertebral level numbers on a sagittal spine image as REFERENCE INK — nothing is written to the report. Map the action and press it — since 5.8.34 it finds the vertebral column in the sagittal viewport you are already looking at, with no click on the spine needed. It proposes a numbering (e.g. T12, L1 … L5, S1) that you confirm or correct on screen. It reads the spine region from the study description, so it works on dedicated spine exams and on body CTs whose sagittal shows the spine (a neck study numbers cervical, a chest study thoracic, an abdomen/pelvis study lumbar).</p>
 <p>Three detectors, one on-screen result. All of them run on your workstation — no image leaves the machine. The newest one that answers is the one you see, and the S1/S2/S3 buttons on the proposal let you compare them:</p>
 <ul>
@@ -215,7 +221,7 @@ still taken and still written to the diagnostic record.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.8</strong> · built 2026-09-10</div>
+  <div>Documents <strong>MosaicTools v6.0.9</strong> · built 2026-09-12</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

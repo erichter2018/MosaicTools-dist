@@ -48,7 +48,20 @@
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-stt.png" alt="Enable Custom STT Mode — the top of the Speech-to-Text settings" loading="lazy" class="lightboxable"><figcaption>Enable Custom STT Mode — the top of the Speech-to-Text settings</figcaption></figure></div>
-      <h2>What it does</h2>
+      <h2>What changed in 6.0.9</h2>
+<p><strong>Around ninety separate ways a word could be lost or duplicated between the microphone and the report
+are fixed.</strong> Six audit passes over the merger that combines the speech engines. The most serious dropped
+a NEGATION — &quot;no&quot; and &quot;not&quot; disappearing from a sentence, which changes what the report says. Others ate
+a four-letter word the merger treated as noise, cut a word off after a stutter, or pasted the same
+sentence twice.</p>
+<p>The underlying cause is structural: the batch engines re-deliver a whole recording with no timing, into a
+stream that is being pasted turn by turn, and roughly twenty separate de-duplication mechanisms had to
+decide what was new. Where two of them disagreed, a word could fall between them.</p>
+<p><strong>Every fix is measured before it ships.</strong> Each one is replayed against 66,755 real transcripts in both
+directions, so a change that repairs one case and breaks another is caught first. The standing rule: when
+the merger cannot tell, it must risk a duplicate, never a deletion — a duplicate you can see, a deletion
+you cannot.</p>
+<h2>What it does</h2>
 <p>Custom STT Mode takes over dictation from Mosaic&#39;s built-in speech recognition. Your microphone audio goes to one or (usually) several speech engines in parallel, the results are merged, run through radiology-aware text processing (units, spine levels, punctuation, your own word replacements), and pasted into the Mosaic report. You keep your normal workflow — Record button, transcript, Process Report — but the recognition underneath is yours to choose and tune.</p>
 <h2>How to turn it on / set it up</h2>
 <ol>
@@ -96,7 +109,7 @@ widget bar names which one.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.8</strong> · built 2026-09-10</div>
+  <div>Documents <strong>MosaicTools v6.0.9</strong> · built 2026-09-12</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
