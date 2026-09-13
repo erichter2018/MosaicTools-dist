@@ -53,6 +53,12 @@
 <p>Auto Measure captures the region of the InteleViewer image around your cursor, finds the lesion under it, and draws a <strong>bidimensional measurement overlay</strong> (long axis + perpendicular short axis, with the numbers) right on top of the image. The boundary comes from an adaptive region-growing method with edge-snap refinement, and the long axis is the largest diameter across that boundary with the short axis perpendicular through its middle — the way RECIST asks for it. Calibration is ruler-free: measurements derive from the workstation&#39;s monitor pitch and the true-size zoom level, so you don&#39;t need the on-screen ruler overlay for it to be accurate.</p>
 <h2>How to turn it on / set it up</h2>
 <p>Map the <strong>Auto Measure</strong> action to a PowerMic/SpeechMike button or hotkey under Settings → Keys &amp; Buttons. There&#39;s no separate enable toggle — the action does the work.</p>
+<h3>Where the calipers come from  <span>6.0.13</span></h3>
+<p>The measurement is now drawn by <strong>AM1</strong>, a model trained on the measurements radiologists have
+accepted, rather than by the older shape-matching code. It looks exactly the same — same colours,
+same two lines — and you can still drag the four ends to correct it before accepting.</p>
+<p>If the model cannot measure what is under your cursor, the older measurement is shown instead, so
+you never get nothing.</p>
 <h3>Contributing your measurements <em>(new in 5.9.7, off by default)</em></h3>
 <p>Settings → Profile → <strong>Share Auto Measure diagnostics — my accepted images</strong>. This is the one setting that changes how the feature behaves for you, so it is worth reading before you tick it:</p>
 <ul>
@@ -110,7 +116,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.12</strong> · built 2026-09-13</div>
+  <div>Documents <strong>MosaicTools v6.0.13</strong> · built 2026-09-13</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

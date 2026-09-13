@@ -48,7 +48,26 @@
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The drafted findings list this works on</figcaption></figure></div>
-      <h2>What changed in 6.0.11</h2>
+      <h2>If you keep your microphone on, this was doing nothing  <span>6.0.13</span></h2>
+<p><strong>If you start dictating at the top of a report and leave the microphone running, this feature has
+never worked for you — and it gave no sign of that.</strong></p>
+<p>To strike out what you have already said, MosaicTools first has to keep a copy of the drafting AI&#39;s
+text as it arrived, before you spoke. Without that copy it cannot tell the draft&#39;s words from yours,
+so it does nothing at all.</p>
+<p>It was refusing to take that copy whenever the microphone was open. If you record continuously, the
+microphone is open from the moment the study opens — so the copy was never taken. Not on that study,
+not on the next one, not ever. The popup had nothing to strike through and nothing was removed from
+your transcript.</p>
+<p><strong>Fixed in 6.0.13.</strong> It now looks at the report text rather than the microphone: for as long as the
+box still holds only the draft, the copy is taken, whether or not you are recording. The moment your
+words appear, it stops — which is the same protection as before, just measured on the thing that
+actually matters.</p>
+<p>If you switch your microphone on and off as you work, nothing changes for you. This was already
+working, and the new behaviour never applies to you.</p>
+<p><em>One limit worth knowing: if you begin speaking within a second or two of the study opening — before
+MosaicTools has read the report even once — the first thing it sees already contains your words, and
+it cannot tell. That is a far smaller gap than before, but it is not nothing.</em></p>
+<h2>What changed in 6.0.11</h2>
 <p><strong>A note can only quote your draft&#39;s own words.</strong> &quot;Mild hazy and diffuse perihilar lung opacities&quot;
 could come back annotated <em>&quot;you didn&#39;t state the atelectasis&quot;</em> — a word that is nowhere in that
 sentence. Inside the matcher, &quot;opacities&quot; belongs to the airspace family, and that family&#39;s internal
@@ -187,7 +206,7 @@ wording is probably one the engine has not been taught yet — worth reporting.<
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.12</strong> · built 2026-09-13</div>
+  <div>Documents <strong>MosaicTools v6.0.13</strong> · built 2026-09-13</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
