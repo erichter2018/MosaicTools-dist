@@ -50,10 +50,14 @@
       <div class="shots"><figure class="shot"><img src="../img/settings-profile.png" alt="&quot;Share app diagnostics&quot; opt-in on the Profile tab" loading="lazy" class="lightboxable"><figcaption>&quot;Share app diagnostics&quot; opt-in on the Profile tab</figcaption></figure>
 <figure class="shot"><img src="../img/settings-stt-sharing.png" alt="The dictation data-sharing opt-ins (de-identified on device)" loading="lazy" class="lightboxable"><figcaption>The dictation data-sharing opt-ins (de-identified on device)</figcaption></figure></div>
       <h2>What it does</h2>
-<p>MosaicTools has two separate, <strong>opt-in, default-off</strong> sharing switches:</p>
+<p>MosaicTools&#39; sharing switches are all <strong>opt-in and default-off</strong>. Since 6.0.12 every one of them carries
+the word <strong>diagnostics</strong> in its name, so typing &quot;diagnostics&quot; into the settings search finds all of them —
+and only them.</p>
 <ol>
 <li><strong>Share app diagnostics to help troubleshoot issues</strong> (Settings → Profile) — a one-way stream of errors, crashes, config, and version info, so problems can be diagnosed without asking you to dig up log files. It contains <strong>no patient info, no report text, and no record of what or how much you read</strong> — by design, it cannot be a productivity tracker.</li>
-<li><strong>Share de-identified dictation to improve accuracy</strong> (Settings → Speech-to-Text → Data Sharing) — contributes anonymized dictation data used to tune the speech-recognition ensemble for everyone.</li>
+<li><strong>Share dictation diagnostics — de-identified dictation, to improve accuracy</strong> (Settings → Speech-to-Text → Data Sharing) — contributes anonymized dictation data used to tune the speech-recognition ensemble for everyone.</li>
+<li><strong>Share drafting diagnostics to improve the drafted findings popup</strong> (Settings → Drafting) — the AI&#39;s draft, your dictation for that study, and what MosaicTools decided about each drafted statement. <em>(6.0.12)</em> This one is <strong>separate on purpose</strong>: these records carry de-identified report text, and switch 1 promises on screen that it never sends report text. Two switches, two promises that stay true. It is also why it is separate from switch 2 — the popup&#39;s evidence used to ride the speech-recognition consent, so radiologists who do not use MosaicTools&#39; dictation could report a popup fault that left nothing behind.</li>
+<li><strong>Share Spine Labeling diagnostics — my accepted images</strong> and <strong>Share Auto Measure diagnostics — my accepted images</strong> (Settings → Profile) — these send image data, so they are never implied by any of the switches above. Everything outside the spine or the measurement is blacked out <strong>before</strong> the image is saved, and the result is text-checked before anything is sent. <em>(6.0.12: neither of these stops after 300 images any more — they used to stop silently.)</em></li>
 </ol>
 <h2>Anonymous usage statistics <em>(new in 5.5.29)</em></h2>
 <p>Separately from the two opt-in switches above, MosaicTools sends <strong>anonymous, patient-free usage statistics</strong> — which features are turned on and how often they&#39;re used — so development can focus on what people actually use and retire features nobody does. This stream:</p>
@@ -84,7 +88,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.11</strong> · built 2026-09-12</div>
+  <div>Documents <strong>MosaicTools v6.0.12</strong> · built 2026-09-13</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

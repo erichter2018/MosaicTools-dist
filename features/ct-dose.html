@@ -65,6 +65,16 @@
 <p>Put the dose report series on screen and trigger the action. It does <strong>not</strong> have to be the selected viewport — the whole workspace is scanned, across every monitor, in about a second.</p>
 <p>What you get back depends on what is already there. If neither the report nor the transcript has the dose, both are filled. If one of them already has it, that one is left alone and the other is filled in. Pressing it twice will not duplicate anything.</p>
 <p>At a California site, two reminders appear on a CT that is still missing its dose: the clinical history box outlines in <strong>pink</strong>, and signing shows a message. <strong>Neither ever blocks you</strong> — you can always sign. Nothing happens at all on a non-CT study, or at a site that is not on the list.</p>
+<h2>If it refused every press between 6.0.4 and 6.0.12  <span>6.0.12</span></h2>
+<p>Insert DLP had a safety check that could never pass. From v6.0.4 until this release it answered
+<strong>&quot;Could not verify the report target — try Insert DLP again&quot;</strong> on every press, on every workstation, no
+matter what was on screen. Pressing again never helped, because nothing about the study was the problem.</p>
+<p>It is fixed. Insert DLP now uses the same study-ownership check that Process Report and Sign Report use,
+which can tell &quot;I could not read which report this is&quot; apart from &quot;this is the wrong report&quot; — the first
+falls back to matching the accession, the second still refuses.</p>
+<p>Nothing was loosened. A dose sheet is still never inserted into a study it does not belong to, the two
+editors must still be the same report, and a sheet naming a different accession still needs the
+deliberate second press described below.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li><strong>It refuses rather than guesses.</strong> The numbers are read from the sheet&#39;s CTDIvol and DLP <em>columns</em>, then added up and compared against the total DLP the scanner printed. If those disagree, something was misread and the whole reading is thrown away — a wrong radiation dose in a signed report is worse than no dose. You&#39;ll see the reason in the message.</li>
@@ -92,7 +102,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.11</strong> · built 2026-09-12</div>
+  <div>Documents <strong>MosaicTools v6.0.12</strong> · built 2026-09-13</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
