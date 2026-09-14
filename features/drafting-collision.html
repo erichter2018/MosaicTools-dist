@@ -48,7 +48,23 @@
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The drafted findings list this works on</figcaption></figure></div>
-      <h2>What counts as the same finding  <span>6.0.14</span></h2>
+      <h2>If you say an organ is normal  <span>6.0.15</span></h2>
+<p>Saying <em>&quot;appendix is normal&quot;</em> or <em>&quot;the uterus is unremarkable&quot;</em> now clears the drafted findings for that organ. It is a statement that you looked and made the call, and the drafting AI&#39;s claim about that organ does not survive it.</p>
+<p>Two limits, both deliberate:</p>
+<ul>
+<li><strong>A device is not an abnormality.</strong> An IUD in a normal uterus, or a cholecystostomy tube in a normal gallbladder, is not cleared.</li>
+<li><strong>A qualified normal is not a blanket one.</strong> <em>&quot;the kidneys are normal in size and echotexture&quot;</em> names the two respects in which they are normal, and a 3 mm stone is neither, so a drafted calculus stays. <em>&quot;normal in appearance&quot;</em> is blanket and does clear.</li>
+</ul>
+<h2>Things it will no longer clear  <span>6.0.15</span></h2>
+<p>Three changes, all in the direction of keeping a finding rather than removing it:</p>
+<ul>
+<li><strong>An acute fracture is not an old one.</strong> Describing a healed deformity at a level no longer clears a drafted acute fracture there. When both sides state an age and they disagree, the line is kept and annotated.</li>
+<li><strong>A tumour is not the surgery it sits at.</strong> A drafted <em>&quot;recurrent tumor at the colonic anastomosis&quot;</em> is no longer cleared by <em>&quot;status post colectomy&quot;</em>. If the draft claims a mass and you named none, the line stays.</li>
+<li><strong>The canal, the foramina and the disc space are three different things.</strong> Describing one at a disc level no longer clears the other two. Naming no structure behaves exactly as before.</li>
+</ul>
+<h2>More of your wording now meets the draft  <span>6.0.15</span></h2>
+<p>A suture line meets a drafted anastomosis. A cholecystostomy tube, an opacified hemithorax, an opacified sinus, a healed deformity of a bone, <em>&quot;C5-6&quot;</em> written the way you say it, ACDF, and the perineum are all recognised now. <em>&quot;Lower lungs are reported separately&quot;</em> defers the chest the same way <em>&quot;lower chest&quot;</em> already did — the vocabulary knew the cavity words and not the organ inside it. Ascites is no longer asked for a side, and a cirrhotic liver is no longer asked for a size.</p>
+<h2>What counts as the same finding  <span>6.0.14</span></h2>
 <p>Four changes to when a drafted line is treated as something you already said:</p>
 <ul>
 <li><strong>Locations written in the plural now count.</strong> A drafted line saying &quot;in the upper lobes&quot; used to
@@ -227,7 +243,7 @@ wording is probably one the engine has not been taught yet — worth reporting.<
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.14</strong> · built 2026-09-14</div>
+  <div>Documents <strong>MosaicTools v6.0.15</strong> · built 2026-09-14</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
