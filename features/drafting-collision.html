@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Alternate Drafting Popup — MosaicTools docs</title>
+<title>Remove Matched Entries From Transcript — MosaicTools docs</title>
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 
@@ -42,13 +42,29 @@
 <article class="feature">
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
-    <h1>Alternate Drafting Popup</h1>
+    <h1>Remove Matched Entries From Transcript</h1>
     <p class="brief">On a drafted study, the findings you have already dictated are struck through in the popup and taken out of the transcript, so Mosaic's Process Report reads your words rather than the drafting AI's.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The drafted findings list this works on</figcaption></figure></div>
-      <h2>If you keep your microphone on, this was doing nothing  <span>6.0.13</span></h2>
+      <h2>What counts as the same finding  <span>6.0.14</span></h2>
+<p>Four changes to when a drafted line is treated as something you already said:</p>
+<ul>
+<li><strong>Locations written in the plural now count.</strong> A drafted line saying &quot;in the upper lobes&quot; used to
+carry no location at all, so it could be matched by something you said about a different part of the
+lung. The singular worked; the plural did not.</li>
+<li><strong>Rib numbers are compared.</strong> A drafted fourth rib fracture is no longer matched by your third and
+sixth. When the draft gives a range, such as fifth through ninth, naming any rib inside it is enough.</li>
+<li><strong>The space a bleed sits in is respected.</strong> A drafted subarachnoid haemorrhage is not matched by your
+subdural one, or the other way round.</li>
+<li><strong>&quot;Subdural blood&quot; now registers as a haemorrhage.</strong> Said that way, your own sentence was not being
+recognised as a bleed at all.</li>
+</ul>
+<p><strong>Report boilerplate is stripped out of your dictation before any of this runs.</strong> Standing report
+templates and transcription prompt text were being read as though you had dictated them, and several
+hundred words of plausible clinical English in there can match a drafted finding and remove it.</p>
+<h2>If you keep your microphone on, this was doing nothing  <span>6.0.13</span></h2>
 <p><strong>If you start dictating at the top of a report and leave the microphone running, this feature has
 never worked for you — and it gave no sign of that.</strong></p>
 <p>To strike out what you have already said, MosaicTools first has to keep a copy of the drafting AI&#39;s
@@ -134,7 +150,12 @@ you have partly covered stay, with a short blue note saying what is still missin
 a location — so you can see why it was left alone.</p>
 <p>Nothing is invented or reworded. A drafted statement is only ever removed, never rewritten.</p>
 <h2>How to turn it on / set it up</h2>
-<p>Settings → Drafting → <strong>Alternate drafting popup</strong>. Off by default; it is marked EXPERIMENTAL.</p>
+<p>Settings → Drafting → <strong>Remove matched entries from transcript</strong> (renamed in 6.0.10 from &quot;Alternate drafting popup&quot;). Off by default; it is marked EXPERIMENTAL.</p>
+<p>Two sub-options underneath, both off by default, change only how a matched entry LOOKS in the popup (the transcript removal is the same either way):</p>
+<ul>
+<li><strong>Remove from popup also</strong> — instead of a line through the matched entry, take it out of the popup entirely. The rows below collapse up to fill the gap; the entry is kept in memory, not discarded.</li>
+<li><strong>Show matched on mouseover</strong> (under the option above) — bring the removed entries back, struck through, while the cursor is over the popup, the same way the A− / A+ buttons appear on hover. A quick peek at what was removed without keeping it on screen.</li>
+</ul>
 <h2>Using it</h2>
 <p><strong>Click a struck-through line to bring it back.</strong> It returns to the popup un-struck and to the
 transcript, and it will not be removed again for that study. That is the escape hatch: if the engine
@@ -196,7 +217,7 @@ wording is probably one the engine has not been taught yet — worth reporting.<
     </div>
     <aside class="feature-meta">
       <h4>At a glance</h4>
-      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Drafting → Alternate drafting popup</span></div>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Drafting → Remove matched entries from transcript</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.9.21</span></div>
@@ -206,7 +227,7 @@ wording is probably one the engine has not been taught yet — worth reporting.<
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.13</strong> · built 2026-09-13</div>
+  <div>Documents <strong>MosaicTools v6.0.14</strong> · built 2026-09-14</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

@@ -51,6 +51,12 @@
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>Bidimensional measurement overlay on a lesion</figcaption></figure></div>
       <h2>What it does</h2>
 <p>Auto Measure captures the region of the InteleViewer image around your cursor, finds the lesion under it, and draws a <strong>bidimensional measurement overlay</strong> (long axis + perpendicular short axis, with the numbers) right on top of the image. The boundary comes from an adaptive region-growing method with edge-snap refinement, and the long axis is the largest diameter across that boundary with the short axis perpendicular through its middle — the way RECIST asks for it. Calibration is ruler-free: measurements derive from the workstation&#39;s monitor pitch and the true-size zoom level, so you don&#39;t need the on-screen ruler overlay for it to be accurate.</p>
+<h2>How accurate it is  <span>6.0.14</span></h2>
+<p>The caliper lands <strong>within 2 mm of where you would put it 70% of the time</strong>, up from 60%, measured on
+the measurements radiologists have accepted so far and scored only on the ones where the truth came
+from a person rather than from the model itself.</p>
+<p>It is retrained as that collection grows. When it is wrong it is usually wrong by a little: drag a
+handle and press accept, and that correction is what the next version learns from.</p>
 <h2>How to turn it on / set it up</h2>
 <p>Map the <strong>Auto Measure</strong> action to a PowerMic/SpeechMike button or hotkey under Settings → Keys &amp; Buttons. There&#39;s no separate enable toggle — the action does the work.</p>
 <h3>Where the calipers come from  <span>6.0.13</span></h3>
@@ -116,7 +122,7 @@ you never get nothing.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.13</strong> · built 2026-09-13</div>
+  <div>Documents <strong>MosaicTools v6.0.14</strong> · built 2026-09-14</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

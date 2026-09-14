@@ -43,7 +43,7 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
     <h1>Drafted Findings Popup</h1>
-    <p class="brief">A glanceable, prioritized list of a pre-drafted study's findings — acute lines loud and bright, chronic/incidental lines dimmed — with per-term loudness tuning, one-click deletion, and an optional organ-rail layout that puts the body part at the left edge.</p>
+    <p class="brief">A glanceable, prioritized list of a pre-drafted study's findings — acute lines loud and bright, chronic/incidental lines dimmed — with per-term loudness tuning, one-click deletion, and an organ-rail layout that puts the body part at the left edge.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
@@ -95,8 +95,10 @@ again when you move to the next study.</p>
 <p>Covered to start (abdominal / right-upper-quadrant ultrasound): liver length, gallbladder length and wall thickness, common bile duct, kidney length, renal cortical thickness, aorta, portal vein diameter and velocity, spleen, pancreatic duct, IVC. The common bile duct limit <strong>adjusts for age</strong> (it widens about 1 mm per decade after 60) and lifts further if the report mentions a prior cholecystectomy.</p>
 <p><strong>An uncolored number means there is no rule for it — not that it is normal.</strong> Only the measurements listed above are checked, and a measurement of a mass, cyst, nodule or stone is deliberately never colored, because a lesion has no normal range.</p>
 <p>Turn it off in Settings → Drafting → &quot;Color abnormal measurements in the popup&quot;.</p>
-<h2>Alternate appearance (since 5.9.20)</h2>
-<p>Settings → Drafting → <strong>Alternate appearance</strong>, underneath the main toggle. <strong>Off by default</strong> — turn it on to try it, turn it off to go straight back.</p>
+<h2>The organ-rail layout <span>6.0.9</span></h2>
+<p>This is simply <strong>how the popup looks</strong> — there is no toggle. As of 6.0.9 it is the one and only
+appearance, so turning on <strong>Show glanceable drafted findings popup</strong> gives you this. (It was an optional
+&quot;Alternate appearance&quot; checkbox from 5.9.20; that checkbox is gone and the layout is now the default.)</p>
 <p>Instead of a block of sentences, each finding gets its <strong>body part as a coloured tag in a fixed left column</strong>, so the left edge of the box becomes a list of anatomy you can scan without reading a word. &quot;Did I say anything about the kidneys?&quot; is answered by looking, not reading.</p>
 <p>Three things ride along with it:</p>
 <ul>
@@ -129,13 +131,13 @@ start. A comparison that arrives late is no longer mistaken for something you di
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.0</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/auto-process.html">Auto-Process on Open</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/drafting-fixups.html">Drafting Fixups</a></li><li><a href="../features/drafting-collision.html">Alternate Drafting Popup</a></li><li><a href="../features/auto-comparison.html">Automatic Comparison</a></li></ul>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/auto-process.html">Auto-Process on Open</a></li><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/drafting-fixups.html">Drafting Fixups</a></li><li><a href="../features/drafting-collision.html">Remove Matched Entries From Transcript</a></li><li><a href="../features/auto-comparison.html">Automatic Comparison</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.13</strong> · built 2026-09-13</div>
+  <div>Documents <strong>MosaicTools v6.0.14</strong> · built 2026-09-14</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

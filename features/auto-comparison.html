@@ -55,18 +55,22 @@ folds into the <strong>same single line</strong>, newest study first. A report c
 <p>If a comparison line is already there when the study opens, it stands down. It will never duplicate a
 comparison macro of your own.</p>
 <h2>The two sources</h2>
-<p><strong>Insert most recent prior comparison on open.</strong> Reads Clario&#39;s list of the patient&#39;s priors and picks
-the most recent relevant one. Clario knows which priors <em>exist</em>.</p>
-<p><strong>Read the comparison from the InteleViewer study list.</strong> Reads InteleViewer&#39;s study list off the screen,
-once per study, to find which prior is actually <strong>loaded</strong> — the one you are looking at. Clario cannot
-tell you that.</p>
+<p><strong>Comparison from Clario: insert the most recent prior (date + study) on open.</strong> Reads Clario&#39;s list
+of the patient&#39;s priors and picks the most recent relevant one. Clario knows which priors <em>exist</em>.</p>
+<p><strong>Comparison from InteleViewer: read which prior is loaded from the study list.</strong> Reads InteleViewer&#39;s
+study list off the screen, once per study, to find which prior is actually <strong>loaded</strong> — the one you are
+looking at. Clario cannot tell you that.</p>
 <p>This second one is no longer developer-only as of 6.0.6, but it is still <strong>off unless you turn it on</strong>.
 It reads the screen once per study, never continuously, and if anything is unclear — the panel is not
 where it is expected, a date will not read, two rows disagree — it writes <strong>nothing</strong>. A wrong comparison
 is worse than no comparison.</p>
 <p>Get Prior always wins: pulling the prior by hand replaces the automatic line with the fuller one.</p>
-<h2>Combine repeat studies into one statement</h2>
-<p>New in 6.0.6, a child of the InteleViewer setting above, and <strong>off by default</strong>.</p>
+<p><strong>Set IV Comparison Box.</strong> The InteleViewer reader looks for the study list in the top-left of the
+InteleViewer window. If your screen layout puts it elsewhere, click <strong>Set IV Comparison Box</strong> in
+Drafting settings: a see-through, orange-bordered box opens that you position and resize over your
+study list. Confirm, and that rectangle is where the comparison is read on that PC.</p>
+<h2>Combine multiple prior study mentions into one statement</h2>
+<p>Off by default, and it works with <strong>either</strong> comparison source above — Clario or InteleViewer.</p>
 <p>A patient with a run of repeat films produces a list:</p>
 <pre><code>COMPARISON: 7/6/2026, 3/19/2026 chest radiograph 1 view, 6/13/2025 chest radiograph 1 view,
 3/12/2025 chest radiograph 2 views, 3/9/2025 chest radiograph 2 views.
@@ -122,8 +126,8 @@ MosaicTools falls back to the viewer&#39;s own text or a bare date — never ano
 <li>nothing actually repeating, so there is nothing to gain</li>
 </ul>
 <h2>How to turn it on</h2>
-<p><strong>Settings → Drafting → Prior comparison.</strong> Tick the source you want, then tick <strong>Combine repeat studies
-into one statement</strong> underneath the InteleViewer one if you want the shorter wording.</p>
+<p><strong>Settings → Drafting → Prior comparison.</strong> Tick the source you want, then tick <strong>Combine multiple prior
+study mentions into one statement</strong> if you want the shorter wording — it applies to whichever source you chose.</p>
 
     </div>
     <aside class="feature-meta">
@@ -138,7 +142,7 @@ into one statement</strong> underneath the InteleViewer one if you want the shor
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.13</strong> · built 2026-09-13</div>
+  <div>Documents <strong>MosaicTools v6.0.14</strong> · built 2026-09-14</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
