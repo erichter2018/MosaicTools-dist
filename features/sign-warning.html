@@ -49,7 +49,18 @@
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-behavior.png" alt="&quot;Warn before signing (unprocessed transcript)&quot; in Behavior settings" loading="lazy" class="lightboxable"><figcaption>&quot;Warn before signing (unprocessed transcript)&quot; in Behavior settings</figcaption></figure>
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The warning window at sign time</figcaption></figure></div>
-      <h2>What changed in 6.0.9</h2>
+      <h2>What changed in 6.0.16</h2>
+<p><strong>The finalization check is now optional, and it is off by default.</strong> The box headed <em>Transcription
+still finishing</em> (described below) was the one most radiologists actually saw, and there was no setting
+for it — the only answer was to press Sign again, every time. It is now
+<strong>Settings → Dictation → &quot;Hold Sign until the last dictation has landed&quot;</strong>. With it off, Sign does what
+it did before the check existed.</p>
+<p><strong>If you leave the microphone on, the minute-of-silence release now reaches you.</strong> That release was
+gated on the microphone being stopped, so anyone who never toggles the mic could never get to it: every
+Sign took the long path, waited for a dictation that was not coming, and timed out. It now goes by when
+you last dictated, not by whether the mic is open. An open microphone is not speech. Push-to-talk is
+unaffected — a held button mid-sentence still counts as active dictation.</p>
+<h2>What changed in 6.0.9</h2>
 <p><strong>The warning no longer blames your dictation.</strong> When the check is unsure it now names the actual doubt,
 instead of saying the dictation failed — which was often untrue and sent you looking for a problem that
 was not there.</p>
@@ -78,6 +89,7 @@ warned.</p>
 longer appears. The <strong>transcript changed after processing</strong> warning is unchanged: that one has a real
 baseline and real movement away from it.</p>
 <h2>Sign no longer refuses you <span>6.0.8</span></h2>
+<p><em>Since 6.0.16 this check is off by default — see &quot;What changed in 6.0.16&quot; above.</em></p>
 <p>There is a second, separate check before Sign — not about <strong>unprocessed</strong> dictation, but about whether
 your last dictation had finished being <strong>inserted</strong>. When a speech provider was slow to confirm the end
 of a turn, or a paste reported a failure, that check used to cancel the sign outright with a small toast
@@ -120,7 +132,7 @@ press Sign again.</li>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.15</strong> · built 2026-09-14</div>
+  <div>Documents <strong>MosaicTools v6.0.16</strong> · built 2026-09-15</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

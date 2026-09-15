@@ -58,6 +58,15 @@
 <p><strong>Settings → Experimental → &quot;Run post-action effects on native Process / Sign.&quot;</strong> Off by default. Requires CDP (the direct-DOM connection to Mosaic).</p>
 <h2>Using it</h2>
 <p>Process or sign however you like — the button, a mic key, or a MosaicTools action — and the same things happen afterward either way. It detects the Process button greying out, and the SIGN button changing as the study closes.</p>
+<h2>Fixed in 6.0.16 — it no longer fires on MosaicC</h2>
+<p>On MosaicC this watch read every phrase you dictated as a Sign. The drafted findings popup closed after
+each sentence, the study was marked signed, and a signed study was reported to RVUCounter while you were
+still dictating.</p>
+<p>The watch works by judging the PROCESS and SIGN buttons greying out. Neither rule holds on MosaicC:
+there is no Process Report button there at all, and SIGN FINAL greys out whenever the report is busy —
+which includes the whole time your dictation is being inserted.</p>
+<p>The button watch is now off on MosaicC. Classic Mosaic is unchanged. Detection by an actual button
+<strong>click</strong> still runs on both platforms and was never affected by this.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>MTRec recommendations already re-run on any report change, and RVU/signed counting already happens on study close — this fills the remaining <em>UI-effect</em> gap, and won&#39;t double-count anything.</li>
@@ -78,7 +87,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.15</strong> · built 2026-09-14</div>
+  <div>Documents <strong>MosaicTools v6.0.16</strong> · built 2026-09-15</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
