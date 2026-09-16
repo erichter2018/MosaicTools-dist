@@ -48,7 +48,19 @@
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-cdp.png" alt="Independent column scrolling under Experimental → Mosaic CDP" loading="lazy" class="lightboxable"><figcaption>Independent column scrolling under Experimental → Mosaic CDP</figcaption></figure></div>
-      <h2>What it does</h2>
+      <h2>New in 6.0.17 — &quot;Hold the report&#39;s scroll position&quot;</h2>
+<p>There is a second, separate thing MosaicTools does to your scrolling, and until now it had <strong>no switch
+at all</strong>: a guard that puts the report back where you left it when something moves it on its own.
+It runs whenever CDP is connected, and it is <strong>not</strong> part of independent column scrolling — so turning
+that off never affected it.</p>
+<p><strong>If the report keeps jumping back to the middle after you edit it</strong>, turn off
+<strong>Settings → Experimental → Mosaic CDP → &quot;Hold the report&#39;s scroll position&quot;</strong>. It is on by default,
+so nothing changes unless you switch it.</p>
+<p>Turning it off removes the guard immediately — you do not need to restart Mosaic.</p>
+<p>MosaicTools now also records, once per study, whether it moved your scroll and which part of it did.
+So if switching this off does not help, the next telemetry pull says what did, instead of leaving it a
+guess.</p>
+<h2>What it does</h2>
 <p>By default, Mosaic scrolls its layout as one page: scroll the report and the transcript goes with it. With this on, MosaicTools injects styling via CDP so the <strong>Transcript, Report, and sidebar/utility columns each scroll on their own</strong>. You can park the transcript where you want it, scroll the Final Report to the impression, and keep a utility panel pinned — each column holds its own position.</p>
 <h2>How to turn it on / set it up</h2>
 <ol>
@@ -78,7 +90,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.16</strong> · built 2026-09-15</div>
+  <div>Documents <strong>MosaicTools v6.0.17</strong> · built 2026-09-16</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
