@@ -43,16 +43,21 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/dictation.html">Dictation &amp; Speech</a></div>
     <h1>Punctuation &amp; Formatting</h1>
-    <p class="brief">Controls how dictation becomes report text — auto vs. spoken punctuation, new-line behavior, radiology notation cleanup, and your own word replacements.</p>
+    <p class="brief">Controls how dictation becomes report text — pick a punctuation method for the transcript and another for the final report, plus new-line behavior, radiology notation cleanup, and your own word replacements.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/punctuation-group.png" alt="Punctuation options in Speech-to-Text settings" loading="lazy" class="lightboxable"><figcaption>Punctuation options in Speech-to-Text settings</figcaption></figure></div>
       <h2>What it does</h2>
 <p>Between the speech engines and your report sits a text-processing layer you control:</p>
+<p><strong>Punctuation method</strong> — there are three, and you choose one for the <strong>transcript</strong> (the box your dictation lands in as you speak) and one for the <strong>final report</strong>, independently. The same spoken sentence can therefore appear one way in the transcript and another way in the report.</p>
 <ul>
-<li><strong>Auto-punctuate</strong> — on, the engines insert punctuation for you; off, you dictate it (&quot;period&quot;, &quot;comma&quot;). With it off, punctuation you actually <em>speak</em> is kept while model-guessed punctuation is dropped, so the transcript reflects what you said.</li>
-<li><strong>Auto-punctuate in final report only</strong> — a middle path: dictate punctuation in the transcript, but text dictated directly into the final-report editor still gets auto-punctuation.</li>
+<li><strong>Strip all punctuation</strong> — no marks at all. Model-inserted marks are removed, and a spoken &quot;period&quot; is deleted rather than converted. Line breaks still work (&quot;new line&quot;, &quot;new paragraph&quot; are layout, not punctuation), and so do spoken hyphens and slashes, because &quot;L4-5&quot; and &quot;cyst/follicle&quot; are words, not sentences.</li>
+<li><strong>Auto-punctuate</strong> — the engines decide. Marks and sentence capitals come from the models.</li>
+<li><strong>Respect spoken punctuation</strong> — only the marks you actually say. The engines are asked not to punctuate, anything they punctuate anyway is stripped, your spoken &quot;period&quot;/&quot;comma&quot; becomes a real mark, and the word after each sentence end is capitalized. If the main engine misses a period you spoke and two other engines heard it, it is put back.</li>
+</ul>
+<p>The other text rules apply whichever method you pick:</p>
+<ul>
 <li><strong>New line after every sentence</strong> — a line break after each sentence-ending period, for list-style findings.</li>
 <li><strong>Radiology cleanup</strong> — converts spoken spine levels, units, dimensions, and dates to standard notation (say &quot;el four five&quot; and get L4-5; &quot;three point two by two point one centimeters&quot; formats as numerals).</li>
 <li><strong>Expand contractions</strong> — &quot;there&#39;s&quot; becomes &quot;there is&quot;; reports read formally.</li>
@@ -62,7 +67,8 @@
 <p>Everything lives in Settings → Speech-to-Text, under the <strong>Punctuation</strong> and <strong>Text Processing</strong> dividers. The replacements grid has +/− buttons to add and remove rows.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>Auto-punctuate and &quot;final report only&quot; are mutually exclusive — checking the first disables the second.</li>
+<li><strong>Changed in 6.0.18:</strong> the old pair of checkboxes (&quot;Auto-punctuate&quot; plus &quot;Auto-punctuate in final report only&quot;) became these two dropdowns. Your existing choice carries over: both boxes off becomes <strong>Respect spoken punctuation</strong> on both surfaces, and &quot;final report only&quot; becomes <strong>Respect spoken</strong> for the transcript with <strong>Auto-punctuate</strong> for the report.</li>
+<li>Strip removes marks, not capitals. A word the engines already capitalized stays capitalized, because blindly lowercasing would also hit CABG, L4 and Crohn.</li>
 <li>Replacements are word-for-word and deterministic; for <em>biasing</em> recognition toward a hard term, use keyterms instead.</li>
 <li>These rules run identically whether Turbo Paste is on or off — they&#39;re applied to whatever the ensemble produces.</li>
 </ul>
@@ -80,7 +86,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.17</strong> · built 2026-09-16</div>
+  <div>Documents <strong>MosaicTools v6.0.18</strong> · built 2026-09-16</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
