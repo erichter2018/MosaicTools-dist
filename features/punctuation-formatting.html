@@ -68,6 +68,7 @@
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li><strong>Changed in 6.0.18:</strong> the old pair of checkboxes (&quot;Auto-punctuate&quot; plus &quot;Auto-punctuate in final report only&quot;) became these two dropdowns. Your existing choice carries over: both boxes off becomes <strong>Respect spoken punctuation</strong> on both surfaces, and &quot;final report only&quot; becomes <strong>Respect spoken</strong> for the transcript with <strong>Auto-punctuate</strong> for the report.</li>
+<li><strong>Fixed in 6.0.19:</strong> a slash or dash is never treated as punctuation and is never stripped, in any mode. They build words here — dates, spine levels (L4-5), ratios (123/222), paired terms (stranding/effusion). Previously a lone slash arriving on its own could be dropped, which is what made some dictated dates disappear.</li>
 <li>Strip removes marks, not capitals. A word the engines already capitalized stays capitalized, because blindly lowercasing would also hit CABG, L4 and Crohn.</li>
 <li>Replacements are word-for-word and deterministic; for <em>biasing</em> recognition toward a hard term, use keyterms instead.</li>
 <li>These rules run identically whether Turbo Paste is on or off — they&#39;re applied to whatever the ensemble produces.</li>
@@ -86,7 +87,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.18</strong> · built 2026-09-16</div>
+  <div>Documents <strong>MosaicTools v6.0.19</strong> · built 2026-09-18</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
