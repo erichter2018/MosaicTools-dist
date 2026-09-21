@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Text Rules — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
+    <h1>Text Rules</h1>
+    <p class="brief">One list of find-and-replace rules covering both the text the AI drafted and the words you dictate or type. Leave the replacement blank and the rule deletes what it finds instead.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      <div class="shots"><figure class="shot"><img src="../img/settings-report-display.png" alt="The text rule list, reached from either settings page" loading="lazy" class="lightboxable"><figcaption>The text rule list, reached from either settings page</figcaption></figure></div>
+      <h2>One list instead of three  <span>6.0.20</span></h2>
+<p>Until 6.0.20 there were <strong>three</strong> separate lists doing the same job in different places: auto-remove
+draft phrases and find-and-replace in drafts, both under Drafting, and a word-replacement table for
+dictation under Text &amp; Templates. A correction you wanted in both your drafts and your own speech had
+to be typed twice, in two different settings pages, and the two copies drifted apart.</p>
+<p>They are now <strong>one list</strong>. Your existing entries were moved across automatically the first time you ran
+6.0.20 — nothing to re-enter, and nothing was thrown away.</p>
+<p>The two switches that turn the rules on moved too. They sit at the <strong>top of the Text Rules editor</strong>,
+right above the list they control, instead of being split across two settings pages.</p>
+<h2>What it does</h2>
+<p>A text rule finds something and either replaces it or deletes it. Each rule says <strong>where</strong> it applies —
+the text the drafting AI wrote, the words you dictate or type, or both — and <strong>how</strong> it matches. One
+rule can strip the boilerplate sentence your drafting AI keeps inserting, and another can turn &quot;ptx&quot;
+into &quot;pneumothorax&quot; the instant you finish saying it.</p>
+<h2>How to turn it on / set it up</h2>
+<ol>
+<li>Open <strong>Settings → Drafting → Text rules</strong>, or <strong>Settings → Text &amp; Templates → Text rules</strong> — both
+buttons open the same editor and the same list.</li>
+<li>Tick <strong>Apply rules to drafted text</strong> to let rules edit the AI&#39;s draft. This is <strong>off by default</strong>,
+because these are the only rules that delete or rewrite text in your report on their own.</li>
+<li>Tick <strong>Apply rules live as I type or dictate</strong> to have a rule fire the moment you finish a word —
+space, comma, period or Enter. <strong>Apply to</strong> chooses the transcript box, the final report, or both.</li>
+<li>Click <strong>Add…</strong> and fill in Find, Replace, where it applies, and how it matches. Leave <strong>Replace</strong>
+blank and the rule deletes what it finds.</li>
+</ol>
+<h2>Using it</h2>
+<p>Three match modes:</p>
+<ul>
+<li><strong>Whole word</strong> — finds your text as a word anywhere, ignoring capitals, and carries your capitals
+across, so &quot;ptx&quot; gives &quot;pneumothorax&quot; and &quot;PTX&quot; gives &quot;PNEUMOTHORAX&quot;. A match inside a longer word is
+left alone. This is the only mode that can fire live while you speak.</li>
+<li><strong>Exactly as written</strong> — character for character, capitals included. Best for a boilerplate sentence
+you want removed verbatim.</li>
+<li><strong>Any sentence containing ALL of these words</strong> — matches a whole sentence however it is worded, so one
+rule covers a family of near-identical drafted statements instead of half a dozen entries.</li>
+</ul>
+<p>The line under the list tells you what is actually running: how many rules act on drafted text, how many
+on your dictation, and how many of those fire live as you type. It turns amber when nothing is switched
+on.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li><strong>Order matters.</strong> Rules run top to bottom and each one sees the previous one&#39;s output. Use <strong>Move up</strong>
+and <strong>Move down</strong> to sort them.</li>
+<li><strong>Only whole-word rules can run live.</strong> The two sentence modes need a finished sentence, so they run at
+Process Report rather than while you are still speaking. The editor says so next to the choice.</li>
+<li><strong>Drafted rules need their switch.</strong> Rules aimed at the AI&#39;s draft do nothing until &quot;Apply rules to
+drafted text&quot; is ticked. Rules aimed at your own dictation are not gated by it.</li>
+<li><strong>A rule aimed nowhere cannot be saved</strong> — the editor will not let you leave both &quot;applies to&quot; boxes
+unticked, because such a rule would sit in the list looking live and never fire.</li>
+<li>Your old lists are still written to the settings file, so rolling back to an older build finds your
+rules where that build looks for them.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Drafting → Text rules, or Settings → Text &amp; Templates → Text rules</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/processing.html">🧾 Report Processing &amp; QA</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v6.0.20</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/draft-phrase-remover.html">Auto-Remove Draft Phrases (now Text Rules)</a></li><li><a href="../features/auto-process.html">Auto-Process on Open</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/drafting-fixups.html">Drafting Fixups</a></li><li><a href="../features/custom-stt.html">Custom STT Mode</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v6.0.20</strong> · built 2026-09-21</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

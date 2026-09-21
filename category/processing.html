@@ -40,10 +40,10 @@
 <main>
 
 <section class="cathead"><div class="cathead-icon">🧾</div><div><h1>Report Processing &amp; QA</h1><p>Process Report and the safety net around it — consistency checks, mismatch alerts, and sign-time guards.</p></div></section>
-<div class="cardgrid"><a class="card" href="../features/draft-phrase-remover.html">
-    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 5.5.23</span></div>
-    <h3>Auto-Remove Draft Phrases</h3>
-    <p>Keep a checklist of exact statements the drafting AI keeps inserting that you never want, and MosaicTools deletes them from the draft automatically when the study opens.</p>
+<div class="cardgrid"><a class="card card-deprecated" href="../features/draft-phrase-remover.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="badge-dep">legacy</span><span class="card-since">since 5.5.23</span></div>
+    <h3>Auto-Remove Draft Phrases (now Text Rules)</h3>
+    <p>Folded into Text Rules in 6.0.20. A rule with its replacement left blank deletes what it finds, which is exactly what this list used to do.</p>
   </a>
 <a class="card" href="../features/ct-dose.html">
     <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 5.9.0</span></div>
@@ -95,6 +95,11 @@
     <h3>Template Mismatch &amp; Auto-Correct</h3>
     <p>A red-border alert when the loaded report template doesn't match the study type — with an optional attempt to fix it automatically by re-typing the study description into Mosaic.</p>
   </a>
+<a class="card" href="../features/text-rules.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 6.0.20</span></div>
+    <h3>Text Rules</h3>
+    <p>One list of find-and-replace rules covering both the text the AI drafted and the words you dictate or type. Leave the replacement blank and the rule deletes what it finds instead.</p>
+  </a>
 <a class="card" href="../features/sign-warning.html">
     <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 5.1</span></div>
     <h3>Unprocessed-Sign Warning</h3>
@@ -102,7 +107,7 @@
   </a></div>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.19</strong> · built 2026-09-18</div>
+  <div>Documents <strong>MosaicTools v6.0.20</strong> · built 2026-09-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

@@ -144,10 +144,10 @@
     <h3>Auto-Process on Open</h3>
     <p>Runs Process Report automatically the moment a drafted or capture study opens, so AI-drafted findings land in the Final Report before you've touched anything.</p>
   </a>
-<a class="card" href="features/draft-phrase-remover.html">
-    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 5.5.23</span></div>
-    <h3>Auto-Remove Draft Phrases</h3>
-    <p>Keep a checklist of exact statements the drafting AI keeps inserting that you never want, and MosaicTools deletes them from the draft automatically when the study opens.</p>
+<a class="card card-deprecated" href="features/draft-phrase-remover.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="badge-dep">legacy</span><span class="card-since">since 5.5.23</span></div>
+    <h3>Auto-Remove Draft Phrases (now Text Rules)</h3>
+    <p>Folded into Text Rules in 6.0.20. A rule with its replacement left blank deletes what it finds, which is exactly what this list used to do.</p>
   </a>
 <a class="card" href="features/auto-comparison.html">
     <div class="card-top"><span class="card-cat">📚 Priors &amp; Clinical History</span><span class="card-since">since 6.0.6</span></div>
@@ -198,6 +198,11 @@
     <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 2.1</span></div>
     <h3>Template Mismatch &amp; Auto-Correct</h3>
     <p>A red-border alert when the loaded report template doesn't match the study type — with an optional attempt to fix it automatically by re-typing the study description into Mosaic.</p>
+  </a>
+<a class="card" href="features/text-rules.html">
+    <div class="card-top"><span class="card-cat">🧾 Report Processing &amp; QA</span><span class="card-since">since 6.0.20</span></div>
+    <h3>Text Rules</h3>
+    <p>One list of find-and-replace rules covering both the text the AI drafted and the words you dictate or type. Leave the replacement blank and the rule deletes what it finds instead.</p>
   </a>
 <a class="card" href="features/triage-reason.html">
     <div class="card-top"><span class="card-cat">📈 Worklist &amp; Productivity</span><span class="card-since">since 5.5.22</span></div>
@@ -451,7 +456,7 @@
 </div>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.19</strong> · built 2026-09-18</div>
+  <div>Documents <strong>MosaicTools v6.0.20</strong> · built 2026-09-21</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "";</script>
