@@ -49,7 +49,16 @@
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/keymappings.png" alt="Assign Auto Measure to a key or mic button in Key Mappings" loading="lazy" class="lightboxable"><figcaption>Assign Auto Measure to a key or mic button in Key Mappings</figcaption></figure>
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>Bidimensional measurement overlay on a lesion</figcaption></figure></div>
-      <h2>What it does</h2>
+      <h2>It refuses rather than measure the wrong thing  <span>6.0.21</span></h2>
+<p>If the outline the model produces does not contain the pixel you clicked, Auto Measure now declines and
+shows the engine caliper instead.</p>
+<p>Before, it fell back to the largest shape in the window. On a view centred on your click, that is the
+structure NEXT TO the one you meant whenever your target is the smaller of the two — so it returned a
+confident measurement of the wrong thing. You still get a measurement either way; it is just no longer a
+made-up one.</p>
+<p>Measured on the full measurement corpus: 402 of 409 still measured, 7 refused, and every one of those
+seven was a genuine miss.</p>
+<h2>What it does</h2>
 <p>Auto Measure captures the region of the InteleViewer image around your cursor, finds the lesion under it, and draws a <strong>bidimensional measurement overlay</strong> (long axis + perpendicular short axis, with the numbers) right on top of the image. The boundary comes from an adaptive region-growing method with edge-snap refinement, and the long axis is the largest diameter across that boundary with the short axis perpendicular through its middle — the way RECIST asks for it. Calibration is ruler-free: measurements derive from the workstation&#39;s monitor pitch and the true-size zoom level, so you don&#39;t need the on-screen ruler overlay for it to be accurate.</p>
 <h2>How accurate it is  <span>6.0.14</span></h2>
 <p>The caliper lands <strong>within 2 mm of where you would put it 70% of the time</strong>, up from 60%, measured on
@@ -122,7 +131,7 @@ you never get nothing.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.20</strong> · built 2026-09-21</div>
+  <div>Documents <strong>MosaicTools v6.0.21</strong> · built 2026-09-22</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

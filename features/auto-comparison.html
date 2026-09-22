@@ -48,7 +48,20 @@
   <div class="feature-cols">
     <div class="feature-body">
       
-      <h2>What it does</h2>
+      <h2>Reading the prior list  <span>6.0.21</span></h2>
+<p>The study list is now read in a single pass, and the reader works out where the rows are from the text
+itself rather than by measuring the panel. That means it no longer cares about your InteleViewer font
+size, and it survives a layout it has not seen before.</p>
+<p>Two things you may notice:</p>
+<ul>
+<li>A prior whose date it cannot read is dropped on its own. Before, one unreadable date could silence
+the whole comparison line.</li>
+<li>Study names no longer leave a stray word behind. &quot;XR LUMBAR SPINE 2 OR 3 VIEWS&quot; used to come out as
+&quot;lumbar spine <strong>or</strong> radiograph&quot;, and &quot;CT ABDOMEN PELVIS IV CONTRAST ONLY&quot; as &quot;abdomen and pelvis
+<strong>contrast only</strong> CT studies&quot;.</li>
+</ul>
+<p>If it is not sure, it still says nothing. Putting in the wrong comparison is worse than putting in none.</p>
+<h2>What it does</h2>
 <p>As a study opens, MosaicTools writes a <code>COMPARISON:</code> line at the top of your transcript so you do not
 have to dictate one. Everything that can produce that line — this, <strong>Get Prior</strong>, and your own typing —
 folds into the <strong>same single line</strong>, newest study first. A report can never grow two comparison lines.</p>
@@ -142,7 +155,7 @@ study mentions into one statement</strong> if you want the shorter wording — i
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.20</strong> · built 2026-09-21</div>
+  <div>Documents <strong>MosaicTools v6.0.21</strong> · built 2026-09-22</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
