@@ -65,9 +65,10 @@
 <pre><code>C3-C4: Mild bilateral neural foraminal stenosis.
 C4-C5: Mild bilateral neural foraminal stenosis.
 C5-C6: Mild bilateral neural foraminal stenosis.
-C6-C7: Mild bilateral neural foraminal stenosis. Moderate disc space narrowing.
+C6-C7: Mild bilateral neural foraminal stenosis; moderate disc space narrowing.
 </code></pre>
-<p>Each level becomes its own statement, so dictating about one level removes that line and leaves the others. It is <strong>all or nothing</strong>: if any part of the sentence cannot be accounted for, the sentence is left exactly as drafted rather than partly rewritten. A drafted range is expanded to the levels it covers, and a level given two severities for one side becomes a span (<em>&quot;moderate to severe&quot;</em>) rather than a refusal.</p>
+<p><em>(Changed in 6.0.22.)</em> Each level is <strong>one line</strong>, with its findings separated by semicolons, so every finding stays under its level. In the drafted popup you can hover a single finding and click it off; the rest of the level stays. When you dictate one finding of a level, that finding alone is taken out of the line — <em>&quot;narrowing of the C6-7 disc&quot;</em> turns <code>C6-C7: Moderate bilateral neural foraminal stenosis; moderate to severe disc space narrowing.</code> into <code>C6-C7: Moderate bilateral neural foraminal stenosis.</code> A line comes out whole only when you have addressed every finding on it.</p>
+<p>It is <strong>all or nothing</strong>: if any part of the sentence cannot be accounted for, the sentence is left exactly as drafted rather than partly rewritten. A drafted range is expanded to the levels it covers, a level given two severities for one side becomes a span (<em>&quot;moderate to severe&quot;</em>), a finding that names no level (<em>&quot;moderate multilevel neural foraminal stenosis&quot;</em>) keeps its own line word for word, and a closing <em>&quot;unchanged&quot;</em> is carried onto every line it describes. Level lines sort top-down under <strong>Degenerative &amp; Chronic</strong>.</p>
 <p>An <strong>Orig</strong> button on the drafted-findings popup shows you the sentence it replaced, and what has since happened to each line it became.</p>
 <h2>How to turn it on / set it up</h2>
 <p><strong>Settings → Drafting → Drafting Fixups (experimental).</strong> Each fixup is its own checkbox, all off by default — enable only the ones whose failure mode you&#39;ve seen. Requires CDP (the direct-DOM connection to Mosaic).</p>
@@ -95,7 +96,7 @@ C6-C7: Mild bilateral neural foraminal stenosis. Moderate disc space narrowing.
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.0.21</strong> · built 2026-09-22</div>
+  <div>Documents <strong>MosaicTools v6.0.22</strong> · built 2026-09-25</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
