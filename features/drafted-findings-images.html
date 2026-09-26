@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Drafted Findings Within Images — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
+    <h1>Drafted Findings Within Images</h1>
+    <p class="brief">Writes each drafted finding on the InteleViewer images while you scroll — in the black air beside the body, on the images where that organ usually is.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      
+      <h2>What it does</h2>
+<p>While you scroll an axial series in InteleViewer, each drafted finding appears as a small framed box beside the
+body, on the images where its organ most likely is. &quot;Cholelithiasis&quot; shows up with the gallbladder; the spine
+shows below the body; a bilateral finding sits in the middle.</p>
+<p>The drafting AI gives no image numbers, so every place is an <strong>estimate from anatomy</strong> — which organ the
+sentence names, and where that organ usually sits in the stack. Works on <strong>CT abdomen/pelvis</strong>, <strong>CT and CTA
+chest</strong>, and <strong>plain head CT</strong> (where image 1 is the skull base).</p>
+<h2>How to turn it on / set it up</h2>
+<p><strong>Settings → Drafting → Drafted Findings Popup → Show drafted findings within images</strong>. It is a child of the
+drafted findings popup, so that must be on too. Off by default.</p>
+<p>Its child, <strong>Dim matched findings</strong>: off, a finding your dictation already covers is taken off the images; on,
+it stays, dimmed.</p>
+<h2>Using it</h2>
+<p>Click the axial series so it has the yellow frame, then scroll. Brightness and weight follow the popup — loud
+findings white and bold, quieter ones grey. Sentences the draft wrote on one line stay together in one stack,
+in their written order. A box keeps its place once shown; it only moves to get off the anatomy, and only
+outward. Zoom in or out and the boxes are re-placed for the new view.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>An estimate, not a detection: it tells you roughly where to look, not where the finding is.</li>
+<li>Axial only. A combined study (chest/abdomen/pelvis, head plus face or spine) gets no labels rather than
+wrong ones.</li>
+<li>Boxes avoid MosaicTools&#39; own windows, InteleViewer&#39;s corner text and its R/L/A/P letters, and never block a
+click.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Drafting → Drafted Findings Popup → Show drafted findings within images</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v6.1</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/drafting-collision.html">Remove Matched Entries From Transcript</a></li><li><a href="../features/capture-series-image.html">Capture Series/Image</a></li><li><a href="../features/iv-true-size-zoom.html">Enable True Size Zoom (InteleViewer setup)</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v6.1.0</strong> · built 2026-09-26</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
