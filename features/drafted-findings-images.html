@@ -88,7 +88,7 @@ the ETT in the trachea, a line in the SVC, a knee compartment, an ankle. On bone
 nearest black air at its height when there is some; on a chest film, only findings at the edge of the body do.</p>
 <p>When <strong>every</strong> sentence fits in black air, off the patient, they simply show. When any would have to sit on the
 anatomy, they all stay hidden until you <strong>dictate</strong> — while the mic records they appear, and they hide when you
-stop. Findings with no place are listed at the top. Click a box to clear it. Flipping back to an image already
+stop. Findings with no place are listed at the top, tagged <strong>[unknown position]</strong>. Click a box to clear it. Flipping back to an image already
 seen is instant.</p>
 <p>The anatomy comes from <strong>FleXray</strong>, an open research model from MIT that outlines 60 structures on a plain
 film. It is <strong>not a medical device</strong>; it only decides where a sentence is written. Turning the setting on
@@ -101,6 +101,10 @@ the image holds still. Unusual views (a lateral leg, say) can get the bone names
 wrong ones.</li>
 <li>Boxes avoid MosaicTools&#39; own windows, InteleViewer&#39;s corner text and its R/L/A/P letters.</li>
 <li>When there is no air left for a box, it goes where it covers the least patient.</li>
+<li>A finding with no known place is still shown <em>(since 6.1.5)</em>: above the body on every image (at the top on an
+X-ray), with <strong>[unknown position]</strong> under it in light red. It is shown, not placed - look for it yourself.</li>
+<li>A finding that names a side keeps that side, even near the midline <em>(since 6.1.5)</em>: a left thalamic infarct
+goes on the screen&#39;s right, the patient&#39;s left.</li>
 </ul>
 
     </div>
@@ -116,7 +120,7 @@ wrong ones.</li>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.1.4</strong> · built 2026-09-26</div>
+  <div>Documents <strong>MosaicTools v6.1.5</strong> · built 2026-09-27</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
