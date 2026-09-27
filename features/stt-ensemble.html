@@ -60,6 +60,9 @@
 <li>Every voting slot needs its own working (paid) API key except medASR, which is free and local.</li>
 <li>Batch engines (Voxtral, Soniox Async, gpt-4o-transcribe) can&#39;t drive — the Driver must stream.</li>
 <li>A guard prevents late corrections from re-inserting sentences already in your report.</li>
+<li><strong>Repeats removed by time</strong> <em>(since 6.1.6)</em>: MedASR and Chirp now send word timings, so a voter re-sending
+the whole recording at the end no longer pastes an earlier sentence a second time - even when it misheard it.
+Late corrections never delete no/without/left/right or change a number.</li>
 </ul>
 <h2>Updated in 5.9.2</h2>
 <p>A new voter is available — <strong>OpenAI GPT Transcribe</strong>, reached through OpenRouter. On our own radiology recordings it is roughly twice as accurate as the older OpenAI engine, and it does not invent speech during silence.</p>
@@ -78,7 +81,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.1.5</strong> · built 2026-09-27</div>
+  <div>Documents <strong>MosaicTools v6.1.6</strong> · built 2026-09-27</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
