@@ -150,6 +150,14 @@ appearance, so turning on <strong>Show glanceable drafted findings popup</strong
 <strong>URETER</strong> instead of KIDNEY, and <strong>SCROTUM</strong>, <strong>PROSTATE</strong>, <strong>ADNEXA</strong> or <strong>UTERUS</strong> in the pelvis. The small dot
 means &quot;same tag as the row above&quot;.</p>
 <p>The columns are fixed, so they do not shift as you move between studies, and the box stays where you put it — a study too tall for the space scrolls rather than moving. You can drag its left or right edge to change the width; the width is remembered.</p>
+<h2>Clinical history line (since 6.1.7)</h2>
+<p>Turn on <strong>Show the clinical history in the popup</strong> (Settings → Drafting, under the impression options; off by
+default) and the popup&#39;s first line is the study&#39;s <strong>HISTORY</strong> - the same cleaned text the Clinical History window
+shows. A long history is cut to one line; <strong>hover</strong> over it to read all of it. The line is read-only: a click does
+nothing. It also keeps the popup up on an undrafted study, and closes with the study when you sign.</p>
+<h2>DRAFTED / NOT DRAFTED (since 6.1.7)</h2>
+<p>A drafted study shows <strong>DRAFTED</strong> in green, where an undrafted one shows <strong>NOT DRAFTED</strong> - above the IMPRESSION
+rule, or at the top of the list before Process Report has written an impression.</p>
 <h2>Sentences dictated together stay together (since 5.9.20)</h2>
 <p>The drafting AI writes <strong>one organ system per line</strong> — a chest line, a renal line, a spine line. The popup used to split every line into sentences and re-sort each one on its own, so half a chest paragraph could end up under &quot;Degenerative &amp; Chronic&quot; while the other half sat at the top, and an unrelated sentence could land in the middle of a group.</p>
 <p>Now a paragraph moves as a unit: it is filed under the section of its most urgent member, and sorts at the position of its body part. Each sentence still gets <strong>its own line, in the order it was drafted</strong>.</p>
@@ -179,7 +187,7 @@ start. A comparison that arrives late is no longer mistaken for something you di
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.1.6</strong> · built 2026-09-27</div>
+  <div>Documents <strong>MosaicTools v6.1.7</strong> · built 2026-09-28</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

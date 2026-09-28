@@ -100,7 +100,13 @@ the image holds still. Unusual views (a lateral leg, say) can get the bone names
 <li>An estimate, not a detection: it tells you roughly where to look, not where the finding is.</li>
 <li>Axial only. A combined study (chest/abdomen/pelvis, head plus face or spine) gets no labels rather than
 wrong ones.</li>
-<li>Boxes avoid MosaicTools&#39; own windows, InteleViewer&#39;s corner text and its R/L/A/P letters.</li>
+<li>Boxes avoid MosaicTools&#39; own windows and InteleViewer&#39;s corner text. They may sit on the R/L/A/P letters
+<em>(since 6.1.7)</em>.</li>
+<li>There is always room for two rows of labels above and below the image, and side labels are always wide
+enough to read (about 20 characters a line), even where that covers some anatomy <em>(since 6.1.7)</em>. A row that
+ends up on the patient moves away from the body when there is room.</li>
+<li>Only windows wider than 1200 (lung, bone) are ignored for finding the body <em>(since 6.1.7; was 800)</em>.</li>
+<li>X-ray labels on the same side line up on one edge <em>(since 6.1.7)</em>.</li>
 <li>When there is no air left for a box, it goes where it covers the least patient.</li>
 <li>Labels never sit under MosaicTools&#39; own button bar <em>(since 6.1.6)</em>.</li>
 <li>On a limb X-ray, the flat grey field around the part counts as air, whatever its brightness <em>(since 6.1.6)</em>.</li>
@@ -123,7 +129,7 @@ goes on the screen&#39;s right, the patient&#39;s left.</li>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.1.6</strong> · built 2026-09-27</div>
+  <div>Documents <strong>MosaicTools v6.1.7</strong> · built 2026-09-28</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

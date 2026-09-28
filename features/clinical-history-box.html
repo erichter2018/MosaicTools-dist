@@ -56,7 +56,7 @@
 <p>Settings → Alerts → Notification Box:</p>
 <ul>
 <li><strong>Enable Notification Box</strong> — the master toggle (requires Mosaic scraping to be on).</li>
-<li><strong>Show clinical history in notification box</strong> — uncheck for alerts-only mode: the box stays hidden until an alert fires.</li>
+<li><strong>Show clinical history in notification box</strong> — uncheck for alerts-only mode: the box stays hidden until an alert fires. The auto-fix (and age/sex in the final report) keeps working while it is hidden <em>(fixed in 6.1.7)</em>.</li>
 <li><strong>Hide when no study open</strong> — hides it between studies.</li>
 <li><strong>Auto-fix clinical history</strong> — two independent toggles: paste the corrected history into the <strong>transcript box</strong>, and/or rewrite the CLINICAL HISTORY section of the <strong>final report</strong> in place (re-applied automatically when Process Report re-pulls the raw worklist history).</li>
 <li><strong>Add patient age</strong> / <strong>Add patient sex</strong> — prepend these (&quot;55-year-old female. &quot;) wherever the auto-fix writes — transcript and/or final report <em>(final-report support since 5.5.28; previously these only worked with the transcript option)</em>. Never doubles up when the history already starts with demographics (&quot;65 yo M with…&quot;).</li>
@@ -89,7 +89,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.1.6</strong> · built 2026-09-27</div>
+  <div>Documents <strong>MosaicTools v6.1.7</strong> · built 2026-09-28</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
