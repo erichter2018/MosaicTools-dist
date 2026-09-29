@@ -60,6 +60,18 @@
 <li>Auto-correct types into Mosaic — if you&#39;re mid-keystroke elsewhere it waits its turn through the normal action queue, but expect a brief flicker in the Study field when it fires.</li>
 <li>If a template persistently mismatches for a study description your site words unusually, leave the alert on but auto-correct off and fix those by hand.</li>
 </ul>
+<h2>Fix Alaska templates (since 6.1.8)</h2>
+<p><strong>Settings → Behavior → Report repairs → Fix Alaska templates</strong> (off by default). Some Alaska sites open studies on
+custom templates whose names start with <strong>AK</strong>. With this on, when a study opens on an &quot;AK...&quot; template, MosaicTools
+opens Mosaic&#39;s Template list and picks the proper template instead:</p>
+<ul>
+<li>not an &quot;AK&quot; template;</li>
+<li>nothing with <strong>test</strong> in its name;</li>
+<li>not a <strong>gears-icon</strong> template (Mosaic calls these &quot;System Template&quot;).</li>
+</ul>
+<p>Of what is left it prefers the same name without the &quot;AK&quot;, then a template whose body part and modality match the
+study. It runs once per study, only before anything is dictated (switching the template reloads the report). If no
+template qualifies, the template is left alone.</p>
 
     </div>
     <aside class="feature-meta">
@@ -74,7 +86,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.1.7</strong> · built 2026-09-28</div>
+  <div>Documents <strong>MosaicTools v6.1.8</strong> · built 2026-09-29</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
