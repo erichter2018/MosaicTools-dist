@@ -98,8 +98,11 @@ the image holds still. Unusual views (a lateral leg, say) can get the bone names
 <h2>Tips &amp; gotchas</h2>
 <ul>
 <li>An estimate, not a detection: it tells you roughly where to look, not where the finding is.</li>
-<li>Axial only. A combined study (chest/abdomen/pelvis, head plus face or spine) gets no labels rather than
-wrong ones.</li>
+<li>Axial only. A combined study (head plus face or spine) gets no labels rather than wrong ones. <strong>Chest/abdomen/
+pelvis</strong> gets labels with the <strong>Anatomy/draft selector</strong> on <em>(since 6.2.0)</em> - see that page.</li>
+<li>With the <strong>Anatomy/draft selector</strong> on <em>(since 6.2.0)</em>, labels are placed by the anatomy actually on the slice,
+with a thin line to the organ, and a finding at a vertebral level shows on that level&#39;s slices when the
+sagittal has spine labels.</li>
 <li>Boxes avoid MosaicTools&#39; own windows and InteleViewer&#39;s corner text. They may sit on the R/L/A/P letters
 <em>(since 6.1.7)</em>.</li>
 <li>There is always room for two rows of labels above and below the image, and side labels are always wide
@@ -116,6 +119,9 @@ X-ray), with <strong>[unknown position]</strong> under it in light red. It is sh
 goes on the screen&#39;s right, the patient&#39;s left.</li>
 <li><strong>Image label text size</strong> <em>(since 6.1.9)</em> - Settings → Drafting, under the image options: 50-200% of the
 automatic size, for CT and X-ray labels alike. The labels are placed again at the new size on the next image.</li>
+<li><strong>Label frame color</strong> <em>(since 6.2.0)</em> - Settings → Drafting, under the image options: the frame and pointer line of
+each drafted label in White, Cyan, Blue, Green, Pink or Red instead of the finding&#39;s grey. Never yellow - that is
+InteleViewer&#39;s active-pane color, which MosaicTools looks for on screen.</li>
 </ul>
 
     </div>
@@ -125,13 +131,13 @@ automatic size, for CT and X-ray labels alike. The labels are placed again at th
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v6.1</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/drafting-collision.html">Remove Matched Entries From Transcript</a></li><li><a href="../features/capture-series-image.html">Capture Series/Image</a></li><li><a href="../features/iv-true-size-zoom.html">Enable True Size Zoom (InteleViewer setup)</a></li></ul>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/anatomy-draft-selector.html">Anatomy / Draft Selector</a></li><li><a href="../features/drafting-collision.html">Remove Matched Entries From Transcript</a></li><li><a href="../features/capture-series-image.html">Capture Series/Image</a></li><li><a href="../features/iv-true-size-zoom.html">Enable True Size Zoom (InteleViewer setup)</a></li></ul>
     </aside>
   </div>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.1.9</strong> · built 2026-09-30</div>
+  <div>Documents <strong>MosaicTools v6.2.0</strong> · built 2026-10-01</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

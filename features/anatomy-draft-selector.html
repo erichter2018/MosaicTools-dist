@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Anatomy / Draft Selector — MosaicTools docs</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="">MosaicTools<span class="brand-docs">docs</span></a>
+  <nav class="mainnav">
+    <a href="../index.html">Home</a>
+    <a href="../az.html">A–Z</a>
+    <a href="../workflow.html">Workflow</a>
+    <a href="../surfaces.html">By Type</a>
+    <div class="nav-cats">
+      <button class="nav-cats-btn">Categories ▾</button>
+      <div class="nav-cats-menu">
+        <a href="../category/dictation.html">🎙️ Dictation &amp; Speech</a>
+        <a href="../category/processing.html">🧾 Report Processing &amp; QA</a>
+        <a href="../category/recommendations.html">📋 Recommendations</a>
+        <a href="../category/priors.html">📚 Priors &amp; Clinical History</a>
+        <a href="../category/display.html">🌈 Report Display &amp; Highlighting</a>
+        <a href="../category/measurement.html">📏 Measurement &amp; Imaging</a>
+        <a href="../category/worklist.html">📈 Worklist &amp; Productivity</a>
+        <a href="../category/platform.html">⚙️ Setup &amp; Platform</a>
+      </div>
+    </div>
+    <a class="nav-external" href="https://erichter2018.github.io/RADCounter-dist/" title="RADCounter — the companion productivity tracker">RADCounter <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="searchbox">
+    <input id="search" type="search" placeholder="Search features…  ( / )" autocomplete="off">
+    <div id="search-results" hidden></div>
+  </div>
+</header>
+<main>
+
+<article class="feature">
+  <div class="feature-head">
+    <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/display.html">Report Display &amp; Highlighting</a></div>
+    <h1>Anatomy / Draft Selector</h1>
+    <p class="brief">A small box over your CT - Show anatomy labels what is on the slice (organs, bones, vessels, muscles), Show drafted puts the drafted findings on the real organ.</p>
+  </div>
+  <div class="feature-cols">
+    <div class="feature-body">
+      
+      <h2>What it does</h2>
+<p>A small box on screen with four buttons:</p>
+<ul>
+<li><strong>Show anatomy</strong> - labels what is on the axial slice you are looking at: organs, the five lung lobes, bones,
+vessels and muscles (68 structures), each with a thin line to a dot on it. Handy for anatomy you do not see
+every day.</li>
+<li><strong>Show drafted</strong> - the drafted findings on the images, as before, but now placed by the <strong>real</strong> anatomy on
+the slice (see below).</li>
+<li><strong>Show nothing</strong> - hides both.</li>
+<li><strong>Copy</strong> - puts the pane with its anatomy labels on the clipboard. The labels themselves are left out of
+ordinary screenshots on purpose; the box itself is not.</li>
+</ul>
+<p><strong>Right-click Show anatomy</strong> for a small drawer: All, Muscles, Bones, Vessels, Organs. <strong>Right-click Show
+drafted</strong> for <em>Dim matched findings</em>, a <strong>text size</strong> slider, and the <strong>frame/line color</strong> of the drafted labels
+(White, Cyan, Blue, Green, Pink, Red, or the default grey) - the same settings as on the Drafting page. Your choices
+are kept.</p>
+<p><strong>Plain films</strong> work too: Show anatomy names the bones and organs FleXray finds on the film (the X-ray model the
+drafted X-ray labels already use), with each label right beside its structure - on the film, since a radiograph
+has no air to keep to. Show drafted / Show nothing switch the drafted X-ray labels.</p>
+<h2>The anatomy model (A1)</h2>
+<p>A1 is MosaicTools&#39; own model. It looks at the one slice on screen, as displayed, and outlines what it recognises.
+On scans it never saw it matched the reference outlines about 85% (Dice 0.85; 0.82 on scans from other
+hospitals). Big organs, lungs, bones and large muscles are the most reliable; small structures (adrenals,
+prostate, thin vessels) less so. It is <strong>not a medical device</strong> and does not look for disease - it only names
+anatomy and decides where a label goes.</p>
+<p>Turning the setting on downloads A1 once (48 MB). It runs on the graphics card when there is one.</p>
+<p>A1 was trained on two public datasets, both CC BY 4.0: the TotalSegmentator CT dataset (Wasserthal et al.,
+Radiology: AI 2023) and AMOS 2022 (Ji et al., NeurIPS 2022).</p>
+<h2>What changes for the drafted findings</h2>
+<p>With the selector on, the drafted findings on the images use A1:</p>
+<ul>
+<li><strong>When:</strong> a finding about an organ shows on the images where A1 actually sees that organ (the image number is
+only a loose check against the impossible).</li>
+<li><strong>Where:</strong> a new label goes beside where the organ really is on that slice, with a thin line to it.</li>
+<li><strong>Chest/abdomen/pelvis CT</strong> now gets labels - whether it is one long stack or a separate chest series and
+abdomen/pelvis series. Where A1 stops seeing lung is the lung bases: above them the chest findings, below them
+the abdomen/pelvis findings.</li>
+<li>Anything A1 does not outline (effusions, nodes, free fluid, the brain) keeps the old placement.</li>
+</ul>
+<h2>Vertebral levels</h2>
+<p>If the sagittal has spine labels (Spine Labeling), a drafted finding that names a level (&quot;L4 compression
+fracture&quot;) shows exactly on that level&#39;s slices. With Show anatomy on, the vertebra label reads <strong>&quot;L3 vertebral
+body&quot;</strong> or <strong>&quot;L3-L4 disc space&quot;</strong>, and the separate level box steps aside.</p>
+<h2>Tips &amp; gotchas</h2>
+<ul>
+<li>Shows while a CT or CTA of the chest, abdomen or pelvis, or a plain film, is open in Mosaic.</li>
+<li>Drag the box by its title strip; it stays where you put it.</li>
+<li>Labels keep their spot while you scroll; only the line moves.</li>
+<li>Labels avoid MosaicTools&#39; windows and InteleViewer&#39;s corner text, and use the air beside the body.</li>
+<li>Not yet labelled (no public data): pelvic floor, pelvic and neck lymph node regions, pancreas head/body/tail,
+lung segments. Kidney cysts are hidden for now.</li>
+</ul>
+
+    </div>
+    <aside class="feature-meta">
+      <h4>At a glance</h4>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Drafting → Anatomy/draft selector</span></div>
+    <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/display.html">🌈 Report Display &amp; Highlighting</a></span></div>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v6.2.0</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/drafted-findings-images.html">Drafted Findings Within Images</a></li><li><a href="../features/drafted-findings-popup.html">Drafted Findings Popup</a></li><li><a href="../features/spine-labeling.html">Spine Labeling</a></li></ul>
+    </aside>
+  </div>
+</article>
+</main>
+<footer class="footer">
+  <div>Documents <strong>MosaicTools v6.2.0</strong> · built 2026-10-01</div>
+  <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
+</footer>
+<script>window.__REL = "../";</script>
+<script src="../assets/minisearch.min.js"></script>
+<script src="../assets/search-data.js"></script>
+<script src="../assets/features-lite.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
