@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Mosaic Zoom Memory — MosaicTools docs</title>
+<title>Auto-fix Clario Dictation Defaults — MosaicTools docs</title>
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 
@@ -42,37 +42,46 @@
 <article class="feature">
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
-    <h1>Mosaic Zoom Memory</h1>
-    <p class="brief">Mosaic forgets your Ctrl+scroll text-size zoom on every launch; MosaicTools remembers it and re-applies it silently.</p>
+    <h1>Auto-fix Clario Dictation Defaults</h1>
+    <p class="brief">Sets every site's Default Dictation in Clario to &quot;mosaic 2&quot;, so a site that was just added for you - and set to the wrong dictation system - still starts dictation.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
-      <div class="shots"><figure class="shot"><img src="../img/settings-behavior-zoom.png" alt="&quot;Remember &amp; restore my Mosaic zoom level&quot; in Behavior settings" loading="lazy" class="lightboxable"><figcaption>&quot;Remember &amp; restore my Mosaic zoom level&quot; in Behavior settings</figcaption></figure></div>
+      
       <h2>What it does</h2>
-<p>Mosaic loses your text-size zoom (the Ctrl+scroll / Ctrl +/- page zoom) every time it launches, so anyone who reads at anything other than 100% has been re-zooming daily. With this on, MosaicTools remembers the zoom level you set and re-applies it automatically the next time you&#39;re working in Mosaic.</p>
-<h2>How to turn it on / set it up</h2>
+<p>When you are credentialed at a new site, the site is added to your Clario account. Often it gets the wrong
+dictation system - the old &quot;mosaic&quot; instead of &quot;mosaic 2&quot; - and dictation will not start on that site&#39;s studies.
+It usually takes a few IT calls before anyone finds the cause.</p>
+<p>With this setting on, MosaicTools checks your Clario <strong>Profile Management → Application Defaults</strong> list at
+startup and every 6 hours. Any site whose Default Dictation is not &quot;mosaic 2&quot; is changed to &quot;mosaic 2&quot;.
+<strong>Sites set to MosaicC are left alone.</strong> The viewer column is never touched.</p>
+<h2>How to turn it on</h2>
 <ol>
-<li>Enable CDP if you haven&#39;t: <strong>Settings → Experimental → Mosaic CDP → Use CDP for Mosaic interaction</strong> (this feature requires it).</li>
-<li>Check <strong>Remember &amp; restore my Mosaic zoom level</strong> in <strong>Settings → Behavior → Mosaic Zoom</strong>.</li>
-<li>Set your preferred zoom once in Mosaic with Ctrl+scroll or Ctrl +/-. Done.</li>
+<li>Clario CDP must work: <strong>Use CDP for Clario interaction</strong> on, and Clario opened from the &quot;Clario CDP&quot; shortcut
+(see <a href="cdp-integration">CDP Integration</a>).</li>
+<li>Check <strong>Auto-fix Clario dictation defaults to &quot;mosaic 2&quot;</strong> in the same Clario CDP section. It is <strong>off by default</strong>.</li>
 </ol>
 <h2>Using it</h2>
-<p>Nothing to do day-to-day. When Mosaic launches fresh at the default zoom, MosaicTools applies your remembered level the moment Mosaic is focused. If you change the zoom during a shift, the new level becomes the remembered one.</p>
+<p>Nothing to do. When it changes a site you see a toast, for example
+<em>Clario: set dictation default to &quot;mosaic 2&quot; for 1 site(s): ...</em>. If nothing needs changing, nothing is shown.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>The restore is deliberately unobtrusive: it applies <strong>silently while Mosaic is focused</strong> and never moves, resizes, or steals focus from your windows.</li>
-<li>This is the <em>text-size page zoom</em> inside Mosaic&#39;s report area, not your PACS/InteleViewer image zoom.</li>
-<li>If restore stops working, check the CDP status dashboard (Settings → Experimental → CDP Status) — the Mosaic dot should be green. CDP requires a Mosaic restart the first time it&#39;s enabled.</li>
+<li><strong>Clario must be visible on a screen.</strong> A minimized Clario window is so slowed down by the browser that MT
+skips it and tries again 5 minutes later.</li>
+<li>MT reads the list back after saving and reports only the sites that really changed. A site that has no
+&quot;mosaic 2&quot; choice at all is left as it is.</li>
+<li>If you have unsaved edits open in that Clario table, MT waits.</li>
+<li>It changes your own Clario profile only - the same change you could make by hand in Profile Management.</li>
 </ul>
 
     </div>
     <aside class="feature-meta">
       <h4>At a glance</h4>
-      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Behavior → Mosaic Zoom → Remember &amp; restore my Mosaic zoom level</span></div>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → CDP → Clario CDP → Auto-fix Clario dictation defaults to &quot;mosaic 2&quot; (new settings window: Experimental → Clario CDP)</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
-    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.1</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/visual-enhancements.html">Visual Report Enhancements</a></li></ul>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v6.2.1</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/cdp-integration.html">CDP Integration</a></li><li><a href="../features/critical-findings.html">Critical Findings</a></li></ul>
     </aside>
   </div>
 </article>
