@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Triage Reason — MosaicTools docs</title>
+<title>Consult — MosaicTools docs</title>
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 
@@ -42,33 +42,81 @@
 <article class="feature">
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/worklist.html">Worklist &amp; Productivity</a></div>
-    <h1>Triage Reason</h1>
-    <p class="brief">When Mosaic's mosaicAI triages a study, MosaicTools reads WHY (e.g. &quot;Suspected PE&quot;) and shows it in the notification box — so the reason for the triage flag is visible before you start reading.</p>
+    <h1>Consult</h1>
+    <p class="brief">One press shows the Matrix radiologists who are online in InteleViewer's chat - the right specialist for the study on screen first, general radiologists after - and a second press opens the chat with the one you pick.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
       
       <h2>What it does</h2>
-<p>When Mosaic flags a study as <strong>TRIAGED</strong> by mosaicAI, the flag alone doesn&#39;t tell you <em>why</em>. MosaicTools reads the triage <strong>reason</strong> from Mosaic and shows it in the notification box as a <strong>red-orange banner</strong> — for example, <strong>&quot;TRIAGED (mosaicAI): Suspected PE&quot;</strong> — so you know what the AI was worried about before you open the images. It&#39;s the same idea as the older Aidoc alert, for Mosaic&#39;s own triage.</p>
-<h2>How to turn it on / set it up</h2>
-<p>Nothing to configure beyond the notification box itself: as long as <strong>Settings → Alerts → Notification Box → Enable Notification Box</strong> is on (and Mosaic scraping is running), the triage reason appears automatically on any triaged study.</p>
+<p>Consult reads who is online in InteleViewer&#39;s chat directory (the <strong>Matrix_Rads</strong> group) and shows one button per
+radiologist. The study on screen decides the order:</p>
+<table>
+<thead>
+<tr>
+<th>Study</th>
+<th>Offered first</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Head, face, neck, spine</td>
+<td>Neuro (spine also MSK)</td>
+</tr>
+<tr>
+<td>Bones and joints of the limbs, shoulder, bony pelvis</td>
+<td>MSK</td>
+</tr>
+<tr>
+<td>Abdomen and pelvis</td>
+<td>Body</td>
+</tr>
+<tr>
+<td>Chest</td>
+<td>Cardiothoracic, then Body</td>
+</tr>
+<tr>
+<td>Vessels (CTA outside the head, duplex, venous, runoff)</td>
+<td>IR / Vascular</td>
+</tr>
+<tr>
+<td>Any MR</td>
+<td>MRI (after the region&#39;s specialist)</td>
+</tr>
+<tr>
+<td>PET and nuclear medicine</td>
+<td>PET / NM</td>
+</tr>
+<tr>
+<td>A patient under 18</td>
+<td>Peds, before everything else</td>
+</tr>
+</tbody></table>
+<p>General radiologists always follow. You only see radiologists of your own section, and never yourself.</p>
+<h2>How to turn it on</h2>
+<p>Map <strong>Consult</strong> to a hotkey or a floating toolbar button in <strong>Settings → Keys &amp; Buttons</strong>. InteleViewer must be open.</p>
 <h2>Using it</h2>
-<p>There&#39;s nothing to trigger. When a triaged study opens, glance at the notification box: if mosaicAI triaged it, the red-orange banner names the suspected reason. Studies that weren&#39;t triaged show no triage banner.</p>
+<ul>
+<li>From a <strong>hotkey</strong>, a small window pops up by the mouse. From a <strong>floating button</strong>, it slides out from the button.</li>
+<li>Click a name: MosaicTools opens InteleViewer&#39;s chat with that radiologist (about 2 seconds) and puts InteleViewer&#39;s
+people list away again. You type the message yourself.</li>
+<li><strong>Esc</strong> or clicking elsewhere closes the window.</li>
+</ul>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>The reason lives only in the triage tag&#39;s tooltip in Mosaic, so MosaicTools reads it with a brief one-time hover per study — you may see a momentary tooltip flicker on the Mosaic panel the first time a triaged study opens. It&#39;s read once per study, not repeatedly.</li>
-<li>The banner reflects what mosaicAI suspected, not a confirmed finding — treat it as a heads-up, the same way you would a worklist triage flag.</li>
-<li>Like the other notification-box alerts, this shares the box with the clinical-history display and works in alerts-only mode.</li>
+<li>A name with <strong>*</strong> is online but not on the consult list, so it is shown as General.</li>
+<li>Away and available look the same here - InteleViewer does not expose that status.</li>
+<li>After InteleViewer restarts, the first Consult opens its people list once to load it.</li>
+<li>The specialist list is built into MosaicTools; tell the developer when it changes.</li>
 </ul>
 
     </div>
     <aside class="feature-meta">
       <h4>At a glance</h4>
-      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Alerts → Notification Box → Enable Notification Box</span></div>
+      <div class="meta-row"><span class="meta-k">Action</span><span class="meta-v"><code>Consult</code> — map it under Keys &amp; Buttons</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/worklist.html">📈 Worklist &amp; Productivity</a></span></div>
-    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Opening a study</span></div>
-    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v5.5.22</span></div>
-      <h4>Related</h4><ul class="rel-list"><li><a href="../features/clinical-history-box.html">Clinical History / Notification Box</a></li><li><a href="../features/aidoc-alerts.html">Aidoc Alerts</a></li><li><a href="../features/stroke-detection.html">Stroke Detection</a></li></ul>
+    <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Dictating</span></div>
+    <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v6.2.2</span></div>
+      <h4>Related</h4><ul class="rel-list"><li><a href="../features/get-prior.html">Get Prior</a></li><li><a href="../features/critical-notes.html">Critical Notes</a></li></ul>
     </aside>
   </div>
 </article>
