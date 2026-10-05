@@ -57,6 +57,10 @@
 <li><strong>Builder</strong> — sentence construction: step through categories in order (location → size → character…), and the popup assembles the sentence as you go.</li>
 </ul>
 <p>Tree nodes can embed Builder lists and vice versa, so a tree item can drop you into a sentence builder mid-flow.</p>
+<p><strong>Structured</strong> tree lists insert each category as a heading: <code>THORACIC AORTA: Scattered minimal disease.</code> Since
+6.2.3, tick <strong>Label exactly as typed (no CAPS, no colon)</strong> under the list&#39;s Structured options in the Pick List
+Editor to insert the label as you wrote it instead: a label &quot;Thoracic aorta&quot; gives <code>Thoracic aorta Scattered minimal disease.</code>, and &quot;Thoracic Aorta:&quot; gives <code>Thoracic Aorta: Scattered minimal disease.</code> Use it when the drafting AI reads
+the CAPS heading as a new report section.</p>
 <h2>How to turn it on / set it up</h2>
 <ol>
 <li>Check <strong>Enable Pick Lists</strong> in <strong>Settings → Text &amp; Templates → Pick Lists</strong>.</li>
@@ -91,7 +95,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.2.2</strong> · built 2026-10-02</div>
+  <div>Documents <strong>MosaicTools v6.2.3</strong> · built 2026-10-05</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

@@ -64,16 +64,26 @@ ordinary screenshots on purpose; the box itself is not.</li>
 drafted</strong> for <em>Dim matched findings</em>, a <strong>text size</strong> slider, and the <strong>frame/line color</strong> of the drafted labels
 (White, Cyan, Blue, Green, Pink, Red, or the default grey) - the same settings as on the Drafting page. Your choices
 are kept.</p>
-<p><strong>Plain films</strong> work too: Show anatomy names the bones and organs FleXray finds on the film (the X-ray model the
-drafted X-ray labels already use), with each label right beside its structure - on the film, since a radiograph
-has no air to keep to. Show drafted / Show nothing switch the drafted X-ray labels.</p>
+<p><strong>Show drafted cycles</strong> (since 6.2.3): each click steps through <strong>Drafted</strong> (the drafted findings), <strong>Mine</strong> (your
+own dictated sentences, placed the same way) and <strong>Both</strong>. Right-click it to tick <strong>Default view</strong> - the view each
+new study opens in - and to pick a separate colour for drafted labels and for yours. <strong>Copy</strong> on any of these views
+copies the pane with those labels.</p>
+<p><strong>Plain films</strong> work too: Show anatomy names the bones and organs on the film, with each label right beside its
+structure - on the film, since a radiograph has no air to keep to. Since 6.2.3 it shows <strong>only the bones that fit
+the study</strong> (a foot study shows no hand or thigh) and takes the side from the study name. Show drafted / Show
+nothing switch the drafted X-ray labels.</p>
+<p><strong>XR1</strong> (since 6.2.3) is MosaicTools&#39; own X-ray anatomy model. On a plain film the button reads <strong>Anatomy:
+FleXray</strong>; click it to switch to <strong>Anatomy: XR1</strong> (downloads 48 MB once). It is an early version - tell Erik about
+any wrong label.</p>
 <h2>The anatomy model (A1)</h2>
 <p>A1 is MosaicTools&#39; own model. It looks at the one slice on screen, as displayed, and outlines what it recognises.
 On scans it never saw it matched the reference outlines about 85% (Dice 0.85; 0.82 on scans from other
 hospitals). Big organs, lungs, bones and large muscles are the most reliable; small structures (adrenals,
 prostate, thin vessels) less so. It is <strong>not a medical device</strong> and does not look for disease - it only names
 anatomy and decides where a label goes.</p>
-<p>Turning the setting on downloads A1 once (48 MB). It runs on the graphics card when there is one.</p>
+<p>Turning the setting on downloads A1 once (48 MB). It runs on the graphics card when there is one; <strong>Settings →
+Profile → Use the graphics card (GPU) for AI models</strong> (on by default, since 6.2.3) turns that off for every
+MosaicTools AI model if the graphics card causes trouble.</p>
 <p>A1 was trained on two public datasets, both CC BY 4.0: the TotalSegmentator CT dataset (Wasserthal et al.,
 Radiology: AI 2023) and AMOS 2022 (Ji et al., NeurIPS 2022).</p>
 <h2>What changes for the drafted findings</h2>
@@ -93,7 +103,8 @@ fracture&quot;) shows exactly on that level&#39;s slices. With Show anatomy on, 
 body&quot;</strong> or <strong>&quot;L3-L4 disc space&quot;</strong>, and the separate level box steps aside.</p>
 <h2>Tips &amp; gotchas</h2>
 <ul>
-<li>Shows while a CT or CTA of the chest, abdomen or pelvis, or a plain film, is open in Mosaic.</li>
+<li>Shows while a CT or CTA of the neck, chest, abdomen or pelvis, or a plain film, is open in Mosaic.</li>
+<li>On X-rays the rib labels are hidden.</li>
 <li>Drag the box by its title strip; it stays where you put it.</li>
 <li>Labels keep their spot while you scroll; only the line moves.</li>
 <li>Labels avoid MosaicTools&#39; windows and InteleViewer&#39;s corner text, and use the air beside the body.</li>
@@ -114,7 +125,7 @@ lung segments. Kidney cysts are hidden for now.</li>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.2.2</strong> · built 2026-10-02</div>
+  <div>Documents <strong>MosaicTools v6.2.3</strong> · built 2026-10-05</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

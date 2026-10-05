@@ -61,16 +61,18 @@
 <li>If a template persistently mismatches for a study description your site words unusually, leave the alert on but auto-correct off and fix those by hand.</li>
 </ul>
 <h2>Fix Alaska templates (since 6.1.8)</h2>
-<p><strong>Settings → Behavior → Report repairs → Fix Alaska templates</strong> (off by default). Some Alaska sites open studies on
-custom templates whose names start with <strong>AK</strong>. With this on, when a study opens on an &quot;AK...&quot; template, MosaicTools
-opens Mosaic&#39;s Template list and picks the proper template instead:</p>
+<p><strong>Settings → Behavior → Report repairs → Fix Alaska templates</strong> (off by default). Alaska sites open studies on
+custom templates whose names <strong>end in &quot;- AKA&quot;</strong> (&quot;CT Abdomen and Pelvis Without - AKA&quot;). With this on, when a study
+opens on one of them, MosaicTools opens Mosaic&#39;s Template list and picks the proper template instead:</p>
 <ul>
-<li>not an &quot;AK&quot; template;</li>
+<li>not an &quot;AKA&quot; template;</li>
 <li>nothing with <strong>test</strong> in its name;</li>
-<li>not a <strong>gears-icon</strong> template (Mosaic calls these &quot;System Template&quot;).</li>
+<li>not a <strong>gears-icon</strong> template (Mosaic calls these &quot;System Template&quot;) - the proper one has the building icon.</li>
 </ul>
-<p>Of what is left it prefers the same name without the &quot;AK&quot;, then a template whose body part and modality match the
-study. It runs once per study, only before anything is dictated (switching the template reloads the report). If no
+<p>Of what is left it prefers the same name without the &quot;- AKA&quot; and the contrast words (&quot;Without&quot;, &quot;With&quot;), so
+&quot;CT Abdomen and Pelvis Without - AKA&quot; becomes the plain <strong>CT Abdomen and Pelvis</strong>. Failing that, it takes the
+shortest template whose body part and modality match the study, so a variant such as &quot;..., Stone&quot; is not chosen
+over the plain one. (Before 6.2.3 it looked for names <em>starting</em> with &quot;AK&quot; and so never switched an Alaska template.) It runs once per study, only before anything is dictated (switching the template reloads the report). If no
 template qualifies, the template is left alone.</p>
 
     </div>
@@ -86,7 +88,7 @@ template qualifies, the template is left alone.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.2.2</strong> · built 2026-10-02</div>
+  <div>Documents <strong>MosaicTools v6.2.3</strong> · built 2026-10-05</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
