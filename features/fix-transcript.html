@@ -60,6 +60,15 @@
 <li>It works through MosaicTools&#39; direct Mosaic access (CDP); if the button can&#39;t be found — say, no transcript is open — the action logs it and does nothing rather than clicking blindly.</li>
 <li>It pairs well with a dictation-heavy workflow: dictate, Fix Transcript, then Process Report, all from mic buttons without touching the mouse.</li>
 </ul>
+<h2>Keeps your drafted text  <span>6.2.8</span></h2>
+<p>Mosaic&#39;s cleanup rewrites the whole transcript - it adds colons, puts a blank line between sentences, drops
+MosaicTools&#39; dashed line and can reword the drafted findings. Fix Transcript now keeps <strong>everything down to
+the dashed line exactly as it was</strong> and only takes Mosaic&#39;s cleanup of <strong>your dictation</strong> below it. With no
+dashed line the cleanup is left as Mosaic made it; if MosaicTools cannot find the drafted lines in the cleaned
+text it changes nothing and says so.</p>
+<p><strong>Settings → Behavior → &quot;Fix Transcript before every Process Report&quot;</strong> (off by default) runs the same Fix
+Transcript automatically right before each Process Report, once your dictation has landed. It is skipped when
+nothing is dictated, and adds about 3 seconds.</p>
 
     </div>
     <aside class="feature-meta">
@@ -74,7 +83,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.2.7</strong> · built 2026-10-08</div>
+  <div>Documents <strong>MosaicTools v6.2.8</strong> · built 2026-10-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

@@ -93,6 +93,18 @@ release now</strong> leaves at once.</li>
 <li>Don&#39;t run MosaicTools from a folder you can&#39;t write to, or from OneDrive-synced paths if you can avoid it — the rename swap needs write access next to the exe.</li>
 <li>Rollback is the escape hatch if a new version misbehaves; report the issue so it&#39;s fixed, then re-enable <strong>Auto-update on startup</strong>.</li>
 </ul>
+<h2>Moving out of OneDrive, Program Files and the zip  <span>6.2.8</span></h2>
+<p>If MosaicTools starts from <strong>a OneDrive folder</strong>, <strong>Program Files</strong>, or <strong>straight out of the downloaded zip</strong>,
+it offers to move itself to its own folder, <code>%LOCALAPPDATA%\MosaicTools\App</code> (just for you, never synced by
+OneDrive, no administrator needed). It copies only the program - your settings already live there - puts a
+<strong>MosaicTools</strong> icon on your desktop, says where it went, and starts from there. Nothing is deleted.</p>
+<ul>
+<li>From inside the zip it will not run at all: choose <strong>OK</strong> to move it, or <strong>Cancel</strong> and use &quot;Extract All&quot;.</li>
+<li>From OneDrive or Program Files, <strong>No</strong> keeps it where it is and you are not asked again for that folder.</li>
+<li><code>run me first.bat</code> now also offers <strong>&quot;Install MosaicTools for this user&quot;</strong> - the same folder and desktop icon.</li>
+<li>A failed update now says <strong>why</strong> (download did not complete, file held by something on the PC, ...), and a
+slow connection gets 20 minutes per download attempt.</li>
+</ul>
 
     </div>
     <aside class="feature-meta">
@@ -107,7 +119,7 @@ release now</strong> leaves at once.</li>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.2.7</strong> · built 2026-10-08</div>
+  <div>Documents <strong>MosaicTools v6.2.8</strong> · built 2026-10-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

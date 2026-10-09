@@ -178,6 +178,14 @@ start. A comparison that arrives late is no longer mistaken for something you di
 <li>Custom loudness terms match whole words only — a custom &quot;cyst&quot; won&#39;t fire on &quot;cystitis&quot;.</li>
 <li>Lines beginning with macro/template markers (like &quot;--&quot; or &quot;##&quot;) are ignored so stray macro text doesn&#39;t show up as a finding. Since 5.5.29 the popup also strips whole lines that exactly match one of your enabled macros, so auto-inserted macro text (e.g. &quot;Please change default statement…&quot;) no longer appears as a drafted finding.</li>
 </ul>
+<h2>Ultrasound worksheets and empty drafts  <span>6.2.8</span></h2>
+<ul>
+<li>On an ultrasound worksheet (capture study) every line now gets its <strong>body-part tag</strong> in the worksheet&#39;s own
+order. A line that names no organ (&quot;No masses seen.&quot;) takes the organ of the line above; the <strong>gallbladder</strong>
+has its own section, separate from the liver; one organ&#39;s lines sit together as a block.</li>
+<li>A study Mosaic marks as drafted but with <strong>no drafted text</strong> now shows the undrafted box (history,
+impression, comparison) instead of nothing.</li>
+</ul>
 
     </div>
     <aside class="feature-meta">
@@ -192,7 +200,7 @@ start. A comparison that arrives late is no longer mistaken for something you di
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.2.7</strong> · built 2026-10-08</div>
+  <div>Documents <strong>MosaicTools v6.2.8</strong> · built 2026-10-09</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
