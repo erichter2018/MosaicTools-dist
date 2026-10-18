@@ -52,7 +52,11 @@
 <figure class="shot"><img src="../img/iv-truesize-1-preferences.jpg" alt="PART 2 · InteleViewer → Utilities → User Preferences… (Ctrl+U)" loading="lazy" class="lightboxable"><figcaption>PART 2 · InteleViewer → Utilities → User Preferences… (Ctrl+U)</figcaption></figure>
 <figure class="shot"><img src="../img/iv-truesize-2-modality-ct.jpg" alt="PART 2 · User Preferences → Modality → CT" loading="lazy" class="lightboxable"><figcaption>PART 2 · User Preferences → Modality → CT</figcaption></figure>
 <figure class="shot"><img src="../img/iv-truesize-3-text-overlay.jpg" alt="PART 2 · Text Overlay tab → add &quot;True Size Zoom Factor&quot; to an overlay corner (Overlay Lower Right)" loading="lazy" class="lightboxable"><figcaption>PART 2 · Text Overlay tab → add &quot;True Size Zoom Factor&quot; to an overlay corner (Overlay Lower Right)</figcaption></figure></div>
-      <h2>Why this is needed</h2>
+      <h2>With InteleViewer Direct it is the backup  <span>6.3.0</span></h2>
+<p>Since 6.3.0, <strong>InteleViewer Direct</strong> (Settings → Auto Measure, on by default) reads the image&#39;s exact pixel size
+straight from InteleViewer, so Auto Measure does not need True Size Zoom while it works. Keep this setup anyway:
+it is what Auto Measure falls back to whenever an InteleViewer Direct read fails, and Spine Labeling still uses it.</p>
+<h2>Why this is needed</h2>
 <p><strong>Spine Labeling</strong> and <strong>Auto Measure</strong> both work in <em>real-world</em> size, not pixels. Spine Labeling
 spaces vertebral bodies using their physical height in centimeters, and Auto Measure reports a lesion&#39;s
 long and short axes in millimeters. To do that, MosaicTools has to know how many millimeters one screen
@@ -138,7 +142,7 @@ monitor&#39;s pitch. Compare the pitch values of the monitor you read on and the
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.2.9</strong> · built 2026-10-10</div>
+  <div>Documents <strong>MosaicTools v6.3.0</strong> · built 2026-10-18</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
