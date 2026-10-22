@@ -1,0 +1,38 @@
+{
+ "grid_mm": 1.0,
+ "size": 256,
+ "fill_hu": -1024,
+ "windows": [
+  [
+   40,
+   400
+  ],
+  [
+   -600,
+   1500
+  ],
+  [
+   400,
+   1800
+  ]
+ ],
+ "classes": [
+  "II_R",
+  "II_L",
+  "III_R",
+  "III_L",
+  "Va_R",
+  "Va_L",
+  "IV_R",
+  "IV_L",
+  "Vbc_R",
+  "Vbc_L",
+  "Ib_R",
+  "Ib_L"
+ ],
+ "classes_offset": 1,
+ "orientation": "radiological: patient right = image left, anterior up",
+ "plane": "standard axial only",
+ "centre": "body: centroid of the largest HU > -500 blob after a 5x5 opening (source pixels), then 1 mm grid",
+ "note": "HU -> resample to 1 mm/px about the body centre -> size x size (fill_hu outside) -> one 0..1 channel per window (clip((hu - (level - width/2)) / width)). Output class c>0 = classes[c-1]."
+}

@@ -41,3 +41,13 @@ only where the references agreed, and the datasets' own annotations where noted)
 - "Ankle joints" radiographs - Mendeley Data dskmk9cb8g v2, licensed CC BY-NC 3.0.
 - CGMH Knee Segmentation Database - github.com/yaufan/Knee_Segmentation_Database (MIT; image rights not stated).
 - Roboflow Universe "pelvis_xray" v5 (uploader-declared Public Domain).
+
+## ln1/ - LN1, neck lymph node level model
+
+`ln1-r1.onnx` (+ `ln1-r1_input.json`, `ln1-r1.sha256`): labels neck lymph node levels (right/left II, III, Va, IV, Vb+Vc,
+Ib) on one standard axial CT image. Input [1,3,256,256]: Hounsfield units resampled to 1 mm about the body, three 0..1
+window channels (40/400, -600/1500, 400/1800); output [1,256,256] int64 class index (0 = none, k = the k-th name in
+`ln1-r1_input.json`).
+
+Trained on LNCTVSeg (Luo X. et al., figshare 10.6084/m9.figshare.26793622, CC BY 4.0) and the TotalSegmentator CT dataset
+v3 (Wasserthal J. et al., CC BY 4.0) - details and changes in `ln1/ATTRIBUTION.md`.
