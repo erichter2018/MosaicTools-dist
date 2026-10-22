@@ -49,7 +49,19 @@
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/keymappings.png" alt="Assign Auto Measure to a key or mic button in Key Mappings" loading="lazy" class="lightboxable"><figcaption>Assign Auto Measure to a key or mic button in Key Mappings</figcaption></figure>
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>Bidimensional measurement overlay on a lesion</figcaption></figure></div>
-      <h2>Zoom in the lesion picker, faster current study  <span>6.3.9</span></h2>
+      <h2>Fast again, HU on the first press, clearer lesion answers  <span>6.3.10</span></h2>
+<ul>
+<li>The caliper no longer waits for InteleViewer or the vessel check: the True Size Zoom reading is used unless
+InteleViewer answers within a moment.</li>
+<li>HU on the first measurement of a patient, and from MosaicTools&#39; own copy of the image when InteleViewer is slow
+(the same image, study and series as on screen).</li>
+<li>A kidney lesion with fat (-10 HU or less on any phase) reads &quot;angiomyolipoma&quot;. The adrenal box gives one answer line
+(adenoma, adenoma? or indeterminate adrenal nodule) and one reason per line under it.</li>
+<li>No &quot;ovary&quot; call on chest or shoulder slices.</li>
+<li>Auto Measure can no longer be put on a floating button: it measures under the mouse, so it needs a key or a mic or
+mouse button.</li>
+</ul>
+<h2>Zoom in the lesion picker, faster current study  <span>6.3.9</span></h2>
 <ul>
 <li>In the picker that opens from a <strong>fix</strong> button, each picture has <strong>+</strong> and <strong>-</strong> in its top right corner to zoom it.</li>
 <li>The current study&#39;s images are read first, and the series on screen goes first.</li>
@@ -201,7 +213,7 @@ is always on.</p>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.3.9</strong> · built 2026-10-22</div>
+  <div>Documents <strong>MosaicTools v6.3.10</strong> · built 2026-10-22</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
