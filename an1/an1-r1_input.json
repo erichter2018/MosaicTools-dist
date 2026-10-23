@@ -1,0 +1,22 @@
+{
+  "model": "an1-r1.onnx",
+  "sha256": "fff6065f4cdf660448bd4c6daed2b16b4acc854e0394244ffd8432c3e67f9a08",
+  "note": "Documentation only - MosaicTools does not read this file; the same contract is coded in Services/VesselWalk/VwAn1.cs.",
+  "input": { "name": "image", "shape": [1, 5, 160, 160], "type": "float32" },
+  "output": { "name": "logits", "shape": [1, 4, 160, 160], "type": "float32" },
+  "grid_mm": 1.0,
+  "size": 160,
+  "fill_hu": -1024,
+  "orientation": "radiological axial: columns toward the patient's left, rows toward the back (patient right = image left)",
+  "window": "clip((hu - (level - width/2)) / width, 0, 1)",
+  "channels": [
+    "soft 40/400 at the slice",
+    "narrow 40/150 at the slice",
+    "high 350/900 at the slice",
+    "soft 40/400 at z - 3 mm",
+    "soft 40/400 at z + 3 mm"
+  ],
+  "classes": ["background", "aorta_outer_wall", "iliac_artery", "ivc_or_iliac_vein"],
+  "decision": "argmax over the 4 classes",
+  "crop": "centred on the aorta (seeded by CT1, then the previous slice's An1 aorta)"
+}

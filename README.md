@@ -51,3 +51,12 @@ window channels (40/400, -600/1500, 400/1800); output [1,256,256] int64 class in
 
 Trained on LNCTVSeg (Luo X. et al., figshare 10.6084/m9.figshare.26793622, CC BY 4.0) and the TotalSegmentator CT dataset
 v3 (Wasserthal J. et al., CC BY 4.0) - details and changes in `ln1/ATTRIBUTION.md`.
+
+## an1/ - An1, abdominal aorta outer-wall model
+
+`an1-r1.onnx` (+ `an1-r1_input.json`, `an1-r1.sha256`): outlines the abdominal aorta's outer wall (lumen + thrombus + wall),
+the iliac arteries and the IVC / iliac veins on a 160 x 160 mm crop of one axial CT image (1.0 mm grid), from Hounsfield
+units. Used to measure aortic aneurysms perpendicular to the centerline.
+
+Trained on the TotalSegmentator CT dataset v3 (Wasserthal J. et al., CC BY 4.0) only - details and changes in
+`an1/ATTRIBUTION.md`.
