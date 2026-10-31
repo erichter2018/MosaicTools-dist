@@ -49,7 +49,11 @@
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/text-processing.png" alt="⚡ Turbo Paste in the Text Processing group" loading="lazy" class="lightboxable"><figcaption>⚡ Turbo Paste in the Text Processing group</figcaption></figure>
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>Dictated text appearing instantly, refining in place</figcaption></figure></div>
-      <h2>What it does</h2>
+      <h2>Pauses when Mosaic blocks CDP  <span>6.3.17</span></h2>
+<p>Turbo Paste&#39;s later fixes reach the report only through CDP. When Mosaic blocks CDP access (Mosaic 2.0.6.1, or CDP off),
+Turbo Paste pauses itself and pastes the finished result instead, so the rough first text never stays in the report.
+It turns back on when CDP returns. A short CDP drop does not pause it: the fixes wait and land when CDP is back.</p>
+<h2>What it does</h2>
 <p>Normally the ensemble waits a beat (the merge wait) so every engine can vote before text is pasted. Turbo Paste collapses that wait: the first transcript appears in your report almost instantly, and the other engines&#39; corrections catch up a moment later, editing the text <strong>in place</strong>. You get single-engine speed with full-ensemble accuracy — the end state of the text is the same, it just arrives sooner.</p>
 <h2>How to turn it on / set it up</h2>
 <p>Settings → Speech-to-Text → Text Processing → <strong>⚡ Turbo Paste</strong>. It&#39;s on by default when Custom STT is enabled.</p>
@@ -75,7 +79,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.3.16</strong> · built 2026-10-31</div>
+  <div>Documents <strong>MosaicTools v6.3.17</strong> · built 2026-10-31</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

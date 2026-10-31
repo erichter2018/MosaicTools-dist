@@ -49,7 +49,17 @@
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-behavior-zoom.png" alt="&quot;Show glanceable drafted findings popup&quot; in Behavior settings" loading="lazy" class="lightboxable"><figcaption>&quot;Show glanceable drafted findings popup&quot; in Behavior settings</figcaption></figure>
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The tiered, loudness-weighted findings list</figcaption></figure></div>
-      <h2>Impression buttons on the IMPRESSION line  <span>6.2.5</span></h2>
+      <h2>Crosshair: go to the finding  <span>6.3.17</span></h2>
+<p>A small crosshair sits between each finding&#39;s organ tag and its text. Click it and InteleViewer&#39;s selected pane scrolls
+to that finding with one click on its Image Scroller.</p>
+<ul>
+<li>If the sentence gives an image number (&quot;image 45&quot;, &quot;images 40-50&quot;), MT goes there (a range: its middle).</li>
+<li>Otherwise MT goes to the middle of where that organ sits in the stack - the same anatomy map that places the drafted
+labels on the images. A nodule in the right upper lobe lands in the middle of the right upper lobe, not on the nodule.</li>
+<li>Needs <strong>Show drafted findings within CT images</strong> on, and InteleViewer&#39;s <strong>Image Scroller</strong> turned on (Tools &gt; Image
+Scroller). When MT cannot do it, the reason shows next to the crosshair.</li>
+</ul>
+<h2>Impression buttons on the IMPRESSION line  <span>6.2.5</span></h2>
 <p>The impression buttons the report shows for this study (<strong>+</strong> adds a line, <strong>=</strong> replaces the impression - your
 Impression Fixer entries) appear on the popup&#39;s IMPRESSION line too. A click presses the report&#39;s own button, so it
 does exactly the same thing. Degenerative changes of a finger, hand, knee or other limb joint are now filed under
@@ -207,7 +217,7 @@ can you drag its bottom edge; the box can grow down to 10 px above the bottom of
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.3.16</strong> · built 2026-10-31</div>
+  <div>Documents <strong>MosaicTools v6.3.17</strong> · built 2026-10-31</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
