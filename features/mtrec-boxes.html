@@ -61,6 +61,12 @@
 <p><strong>Auto-insert (new in 5.5.5):</strong> a separate peer toggle, <strong>Settings → MTRec → &quot;Automatically insert recommendations on Process Report&quot;</strong>, skips the click entirely — MTRec&#39;s green-box recommendations are merged into the impression automatically when you Process Report. It&#39;s independent of showing the boxes (you can have either, both, or neither), off by default, and Ctrl+Z still undoes an insert.</p>
 <h2>Using it</h2>
 <p>Process the report, glance right of &quot;Final Report&quot;. No boxes = MTRec found nothing actionable. A green &quot;+ thyroid&quot; means a guideline follow-up is one click away; click it, check the wording in the impression, move on. An amber &quot;⚠ cirrhosis&quot; is a nudge, not text — hover for the missing companions or click for the checklist.</p>
+<p><strong>When your impression already covers it (6.3.18).</strong> A recommendation is offered even when the impression already
+covers that finding (the impression is usually written by Mosaic, not by you). Its box is marked
+<strong>&quot;(impression covers it)&quot;</strong>, and a click puts MTRec&#39;s line in place of the matching impression point. If MTRec
+cannot replace that point (for example it names a concern MTRec&#39;s line does not), nothing is added and the box
+says why. The grey <strong>&quot;✔ MTRec rec in the report&quot;</strong> box now counts only recommendations whose MTRec text is
+really in the report.</p>
 <h2>Debug information</h2>
 <p><strong>Since 5.5.8 the box debug is always on</strong> — no setting required.</p>
 <ul>
@@ -93,7 +99,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.3.17</strong> · built 2026-10-31</div>
+  <div>Documents <strong>MosaicTools v6.3.18</strong> · built 2026-11-02</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
