@@ -43,31 +43,24 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/platform.html">Setup &amp; Platform</a></div>
     <h1>CDP Integration</h1>
-    <p class="brief">Reads Mosaic and Clario through the Chrome DevTools Protocol instead of screen-level UI Automation — faster, more reliable, and the foundation for the in-editor visual features.</p>
+    <p class="brief">External Mosaic CDP is obsolete and defaults off. Core report actions use Windows accessibility when CDP is unavailable; Clario CDP is configured separately.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
-      <div class="shots"><figure class="shot"><img src="../img/settings-cdp.png" alt="Mosaic CDP toggles and what they unlock" loading="lazy" class="lightboxable"><figcaption>Mosaic CDP toggles and what they unlock</figcaption></figure>
-<figure class="shot"><img src="../img/settings-experimental.png" alt="The Experimental tab hosting the CDP settings" loading="lazy" class="lightboxable"><figcaption>The Experimental tab hosting the CDP settings</figcaption></figure></div>
-      <h2>What it does</h2>
-<p>Mosaic&#39;s report screen is a web page inside an embedded browser, and Clario is a Chrome web app. CDP lets MosaicTools read and modify those pages directly through the browser&#39;s own debugging protocol — instant JS evaluation instead of walking accessibility trees. That means faster and more accurate scraping (accession, drafted state, clinical history, exam notes, Priority/Class, critical note creation), plus a set of features that are only possible with DOM access: independent column scrolling, auto-scroll to the cursor while dictating, dictated-text highlighting, visual report enhancements, flashing alert text, in-editor impression-fixer buttons, MTRec boxes, and Mosaic zoom memory.</p>
-<h2>How to turn it on / set it up</h2>
-<p><strong>Mosaic</strong> — in <strong>Settings → Experimental → Mosaic CDP (Direct DOM Access)</strong>, check <strong>Use CDP for Mosaic interaction</strong> (requires a Mosaic restart the first time), then enable whichever sub-features you want.</p>
-<p><strong>Clario</strong> — in the <strong>Clario CDP (Direct DOM Access)</strong> section, check <strong>Use CDP for Clario interaction</strong>, enter your <strong>Clario URL</strong>, and click <strong>Setup Chrome CDP Shortcut</strong>. This creates a &quot;Clario CDP&quot; desktop shortcut (and a profile junction) so Chrome launches with CDP enabled while keeping your normal profile. Close Chrome before first launching it, then always open Clario from that shortcut.</p>
-<p>The <strong>CDP Status</strong> dashboard at the bottom of the section shows live green/red dots for both connections.</p>
-<h2>Using it</h2>
-<p>Invisible when working: everything is just faster and steadier. The Clario TBWU injection and instant critical-note creation also depend on it.</p>
-<h2>Tips &amp; gotchas</h2>
-<ul>
-<li><strong>UI Automation remains the fallback</strong> — if CDP is unavailable, MosaicTools silently falls back, so enabling CDP can&#39;t leave you worse off.</li>
-<li>If CDP-dependent features stop, check the status dashboard first; the Clario side usually means Chrome wasn&#39;t launched from the &quot;Clario CDP&quot; shortcut.</li>
-<li>Known interaction: the Independent Column Scrolling CSS can corrupt the page for RadPair users — turn that sub-option off if you run RadPair.</li>
-</ul>
+
+      <h2>External Mosaic CDP is off by default</h2>
+<p>Recent regular Mosaic versions no longer provide the external CDP connection. MosaicTools now defaults it off and turns off previously automatic-on configurations once. Simple Mode does not switch it back on. You do not need to keep restarting Mosaic to dismiss an unavailable-CDP warning.</p>
+<p>The manual <strong>Use external CDP (obsolete)</strong> option remains for an environment that explicitly supports it. Turning it on cannot restore access that Mosaic no longer exposes. Settings saved after the one-time migration keep your explicit choice.</p>
+<h2>Working without CDP</h2>
+<p>MosaicTools uses Windows accessibility for report and transcript reads and supported actions. Get Prior, macros, Process Report, MTRec, DLP and CC target the intended current-study editor. If the editor cannot be identified or a write cannot be confirmed, the action pauses or reports the problem instead of pasting into another field.</p>
+<p>This does not restore every feature that previously injected content or styling into Mosaic. Independent column scrolling only works where Mosaic exposes a suitable field-level accessibility scroller. A report that cannot be read is not evidence that it is ready to sign; review the native report.</p>
+<h2>Clario CDP is separate</h2>
+<p>The Clario connection has its own <strong>Use CDP for Clario interaction</strong> setting, URL and <strong>Setup Chrome CDP Shortcut</strong>. Its configuration is not changed by the Mosaic CDP default. Launch Clario from the configured shortcut when using its CDP features. An unavailable Mosaic CDP connection does not by itself mean Clario needs reconfiguration.</p>
 
     </div>
     <aside class="feature-meta">
       <h4>At a glance</h4>
-      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Experimental → Mosaic CDP (Direct DOM Access) → Use CDP for Mosaic interaction</span></div>
+      <div class="meta-row"><span class="meta-k">Settings</span><span class="meta-v">Settings → Experimental → Mosaic CDP (Direct DOM Access)</span></div>
     <div class="meta-row"><span class="meta-k">Category</span><span class="meta-v"><a href="../category/platform.html">⚙️ Setup &amp; Platform</a></span></div>
     <div class="meta-row"><span class="meta-k">Stage</span><span class="meta-v">Set up</span></div>
     <div class="meta-row"><span class="meta-k">Since</span><span class="meta-v">v4.0</span></div>
@@ -77,7 +70,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.4.2</strong> · built 2026-11-04</div>
+  <div>Documents <strong>MosaicTools v6.4.4</strong> · built 2026-11-11</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

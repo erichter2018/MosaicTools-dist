@@ -43,15 +43,17 @@
   <div class="feature-head">
     <div class="crumbs"><a href="../index.html">Home</a> › <a href="../category/processing.html">Report Processing &amp; QA</a></div>
     <h1>Process Report</h1>
-    <p class="brief">The one-button core of the workflow — sends Alt+P to Mosaic to structure your dictation into the report, wrapped with auto-stop dictation, smart scrolling, and every post-process surface MosaicTools offers.</p>
+    <p class="brief">Invokes Mosaic's native report action with current-study and readiness checks, then runs your enabled post-process tools.</p>
   </div>
   <div class="feature-cols">
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-profile.png" alt="Auto-Stop Dictation on Process Report (Desktop Mode)" loading="lazy" class="lightboxable"><figcaption>Auto-Stop Dictation on Process Report (Desktop Mode)</figcaption></figure>
 <figure class="shot"><img src="../img/settings-behavior.png" alt="Report-processing behavior: scroll, warnings, auto-process" loading="lazy" class="lightboxable"><figcaption>Report-processing behavior: scroll, warnings, auto-process</figcaption></figure>
 <figure class="shot"><img src="../img/mtrec-boxes.png" alt="MTRec boxes appearing next to Final Report after processing" loading="lazy" class="lightboxable"><figcaption>MTRec boxes appearing next to Final Report after processing</figcaption></figure></div>
-      <h2>What it does</h2>
-<p>Process Report is the center of the MosaicTools workflow. The action itself sends Alt+P to Mosaic, which runs Mosaic&#39;s own LLM to structure your dictation into the report. What MosaicTools adds is everything around that keypress: it can stop your dictation first, scroll the report so the IMPRESSION is visible, and light up all the post-process surfaces — the report popup, the impression popup, MTRec boxes, and (if enabled) RadAI.</p>
+      <h2>No-CDP report actions</h2>
+<p>Process Report first targets an enabled native Process Report button when accessible, with a guarded keyboard fallback. MosaicTools verifies the active application and current study before dispatch. A refused or unconfirmed dispatch does not mark the report as processed. MosaicC retains its own Generate impressions behavior; it does not have a native full Process Report equivalent.</p>
+<h2>What it does</h2>
+<p>Process Report is the center of the MosaicTools workflow. The action targets Mosaic&#39;s native processing control when available, with a guarded keyboard fallback, so Mosaic can structure the dictation into its report. What MosaicTools adds is everything around that keypress: it can stop your dictation first, scroll the report so the IMPRESSION is visible, and light up all the post-process surfaces — the report popup, the impression popup, MTRec boxes, and (if enabled) RadAI.</p>
 <h2>How to turn it on / set it up</h2>
 <p>Map <strong>Process Report</strong> to a mic button or hotkey under <strong>Settings → Keys &amp; Buttons</strong>. The wrappers each have their own toggle:</p>
 <ul>
@@ -78,7 +80,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.4.2</strong> · built 2026-11-04</div>
+  <div>Documents <strong>MosaicTools v6.4.4</strong> · built 2026-11-11</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
