@@ -49,7 +49,10 @@
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-behavior.png" alt="&quot;Warn before signing (unprocessed transcript)&quot; in Behavior settings" loading="lazy" class="lightboxable"><figcaption>&quot;Warn before signing (unprocessed transcript)&quot; in Behavior settings</figcaption></figure>
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The warning window at sign time</figcaption></figure></div>
-      <h2>Unprocessed-report protection without CDP</h2>
+      <h2>When the transcript cannot be read (6.4.5)</h2>
+<p>With the unprocessed-transcript warning enabled, an unreadable transcript now produces <strong>Could not verify transcript</strong> when verification is needed. It is not treated as an empty transcript. Inspect the report, then press Sign again to override. Untouched worksheet and initial-draft exemptions remain.</p>
+<p>This applies to Sign actions handled by MT. Mosaic’s direct hardware Sign action cannot be blocked by MT.</p>
+<h2>Unprocessed-report protection without CDP</h2>
 <p>The warning can use accessibility transcript and report reads, with processing observations tied to the current study. Existing protections against warnings on an untouched worksheet remain. MosaicTools cannot block a hardware/native Sign action, and an unreadable report is not proof of completion. Always inspect the native final report before signing.</p>
 <h2>What changed in 6.0.16</h2>
 <p><strong>The finalization check is now optional, and it is off by default.</strong> The box headed <em>Transcription
@@ -134,7 +137,7 @@ press Sign again.</li>
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.4.4</strong> · built 2026-11-11</div>
+  <div>Documents <strong>MosaicTools v6.4.5</strong> · built 2026-11-12</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

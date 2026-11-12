@@ -50,7 +50,9 @@
       <div class="shots"><figure class="shot"><img src="../img/settings-profile.png" alt="Auto-Stop Dictation on Process Report (Desktop Mode)" loading="lazy" class="lightboxable"><figcaption>Auto-Stop Dictation on Process Report (Desktop Mode)</figcaption></figure>
 <figure class="shot"><img src="../img/settings-behavior.png" alt="Report-processing behavior: scroll, warnings, auto-process" loading="lazy" class="lightboxable"><figcaption>Report-processing behavior: scroll, warnings, auto-process</figcaption></figure>
 <figure class="shot"><img src="../img/mtrec-boxes.png" alt="MTRec boxes appearing next to Final Report after processing" loading="lazy" class="lightboxable"><figcaption>MTRec boxes appearing next to Final Report after processing</figcaption></figure></div>
-      <h2>No-CDP report actions</h2>
+      <h2>Process Report in regular Mosaic (6.4.5)</h2>
+<p>Process Report can use the accessible action button even when transcript reading is temporarily unavailable. If no accessible button is found, MT can use Mosaic’s keyboard shortcut after rechecking the current study. A button known to be disabled or ambiguous is not bypassed, and an unconfirmed action is not repeated automatically.</p>
+<h2>No-CDP report actions</h2>
 <p>Process Report first targets an enabled native Process Report button when accessible, with a guarded keyboard fallback. MosaicTools verifies the active application and current study before dispatch. A refused or unconfirmed dispatch does not mark the report as processed. MosaicC retains its own Generate impressions behavior; it does not have a native full Process Report equivalent.</p>
 <h2>What it does</h2>
 <p>Process Report is the center of the MosaicTools workflow. The action targets Mosaic&#39;s native processing control when available, with a guarded keyboard fallback, so Mosaic can structure the dictation into its report. What MosaicTools adds is everything around that keypress: it can stop your dictation first, scroll the report so the IMPRESSION is visible, and light up all the post-process surfaces — the report popup, the impression popup, MTRec boxes, and (if enabled) RadAI.</p>
@@ -80,7 +82,7 @@
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.4.4</strong> · built 2026-11-11</div>
+  <div>Documents <strong>MosaicTools v6.4.5</strong> · built 2026-11-12</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>

@@ -49,7 +49,10 @@
     <div class="feature-body">
       <div class="shots"><figure class="shot"><img src="../img/settings-behavior-zoom.png" alt="&quot;Show glanceable drafted findings popup&quot; in Behavior settings" loading="lazy" class="lightboxable"><figcaption>&quot;Show glanceable drafted findings popup&quot; in Behavior settings</figcaption></figure>
 <figure class="shot shot-placeholder"><div class="shot-coming">📷 screenshot coming</div><figcaption>The tiered, loudness-weighted findings list</figcaption></figure></div>
-      <h2>Crosshair: go to the finding  <span>6.3.17</span></h2>
+      <h2>Transcript-only clicks without CDP (6.4.5)</h2>
+<p>In regular Mosaic, finding clicks delete or restore only their original transcript text. Restored drafts return above the dictation separator. Successful edits leave the cursor at the bottom of dictation. The final report is untouched by finding clicks; impression enhancement buttons remain separate report actions.</p>
+<p>If the editor cannot be verified, MT leaves the text unchanged. Do not dictate during a click.</p>
+<h2>Crosshair: go to the finding  <span>6.3.17</span></h2>
 <p>A small crosshair sits between each finding&#39;s organ tag and its text. Click it and InteleViewer&#39;s selected pane scrolls
 to that finding with one click on its Image Scroller.</p>
 <ul>
@@ -136,7 +139,7 @@ again when you move to the next study.</p>
 <ul>
 <li>It appears automatically for drafted studies and updates when the draft changes.</li>
 <li><strong>Right-click a line</strong> to open the loudness tuner: it shows the per-term contributions behind that line&#39;s tier, with ▲/▼ arrows to make a term louder or quieter for you permanently. &quot;Add term from this sentence…&quot; lets you introduce your own term (multi-word phrases work), and &quot;Sort order&quot; lets you drag-reorder the body regions per study type.</li>
-<li><strong>Click the red X</strong> (or the finding&#39;s text) to delete that finding from the report — the deletion is propagated into the Mosaic transcript editor via CDP.</li>
+<li><strong>Click the red X</strong> (or the finding&#39;s text) to delete that finding from the transcript. Click its struck-through row to restore it to its original transcript location.</li>
 <li>Left-click elsewhere dismisses it for the current case; it re-appears on the next drafted case, and it closes automatically when you sign or discard.</li>
 </ul>
 <h2>Abnormal measurement colors (since 5.8.32)</h2>
@@ -217,7 +220,7 @@ can you drag its bottom edge; the box can grow down to 10 px above the bottom of
 </article>
 </main>
 <footer class="footer">
-  <div>Documents <strong>MosaicTools v6.4.4</strong> · built 2026-11-11</div>
+  <div>Documents <strong>MosaicTools v6.4.5</strong> · built 2026-11-12</div>
   <div class="footer-quiet">Internal tooling documentation. No patient data appears anywhere on this site.</div>
 </footer>
 <script>window.__REL = "../";</script>
