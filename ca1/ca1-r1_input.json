@@ -1,0 +1,77 @@
+{
+  "model": "ca1.onnx",
+  "sha256": "287649bbb6cab8d09afad709c37a4a05d4219083cd6cbb99c8557e985b9ea2b2",
+  "input": {
+    "name": "image",
+    "shape": [
+      1,
+      7,
+      160,
+      160
+    ],
+    "type": "float32"
+  },
+  "output": {
+    "name": "logits",
+    "shape": [
+      1,
+      6,
+      160,
+      160
+    ],
+    "type": "float32"
+  },
+  "grid_mm": 0.5,
+  "size": 160,
+  "fov_mm": 80.0,
+  "fill_hu": -1024.0,
+  "neighbour_offset_mm": 2.0,
+  "width": 32,
+  "windows": {
+    "soft": [
+      40,
+      400
+    ],
+    "cta_lumen": [
+      250,
+      700
+    ],
+    "bone_calcium": [
+      500,
+      1500
+    ]
+  },
+  "window_formula": "clip((hu - (level - width/2)) / width, 0, 1)",
+  "channels": [
+    "soft 40/400 at z",
+    "cta_lumen 250/700 at z",
+    "bone_calcium 500/1500 at z",
+    "cta_lumen 250/700 at z - 2.0 mm",
+    "cta_lumen 250/700 at z + 2.0 mm",
+    "soft 40/400 at z - 2.0 mm",
+    "soft 40/400 at z + 2.0 mm"
+  ],
+  "orientation": "radiological axial: columns toward patient Left, rows toward patient Posterior (patient right = image left)",
+  "classes": [
+    "background",
+    "cca",
+    "ica",
+    "eca",
+    "ijv",
+    "other_vessel"
+  ],
+  "decision": "argmax over the 6 classes (or softmax probability map per vessel class for 3D tracking)",
+  "crop": "80x80 mm unilateral crop centred on one carotid sheath (seeded at cursor / tracked slice-by-slice)",
+  "onnx_parity_max_abs_diff": 2.86102294921875e-05,
+  "val_metrics": {
+    "score": 0.83854,
+    "ica_dice": 0.7966,
+    "cca_dice": 0.8641,
+    "eca_dice": null,
+    "ijv_dice": 0.8969,
+    "other_dice": 0.8994,
+    "carotid_union_dice": 0.8608,
+    "ijv_leak_rate": 0.00284,
+    "carotid_in_ijv_fp": 0.00011
+  }
+}

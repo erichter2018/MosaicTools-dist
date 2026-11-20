@@ -54,9 +54,18 @@ v3 (Wasserthal J. et al., CC BY 4.0) - details and changes in `ln1/ATTRIBUTION.m
 
 ## an1/ - An1, abdominal aorta outer-wall model
 
-`an1-r1.onnx` (+ `an1-r1_input.json`, `an1-r1.sha256`): outlines the abdominal aorta's outer wall (lumen + thrombus + wall),
-the iliac arteries and the IVC / iliac veins on a 160 x 160 mm crop of one axial CT image (1.0 mm grid), from Hounsfield
-units. Used to measure aortic aneurysms perpendicular to the centerline.
+`an1-r2.onnx` (superseding `an1-r1.onnx`; `+ an1-r2_input.json`, `an1-r2.sha256`): outlines the abdominal aorta's outer
+wall (lumen + thrombus + wall), the iliac arteries and the IVC / iliac veins on a 160 x 160 mm crop of one axial CT
+image (1.0 mm grid), from Hounsfield units. Used to measure aortic aneurysms perpendicular to the centerline.
 
-Trained on the TotalSegmentator CT dataset v3 (Wasserthal J. et al., CC BY 4.0) only - details and changes in
-`an1/ATTRIBUTION.md`.
+Trained on the TotalSegmentator CT dataset v3 (Wasserthal J. et al., CC BY 4.0) and Siriapisith et al. AAA Pre-/Post-EVAR
+dataset (Figshare 10.6084/m9.figshare.19090052, CC BY 4.0) - details and changes in `an1/ATTRIBUTION.md`.
+
+## ca1/ - Ca1, carotid 2.5-D segmentation model
+
+`ca1-r1.onnx` (+ `ca1-r1_input.json`, `ca1-r1.sha256`): segments the common carotid artery (CCA), internal carotid
+artery (ICA), and internal jugular vein (IJV) on an 80 x 80 mm unilateral axial CT crop (0.5 mm grid, +/-2 mm neighbour
+context) from Hounsfield units. Used to exclude touching jugular veins and disambiguate ICA vs ECA during carotid tracing.
+
+Trained on the TotalSegmentator CT dataset v3 (Wasserthal J. et al., CC BY 4.0) and SegRap 2023 (Luo X. et al., CC BY 4.0)
+- details and changes in `ca1/ATTRIBUTION.md`.

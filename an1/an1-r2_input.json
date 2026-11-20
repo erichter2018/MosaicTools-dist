@@ -1,0 +1,41 @@
+{
+ "model_version": "an1-r2",
+ "grid_mm": 1.0,
+ "size": 160,
+ "fill_hu": -1024,
+ "windows": [
+  [
+   40,
+   400
+  ],
+  [
+   40,
+   150
+  ],
+  [
+   350,
+   900
+  ]
+ ],
+ "neighbour_window": [
+  40,
+  400
+ ],
+ "neighbour_offset_mm": 3.0,
+ "width": 32,
+ "channels": [
+  "soft 40/400 z",
+  "narrow 40/150 z",
+  "high 350/900 z",
+  "soft 40/400 z-3mm",
+  "soft 40/400 z+3mm"
+ ],
+ "orientation": "radiological: patient right = image left",
+ "classes": [
+  "background",
+  "aorta_outer_wall",
+  "iliac_artery",
+  "ivc_or_iliac_vein"
+ ],
+ "note": "Drop-in replacement for an1-r1.onnx (VwAn1.cs compatible). Trained on TSv3 + Siriapisith AAA/EVAR + AMOS22/DAP_Atlas."
+}
