@@ -1,0 +1,80 @@
+{
+  "model": "re1.onnx",
+  "sha256": "00958b3b11c03e72f0293908880d2e26900c8a8e6a7f1e1267ec3061888248a2",
+  "input": {
+    "name": "image",
+    "shape": [
+      1,
+      9,
+      192,
+      192
+    ],
+    "type": "float32"
+  },
+  "output": {
+    "name": "logits",
+    "shape": [
+      1,
+      5,
+      192,
+      192
+    ],
+    "type": "float32"
+  },
+  "grid_mm": 0.75,
+  "size": 192,
+  "fov_mm": 144.0,
+  "fill_hu": -1024.0,
+  "neighbour_offset_mm": 2.0,
+  "width": 32,
+  "windows": {
+    "soft": [
+      40,
+      400
+    ],
+    "renal_contrast": [
+      80,
+      350
+    ],
+    "bone_stone": [
+      400,
+      1500
+    ]
+  },
+  "channels": [
+    "soft_40_400_z",
+    "renal_80_350_z",
+    "bone_400_1500_z",
+    "soft_40_400_z_minus_2mm",
+    "renal_80_350_z_minus_2mm",
+    "bone_400_1500_z_minus_2mm",
+    "soft_40_400_z_plus_2mm",
+    "renal_80_350_z_plus_2mm",
+    "bone_400_1500_z_plus_2mm"
+  ],
+  "classes": [
+    "background",
+    "kidney",
+    "cyst",
+    "mass",
+    "stone"
+  ],
+  "orientation": "radiological_axial_patient_right_is_image_left_isotropic_never_stretched",
+  "onnx_parity_max_abs_diff": 1.9073486328125e-05,
+  "val_metrics": {
+    "score": 0.72618,
+    "kidney_dice": 0.9227,
+    "cyst_dice": 0.817,
+    "mass_dice": 0.8692,
+    "stone_dice": 0.7441,
+    "cyst_lesion_sens": 0.7781,
+    "cyst_fp_per_kidney": 0.6275,
+    "cyst_gt_n": 383,
+    "mass_lesion_sens": 0.8395,
+    "mass_fp_per_kidney": 0.3119,
+    "mass_gt_n": 81,
+    "stone_lesion_sens": 0.375,
+    "stone_fp_per_kidney": 0.3846,
+    "stone_gt_n": 128
+  }
+}
